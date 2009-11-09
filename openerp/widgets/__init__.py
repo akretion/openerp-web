@@ -1,10 +1,6 @@
-import form
-import graph
-import listgrid
-import treegrid
+from base import *
+from widgets import *
+from resource import *
+from interface import *
 
-import screen
-import form_view
-
-# vim: ts=4 sts=4 sw=4 si et
-
+from js_i18n import js_i18n
