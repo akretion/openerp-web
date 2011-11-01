@@ -102,7 +102,9 @@ def parse_groups(group_by, grp_records, headers, ids, model,  offset, limit, con
                     rec[key] = format.format_decimal(val or 0.0, digit)
 
             for grp_by in group_by:
-                if not rec.get(grp_by):
+                if fields.get(grp_by).get('type') == 'boolean' and rec.has_key(grp_by) and rec.get(grp_by) == False:
+                    rec[grp_by] = 'False'
+                elif not rec.get(grp_by):
                     rec[grp_by] = ''
 
             ch_ids = []
