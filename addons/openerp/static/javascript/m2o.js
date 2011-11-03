@@ -164,6 +164,7 @@ ManyToOne.prototype.open = function(id) {
 };
 
 ManyToOne.prototype.get_text = function() {
+    this.clearResults();
     if(!this.text) { return; }
     if(!this.field.value) {
         this.text.value = '';
