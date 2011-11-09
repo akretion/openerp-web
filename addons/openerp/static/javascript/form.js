@@ -467,12 +467,13 @@ function onChange(caller){
 
     // Inline editable row pass the fields when not save row
     // so remove whole editable row when onchange called outside the o2m
-    if ((jQuery('tr.editors').length) && (!$caller.closest('tr.editors').length)) {
-        if(jQuery('tr.editors').attr("record") != "-1"){
-            o2m_id = (jQuery('tr.editors').closest('table').attr("id")).replace("_grid", "");
-            new One2Many(o2m_id).save(jQuery('tr.editors').attr("record"));
+    if (($('tr.editors').length) && (!$caller.closest('tr.editors').length)) {
+        var edit_line_id = $('tr.editors').attr('record');
+        if(edit_line_id != "-1"){
+            o2m_id = $('tr.editors').closest('.gridview').attr('id');
+            new One2Many(o2m_id).save(edit_line_id);
         }
-        jQuery('tr.editors').remove();
+        $('tr.editors').remove();
     }
 
     var callback = $caller.attr('callback');
