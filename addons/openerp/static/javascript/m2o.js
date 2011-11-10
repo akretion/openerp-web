@@ -87,6 +87,11 @@ ManyToOne.prototype.__init__ = function(name) {
             jQuery(this.reference).change(jQuery.proxy(this, 'on_reference_changed'));
         }
 
+        var self = this;
+        jQuery(idSelector("autoCompleteResults_" + this.name)).mouseout(function(){
+            self.suggestionBoxMouseOver = false;
+        });
+        
         this.is_inline = name.indexOf('_terp_listfields/') == 0;
 
         this.field._m2o = this;
@@ -164,7 +169,6 @@ ManyToOne.prototype.open = function(id) {
 };
 
 ManyToOne.prototype.get_text = function() {
-    this.clearResults();
     if(!this.text) { return; }
     if(!this.field.value) {
         this.text.value = '';
