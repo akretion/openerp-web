@@ -54,9 +54,6 @@
         </tr>
     </table>
     <script type="text/javascript">
-        jQuery('form').submit(function () {
-            jQuery('.save_close:eq(0) button').attr('disabled', true);
-        });
         jQuery.o2m('init');
     </script>
 </%def>
