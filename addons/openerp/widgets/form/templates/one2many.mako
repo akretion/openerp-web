@@ -66,7 +66,7 @@
         % endif
     </tr>
     % if screen.editable and not readonly and view_type == 'tree':
-        % if name == source and not edition:
+        % if name == source and parent_id and not edition:
             <script type="text/javascript">
                 jQuery(document).ready(function() {
                     new One2Many('${name}', jQuery('table.one2many[id=_o2m_${name}]').attr('detail')).create();
