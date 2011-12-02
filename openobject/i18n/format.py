@@ -290,23 +290,16 @@ def _convert_date_format_in_domain(domain, fields, context):
 
     return fixed_domain
 
-LOCALE_CACHE = {
-               'date_format':'%m/%d/%Y',
-               'time_format':'%H:%M:%S',
-               'grouping':[],
-               'decimal_point':'.',
-               'thousands_sep': ','
-                }
 
 def get_lang_float_format(locale_lang,monetary=False):
-    thousands_sep = LOCALE_CACHE.get('thousands_sep') or numbers.get_group_symbol(locale_lang)
-    decimal_point = LOCALE_CACHE.get('decimal_point')
-    grouping      = LOCALE_CACHE.get('grouping')
+    thousands_sep = cherrypy.session['lang'].get('thousands_sep') or numbers.get_group_symbol(locale_lang)
+    decimal_point = cherrypy.session['lang'].get('decimal_point')
+    grouping      = cherrypy.session['lang'].get('grouping')
     return (grouping, thousands_sep, decimal_point)
 
 
 def format_decimal(value, digits=2, grouping=True, monetary=False):
-    locale = get_locale()
+    locale = cherrypy.session['lang'].get('code') or get_locale()
     formatted = ("%%.%df" % digits) % value
     lang_grouping, thousands_sep, decimal_point = get_lang_float_format(locale,monetary=False)
     
@@ -376,19 +369,9 @@ def group(value, monetary=False, grouping=False, thousands_sep=''):
     return result + spaces, seps         
         
 
-def set_locale_cache(lang_data={}):
-    try:
-        if lang_data:
-            if 'id' in lang_data:
-                del lang_data['id']
-            LOCALE_CACHE.update(lang_data)
-    except:
-        pass
-
-    
 def parse_decimal(value):
     
-    locale = get_locale()
+    locale = cherrypy.session['lang'].get('code') or get_locale()
     if isinstance(value, basestring):
         
         value = ustr(value)
