@@ -221,23 +221,12 @@ class ImpEx(SecuredController):
             id = prefix + (prefix and '/' or '') + field
             nm = name + (name and '/' or '') + value['string']
 
-            if is_importing and (value.get('type') not in ('reference',)) and (not value.get('readonly') \
-                        or not dict(value.get('states', {}).get('draft', [('readonly', True)])).get('readonly', True)):
+            record.update(id=id, items={'name': nm},
+                          action='javascript: void(0)', target=None,
+                          icon=None, children=[],
+                          required=value.get('required', False))
 
-                record.update(id=id, items={'name': nm},
-                              action='javascript: void(0)', target=None,
-                              icon=None, children=[],
-                              required=value.get('required', False))
-
-                records.append(record)
-
-            elif not is_importing:
-
-                record.update(id=id, items={'name': nm},
-                              action='javascript: void(0)', target=None,
-                              icon=None, children=[])
-                records.append(record)
-
+            records.append(record)
 
             if len(nm.split('/')) < 3 and value.get('relation', False):
 
