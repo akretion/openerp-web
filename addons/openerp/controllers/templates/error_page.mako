@@ -199,6 +199,9 @@ Choose:
                             </tr>
                         </table>
                     % else:
+                         <script type="text/javascript">
+                            jQuery('.save_close:eq(0) button').removeAttr('disabled');
+                         </script>
                         <table class="errorbox" align="center">
                             <tr>
                                 <td colspan="2" class="error_message_header">${title}</td>
