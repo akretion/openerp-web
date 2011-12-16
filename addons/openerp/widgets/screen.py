@@ -116,6 +116,7 @@ class Screen(TinyInputWidget):
             ctx.update(self.context)
             if ctx.get('view_id'):
                 view_id = ctx['view_id']
+                self.view_ids = [ctx['view_id']]
                 if 'view_id' in cherrypy.request.terp_params['_terp_context']:
                     cherrypy.request.terp_params['_terp_context'].pop('view_id')
             view = cache.fields_view_get(self.model, view_id or False, view_type, ctx, self.hastoolbar, self.hassubmenu)
