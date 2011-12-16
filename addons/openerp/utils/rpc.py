@@ -350,8 +350,6 @@ class RPCSession(object):
         if lang_ids:
             self.storage['lang'] = self.execute(
                     'object', 'execute', 'res.lang', 'read', lang_ids[0], [])
-            lang_data = self.storage['lang']
-            format.set_locale_cache(lang_data)
 
     def execute(self, obj, method, *args):
         if not self.is_logged():
