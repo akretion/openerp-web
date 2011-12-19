@@ -465,6 +465,17 @@ function onChange(caller){
     var $caller = jQuery(openobject.dom.get(caller));
     var $form = $caller.closest('form');
 
+    // Inline editable row pass the fields when not save row
+    // so remove whole editable row when onchange called outside the o2m
+    if (($('tr.editors').length) && (!$caller.closest('tr.editors').length)) {
+        var edit_line_id = $('tr.editors').attr('record');
+        if(edit_line_id != "-1"){
+            o2m_id = $('tr.editors').closest('.gridview').attr('id');
+            new One2Many(o2m_id).save(edit_line_id);
+        }
+        $('tr.editors').remove();
+    }
+
     var callback = $caller.attr('callback');
     var change_default = $caller.attr('change_default');
 
