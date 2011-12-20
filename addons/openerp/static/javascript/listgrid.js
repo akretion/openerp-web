@@ -62,7 +62,7 @@ ListView.prototype = {
     },
 
     checkAll: function(clear) {
-        jQuery('[id="' + this.name + '"]:first :checkbox').each(function() {
+        jQuery('[id="' + this.name + '"] input.grid-record-selector').each(function() {
             jQuery(this).attr('checked', !clear)
         });
 
