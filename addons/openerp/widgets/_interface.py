@@ -167,6 +167,7 @@ class TinyInputWidget(TinyWidget, InputWidget):
         self.callback = attrs.get('on_change', None)
         self.kind = attrs.get('type', None)
 
+        self.default_focus = attrs.get('default_focus', False)
         self.label = self.label_type(self.name, self.string, self.help)
         self.filters = []
 
@@ -218,7 +219,8 @@ class TinyInputWidget(TinyWidget, InputWidget):
                 'callback': self.callback or None,
                 'onchange': self.onchange
             })
-
+        if self.default_focus:
+            params['attrs']['autofocus'] = 'autofocus'
         if self.readonly:
             params['attrs']['disabled'] = 'disabled'
 
