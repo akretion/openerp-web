@@ -81,10 +81,16 @@ class FloatTime(Float):
 
     def _from_python(self, value, state):
         val = value or 0.0
-        t = '%02d:%02d' % (math.floor(abs(val)),round(abs(val)%1+0.01,2) * 60)
+        hours = math.floor(abs(float_val))
+        mins = abs(float_val) - hours
+        mins = round(mins * 60)
+        if mins >= 60.0:
+            hours = hours + 1
+            mins = 0.0        
+        float_time = '%02d:%02d' % (hours,mins)
         if val < 0:
-            t = '-' + t
-        return t
+            float_time = '-' + float_time
+        return float_time
 
     def _to_python(self, value, state):
         try:
