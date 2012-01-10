@@ -29,7 +29,7 @@ import cherrypy
 
 import actions
 
-from openobject.i18n.format import DT_SERVER_FORMATS
+from openobject.i18n.format import format_datetime
 from openobject.tools import url, expose
 
 from openerp.controllers import SecuredController
@@ -39,8 +39,8 @@ from openerp.widgets import tree_view
 FORMATTERS = {
     'integer': lambda value, _i: '%s' % int(value),
     'float': lambda value, _i: '%.02f' % (value),
-    'date': lambda value, _i: time.strftime('%x', time.strptime(value, DT_SERVER_FORMATS['date'])),
-    'datetime': lambda value, _i: time.strftime('%x', time.strptime(value, DT_SERVER_FORMATS['datetime'])),
+    'date': lambda value, _i: format_datetime(value, 'date'),
+    'datetime': lambda value, _i: format_datetime(value, 'datetime'),
     'one2one': lambda value, _i: value[1],
     'many2one': lambda value, _i: value[1],
     'selection': lambda value, info: dict(info['selection']).get(value, ''),
