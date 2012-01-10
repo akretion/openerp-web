@@ -164,7 +164,9 @@ function form_onAttrChange(container, widgetName, attr, expr, elem) {
     var result = form_evalExpr(prefix, expr, elem);
 
     switch (attr) {
-        case 'readonly': form_setReadonly(container, widget, result);
+        case 'readonly': 
+            if (!jQuery(".non-editable").length)
+                form_setReadonly(container, widget, result);
             break;
         case 'required': form_setRequired(container, widget, result);
             break;
