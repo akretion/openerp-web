@@ -81,7 +81,7 @@ class FloatTime(Float):
 
     def _from_python(self, value, state):
         val = value or 0.0
-        t = '%02d:%02d' % (math.floor(abs(val)),round(abs(val)%1+0.01,2) * 60)
+        t = '%02d:%02d' % (math.floor(abs(val)),round(round(abs(val)%1,2) * 60))
         if val < 0:
             t = '-' + t
         return t
