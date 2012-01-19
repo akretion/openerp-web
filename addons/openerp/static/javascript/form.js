@@ -881,7 +881,7 @@ function makeContextMenu(id, kind, relation, val){
         var menu_width = $menu.width();
         var body_width = jQuery(document.body).width();
         if (parseInt($menu.css("left")) + menu_width > body_width) {
-            $menu.offset({ left: body_width - menu_width - 10 });
+            $menu.offset({ left: (body_width - menu_width - 10)+ 'px' });
         }
         showContextMenu();
     });
