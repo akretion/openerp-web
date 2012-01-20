@@ -62,10 +62,7 @@ ListView.prototype = {
     },
 
     checkAll: function(clear) {
-        jQuery('[id="' + this.name + '"] input.grid-record-selector').each(function() {
-            jQuery(this).attr('checked', !clear)
-        });
-
+        jQuery('[id="' + this.name + '"] input.grid-record-selector').attr('checked', !clear);
         this.onBooleanClicked();
     },
 
