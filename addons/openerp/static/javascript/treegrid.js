@@ -320,7 +320,7 @@ TreeNode.prototype = {
             var key = header.name;
             var value = this.record.items[key];
 
-            var td = MochiKit.DOM.TD({'class': header.type || null, 'width' : header.width || null});
+            var td = MochiKit.DOM.TD({'class': header.type || null, 'width' : header.width || null, 'style':{'color':this.record.items['color']}});
             if (i == 0) { // first column
 
                 var row = [];
@@ -338,7 +338,7 @@ TreeNode.prototype = {
 
                 row.push(arrow);
 
-                value = MochiKit.DOM.createDOM('A', {'href': '#'}, value);
+                value = MochiKit.DOM.createDOM('A', {'href': '#','style':{'color':this.record.items['color']}}, value);
                 this.element_a = value;
 
                 this.eventOnKeyDown = MochiKit.Signal.connect(value, 'onkeydown', this, this.onKeyDown);

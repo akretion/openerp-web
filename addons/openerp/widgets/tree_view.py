@@ -69,7 +69,13 @@ class ViewTree(Form):
 
         ids = []
         id = res_id
-
+        
+        colors = {}
+        for color_spec in attrs.get('colors', '').split(';'):
+            if color_spec:
+                colour, test = color_spec.split(':')
+                colors[colour] = test
+                
         if self.toolbar:
             ids = proxy.search(self.domain2, 0, 0, 0, ctx)
             self.toolbar = proxy.read(ids, ['name', 'icon'], ctx)
@@ -94,7 +100,8 @@ class ViewTree(Form):
                                       context=self.context,
                                       field_parent=self.field_parent,
                                       onselection="onSelection",
-                                      fields_info=fields_info)
+                                      fields_info=fields_info,
+                                      colors=colors)
         self.id = id
         self.ids = ids
 
