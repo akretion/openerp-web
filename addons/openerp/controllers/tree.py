@@ -29,7 +29,7 @@ import cherrypy
 
 import actions
 
-from openobject.i18n.format import DT_SERVER_FORMATS
+from openobject.i18n.format import format_datetime
 from openobject.tools import url, expose
 
 from openerp.controllers import SecuredController
@@ -37,10 +37,10 @@ from openerp.utils import rpc, cache, icons, common, TinyDict, expr_eval
 from openerp.widgets import tree_view
 
 FORMATTERS = {
-    'integer': lambda value, _i: str(value),
+    'integer': lambda value, _i: '%s' % int(value),
     'float': lambda value, _i: '%.02f' % (value),
-    'date': lambda value, _i: time.strftime('%x', time.strptime(value, DT_SERVER_FORMATS['date'])),
-    'datetime': lambda value, _i: time.strftime('%x', time.strptime(value, DT_SERVER_FORMATS['datetime'])),
+    'date': lambda value, _i: format_datetime(value, 'date'),
+    'datetime': lambda value, _i: format_datetime(value, 'datetime'),
     'one2one': lambda value, _i: value[1],
     'many2one': lambda value, _i: value[1],
     'selection': lambda value, info: dict(info['selection']).get(value, ''),
@@ -189,6 +189,8 @@ class Tree(SecuredController):
         # format the data
         for field in fields:
             field_info = simplejson.loads(fields_info[field])
+            if field_info.get('widget',''):
+                field_info['type'] = field_info['widget']
             formatter = FORMATTERS.get(field_info['type'])
             for x in result:
                 if x[field] and formatter:
