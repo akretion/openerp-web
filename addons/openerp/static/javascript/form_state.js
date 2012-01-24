@@ -414,7 +414,4 @@ jQuery(document).ready(function(){
     form_hookContextMenu();
     form_hookStateChange();
     form_hookAttrChange();
-}).ajaxStop(function () {
-    form_hookStateChange();
-    form_hookAttrChange();
 });

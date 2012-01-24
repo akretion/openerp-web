@@ -158,6 +158,8 @@ function doLoadingSuccess(app, url) {
         if (jQuery('#_terp_id').val() == 'False') {
             initial_onchange_triggers();
         }
+        form_hookStateChange();
+        form_hookAttrChange();
     };
 }
 
