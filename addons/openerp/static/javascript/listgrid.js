@@ -875,6 +875,7 @@ MochiKit.Base.update(ListView.prototype, {
             height: '98%',
             max_height: 600
         });
+
     },
 
     importData: function() {

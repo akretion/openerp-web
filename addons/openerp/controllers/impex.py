@@ -112,6 +112,9 @@ class ImpEx(SecuredController):
         params, data = TinyDict.split(kw)
         ctx = dict((params.context or {}), **rpc.session.context)
 
+        if ctx.get("group_by_no_leaf", 0):
+            return "You can't Export this records."
+
         views = {}
         if params.view_mode and params.view_ids:
             for i, view in enumerate(params.view_mode):

@@ -184,7 +184,10 @@ class ListGroup(List):
         self.grp_records = []
 
         self.context.update(rpc.session.context.copy())
-
+        
+        if self.group_by_no_leaf:
+            self.limit = -1
+        
         super(ListGroup, self).__init__(
             name=name, model=model, view=view, ids=self.ids, domain=self.domain,
             context=self.context, limit=self.limit, count=self.count,
