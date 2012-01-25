@@ -32,3 +32,16 @@ class Logs(TinyInputWidget):
         super(Logs, self).__init__()
         # Server log will display in flash message in form, tree view for any server action like wizard.
         self.logs = rpc.RPCProxy('res.log').get()
+
+        # Pass the view mode for particular log model for switch view
+        proxy = rpc.RPCProxy('ir.ui.view')
+        for i, log in enumerate(self.logs):
+            model = log.get('res_model')
+            ids = proxy.search([('model', '=', model)])
+            result = proxy.read(ids, ['type'], {})
+            views = []
+            for val in result:
+                v_type = val.get('type')
+                if v_type != 'search' and v_type not in views:
+                    views.append(v_type)
+            self.logs[i]['view_mode'] = views

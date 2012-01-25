@@ -42,7 +42,7 @@
                         % for log in logs:
                             <tr>
                                 <td class="logActions">
-                                    <a href="${py.url('/openerp/form/edit', model=log['res_model'], id=log['res_id'], context=log['context'])}">
+                                    <a href="${py.url('/openerp/form/edit', model=log['res_model'], id=log['res_id'], view_mode=log['view_mode'],  context=log['context'])}">
                                         &rarr; ${log['name']}
                                     </a>
                                 </td>
