@@ -76,7 +76,11 @@ import itertools
                                             % if field_attrs.get('type') == 'many2one':
                                                 ${grp_row.get(field)[-1]}
                                             % elif field_attrs.get('type') == 'selection':
-                                                ${[fld_select[1] for fld_select in field_attrs['selection'] if fld_select[0] == grp_row[field]][0]}
+                                            	% if isinstance(grp_row[field], tuple):
+                                                	${[fld_select[1] for fld_select in field_attrs['selection'] if fld_select[0] == grp_row[field][0]][0]}
+                                                % else:
+                                                	${[fld_select[1] for fld_select in field_attrs['selection'] if fld_select[0] == grp_row[field]][0]}
+                                                % endif
                                             % else:
                                                 ${grp_row.get(field)}
                                             % endif
