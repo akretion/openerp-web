@@ -333,6 +333,7 @@ ManyToOne.prototype.on_keydown = function(evt) {
         this.text.value = '';
         this.field.value = '';
         this.on_change(evt);
+        form_hookAttrChange();
     }
 
     //Tab
