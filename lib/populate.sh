@@ -6,7 +6,7 @@ function install {
     test $2 || PYTHONPATH=. easy_install -a -Z -d . $1
 }
 
-install "CherryPy>=3.1.2" "-d cherrypy"
+install "CherryPy<=3.1.2" "-d cherrypy"
 install "Babel>=0.9.4" "-d babel"
 install "Mako>=0.2.4" "-d mako"
 install "simplejson>=2.0.9" "-d simplejson"
