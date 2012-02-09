@@ -1008,6 +1008,8 @@ class Form(SecuredController):
             domain.extend(expr_eval(action.get('domain', '[]'), context))
             action['domain'] = ustr(domain)
 
+        if context.get('search_view'):
+            context.pop('search_view')
         action['form_context'] = context or {}
         import actions
         return actions.execute(action, model=params.model, id=id, ids=ids, report_type='pdf', context_menu=context_menu)
