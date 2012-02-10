@@ -33,6 +33,12 @@ background = '#F5F5F5'
                             % if grp_row.get(field):
                                 % if field_attrs.get('type') == 'many2one':
                                     ${grp_row.get(field)[-1]}
+                                % elif field_attrs.get('type') == 'selection':
+                                    % for k in field_attrs.get('selection'):
+                                       % if k[0] == grp_row.get(field):
+                                            ${k[1]}
+                                       % endif
+                                    % endfor
                                 % else:
                                     ${grp_row.get(field)}
                                 % endif
