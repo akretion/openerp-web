@@ -81,19 +81,14 @@ class M2M(TinyInputWidget):
         self.switch_to = view_mode[-1]
         if view_type == view_mode[-1]: self.switch_to = view_mode[0]
 
-        if ids is None:
-            ids = attrs.get('value', [])
+        ids = attrs.get('value', [])
 
         id = (ids or None) and ids[0]
         
         pprefix = ''
         if '/' in self.name:
             pprefix = self.name[:self.name.rindex('/')]
-        
-        if self.name == params.source and params.sort_key and ids:
-            self.domain.append(('id', 'in', ids))
-            ids = rpc.RPCProxy(self.model).search(self.domain, 0, 0, params.sort_key+ ' '+params.sort_order, self.context)
-            id = ids[0]
+
         current = params.chain_get(self.name)
 
         if not current:
@@ -102,6 +97,17 @@ class M2M(TinyInputWidget):
         current.offset = current.offset or 0
         current.limit = current.limit or 50
         current.count = len(ids or [])
+
+        if isinstance(ids, tuple):
+            ids = list(ids)
+
+        if ids and current.limit != -1:
+            ids = ids[current.offset: current.offset+current.limit]
+        
+        if self.name == params.source and params.sort_key and ids:
+            self.domain.append(('id', 'in', ids))
+            ids = rpc.RPCProxy(self.model).search(self.domain, 0, 0, params.sort_key+ ' '+params.sort_order, self.context)
+            id = ids[0]
 
         if current.view_mode: view_mode = current.view_mode
         if current.view_type: view_type = current.view_type
@@ -113,9 +119,6 @@ class M2M(TinyInputWidget):
 
         current.model = self.model
         current.id = id
-
-        if isinstance(ids, tuple):
-            ids = list(ids)
 
         current.ids = ids or []
         current.view_mode = view_mode
