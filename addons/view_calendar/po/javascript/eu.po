@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openobject-client-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-03-18 11:53+0100\n"
-"PO-Revision-Date: 2011-02-15 19:29+0000\n"
-"Last-Translator: Antony Lesuisse (OpenERP) <al@openerp.com>\n"
+"PO-Revision-Date: 2012-02-21 15:24+0000\n"
+"Last-Translator: Asier Iturralde Sarasola <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-02-18 05:24+0000\n"
-"X-Generator: Launchpad (build 14814)\n"
+"X-Launchpad-Export-Date: 2012-02-22 05:10+0000\n"
+"X-Generator: Launchpad (build 14838)\n"
 
 #: static/javascript/calendar_box.js:50
 msgid "Cancel"
@@ -23,7 +23,7 @@ msgstr "Utzi"
 
 #: static/javascript/calendar_box.js:51
 msgid "Edit"
-msgstr "Aldatu"
+msgstr "Editatu"
 
 #: static/javascript/calendar_box.js:52
 msgid "Duplicate"
