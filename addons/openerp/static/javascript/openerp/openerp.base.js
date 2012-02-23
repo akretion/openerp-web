@@ -333,7 +333,7 @@ function updateConcurrencyInfo(info) {
                             "'" + concurrency_data + "'" +
                             ")"
                     );
-            jQuery('#' + model.replace(/\./g, '-') + '-' + id)
+            jQuery("#view_form").find('#' + model.replace(/\./g, '-') + '-' + id)
                     .val(formatted_concurrency_value);
         });
     });
