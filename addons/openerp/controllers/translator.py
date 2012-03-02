@@ -73,7 +73,8 @@ class Translator(SecuredController):
 
                         val = proxy.read([params.id], [name], context)
                         val = val[0] if isinstance(val,list) and len(val) > 0 else None
-
+                        if val[name] == False:
+                            val[name]=""
                         value[lang['code']] = val[name] if isinstance(val,dict) \
                             and name in val else None
 
