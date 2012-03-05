@@ -72,7 +72,7 @@
                 }
 		        function do_select(id) {
                     jQuery.m2m('close',
-                        id ? [id]
+                        id ? [parseInt(id, 10)]
                            : ListView('_terp_list').$getSelectedItems().map(function () {
                                 return parseInt(this.value, 10); }).get()
                     );
