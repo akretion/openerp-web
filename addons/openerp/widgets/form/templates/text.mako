@@ -1,5 +1,5 @@
 % if editable:
-    <div style = "position:relative">
+    <div class = "text">
     % if inline:
         <input id ="${name}" name="${name}" type="text" class="${css_class}" size="1"
             ${py.attrs(attrs, kind=kind, value=value)}/>
