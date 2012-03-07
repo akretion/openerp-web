@@ -1,3 +1,60 @@
+2012-03-07: 6.0.4
+=================
+
+Bugfixes
+--------
+
+* Not linked to a bug report:
+
+  * config: force output to UTF-8
+  * actions: fixed context when executing print action (OPW 17058)
+  * actions: avoid reading useless large binary values: helps performance and avoids issues with binary values encoding
+  * actions: watch out for context_menu=None + another fix for actions execution 
+  * actions: context was not passed in act_window action (OPW 10247)
+  * attachments: fix reading of attachment filename (OPW 18009)
+  * calendar view: fix color change in calendar view when new user cretes an event (OPW 14811)
+  * form view: fix issue of buttons being readonly when creating a new record in o2m (OPW 6179)
+  * form view: fix issue of sidebar which is not shown when there is only one view in view_mode (OPW 48974)
+  * form view: fix getting default value of field (OPW 19993)
+  * form view: fix issue of on_change which change the data of many2many but old data remains as it is (OPW 18382)
+  * form view: fix field pass when row not save and onchange call in o2m inline editable (OPW 4079)
+  * form view: fix issue of onChange and setDefault on same field due to change_default_get not called (OPW 17478)
+  * form view: fix issue, data of many2many sended in write method even if it's not modified (OPW 5939)
+  * form view: fix attrs in float or integer widget, which were not working in different locale (OPW 17321)
+  * tree view: fix color for hidden fields (OPW 17809)
+  * form view: fix required field having applied attrs (hold it's original field type) (OPW 17769)
+  * form view: fixed issue of readonly attrs on one2many field (OPW 16824)
+  * search view: fix  issue of search view changing when there are multiple search view on one object (OPW 18162)
+  * search view: fixed issue of context not correctly passed to one2many (OPW 17629)
+  * search view: context not passed in many2one field in search view (OPW 16399)
+  * search view: in filter selection field not search based on string. (OPW 17135)
+  * tree view: can't get focus in inline editable list when click any field to fill.
+  * tree view: fixed record color not support in groupby.
+  * tree view: fix issue of groupby while groupby is based on boolean field (OPW 18489)
+  * tree view: fix issue of color in treegrid for colors attrs (OPW 30826)
+  * tree view: selection field in multi-level groupby should display the functionnal name (OPW 51012)
+  * tree view: fixed the issue of Search result in Clear when there is Listgroup and it has domain (OPW 17386)
+  * datetime field: fix calendar date picker not hiding (OPW 19869)
+  * one2many field: support nested one2many when open popup from one2many form view (base_contact from address) (OPW 17418, OPW 17132)
+  * one2many field: save & close button not disable when msg display (OPW 48969)
+  * one2many field: fix issue of button in o2m which opens new o2m form (OPW 50555)
+  * one2many field: fixed Save & New button not working in O2M edit record (OPW 18141)
+  * button widget: support single quote in button confirmation string (OPW 17626)
+  * data export: fix issue of required fields in export which are not shown with color of required field (50938)
+  * fix issue of wrong view open in log when one save the form (31166)
+  * fix issue of language decimal separator and thousand separator changed in multi user environment (OPW 20039)
+  * fix issue of context in custom_report (OPW 16778)
+  * fix issue of thunderbird plugin download (OPW 17190)
+  * fix issue of knowledge-document save at the time of edit (OPW 17632)
+  * fix issue of ir.ui.menu tree view not comes when one migrates the database
+  * fix issue of parent window losing ID while opening a new window/tab from it
+  * fix onchange change not saving field value when edit record.
+  * add the feature of decimal point, thousand separator and groping of client's language (OPW 16966)
+
+* https://launchpad.net/bugs/887612
+  * tree view: fix issue of floattime widget which is ot working properly with float time value (OPW 57686)
+
+
 2011-08-18: 6.0.3
 =================
 
