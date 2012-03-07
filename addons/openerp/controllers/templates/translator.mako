@@ -56,7 +56,7 @@
                         	<td class="grid-cell" width="${100 / len(langs)}%">${lang['name']}</td>
                         % endfor
                     </tr>
-                    % for n, v, x, s in data:
+                    % for n, v, x, s, t in data:
                     <tr class="grid-row">
                         % if x:
                         	<input type="hidden" name="_terp_models/${n}" value="${x}"/>
@@ -64,11 +64,19 @@
                         % if translate=='fields':
                         	<td class="grid-cell label" align="right">${s}: </td>
                         % endif
-                        % for lang in langs:
-	                        <td class="grid-cell item">
-	                            <input type="text" name="${lang['code']}/${n}" value="${v[lang['code']]}" style="width: 100%;"/>
-	                        </td>
-                        % endfor
+                        % if t == 'text':
+                            % for lang in langs:
+                                <td class="grid-cell item">
+                                    <textarea name="${lang['code']}/${n}" style="width: 100%;">${v[lang['code']]}</textarea>
+                                </td>
+                            % endfor
+                        % else:
+                            % for lang in langs:
+                                <td class="grid-cell item">
+                                    <input type="text" name="${lang['code']}/${n}" value="${v[lang['code']]}" style="width: 100%;"/>
+                                </td>
+                            % endfor
+                        % endif
                     </tr>
                     % endfor
                 </table>

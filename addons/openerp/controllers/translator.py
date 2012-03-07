@@ -66,6 +66,7 @@ class Translator(SecuredController):
             for name in names:
                 attrs = view_fields[name]
                 if attrs.get('translate'):
+                    type = attrs.get('type')
                     value = {}
                     for lang in langs:
                         context = copy.copy(ctx)
@@ -77,7 +78,7 @@ class Translator(SecuredController):
                         value[lang['code']] = val[name] if isinstance(val,dict) \
                             and name in val else None
 
-                    data += [(name, value, None, attrs.get('string'))]
+                    data += [(name, value, None, attrs.get('string'), type)]
 
         if translate == 'labels':
             for name in names:
@@ -91,7 +92,7 @@ class Translator(SecuredController):
                         if name in val[code]:
                             value[code] = val[code][name] or None
 
-                    if value: data += [(name, value, None, None)]
+                    if value: data += [(name, value, None, None, None)]
 
         if translate == 'relates' and view_relates:
             for bar, tools in view_relates.items():
@@ -104,7 +105,7 @@ class Translator(SecuredController):
 
                         value[code] = val[0]['name'] or None
 
-                    data += [(tool['id'], value, tool['type'], None)]
+                    data += [(tool['id'], value, tool['type'], None, None)]
 
         if translate == 'view':
             for lang in langs:
