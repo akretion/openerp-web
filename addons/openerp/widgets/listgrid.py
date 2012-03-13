@@ -48,7 +48,7 @@ class ListViewDataSet(object):
             if invisible:
                 cell = Hidden(**attrs)
             else:
-                cell = CELLTYPES[kind](value=None, **attrs)
+                cell = CELLTYPES[kind](value=False, **attrs)
             self.fields_obj.append((name, invisible, cell))
 
     def next(self):
