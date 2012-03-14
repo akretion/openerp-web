@@ -300,7 +300,8 @@ class List(TinyWidget):
 
         attrs = {}
         if data:
-            d = data[0]
+            dataIter = data.__iter__()
+            d = dataIter.next()
             attrs = d[field].attrs
 
         digits = attrs.get('digits', (16,2))
