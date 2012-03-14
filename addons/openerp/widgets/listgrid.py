@@ -35,6 +35,54 @@ from openobject.tools import ast
 from openobject.i18n import format
 from pager import Pager
 
+class ListViewDataSet(object):
+    def __init__(self, data, fields, colors):
+        self.data = data
+        self.fields = fields
+        self.colors = colors
+        self.current = None
+
+        # pre-compute field's cell
+        self.fields_obj = []
+        for (name, kind, invisible, attrs) in self.fields:
+            if invisible:
+                cell = Hidden(**attrs)
+            else:
+                cell = CELLTYPES[kind](value=False, **attrs)
+            self.fields_obj.append((name, invisible, cell))
+
+    def next(self):
+        row = self.current.next()
+        row = row.copy()
+
+        # compute color once for whole row
+        rowcolor = None
+        for color, expr in self.colors.items():
+            try:
+                if expr_eval(expr,
+                    dict(row, active_id=rpc.session.active_id or False)):
+                    rowcolor = color
+                    break
+            except Exception:
+                pass
+
+        for (name, invisible, cell) in self.fields_obj:
+            if invisible:
+                cell.set_value(row.get(name, False))
+            else:
+                cell.value = row.get(name, False)
+                cell.text = cell.get_text()
+                cell.link = cell.get_link()
+            cell.color = rowcolor
+            row[name] = cell
+        return row
+
+    def __iter__(self):
+        self.current = self.data.__iter__()
+        return self
+
+    def __len__(self):
+        return len(self.data)
 
 class List(TinyWidget):
 
@@ -252,7 +300,8 @@ class List(TinyWidget):
 
         attrs = {}
         if data:
-            d = data[0]
+            dataIter = data.__iter__()
+            d = dataIter.next()
             attrs = d[field].attrs
 
         digits = attrs.get('digits', (16,2))
@@ -338,9 +387,9 @@ class List(TinyWidget):
         hiddens = []
         buttons = []
         field_total = {}
-        values  = [row.copy() for row in data]
 
         myfields = [] # check for duplicate fields
+        list_fields = []
 
         for node in root.childNodes:
 
@@ -386,8 +435,6 @@ class List(TinyWidget):
                     if kind not in CELLTYPES:
                         kind = 'char'
 
-                    fields[name].update(attrs)
-
                     try:
                         visval = fields[name].get('invisible', 'False')
                         invisible = eval(visval, {'context': self.context})
@@ -401,32 +448,16 @@ class List(TinyWidget):
                     if 'sum' in attrs:
                         field_total[name] = [attrs['sum'], 0.0]
 
-                    for i, row in enumerate(data):
-
-                        row_value = values[i]
-                        if invisible:
-                            cell = Hidden(**fields[name])
-                            cell.set_value(row_value.get(name, False))
-                        else:
-                            cell = CELLTYPES[kind](value=row_value.get(name, False), **fields[name])
-
-                        for color, expr in self.colors.items():
-                            try:
-                                if expr_eval(expr,
-                                     dict(row_value, active_id=rpc.session.active_id or False)):
-                                    cell.color = color
-                                    break
-                            except:
-                                pass
-
-                        row[name] = cell
+                    list_fields.append((name, kind, invisible, fields[name],))
 
                     if invisible:
                         continue
 
                     headers += [(name, fields[name])]
 
-        return headers, hiddens, data, field_total, buttons
+        dataset = ListViewDataSet(data, list_fields, self.colors)
+
+        return headers, hiddens, dataset, field_total, buttons
 
 class Char(TinyWidget):
     template = "/openerp/widgets/templates/listgrid/char.mako"
