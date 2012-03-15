@@ -41,6 +41,20 @@ class ListViewDataSet(object):
         self.fields = fields
         self.colors = colors
         self.current = None
+        self.defaults = {
+            'char': False,
+            'many2one': False,
+            'datetime': False,
+            'date': False,
+            'one2many': [],
+            'many2many': [],
+            'selection': False,
+            'float': False,
+            'float_time': False,
+            'integer': False,
+            'boolean' : False,
+            'progressbar': False,
+        }
 
         # pre-compute field's cell
         self.fields_obj = []
@@ -48,7 +62,8 @@ class ListViewDataSet(object):
             if invisible:
                 cell = Hidden(**attrs)
             else:
-                cell = CELLTYPES[kind](value=False, **attrs)
+                default_value = self.defaults[kind]
+                cell = CELLTYPES[kind](value=default_value, **attrs)
             self.fields_obj.append((name, invisible, cell))
 
     def next(self):
