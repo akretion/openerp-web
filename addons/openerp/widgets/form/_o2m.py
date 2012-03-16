@@ -142,6 +142,13 @@ class O2M(TinyInputWidget):
         if not isinstance(ids, list):
             ids = [ids]
 
+        current.offset = current.offset or 0
+        current.limit = current.limit or 50
+        current.count = len(ids or [])
+
+        if current.limit != -1 and not params.sort_key:
+            ids = ids[current.offset: current.offset+current.limit]
+
         if ids:
             if isinstance(ids[0], dict):
                 current.default_data = ids
@@ -159,7 +166,10 @@ class O2M(TinyInputWidget):
             if params.sort_key and ids:
                 domain = current.domain or []
                 domain.append(('id', 'in', ids))
-                ids = rpc.RPCProxy(self.model).search(domain, current.offset, current.limit, params.sort_key + ' '+params.sort_order, current.context)
+                limit = current.limit
+                if current.limit == -1:
+                    limit = 0
+                ids = rpc.RPCProxy(self.model).search(domain, current.offset, limit, params.sort_key + ' '+params.sort_order, current.context)
                 id = ids[0]
         if current and params.source and self.name in params.source.split('/'):
             id = current.id
@@ -194,10 +204,6 @@ class O2M(TinyInputWidget):
 
             if ctx and ctx.get('group_by'):
                 group_by_ctx = ctx.get('group_by')
-
-        current.offset = current.offset or 0
-        current.limit = current.limit or 50
-        current.count = len(ids or [])
 
         # Group By for one2many list.
         if group_by_ctx:
