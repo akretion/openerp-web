@@ -68,8 +68,10 @@ class ListViewDataSet(object):
 
     def next(self):
         row = self.current.next()
-        row = row.copy()
+        return self.build_row(row)
 
+    def build_row(self, row):
+        row = row.copy()
         # compute color once for whole row
         rowcolor = None
         for color, expr in self.colors.items():
@@ -98,6 +100,14 @@ class ListViewDataSet(object):
 
     def __len__(self):
         return len(self.data)
+
+    def __getitem__(self, i):
+        row = self.data[i]
+        return self.build_row(row)
+
+    def __getslice__(self, i, j):
+        sliced_data = self.data[i:j]
+        return ListViewDataSet(sliced_data, self.fields, self.colors)
 
 class List(TinyWidget):
 
@@ -315,8 +325,7 @@ class List(TinyWidget):
 
         attrs = {}
         if data:
-            dataIter = data.__iter__()
-            d = dataIter.next()
+            d = data[0]
             attrs = d[field].attrs
 
         digits = attrs.get('digits', (16,2))
