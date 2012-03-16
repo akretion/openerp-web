@@ -31,6 +31,7 @@ var ManyToOne = function(name) {
     }
 
     this.__init__(name);
+    self = this;
 };
 
 ManyToOne.prototype.__init__ = function(name) {
@@ -65,7 +66,6 @@ ManyToOne.prototype.__init__ = function(name) {
     jQuery(this.text).attr('autocomplete', 'OFF');
 
     if(this.editable) {
-        jQuery(this.field).change(jQuery.proxy(this, 'on_change'));
         jQuery(this.text).bind({
             keydown: jQuery.proxy(this, 'on_keydown'),
             keypress: jQuery.proxy(this, 'on_keypress'),
@@ -294,6 +294,7 @@ ManyToOne.prototype.on_keydown = function(evt) {
                 if(this.callback) {
                     onChange(this.name);
                 }
+                $(this.field).change();
                 this.change_icon();
                 this.clearResults();
                 break;
@@ -332,6 +333,7 @@ ManyToOne.prototype.on_keydown = function(evt) {
     if((evt.which == 8 || evt.which == 46) && this.field.value) {
         this.text.value = '';
         this.field.value = '';
+        $(this.field).change();
         this.on_change(evt);
     }
 
@@ -625,6 +627,7 @@ ManyToOne.prototype.getOnclick = function(evt) {
             if($m2o_field[0].onchange) {
                 $m2o_field[0].onchange();
             } else {
+                self.on_change();
                 $m2o_field.change();
             }
         }
