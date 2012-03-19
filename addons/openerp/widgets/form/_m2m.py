@@ -81,7 +81,8 @@ class M2M(TinyInputWidget):
         self.switch_to = view_mode[-1]
         if view_type == view_mode[-1]: self.switch_to = view_mode[0]
 
-        ids = attrs.get('value') or []
+        if ids is None:
+            ids = attrs.get('value') or []
 
         id = (ids or None) and ids[0]
         
