@@ -102,6 +102,10 @@ class ListViewDataSet(object):
         return len(self.data)
 
     def __getitem__(self, i):
+        if isinstance(i, slice):
+            sliced_data = self.data[i]
+            return ListViewDataSet(sliced_data, self.fields, self.colors)
+
         row = self.data[i]
         return self.build_row(row)
 
