@@ -27,6 +27,11 @@ from error_page import _ep
 import openobject.i18n.format
 from openobject.tools import expose, ast
 
+def cleanup_group_by(s):
+    if s is None:
+        return ''
+    return s.replace('[','').replace(']','').replace('"','').replace("'",'')
+
 class Search(Form):
 
     _cp_path = "/openerp/search"
@@ -116,7 +121,7 @@ class Search(Form):
         parent_context = self.context_get(params.parent_context) or {}
         if 'group_by' in parent_context:
             if isinstance(params.group_by, str):
-                parent_context['group_by'] = params.group_by.split(',')
+                parent_context['group_by'] = cleanup_group_by(params.group_by).split(',')
             else:
                 parent_context['group_by'] = params.group_by
         try:
@@ -179,7 +184,7 @@ class Search(Form):
         parent_context.update(context)
 
         if isinstance(params.group_by, basestring):
-            params.group_by = params.group_by.split(',')
+            params.group_by = cleanup_group_by(params.group_by).split(',')
         elif not isinstance(params.group_by, list):
             params.group_by = []
 
@@ -250,7 +255,7 @@ class Search(Form):
 
         group_by_ctx = kw.get('group_by_ctx', [])
         if isinstance(group_by_ctx, str):
-            group_by_ctx = group_by_ctx.split(',')
+            group_by_ctx = cleanup_group_by(group_by_ctx).split(',')
 
         if domains:
             domains = eval(domains)
@@ -430,7 +435,7 @@ class Search(Form):
         group_by = kw.get('group_by',None)
         selected_filter = kw.get('selected_filter')
         if not isinstance(group_by, list) and group_by:
-            group_by = group_by.split(',')
+            group_by = cleanup_group_by(group_by).split(',')
 
         if group_by:
             group_by_ctx = map(lambda x: x.split('group_')[-1], group_by)
