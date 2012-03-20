@@ -25,6 +25,7 @@
             /*
             % endif
             */
+            jQuery('[autofocus="autofocus"]').focus();
         });
     </script>
 
