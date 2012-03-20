@@ -340,6 +340,7 @@ ManyToOne.prototype.on_keydown = function(evt) {
         this.field.value = '';
         $(this.field).change();
         this.on_change(evt);
+        form_hookAttrChange();
     }
 
     //Tab
