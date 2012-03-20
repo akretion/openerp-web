@@ -1024,7 +1024,8 @@ td.save-filter-header a{
     background-image: url(/openerp/static/images/scroll_right.png);
 }
 
-span.char {
+span.char, 
+div.text {
     position: relative;
 }
 
