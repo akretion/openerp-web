@@ -474,10 +474,12 @@ function parse_filters(src, id) {
     var all_boxes = [];
     var $filter_list = jQuery('#filter_list');
     var domain = '[]';
+    var re = /\[|\]|\'/g;
     if (jQuery('div.group-data').length) {
         jQuery('div.group-data button').each(function(){
             if (jQuery(this).hasClass('active')) {
                 var _grp = jQuery(this).next('input').attr('group_by_ctx');
+               	_grp = _grp.replace(re,'');
                 if (jQuery.inArray(_grp, group_by) < 0) {
                     group_by.push(_grp);
                 }
@@ -509,7 +511,9 @@ function parse_filters(src, id) {
             jQuery(src).attr('checked', true);
             if($source.attr('group_by_ctx') &&
                $source.attr('group_by_ctx') != 'False') {
-                group_by.push($source.attr('group_by_ctx'));
+               group_by_ctx = $source.attr('group_by_ctx')
+               group_by_ctx = group_by_ctx.replace(re,'');
+               group_by.push(group_by_ctx);
             }
 
             if($source.attr('filter_context') &&
