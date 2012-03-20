@@ -404,7 +404,8 @@ class Form(SecuredController):
                 params.ids = (params.ids or []) + [params.id]
                 params.count += 1
             else:
-                original_data = Model.read(params.id, data.keys())
+                ctx = dict((params.context or {}), **rpc.session.context)
+                original_data = Model.read(params.id, data.keys(), ctx)
                 modified = {}
                 
                 if original_data and isinstance(original_data, dict):
