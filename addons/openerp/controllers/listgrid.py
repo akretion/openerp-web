@@ -71,12 +71,13 @@ class List(SecuredController):
                 data = {fld : [(id and 1, id, data.copy())]}
                 proxy.write([params.parent.id], data, ctx)
 
-                all_ids = proxy.read([params.parent.id], [fld])[0][fld]
-                new_ids = [i for i in all_ids if i not in ids]
+                if not id:
+                    all_ids = proxy.read([params.parent.id], [fld])[0][fld]
+                    new_ids = [i for i in all_ids if i not in ids]
 
-                ids = all_ids
-                if new_ids:
-                    id = new_ids[0]
+                    ids = all_ids
+                    if new_ids:
+                        id = new_ids[0]
 
             else:
                 data = frm.copy()
