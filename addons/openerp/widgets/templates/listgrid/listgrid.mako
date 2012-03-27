@@ -223,6 +223,8 @@
                                 % for (field, field_attrs) in headers:
                                     % if field == 'button':
                                         <th class="grid-cell"><div style="width: 0;"></div></th>
+                                    % elif 'function' in field_attrs:
+                                        <th id="grid-data-column/${(name != '_terp_list' or None) and (name + '/')}${field}" class="grid-cell ${field_attrs.get('type', 'char')}" kind="${field_attrs.get('type', 'char')}">${field_attrs['string']}</th>
                                     % else:
                                         <th id="grid-data-column/${(name != '_terp_list' or None) and (name + '/')}${field}" class="grid-cell ${field_attrs.get('type', 'char')}" kind="${field_attrs.get('type', 'char')}" style="cursor: pointer;" onclick="new ListView('${name}').sort_by_order('${field}', this)">${field_attrs['string']}</th>
                                     % endif
