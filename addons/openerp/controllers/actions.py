@@ -406,6 +406,9 @@ def execute_url(**data):
         # determine target for openAction()
         target = {'new': 'popup'}.get(data['target'], 'iframe')
 
+        cherrypy.response.headers['X-Target'] = target
+        cherrypy.response.headers['Location'] = url
+
         return """<script type="text/javascript">
                       openAction('%s', '%s')
                   </script>
