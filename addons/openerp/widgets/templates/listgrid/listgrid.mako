@@ -103,7 +103,11 @@
                 % if impex:
                 	<a href="javascript: void(0)" onclick="do_select('${data['id']}')">${data[field].display()}</a>
                 % else:
-                	<span>${data[field].display()}</span>
+                	% if field_attrs.get('type', '') == 'text':
+                		<pre>${data[field].display()}</pre>
+                	% else:
+                		<span>${data[field].display()}</span>
+                	%endif
                 % endif
             </td>
         % endif
