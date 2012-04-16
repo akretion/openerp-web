@@ -1087,7 +1087,7 @@ class Form(SecuredController):
 
         proxy = rpc.RPCProxy(model)
 
-        ids = ctx.id and [ctx.id] or ctx.parent.id or []
+        ids = ctx.id and [ctx.id] or ctx.parent.id and [ctx.parent.id] or []
 
         try:
             response = getattr(proxy, func_name)(ids, *args)
