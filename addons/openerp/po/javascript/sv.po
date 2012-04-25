@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2011-03-18 11:53+0100\n"
-"PO-Revision-Date: 2011-02-15 19:31+0000\n"
-"Last-Translator: Antony Lesuisse (OpenERP) <al@openerp.com>\n"
+"PO-Revision-Date: 2012-04-24 10:37+0000\n"
+"Last-Translator: Anders Wallenquist <anders.wallenquist@vertel.se>\n"
 "Language-Team: sv <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-21 05:21+0000\n"
-"X-Generator: Launchpad (build 15120)\n"
+"X-Launchpad-Export-Date: 2012-04-25 05:07+0000\n"
+"X-Generator: Launchpad (build 15139)\n"
 "Generated-By: Babel None\n"
 
 #: static/javascript/form.js:92
 #, python-format
 msgid "You selected to open %(tabs)s tabs - do you want to continue?"
-msgstr ""
+msgstr "Du valde att öppna %(tabs)s flikar - vill du fullfölja?"
 
 #: static/javascript/form.js:169
 msgid "Invalid form, correct red fields."
@@ -33,11 +33,11 @@ msgstr "Vill du verkligen makulera denna post?"
 
 #: static/javascript/form.js:960
 msgid "You must select one or several records !"
-msgstr ""
+msgstr "Du måste välja minst en post !"
 
 #: static/javascript/form.js:995
 msgid "You must save this record to perform the action !"
-msgstr ""
+msgstr "Du måste spara denna post för att utföra åtgärden!"
 
 #: static/javascript/form.js:1127
 msgid "Do you really want to delete the attachment"
@@ -45,17 +45,19 @@ msgstr "Vill du verkligen makulera bilagan"
 
 #: static/javascript/form.js:1161
 msgid "No record selected ! You can only attach to existing record."
-msgstr ""
+msgstr "Ingen post vald ! Du kan endast bifoga till befintliga poster."
 
 #: static/javascript/form.js:1220
 msgid "OpenERP - Error"
-msgstr ""
+msgstr "OpenERP - Fel"
 
 #: static/javascript/form.js:1291
 msgid ""
 "Warning, the record has been modified,\n"
 "your changes will be discarded."
 msgstr ""
+"Varning! Posten har ändrats,\n"
+"dina ändringar kommer att förloras."
 
 #: static/javascript/listgrid.js:542 static/javascript/o2m.js:123
 msgid "To edit Record, please first save it."
@@ -67,7 +69,7 @@ msgstr "Vill du verkligen makulera de aktuella posterna?"
 
 #: static/javascript/m2o.js:526
 msgid "error in display::"
-msgstr ""
+msgstr "fel i presentationen::"
 
 #: static/javascript/o2m.js:67
 msgid "Do you really want to delete record ?"
@@ -75,7 +77,7 @@ msgstr "Vill du verkligen makulera posten?"
 
 #: static/javascript/search.js:285
 msgid "Invalid Value"
-msgstr ""
+msgstr "Ogiltigt värde"
 
 #: static/javascript/viewed.js:63
 msgid "Do you really want to remove this node?"
@@ -87,11 +89,11 @@ msgstr "Vill du verkligen skapa en ärvd vy här?"
 
 #: static/javascript/openerp/openerp.base.js:127
 msgid "doLoadingSuccess: Cannot parse JSON"
-msgstr ""
+msgstr "doLoadingSuccess: Kan inte tolka JSON"
 
 #: static/javascript/openerp/openerp.base.js:335
 msgid "Loading"
-msgstr ""
+msgstr "Läser in"
 
 #: static/javascript/openerp/openerp.ui.tips.js:51
 msgid "Object"

@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2011-03-18 11:53+0100\n"
-"PO-Revision-Date: 2011-02-28 12:02+0000\n"
-"Last-Translator: OpenERP Web Administrators <Unknown>\n"
+"PO-Revision-Date: 2012-04-24 10:33+0000\n"
+"Last-Translator: Anders Wallenquist <anders.wallenquist@vertel.se>\n"
 "Language-Team: sv <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-21 05:23+0000\n"
-"X-Generator: Launchpad (build 15120)\n"
+"X-Launchpad-Export-Date: 2012-04-25 05:07+0000\n"
+"X-Generator: Launchpad (build 15139)\n"
 "Generated-By: Babel None\n"
 
 #: validators.py:75
@@ -126,6 +126,9 @@ msgid ""
 "databases. This is not a OpenERP user, just a super administrator. If you "
 "did not changed it, the password is 'admin' after installation."
 msgstr ""
+"Detta lösenord ger rätt att administrera databaserna. Detta är inte någon "
+"OpenERP-användare, bara en super administratör.  Om du inte ändrade det är "
+"lösenordet 'admin' direkt efter installationen."
 
 #: controllers/database.py:69 controllers/database.py:101
 msgid "New database name:"
@@ -136,6 +139,8 @@ msgid ""
 "Choose the name of the database that will be created. The name must not "
 "contain any special character. Exemple: 'terp'."
 msgstr ""
+"Välj namn på databasen som skall skapas. Namnet får inte innehålla några "
+"specialtecken. Exempel på en databas: 'openerp'."
 
 #: controllers/database.py:70
 msgid "Load Demonstration data:"
@@ -147,6 +152,8 @@ msgid ""
 "database. These data will help you to understand OpenERP, with predefined "
 "products, partners, etc."
 msgstr ""
+"Kryssa denna ruta om du vill ladda databasen med demonstrationsdata. Dessa  "
+"data, produkter och företag etc, underlättar att förstå OpenERPs funktion."
 
 #: controllers/database.py:71
 msgid "Default Language:"
@@ -170,6 +177,7 @@ msgid ""
 "This is the password of the 'admin' user that will be created in your new "
 "database."
 msgstr ""
+"Detta är lösenordet för administratören för databasen som kommer att skapas."
 
 #: controllers/database.py:73
 msgid "Confirm password:"
@@ -180,6 +188,8 @@ msgid ""
 "This is the password of the 'admin' user that will be created in your new "
 "database. It has to be the same than the above field."
 msgstr ""
+"Detta är lösenordet för administratören, måste vara det samma som i fältet "
+"ovan."
 
 #: controllers/database.py:79
 msgid "Drop database"
@@ -306,7 +316,7 @@ msgstr ""
 #: controllers/form.py:561
 #, python-format
 msgid "Invalid button type \"%s\""
-msgstr ""
+msgstr "Felaktig knapp \"%s\""
 
 #: controllers/form.py:944 controllers/tree.py:243
 msgid "No record selected"
@@ -314,7 +324,7 @@ msgstr "Ingen post vald"
 
 #: controllers/form.py:949
 msgid "Print Screen"
-msgstr ""
+msgstr "Skriv ut skärmen"
 
 #: controllers/form.py:1016 widgets/listgrid.py:305 widgets/listgrid.py:366
 #: widgets/form/_form.py:910
@@ -328,23 +338,23 @@ msgstr "Felaktig on_change trigger: %s"
 
 #: controllers/form.py:1121
 msgid "Open resource"
-msgstr ""
+msgstr "Ledig resurs"
 
 #: controllers/form.py:1124
 msgid "Set to default value"
-msgstr ""
+msgstr "Använd standardvärde"
 
 #: controllers/form.py:1125
 msgid "Set as default"
-msgstr ""
+msgstr "Ange som standard"
 
 #: controllers/form.py:1132
 msgid "Action"
-msgstr ""
+msgstr "Åtgärd"
 
 #: controllers/form.py:1133
 msgid "Report"
-msgstr ""
+msgstr "Rapport"
 
 #: controllers/impex.py:66
 msgid ""
@@ -360,7 +370,7 @@ msgstr "Exportfel"
 
 #: controllers/impex.py:469
 msgid "Database ID"
-msgstr ""
+msgstr "Databas-ID"
 
 #: controllers/impex.py:476
 msgid "Error opening .CSV file"
@@ -390,7 +400,7 @@ msgstr ""
 
 #: controllers/impex.py:532
 msgid "File Format Error"
-msgstr ""
+msgstr "Fel filformat"
 
 #: controllers/impex.py:550
 msgid "XML-RPC error"
@@ -416,7 +426,7 @@ msgstr "moderpost finns inte..."
 
 #: controllers/preferences.py:35
 msgid "Change your password"
-msgstr ""
+msgstr "Byt ditt lösenord"
 
 #: controllers/preferences.py:65 controllers/templates/header.mako:59
 msgid "Preferences"
@@ -424,15 +434,15 @@ msgstr "Inställningar"
 
 #: controllers/preferences.py:92
 msgid "All passwords have to be filled."
-msgstr ""
+msgstr "Alla lösenord måste fyllas i."
 
 #: controllers/preferences.py:94
 msgid "The new password and its confirmation must be identical."
-msgstr ""
+msgstr "Det nya lösenordet och bekräftelsen måste vara lika."
 
 #: controllers/preferences.py:103
 msgid "Could not change your password."
-msgstr ""
+msgstr "Kunde inte ändra ditt lösenord."
 
 #: controllers/preferences.py:105
 msgid "Original password incorrect, your password was not changed."
@@ -554,10 +564,11 @@ msgstr "OpenERP Web"
 #: controllers/templates/about.mako:30
 msgid "Copyright &copy; 2006-TODAY OpenERP SA. All Rights Reserved."
 msgstr ""
+"Copyright &copy; 2006-TODAY OpenERP SA. Alla rättigheter reserverade."
 
 #: controllers/templates/about.mako:31
 msgid "OpenERP is a trademark of the OpenERP SA Company."
-msgstr ""
+msgstr "OpenERP är ett skyddat varumärke som tillhör OpenERP SA."
 
 #: controllers/templates/about.mako:33
 #, python-format
@@ -632,7 +643,7 @@ msgstr "Åtgärda det åt mig"
 
 #: controllers/templates/error_page.mako:99
 msgid "Publisher warranty contract."
-msgstr ""
+msgstr "Underhållsavtal."
 
 #: controllers/templates/error_page.mako:100
 msgid ""
@@ -697,15 +708,15 @@ msgstr ""
 
 #: controllers/templates/exp.mako:169
 msgid "Import Compatible Export"
-msgstr ""
+msgstr "Importera kompatibel export"
 
 #: controllers/templates/exp.mako:172
 msgid "Export all Data"
-msgstr ""
+msgstr "Exportera all data"
 
 #: controllers/templates/exp.mako:190
 msgid "Available fields"
-msgstr ""
+msgstr "Tillgängliga fält"
 
 #: controllers/templates/exp.mako:192
 msgid "Fields to export"
@@ -713,11 +724,11 @@ msgstr "Fält som skall exporteras"
 
 #: controllers/templates/exp.mako:194
 msgid "Save fields list"
-msgstr ""
+msgstr "Spara fältlista"
 
 #: controllers/templates/exp.mako:196
 msgid "Save as:"
-msgstr ""
+msgstr "Spara som:"
 
 #: controllers/templates/exp.mako:198 controllers/templates/fieldpref.mako:102
 #: controllers/templates/selection.mako:45
@@ -726,7 +737,7 @@ msgstr "OK"
 
 #: controllers/templates/exp.mako:202
 msgid "Saved exports:"
-msgstr ""
+msgstr "Sparad export:"
 
 #: controllers/templates/exp.mako:211 controllers/templates/form.mako:136
 #: widgets/form/templates/one2many.mako:23 widgets/templates/sidebar.mako:67
@@ -751,11 +762,11 @@ msgstr "Ta bort"
 
 #: controllers/templates/exp.mako:234
 msgid "Remove All"
-msgstr ""
+msgstr "Ta bort alla"
 
 #: controllers/templates/exp.mako:252
 msgid "Export to File"
-msgstr ""
+msgstr "Exportera till fil"
 
 #: controllers/templates/fieldpref.mako:4
 #: controllers/templates/fieldpref.mako:29
@@ -824,7 +835,7 @@ msgstr "Inaktivera alla tips"
 
 #: controllers/templates/form.mako:65 controllers/templates/tree.mako:34
 msgid "Hide this Tip"
-msgstr ""
+msgstr "Göm detta tips"
 
 #: controllers/templates/form.mako:83 controllers/templates/tree.mako:41
 msgid "Add / Remove Shortcut..."
@@ -833,7 +844,7 @@ msgstr "Lägg till / tab bort genväg..."
 #: controllers/templates/form.mako:87
 #, python-format
 msgid "Search: %s"
-msgstr ""
+msgstr "Sök: %s"
 
 #: controllers/templates/form.mako:94
 msgid "Corporate Intelligence..."
@@ -922,7 +933,7 @@ msgstr "Visa rutnät på arbetsytan"
 
 #: controllers/templates/form.mako:151
 msgid "Show grid"
-msgstr ""
+msgstr "Visa rutnät"
 
 #: controllers/templates/header.mako:33
 #, python-format
@@ -968,15 +979,15 @@ msgstr "Importera data"
 
 #: controllers/templates/imp.mako:89
 msgid "1. Import a .CSV file"
-msgstr ""
+msgstr "1. Importera en .CSV-fil"
 
 #: controllers/templates/imp.mako:105
 msgid "CSV File:"
-msgstr ""
+msgstr "CSV Fil:"
 
 #: controllers/templates/imp.mako:123
 msgid "2. Check your file format"
-msgstr ""
+msgstr "2. Kontrollera ditt filformat"
 
 #: controllers/templates/imp.mako:130
 #, python-format
@@ -985,11 +996,11 @@ msgstr ""
 
 #: controllers/templates/imp.mako:132
 msgid "Here is a preview of the file we could not import:"
-msgstr ""
+msgstr "Här är en förhandsgranskning av filen vi inte kunder importera:"
 
 #: controllers/templates/imp.mako:157
 msgid "CSV Options"
-msgstr ""
+msgstr "CSV tillägg"
 
 #: controllers/templates/imp.mako:160
 msgid "Separator:"
@@ -1009,23 +1020,23 @@ msgstr "Rader att hoppa över:"
 
 #: controllers/templates/imp.mako:187
 msgid "3. File imported"
-msgstr ""
+msgstr "3. Filen importerad"
 
 #: controllers/templates/imp.mako:205
 msgid "Import File"
-msgstr ""
+msgstr "Importera fil"
 
 #: controllers/templates/index.mako:167
 msgid "System Logs"
-msgstr ""
+msgstr "Systemloggar"
 
 #: controllers/templates/index.mako:192
 msgid "More"
-msgstr ""
+msgstr "Mer"
 
 #: controllers/templates/index.mako:193
 msgid "Widgets"
-msgstr ""
+msgstr "Grafiska komponenter"
 
 #: controllers/templates/index.mako:233 controllers/templates/index.mako:238
 #, python-format
@@ -1100,11 +1111,11 @@ msgstr "Webmoduler"
 
 #: controllers/templates/openo2m.mako:34
 msgid "Save & Close"
-msgstr ""
+msgstr "Spara och stäng"
 
 #: controllers/templates/openo2m.mako:37
 msgid "Save & New"
-msgstr ""
+msgstr "Spara och ny"
 
 #: controllers/templates/save_filter.mako:18
 msgid "Save as Filter"
@@ -1339,11 +1350,11 @@ msgstr "in i"
 
 #: widgets/search.py:392
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: widgets/search.py:392
 msgid "No"
-msgstr ""
+msgstr "Nej"
 
 #: widgets/form/_action.py:48
 msgid "Action not found!"
@@ -1383,7 +1394,7 @@ msgstr "lägg till bilaga"
 
 #: widgets/form/templates/image.mako:6
 msgid "Replace image"
-msgstr ""
+msgstr "Byt bilden"
 
 #: widgets/form/templates/many2one.mako:2
 #: widgets/form/templates/reference.mako:30
@@ -1485,11 +1496,11 @@ msgstr "Hantera vyer"
 
 #: widgets/templates/sidebar.mako:93
 msgid "Edit workflow of the current object"
-msgstr ""
+msgstr "Ändra arbetsflödet för aktuellt objekt"
 
 #: widgets/templates/sidebar.mako:94
 msgid "Edit Workflow"
-msgstr ""
+msgstr "Ändra arbetsflöde"
 
 #: widgets/templates/sidebar.mako:98
 msgid "Customize current object or create a new object"
@@ -1537,11 +1548,11 @@ msgstr "Filter"
 
 #: widgets/templates/viewform.mako:45
 msgid "Saved Filters"
-msgstr ""
+msgstr "Sparade filter"
 
 #: widgets/templates/viewform.mako:52
 msgid "New Filter"
-msgstr ""
+msgstr "Nytt filter"
 
 #: widgets/templates/viewform.mako:53
 msgid "Save Filter"
