@@ -53,7 +53,7 @@
                                         nDaySpan="${evt.dayspan}" 
                                         dtStart="${str(evt.starts)}" 
                                         dtEnd="${str(evt.ends)}" 
-                                        title="${evt.description}"
+                                        title="${evt.title}"
                                         nCreationDate="${evt.create_date}"
                                         nCreationId="${evt.create_uid}"
                                         nWriteDate="${evt.write_date}"
@@ -73,11 +73,12 @@
                             nCreationDate="${evt.create_date}"
                             nCreationId="${evt.create_uid}"
                             nWriteDate="${evt.write_date}"
-                            nWriteId="${evt.write_uid}" 
+                            nWriteId="${evt.write_uid}"
+                            title="${evt.title}" 
                             style="background-color: ${evt.color}" 
                             class="calEvent noAllDay ${evt.classes}">
                            <div style="height: 10px;" class="calEventTitle">${evt.starts.strftime('%I:%M %P')} - ${evt.title}</div>
-                           <div class="calEventDesc">${evt.description}</div>
+                           <div class="calEventDesc">${evt.title}</div>
                            <div class="calEventGrip"></div>
                         </div>
                             % endif
