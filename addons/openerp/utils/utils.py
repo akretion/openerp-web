@@ -122,6 +122,8 @@ class TinyDict(dict):
 
         return value
 
+    _real_eval = _eval # keep a reference of real _eval method
+
     def __setattr__(self, name, value):
         name = '_terp_%s' % name
         value = self._eval(value)
@@ -320,9 +322,7 @@ class TinyForm(object):
                     raise TinyFormError(name.replace('_terp_form/', ''), e.msg, e.value)
 
         # Prevent auto conversion from TinyDict
-        _eval = TinyDict._eval
         TinyDict._eval = lambda self, v: v
-
         try:
             params, data = TinyDict.split(kw)
             params = params.form or {}
@@ -330,7 +330,7 @@ class TinyForm(object):
             return TinyDict(**params)
 
         finally:
-            TinyDict._eval = _eval
+            TinyDict._eval = TinyDict._real_eval
 
     def from_python(self):
         return self._convert(False)
