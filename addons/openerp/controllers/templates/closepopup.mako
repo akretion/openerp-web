@@ -2,6 +2,10 @@
 
 <%def name="header()">
     <script type="text/javascript">    
+        if (this.jQuery == undefined && this.content.jQuery != undefined) {
+	        // catch wrong context having bad 'this' object, wo/ jQuery defined
+            var jQuery = content.jQuery;
+	    }
         jQuery(document).ready(function(){
             if(!window.opener && window.top == window) {
                 window.location.href = '/openerp';
