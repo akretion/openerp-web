@@ -223,6 +223,14 @@ class Form(SecuredController):
 
         target = getattr(cherrypy.request, '_terp_view_target', None)
         buttons.toolbar = (target != 'new' and not form.is_dashboard) or mode == 'diagram'
+        if target == 'new':
+            # for target='new' keep orignal value as '_terp_view_target' hidden field,
+            # that's necessary to keep wizard without toolbar button (new, save, pager, etc...)
+            form_hidden_fields = form.hidden_fields
+            if form_hidden_fields is None:
+                form_hidden_fields = []
+            form_hidden_fields.append(tw.form.Hidden(name='_terp_view_target', default=ustr(target)))
+
         pager = None
         if buttons.pager:
             pager = tw.pager.Pager(id=form.screen.id, ids=form.screen.ids, offset=form.screen.offset,
@@ -487,6 +495,10 @@ class Form(SecuredController):
                 'search_data': ustr(params.search_data),
                 'filter_domain': ustr(params.filter_domain),
                 'notebook_tab': params.notebook_tab}
+        if params.view_target and params.view_target == 'new':
+            # within a wizard popup dialog - keep the orignal target mode
+            # (here target='new' will hide toolbar buttons (new, save, pager, etc..)
+            args.update(target='new')
         if params.o2m_edit:
             # hack to avoid creating new record line when editing o2m inline:
             # by default one2many.mako is going to fetch a new line (.create)
