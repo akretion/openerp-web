@@ -77,7 +77,7 @@
                             title="${evt.title}" 
                             style="background-color: ${evt.color}" 
                             class="calEvent noAllDay ${evt.classes}">
-                           <div style="height: 10px;" class="calEventTitle">${evt.starts.strftime('%I:%M %P')} - ${evt.title}</div>
+                           <div style="min-height: 10px;" class="calEventTitle">${evt.starts.strftime('%I:%M %P')} - ${evt.title}</div>
                            <div class="calEventDesc">${evt.title}</div>
                            <div class="calEventGrip"></div>
                         </div>
