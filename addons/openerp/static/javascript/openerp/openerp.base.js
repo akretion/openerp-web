@@ -189,6 +189,10 @@ function openAction(action_url, target, terp_id) {
             if (terp_id) {
             	window.top.editRecord(terp_id);
             }
+            else {
+                // no terp_id specified, simply reload the current view
+                jQuery(".active", "#view-selector").click();
+            }
             break;
         case 'iframe':
             openLinkFrame(action_url);
