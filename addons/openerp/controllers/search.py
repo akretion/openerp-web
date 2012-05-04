@@ -30,6 +30,11 @@ from openobject.tools import expose, ast
 def cleanup_group_by(s):
     if s is None:
         return ''
+    if isinstance(s, unicode):
+        try:
+            s = str(s)
+        except Exception:
+            pass
     return s.replace('[','').replace(']','').replace('"','').replace("'",'')
 
 class Search(Form):
