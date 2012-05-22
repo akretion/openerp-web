@@ -54,6 +54,8 @@ class Tree(SecuredController):
         view_id = (params.view_ids or False) and params.view_ids[0]
         domain = params.domain
         context = params.context
+        ctx = dict(context,
+                   **rpc.session.context)
 
         res_id = params.ids or 0
         model = params.model
@@ -78,7 +80,7 @@ class Tree(SecuredController):
                 else:
                     tool['icon'] = False
                 id = tool['id']
-                ids = proxy.read([id], [tree.field_parent])[0][tree.field_parent]
+                ids = proxy.read([id], [tree.field_parent], ctx)[0][tree.field_parent]
                 tool['ids'] = ids
             
         can_shortcut = self.can_shortcut_create()

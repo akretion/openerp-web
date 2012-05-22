@@ -84,7 +84,7 @@ class ViewTree(Form):
                 id = ids[0]
 
             if id:
-                ids = proxy.read([id], [self.field_parent])[0][self.field_parent]
+                ids = proxy.read([id], [self.field_parent], ctx)[0][self.field_parent]
         elif not ids:
             ids = proxy.search(domain, 0, 0, 0, ctx)
 
