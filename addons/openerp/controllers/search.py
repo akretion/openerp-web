@@ -123,6 +123,10 @@ class Search(Form):
         # but not when doing a search from the 'search view' (we have to keep parent context)
         if params.search_mode != 'true':
             parent_context = self.context_get(params.parent_context) or {}
+            # update active_id in context for links
+            parent_context.update(
+                active_id=params.active_id or False,
+                active_ids=params.active_ids or [])
 
         if 'group_by' in parent_context:
             if isinstance(params.group_by, str):
@@ -145,12 +149,6 @@ class Search(Form):
             prefix = prefix.rsplit('/', 1)[0]
             pctx = pctx.chain_get(prefix)
 
-        # update active_id in context for links
-        # but not when doing a search from the 'search view' (we have to keep parent context)
-        if params.search_mode != 'true':
-            parent_context.update(
-                active_id=params.active_id or False,
-                active_ids=params.active_ids or [])
         ctx.update(
             parent=pctx,
             context=parent_context,
