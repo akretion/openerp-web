@@ -498,7 +498,7 @@ class Form(SecuredController):
         if params.view_target and params.view_target == 'new':
             # within a wizard popup dialog - keep the orignal target mode
             # (here target='new' will hide toolbar buttons (new, save, pager, etc..)
-            args.update(target='new')
+            args['target'] = 'new'
         if params.o2m_edit:
             # hack to avoid creating new record line when editing o2m inline:
             # by default one2many.mako is going to fetch a new line (.create)
