@@ -18,6 +18,7 @@
 #  You can see the MPL licence at: http://www.mozilla.org/MPL/MPL-1.1.html
 #
 ###############################################################################
+from __future__ import with_statement
 import itertools
 import re
 
@@ -25,23 +26,70 @@ from openerp import validators
 import formencode
 import openobject
 
+crummy_pseudoliteral_matcher = re.compile('^(True|False|None|-?\d+(\.\d+)?|\[.*?\]|\(.*?\)|\{.*?\})$', re.M)
 
-def _make_dict(data, is_params=False):
-    """If is_params is True then generates a TinyDict otherwise generates a valid
-    dictionary from the given data to be used with OpenERP.
+class noeval(object):
+    """contextmanager that prevent TinyDict from doing evals"""
+    def __init__(self, d):
+        self.d = d
+    def __enter__(self):
+        self.d.set_config_noeval(True)
+        return self.d
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.d.set_config_noeval(False)
+        return False # propage exception if any
 
-    @param data: data in the form of {'a': 1, 'b/x': 1, 'b/y': 2}
-    @param is_params: if True generate TinyDict instead of standard dict
-
-    @return: TinyDict or dict
+class TinyDict(dict):
+    """A dictionary class that allows accessing it's items as it's attributes.
+    It also converts stringified Boolean, None, Number or secuence to python object.
+    This class is mainly used by Controllers to get special `_terp_` arguments and
+    to generate valid dictionary of data fields from the controller keyword arguments.
     """
-    
-    def make_dict_internal(data, is_params=False, previous_dict_ids=None):
+    __config_noeval = False
+
+    def __init__(self, **kwargs):
+        super(TinyDict, self).__init__()
+        for k, v in kwargs.items():
+            if (isinstance(v, dict) and not isinstance(v, TinyDict)):
+                v = TinyDict(**v)
+            self[k] = v
+
+    def get_config_noeval(self):
+        return self._TinyDict__config_noeval
+
+    def set_config_noeval(self, value):
+        dict.__setattr__(self, '_TinyDict__config_noeval', value)
+        # recursively propagate the new value
+        for v in self.itervalues():
+            if isinstance(v, TinyDict):
+                v.set_config_noeval(value)
+
+    def build_new(self, is_params=True):
+        if not is_params:
+            return {}
+        new_dict = type(self)()
+        # propagate noeval config flag
+        new_dict.set_config_noeval(self.get_config_noeval())
+        return new_dict
+
+    def build_dict(self, data, is_params=False, previous_dict_ids=None):
+        """If is_params is True then generates a TinyDict otherwise generates a valid
+        dictionary from the given data to be used with OpenERP.
+
+        @param data: data in the form of {'a': 1, 'b/x': 1, 'b/y': 2}
+        @param is_params: if True generate TinyDict instead of standard dict
+        @param previous_dict_ids: set of dict instance to avoid recursion
+
+        @return: TinyDict or dict
+        """
+        if previous_dict_ids is None:
+            previous_dict_ids = set()
+
         if id(data) in previous_dict_ids:
-            raise ValueError("Recursive dictionary detected, _make_dict does not handle recursive dictionaries.")
+            raise ValueError("Recursive dictionary detected, build_dict does not handle recursive dictionaries.")
         previous_dict_ids.add(id(data))
     
-        res = (is_params or {}) and TinyDict()
+        res = self.build_new(is_params)
     
         for name, value in data.items():
     
@@ -54,7 +102,7 @@ def _make_dict(data, is_params=False):
                 root = names[0]
                 if root in res and not isinstance(res[root], dict):
                     del res[root]
-                res.setdefault(root, (is_params or {}) and TinyDict()).update({"/".join(names[1:]): value})
+                res.setdefault(root, self.build_new(is_params)).update({"/".join(names[1:]): value})
             elif name not in res:
                 # if name is already in res, it might be an o2m value
                 # which tries to overwrite a recursive object/dict
@@ -66,38 +114,23 @@ def _make_dict(data, is_params=False):
                     _id = v.pop('__id') or 0
                     _id = int(_id)
     
-                    values = _make_dict(v, is_params)
+                    # build new dict without keeping previous_dict_ids references
+                    values = self.build_dict(v, is_params, previous_dict_ids=None)
                     if values and any(values.itervalues()):
                         res[k] = [(_id and 1, _id, values)]
                     else:
                         res[k] = []
     
                 else:
-                    res[k] = make_dict_internal(v, is_params and isinstance(v, TinyDict), previous_dict_ids)
+                    res[k] = self.build_dict(v, is_params and isinstance(v, TinyDict), previous_dict_ids)
     
         previous_dict_ids.remove(id(data))
         return res
-    
-    return make_dict_internal(data, is_params, set())
-
-
-crummy_pseudoliteral_matcher = re.compile('^(True|False|None|-?\d+(\.\d+)?|\[.*?\]|\(.*?\)|\{.*?\})$', re.M)
-class TinyDict(dict):
-    """A dictionary class that allows accessing it's items as it's attributes.
-    It also converts stringified Boolean, None, Number or secuence to python object.
-    This class is mainly used by Controllers to get special `_terp_` arguments and
-    to generate valid dictionary of data fields from the controller keyword arguments.
-    """
-
-    def __init__(self, **kwargs):
-        super(TinyDict, self).__init__()
-
-        for k, v in kwargs.items():
-            if (isinstance(v, dict) and not isinstance(v, TinyDict)):
-                v = TinyDict(**v)
-            self[k] = v
 
     def _eval(self, value):
+        if self.get_config_noeval():
+            # current behaviour is to store raw value without evaluating them
+            return value
 
         if isinstance(value, list):
             for i, v in enumerate(value):
@@ -167,8 +200,7 @@ class TinyDict(dict):
 
         return value
 
-    @staticmethod
-    def split(kwargs):
+    def split_dict(self, kwargs):
         """A helper function to extract special parameters from the given kwargs.
 
         @param kwargs: dict of keyword arguments
@@ -176,8 +208,7 @@ class TinyDict(dict):
         @rtype: tuple
         @return: tuple of dicts, (TinyDict, dict of data)
         """
-
-        params = TinyDict()
+        params = self.build_new()
         data = {}
 
         for n, v in kwargs.items():
@@ -186,7 +217,11 @@ class TinyDict(dict):
             else:
                 data[n] = v
 
-        return _make_dict(params, True), _make_dict(data, False)
+        return self.build_dict(params, True), self.build_dict(data, False)
+
+    @staticmethod
+    def split(kwargs):
+        return TinyDict().split_dict(kwargs)
 
     def make_plain(self, prefix=''):
 
@@ -322,15 +357,11 @@ class TinyForm(object):
                     raise TinyFormError(name.replace('_terp_form/', ''), e.msg, e.value)
 
         # Prevent auto conversion from TinyDict
-        TinyDict._eval = lambda self, v: v
-        try:
-            params, data = TinyDict.split(kw)
+        with noeval(TinyDict()) as converted_dict:
+            params, data = converted_dict.split_dict(kw)
             params = params.form or {}
-
-            return TinyDict(**params)
-
-        finally:
-            TinyDict._eval = TinyDict._real_eval
+            converted_dict.update(**params)
+            return converted_dict
 
     def from_python(self):
         return self._convert(False)
