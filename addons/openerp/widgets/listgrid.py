@@ -35,12 +35,20 @@ from openobject.tools import ast
 from openobject.i18n import format
 from pager import Pager
 
+class ListViewDataSetIterator(object):
+    def __init__(self, dataset):
+        self.dataset = dataset
+        self.iter = self.dataset.data.__iter__()
+
+    def next(self):
+        row = self.iter.next()
+        return self.dataset.build_row(row)
+
 class ListViewDataSet(object):
     def __init__(self, data, fields, colors):
         self.data = data
         self.fields = fields
         self.colors = colors
-        self.current = None
         self.defaults = {
             'char': False,
             'many2one': False,
@@ -57,18 +65,18 @@ class ListViewDataSet(object):
         }
 
         # pre-compute field's cell
-        self.fields_obj = []
-        for (name, kind, invisible, attrs) in self.fields:
+        self.fields_obj = self.build_new_fields(self.fields)
+
+    def build_new_fields(self, fields):
+        fields_obj = []
+        for (name, kind, invisible, attrs) in fields:
             if invisible:
                 cell = Hidden(**attrs)
             else:
                 default_value = self.defaults[kind]
                 cell = CELLTYPES[kind](value=default_value, **attrs)
-            self.fields_obj.append((name, invisible, cell))
-
-    def next(self):
-        row = self.current.next()
-        return self.build_row(row)
+            fields_obj.append((name, invisible, cell))
+        return fields_obj
 
     def build_row(self, row):
         row = row.copy()
@@ -83,7 +91,7 @@ class ListViewDataSet(object):
             except Exception:
                 pass
 
-        for (name, invisible, cell) in self.fields_obj:
+        for (name, invisible, cell) in self.build_new_fields(self.fields):
             if invisible:
                 cell.set_value(row.get(name, False))
             else:
@@ -95,8 +103,7 @@ class ListViewDataSet(object):
         return row
 
     def __iter__(self):
-        self.current = self.data.__iter__()
-        return self
+        return ListViewDataSetIterator(self)
 
     def __len__(self):
         return len(self.data)
