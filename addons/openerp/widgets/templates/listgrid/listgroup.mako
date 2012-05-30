@@ -34,7 +34,7 @@ import itertools
             <table id="${name}_grid" class="grid" width="100%" cellspacing="0" cellpadding="0">
                 <thead>
                     <tr class="grid-header">
-                        % if editable:
+                        % if editable or selectable:
                             <th class="grid-cell selector"><div style="width: 0;"></div></th>
                         % endif
                         % for (field, field_attrs) in headers:
@@ -53,7 +53,7 @@ import itertools
                 <tbody>
 					% for j, grp_row in enumerate(grp_records):
 					<tr class="grid-row-group" grp_by_id="${grp_row.get('group_by_id')}" records="${grp_row.get('groups_id')}" style="cursor: pointer; " ch_records="${map(lambda x: x['id'], grp_row['child_rec'])}" grp_domain="${grp_row['__domain']}" grp_context="${grp_row['__context']['group_by']}">
-                        % if editable:
+                        % if editable or selectable:
 
                             % if len(group_by_ctx) == 1 and group_by_no_leaf:
                                 <td class="grid-cell"></td>
@@ -112,6 +112,21 @@ import itertools
                                      title="${_('Edit')}" onclick="editRecord(${ch.get('id')}, '${source}')"/>
                             </td>
                         % endif
+                        % if selector:
+                            <td class="grid-cell selector">
+                                % if not m2m:
+                                <%
+                                    selector_click = "new ListView('%s').onBooleanClicked(!this.checked, '%s');" % (name, ch.get('id'))
+                                    if selector == "radio":
+                                        selector_click += " do_select();"
+                                %>
+                                <input type="${selector}" class="${selector} grid-record-selector"
+                                    id="${name}/${ch.get('id')}" name="${(checkbox_name or None) and name}"
+                                    value="${ch.get('id')}"
+                                    onclick="${selector_click}"/>
+                                % endif
+                            </td>
+                        % endif
                         % for i, (field, field_attrs) in enumerate(headers):
                             % if field != 'button':
                                 <td class="grid-cell ${field_attrs.get('type', 'char')}"
@@ -138,7 +153,7 @@ import itertools
 
                     % for i in range(0, min_rows - len(grp_records)):
                     <tr class="grid-row-group">
-                        % if editable:
+                        % if editable or selectable:
                         <td style="text-align: center" class="grid-cell selector">&nbsp;</td>
                         % endif
                         % for i, (field, field_attrs) in enumerate(headers):
@@ -155,7 +170,7 @@ import itertools
                 % if field_total:
                     <tfoot>
                         <tr class="field_sum">
-                            % if editable:
+                            % if editable or selectable:
                                 <td width="1%" class="grid-cell">&nbsp;</td>
                             % endif
                             % for i, (field, field_attrs) in enumerate(headers):
