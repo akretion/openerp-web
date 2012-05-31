@@ -55,12 +55,12 @@ var One2Many = function(name, inline) {
     this.params_parent = false
     if (this.m2o == "False"){
         this.params_parent = {
-            '_terp_view_params/_terp_model': openobject.dom.get('_terp_model').value,
-            '_terp_view_params/_terp_id': openobject.dom.get('_terp_id').value,
-            '_terp_view_params/_terp_view_id':openobject.dom.get('_terp_view_id').value,
-            '_terp_view_params/_terp_view_ids': openobject.dom.get('_terp_view_ids').value,
-            '_terp_view_params/_terp_view_mode': openobject.dom.get('_terp_view_mode').value,
-            '_terp_view_params/_terp_context': openobject.dom.get('_terp_context').value || {},
+            '_terp_view_params/_terp_model': openobject.dom.get(parent_prefix + '_terp_model').value,
+            '_terp_view_params/_terp_id': openobject.dom.get(parent_prefix + '_terp_id').value,
+            '_terp_view_params/_terp_view_id':openobject.dom.get(parent_prefix + '_terp_view_id').value,
+            '_terp_view_params/_terp_view_ids': openobject.dom.get(parent_prefix + '_terp_view_ids').value,
+            '_terp_view_params/_terp_view_mode': openobject.dom.get(parent_prefix + '_terp_view_mode').value,
+            '_terp_view_params/_terp_context': openobject.dom.get(parent_prefix + '_terp_context').value || {},
             '_terp_view_params/_terp_view_type': 'form'
         };
     }
