@@ -183,12 +183,16 @@ class List(SecuredController):
         domain = grp_domain
         group_level = ast.literal_eval(group_level)
         groups = ast.literal_eval(groups)
-
-        context = {'group_by_no_leaf': int(no_leaf), 'group_by': group_by, '__domain': domain}
-        args = {'editable': True,
+        # build a new TinyDict to correctly handle _terp_* params
+        params = TinyDict(**kw)
+        editable = params.editable
+        selectable = params.selectable or 2
+        context = params.context or {}
+        context.update({'group_by_no_leaf': int(no_leaf), 'group_by': group_by, '__domain': domain})
+        args = {'editable': editable,
                 'view_mode': ['tree', 'form', 'calendar', 'graph'],
                 'nolinks': 1, 'group_by_ctx': group_by,
-                'selectable': 2,
+                'selectable': selectable,
                 'multiple_group_by': True,
                 'sort_key': kw.get('sort_key'),
                 'sort_order': kw.get('sort_order')}

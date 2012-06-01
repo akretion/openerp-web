@@ -7,7 +7,7 @@ background = '#F5F5F5'
         records="${grp_row['groups_id']}" style="cursor: pointer; background-color: ${background};"
         ch_records="${map(lambda x: x['id'],grp_row['child_rec'])}" grp_domain="${grp_row['__domain']}"
         grp_context="${grp_row['__context']['group_by']}">
-        % if editable:
+        % if editable or selectable:
             <td class="grid-cell" ></td>
         % endif
         % for i, (field, field_attrs) in enumerate(headers):
@@ -67,6 +67,20 @@ background = '#F5F5F5'
                 <td class="grid-cell">
                     <img src="/openerp/static/images/listgrid/edit_inline.gif" class="listImage" border="0"
                          title="${_('Edit')}" onclick="editRecord(${ch.get('id')}, '${source}')"/>
+                </td>
+            % elif selectable:
+                <td class="grid-cell selector">
+                    % if not m2m:
+                    <%
+                        selector_click = "new ListView('%s').onBooleanClicked(!this.checked, '%s');" % (name, ch.get('id'))
+                        if selector == "radio":
+                            selector_click += " do_select();"
+                    %>
+                    <input type="${selector}" class="${selector} grid-record-selector"
+                        id="${name}/${ch.get('id')}" name="${(checkbox_name or None) and name}"
+                        value="${ch.get('id')}"
+                        onclick="${selector_click}"/>
+                    % endif
                 </td>
             % endif
             % for i, (field, field_attrs) in enumerate(headers):

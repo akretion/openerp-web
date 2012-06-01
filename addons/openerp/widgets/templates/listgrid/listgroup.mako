@@ -111,8 +111,7 @@ import itertools
                                 <img src="/openerp/static/images/iconset-b-edit.gif" class="listImage" border="0"
                                      title="${_('Edit')}" onclick="editRecord(${ch.get('id')}, '${source}')"/>
                             </td>
-                        % endif
-                        % if selector:
+                        % elif selector:
                             <td class="grid-cell selector">
                                 % if not m2m:
                                 <%
@@ -224,7 +223,7 @@ import itertools
                     });
                 </script>
             % endif
-            % if editable:
+            % if editable or selectable:
                 <script type="text/javascript">
                     jQuery('table[id=${name}_grid] tr.grid-row').click(function(event) {
                         var $this = jQuery(this);
