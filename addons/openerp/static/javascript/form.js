@@ -741,6 +741,9 @@ function eval_domain_context_request(options){
         '_terp_active_id': openobject.dom.get(prefix.concat('_terp_id').join('/')).value,
         '_terp_active_ids': openobject.dom.get(prefix.concat('_terp_ids').join('/')).value
     });
+    if (options.from_search_mode) {
+        params['_terp_search_mode'] = 'true';
+    }
 
     if (options.group_by_ctx && options.group_by_ctx.length > 0)
         params['_terp_group_by'] = options.group_by_ctx;

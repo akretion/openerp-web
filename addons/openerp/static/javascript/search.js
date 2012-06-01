@@ -717,7 +717,8 @@ function final_search_domain(custom_domain, all_domains, group_by_ctx) {
                     source: '_terp_list',
                     domain: obj.domain,
                     context: obj.context,
-                    group_by_ctx: group_by_ctx
+                    group_by_ctx: group_by_ctx,
+                    from_search_mode: true,
                 });
 
                 in_req.addCallback(function(in_obj){

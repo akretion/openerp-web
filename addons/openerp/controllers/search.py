@@ -118,7 +118,16 @@ class Search(Form):
         context = params.context or {}
         parent_context = dict(params.parent_context or {},
                               **rpc.session.context)
-        parent_context = self.context_get(params.parent_context) or {}
+
+        # filter out default_* and search_default_* from context,
+        # but not when doing a search from the 'search view' (we have to keep parent context)
+        if params.search_mode != 'true':
+            parent_context = self.context_get(params.parent_context) or {}
+            # update active_id in context for links
+            parent_context.update(
+                active_id=params.active_id or False,
+                active_ids=params.active_ids or [])
+
         if 'group_by' in parent_context:
             if isinstance(params.group_by, str):
                 parent_context['group_by'] = cleanup_group_by(params.group_by).split(',')
@@ -139,11 +148,6 @@ class Search(Form):
         if prefix and '/' in prefix:
             prefix = prefix.rsplit('/', 1)[0]
             pctx = pctx.chain_get(prefix)
-
-        #update active_id in context for links
-        parent_context.update(
-            active_id=params.active_id or False,
-            active_ids=params.active_ids or [])
 
         ctx.update(
             parent=pctx,
