@@ -248,6 +248,12 @@ MochiKit.Base.update(ListView.prototype, {
             jQuery('#' + record + '[parent_grp_id="' + id + '"]').toggle();
         } else {
             if (jQuery(group).hasClass('group-expand')) {
+                // get listview selectable value, so we know if we are in
+                // simple or multiple selection mode
+                var selectable = openobject.dom.get('_terp_selectable');
+                if (selectable) {
+                    selectable = selectable.value
+                }
                 jQuery.ajax({
                     url: '/openerp/listgrid/multiple_groupby',
                     type: 'POST',
@@ -260,7 +266,10 @@ MochiKit.Base.update(ListView.prototype, {
                             'groups': total_groups,
                             'no_leaf': no_leaf,
                             'sort_order': sort_order,
-                            'sort_key': sort_key},
+                            'sort_key': sort_key,
+                            '_terp_editable': openobject.dom.get('_terp_editable').value,
+                            '_terp_selectable': selectable,
+                            '_terp_context': openobject.dom.get('_terp_context').value},
                     dataType: 'html',
                     success: function(xmlHttp) {
                         $group_record.after(xmlHttp);
