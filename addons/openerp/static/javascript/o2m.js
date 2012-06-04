@@ -31,7 +31,11 @@ var One2Many = function(name, inline) {
     this.mode = openobject.dom.get(name + '/_terp_view_type').value;
 
     if (openobject.dom.get(name + '/_terp_default_get_ctx'))
+        this.default_get_ctx = openobject.dom.get(name + '/_terp_default_get_ctx').value;
+    else if (openobject.dom.get(name + '/_terp_context'))
         this.default_get_ctx = openobject.dom.get(name + '/_terp_context').value;
+    else
+        this.default_get_ctx = "{}"
 
     var parent_prefix = name.indexOf('/') > -1 ? name.slice(0, name.lastIndexOf('/') + 1) : '';
 
