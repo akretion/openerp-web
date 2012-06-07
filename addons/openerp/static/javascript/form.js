@@ -964,12 +964,8 @@ function do_action(src, context_menu) {
             new ListView('_terp_list').getSelectedRecords().join(',') +
             ']';
         if (eval(params['_terp_selection']).length == 0) {
-            var ids = eval(jQuery('#_terp_ids').val());
-            if (ids && ids.length > 0){
-                params['_terp_selection'] = '[' + ids[0] + ']';
-            } else {
-                error_display(_('You must select one or several records !'));
-            }
+            error_display(_('You must select one or several records !'));
+            return;
         }
         var id = eval(params['_terp_selection'])[0]
     } else {
