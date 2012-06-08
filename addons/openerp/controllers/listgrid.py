@@ -232,6 +232,15 @@ class List(SecuredController):
     def get(self, **kw):
         params, data = TinyDict.split(kw)
 
+        if not params.model and params.o2m and params.view_params.model:
+            # Ok, no base model, copy infos from _terp_view_params.
+            # This is required to be able to correctly build the form view
+            # and to get the 'widget' related to the requested listgrid
+            view_params_base, x = TinyDict.split(params.view_params)
+            view_params_update = dict([(k[6:], v) for k, v in view_params_base.iteritems()
+                                                if k.startswith('_terp_') ])
+            params.update(view_params_update)
+
         groupby = params.get('_terp_group_by_ctx')
         if groupby and isinstance(groupby, basestring):
             groupby = groupby.split(',')
