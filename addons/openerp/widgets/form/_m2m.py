@@ -106,13 +106,12 @@ class M2M(TinyInputWidget):
             ids = ids[current.offset: current.offset+current.limit]
         
         if self.name == params.source and params.sort_key and ids:
-            if isinstance(self.domain, basestring):
-                self.domain = ast.literal_eval(self.domain)
-            self.domain.append(('id', 'in', ids))
+            domain = current.domain or []
+            domain.append(('id','in',ids))
             limit = current.limit
             if current.limit == -1:
                 limit = 0
-            ids = rpc.RPCProxy(self.model).search(self.domain, current.offset, limit, params.sort_key+ ' '+params.sort_order, self.context)
+            ids = rpc.RPCProxy(self.model).search(domain, current.offset, limit, params.sort_key+ ' '+params.sort_order, current.context)
             id = ids[0]
 
         if current.view_mode: view_mode = current.view_mode
