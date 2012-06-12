@@ -186,12 +186,17 @@ function openAction(action_url, target, terp_id) {
             break;
         case 'popup':
             window.open(action_url);
-            if (terp_id) {
+            if (terp_id && !$dialogs.length) {
+                // reload base model with the record specified by 'terp_id',
+                // but only when we're not in a dialog - in that case the
+                // 'terp_id' is related to the model from that dialog, not the
+                // base model
             	window.top.editRecord(terp_id);
             }
             else {
-                // no terp_id specified, simply reload the current view
-                jQuery(".active", "#view-selector").click();
+                // no terp_id specified, or within a dialog: simply reload the
+                // current view on base model
+                jQuery("#view-selector .active").click();
             }
             break;
         case 'iframe':
