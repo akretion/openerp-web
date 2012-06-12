@@ -164,7 +164,14 @@ function form_onAttrChange(container, widgetName, attr, expr, elem) {
     var result = form_evalExpr(prefix, expr, elem);
 
     switch (attr) {
-        case 'readonly': form_setReadonly(container, widget, result);
+        case 'readonly':
+            var editable = openobject.dom.get(prefix + '_terp_editable');
+            if (editable && (editable.value == 0 || editable.value == 'False')) {
+                // We are in 'non-editable' mode, so we force readonly = True
+                // whatever readonly attrs result
+                result = true;
+            }
+            form_setReadonly(container, widget, result);
             break;
         case 'required': form_setRequired(container, widget, result);
             break;
