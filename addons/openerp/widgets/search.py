@@ -176,7 +176,9 @@ class Filter(TinyInputWidget):
         
 class M2O_search(form.M2O):
     template = "/openerp/widgets/templates/search/many2one.mako"
+    params = ['m2o_filter_domain']
     def __init__(self, **attrs):
+        self.m2o_filter_domain = attrs.get('filter_domain')
         attrs['m2o_filter_domain'] = attrs.get('filter_domain')
 
         super(M2O_search, self).__init__(**attrs)

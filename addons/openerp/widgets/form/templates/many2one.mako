@@ -10,11 +10,17 @@
 % if editable:
     <%self:m2o_container>
         <span class="m2o">
-            <input type="hidden" id="${name}" name="${name}" class="${css_class}" value="${value}"
-                ${py.attrs(attrs, kind=kind, domain=domain, context=ctx, relation=relation, fld_required=required and 1 or 0, fld_readonly=readonly and 1 or 0)}/>
-            <input type="text" id="${name}_text" class="${css_class}" size="1"
-                ${py.attrs(attrs, kind=kind, relation=relation, value=text)}/>
-
+            % if m2o_filter_domain:
+                <input type="hidden" id="${name}" name="${name}" class="${css_class}" value="${value}"
+                ${py.attrs(attrs, kind=kind, domain=domain, m2o_filter_domain=m2o_filter_domain, context=ctx, relation=relation, fld_required=required and 1 or 0, fld_readonly=readonly and 1 or 0)}/>
+                <input type="text" id="${name}_text" class="${css_class}" size="1"
+                ${py.attrs(attrs, kind=kind, m2o_filter_domain=m2o_filter_domain, relation=relation, value=text)}/>
+            % else:
+                <input type="hidden" id="${name}" name="${name}" class="${css_class}" value="${value}"
+                    ${py.attrs(attrs, kind=kind, domain=domain, context=ctx, relation=relation, fld_required=required and 1 or 0, fld_readonly=readonly and 1 or 0)}/>
+                <input type="text" id="${name}_text" class="${css_class}" size="1"
+                    ${py.attrs(attrs, kind=kind, relation=relation, value=text)}/>
+            % endif
             <input type="hidden" id="_hidden_${name}" value=""/>
             % if error:
                 <span class="fielderror">${error}</span>
