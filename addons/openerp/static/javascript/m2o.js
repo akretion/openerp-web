@@ -628,6 +628,8 @@ ManyToOne.prototype.getOnclick = function(evt) {
 
             if($m2o_field[0].onchange) {
                 $m2o_field[0].onchange();
+	    } else if ($m2o_field[0]._m2o) {
+		$m2o_field[0]._m2o.on_change();
             } else {
                 self.on_change();
                 $m2o_field.change();
