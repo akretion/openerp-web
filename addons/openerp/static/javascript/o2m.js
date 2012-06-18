@@ -58,13 +58,22 @@ var One2Many = function(name, inline) {
 
     this.params_parent = false
     if (this.m2o == "False"){
+        var params_parent_prefix = '';
+        if (!openobject.dom.get('_terp_model')) {
+            // Handle case when we create a new one2many record over an unsaved
+            // parent record - in that we not do have a valid '_terp_model'
+            // within the document, so we just copy original information.
+            params_parent_prefix = '_terp_view_params/';
+        } else {
+            params_parent_prefix = parent_prefix;
+        }
         this.params_parent = {
-            '_terp_view_params/_terp_model': openobject.dom.get(parent_prefix + '_terp_model').value,
-            '_terp_view_params/_terp_id': openobject.dom.get(parent_prefix + '_terp_id').value,
-            '_terp_view_params/_terp_view_id':openobject.dom.get(parent_prefix + '_terp_view_id').value,
-            '_terp_view_params/_terp_view_ids': openobject.dom.get(parent_prefix + '_terp_view_ids').value,
-            '_terp_view_params/_terp_view_mode': openobject.dom.get(parent_prefix + '_terp_view_mode').value,
-            '_terp_view_params/_terp_context': openobject.dom.get(parent_prefix + '_terp_context').value || {},
+            '_terp_view_params/_terp_model': openobject.dom.get(params_parent_prefix + '_terp_model').value,
+            '_terp_view_params/_terp_id': openobject.dom.get(params_parent_prefix + '_terp_id').value,
+            '_terp_view_params/_terp_view_id':openobject.dom.get(params_parent_prefix + '_terp_view_id').value,
+            '_terp_view_params/_terp_view_ids': openobject.dom.get(params_parent_prefix + '_terp_view_ids').value,
+            '_terp_view_params/_terp_view_mode': openobject.dom.get(params_parent_prefix + '_terp_view_mode').value,
+            '_terp_view_params/_terp_context': openobject.dom.get(params_parent_prefix + '_terp_context').value || {},
             '_terp_view_params/_terp_view_type': 'form'
         };
     }

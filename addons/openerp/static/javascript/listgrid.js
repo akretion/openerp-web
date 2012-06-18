@@ -734,14 +734,15 @@ MochiKit.Base.update(ListView.prototype, {
         var self = this;
 
         var current_id = edit_inline ? (parseInt(edit_inline) || 0) : edit_inline;
+        var prefix = this.name == '_terp_list' ? '' : this.name + '/';
 
         var args = jQuery.extend(this.makeArgs(), {
             _terp_source: this.name,
             _terp_edit_inline: edit_inline,
             _terp_source_default_get: default_get_ctx,
             _terp_concurrency_info: concurrency_info,
-            _terp_editable: openobject.dom.get('_terp_editable').value,
-            _terp_group_by_ctx: openobject.dom.get('_terp_group_by_ctx').value
+            _terp_editable: openobject.dom.get(prefix + '_terp_editable').value,
+            _terp_group_by_ctx: openobject.dom.get(prefix + '_terp_group_by_ctx').value
         });
 
         if (this.name == '_terp_list') {
