@@ -396,6 +396,10 @@ ManyToOne.prototype.get_matched = function() {
     var domain = jQuery(this.field).attr('domain');
     var context = this.get_context();
 
+    // clear and hide autoComplete results box before getting matched
+    // datas
+    m2o.clearResults();
+
     eval_domain_context_request({
         source: this.name,
         domain: domain,
