@@ -695,7 +695,10 @@ class Button(TinyInputWidget):
         if self.states:
             state = data.get('state')
             try:
-                state = ((state or False) and state.value) or 'draft'
+                if isinstance(state, Hidden):
+                    state = state.widget.get_value()
+                else:
+                    state = ((state or False) and state.value) or 'draft'
             except:
                 state = ustr(state)
             visible = state in self.states
