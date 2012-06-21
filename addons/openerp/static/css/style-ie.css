@@ -36,6 +36,9 @@ div.box2 button {
     width: 98%;
 }
 
+.item .filter-a button {
+	width: 100%;
+}
 .resizable-textarea .grip {
     width: 98%;
 }
