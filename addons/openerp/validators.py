@@ -25,6 +25,15 @@ import math
 import re
 import time
 
+BINARY_FIELD_STORAGE_CLASS = cgi.FieldStorage
+try:
+    # binary data send/get with cherrypy >= 3.2.X
+    # are wrapper inside 'Part' class
+    from cherrypy._cpreqbody import Part
+    BINARY_FIELD_STORAGE_CLASS = ( cgi.FieldStorage, Part )
+except ImportError:
+    pass
+
 import formencode.validators
 import formencode.api
 
@@ -159,7 +168,7 @@ class Binary(BaseValidator):
         if isinstance(value, list):
             value = value[0]
 
-        if isinstance(value, cgi.FieldStorage):
+        if isinstance(value, BINARY_FIELD_STORAGE_CLASS):
             if value.filename:
                 return base64.encodestring(value.file.read())
             elif self.not_empty:
