@@ -5,14 +5,14 @@
         name="${name}" 
         id="${name}" 
         value="${value}"
-        ${py.attrs(attrs)}>
+        ${py.attrs(attrs, fld_readonly=readonly and 1 or 0)}>
     <input
         type="checkbox" 
         kind="${kind}" 
         class="checkbox"
         id="${name}_checkbox_" 
         ${py.checker(value)}
-        ${py.attrs(attrs)}>
+        ${py.attrs(attrs, fld_readonly=readonly and 1 or 0)}>
     % if error:
         <span class="fielderror">${error}</span>
     % endif
