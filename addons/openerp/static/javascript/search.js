@@ -478,8 +478,10 @@ function parse_filters(src, id) {
         jQuery('div.group-data button').each(function(){
             if (jQuery(this).hasClass('active')) {
                 var _grp = jQuery(this).next('input').attr('group_by_ctx');
-                if (jQuery.inArray(_grp, group_by) < 0) {
-                    group_by.push(_grp);
+                if (_grp) {
+                    if (jQuery.inArray(_grp, group_by) < 0) {
+                        group_by.push(_grp);
+                    }
                 }
             }
         });
