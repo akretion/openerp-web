@@ -92,7 +92,12 @@ class Image(TinyInputWidget):
         self.state = attrs.get('state')
         self.field = self.name.split('/')[-1]
         if attrs.get('widget'):
-            self.src = tools.url('/openerp/form/binary_image_get_image', model=self.model, id=self.id, field=self.field, nocache=random.randint(0,2**32))
+            extra_url_params = {}
+            if not (self.id and self.id != 'None'):
+                # during record creation provide current value (from default_get())
+                # so we do not need to call default_get() twice
+                extra_url_params['default_value'] = self.value
+            self.src = tools.url('/openerp/form/binary_image_get_image', model=self.model, id=self.id, field=self.field, nocache=random.randint(0,2**32), **extra_url_params)
             self.height = attrs.get('img_height', attrs.get('height', None))
             self.width = attrs.get('img_width', attrs.get('width', None))
             self.validator = validators.Binary()

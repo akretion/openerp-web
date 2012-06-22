@@ -721,13 +721,14 @@ class Form(SecuredController):
         model = kw.get('model')
         field = kw.get('field')
         id = kw.get('id')
+        default_value = kw.get('default_value')
         proxy = rpc.RPCProxy(model)
         if id == 'None':
             # FIXME: doesnt honor the context
-            res = proxy.default_get([field]).get(field,'')
+            res = default_value or proxy.default_get([field]).get(field,'')
         else:
             res = proxy.read([int(id)], [field])[0].get(field)
-        if res:
+        if res and res != 'None':
             return base64.decodestring(res)
         else:
             return open(openobject.paths.addons('openerp','static','images','placeholder.png'),'rb').read()
