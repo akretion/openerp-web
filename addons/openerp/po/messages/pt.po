@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openobject-client-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-03-18 11:53+0100\n"
-"PO-Revision-Date: 2011-02-28 12:02+0000\n"
-"Last-Translator: Tiago Baptista <Unknown>\n"
+"PO-Revision-Date: 2012-06-21 13:02+0000\n"
+"Last-Translator: aderito.pina@prime.cv <yongzox@hotmail.com>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-20 05:03+0000\n"
-"X-Generator: Launchpad (build 15435)\n"
+"X-Launchpad-Export-Date: 2012-06-22 04:56+0000\n"
+"X-Generator: Launchpad (build 15461)\n"
 
 #: validators.py:75
 msgid "Invalid literal for float"
@@ -27,15 +27,15 @@ msgstr "Formato de Data/Hora inválido"
 
 #: validators.py:166
 msgid "Please select a file."
-msgstr "Selecione um ficheiro."
+msgstr "Por favor seleccione um ficheiro."
 
 #: validators.py:247
 msgid "Please enter an email address"
-msgstr "Insira com um endereço de correio electrónico"
+msgstr "Insira um endereço de correio electrónico"
 
 #: validators.py:248
 msgid "An email address must contain a single @"
-msgstr "Um endereço de correio electrónico contém um único @"
+msgstr "Um endereço de correio electrónico tem de conter um único @"
 
 #: validators.py:249
 #, python-format
@@ -106,7 +106,8 @@ msgstr "Nenhuma ação definida"
 
 #: controllers/attachment.py:55
 msgid "No record selected, You can only attach to existing record..."
-msgstr "Nenhum registro selecionado, só pode anexa a um registo existente..."
+msgstr ""
+"Nenhum registro selecionado, só pode anexar a um registo existente..."
 
 #: controllers/database.py:63
 msgid "Create database"
@@ -128,8 +129,8 @@ msgid ""
 "did not changed it, the password is 'admin' after installation."
 msgstr ""
 "Esta é a senha do utilizador com permissão para administrar bases de dados. "
-"Não é um utilizador comum, é um super administrador. Se ainda não a alterou, "
-"a senha é 'admin' desde a instalação."
+"Não é um utilizador OpenERP, é só um super administrador. Se ainda não a "
+"alterou, a senha é 'admin' depois da instalação."
 
 #: controllers/database.py:69 controllers/database.py:101
 msgid "New database name:"
@@ -141,7 +142,7 @@ msgid ""
 "contain any special character. Exemple: 'terp'."
 msgstr ""
 "Escolha o nome da base de dados a criar. O nome não pode conter caracteres "
-"especiais (como acentos ou cedilhas). Ex: 'teste'."
+"especiais (como acentos ou cedilhas). Ex: 'terp'."
 
 #: controllers/database.py:70
 msgid "Load Demonstration data:"
@@ -155,11 +156,11 @@ msgid ""
 msgstr ""
 "Marque esta caixa se quer que a sua nova base de dados contenha registos de "
 "demonstração. Estes registos vão ajudá-lo a compreender o OpenERP, com "
-"exemplos de produtos, parceiros, etc."
+"exemplos de produtos, terceiros, etc."
 
 #: controllers/database.py:71
 msgid "Default Language:"
-msgstr "Língua predefinida:"
+msgstr "Língua por Omissão:"
 
 #: controllers/database.py:71
 msgid ""
@@ -167,12 +168,12 @@ msgid ""
 "will be able to install new languages after installation through the "
 "administration menu."
 msgstr ""
-"Escolha a língua base para esta companhia. Poderá posteriormente instalar "
-"línguas adicionais pelo menu administração."
+"Escolha o idioma padrão para esta base de dados. Poderá posteriormente "
+"instalar idiomas adicionais pelo menu Administração"
 
 #: controllers/database.py:72
 msgid "Administrator password:"
-msgstr "Senha do administrador:"
+msgstr "Palavra-passe de administrador:"
 
 #: controllers/database.py:72
 msgid ""
@@ -184,7 +185,7 @@ msgstr ""
 
 #: controllers/database.py:73
 msgid "Confirm password:"
-msgstr "Confirmar senha:"
+msgstr "Confirmar palavra-passe:"
 
 #: controllers/database.py:73
 msgid ""
@@ -212,7 +213,7 @@ msgstr "Base de dados:"
 #: controllers/templates/login_ajax.mako:78
 #: controllers/templates/login_ajax.mako:98
 msgid "Password:"
-msgstr "Senha:"
+msgstr "Palavra-Passe:"
 
 #: controllers/database.py:88
 msgid "Backup database"
@@ -401,11 +402,11 @@ msgstr "Erro na importação."
 
 #: controllers/impex.py:520
 msgid "The CSV delimiter must be a single character"
-msgstr ""
+msgstr "O delimitador CSV deve ser um único caracter"
 
 #: controllers/impex.py:532
 msgid "File Format Error"
-msgstr ""
+msgstr "Erro no Formato de Ficheiro"
 
 #: controllers/impex.py:550
 msgid "XML-RPC error"
@@ -601,6 +602,14 @@ msgid ""
 "                    project management, production, services, CRM, etc..\n"
 "                    "
 msgstr ""
+"%(openobject)s é um sistema livre de gestão empresarial desenhado para "
+"incrementar\n"
+"                    a produtividade e o lucro através da integração de "
+"dados. Ele conecta, melhora e\n"
+"                    gere processos de negócio em áreas tais como as vendas, "
+"finanças, armazém,\n"
+"                    gestão de projecto, produção, serviços, CRM, etc..\n"
+"                    "
 
 #: controllers/templates/about.mako:51
 msgid ""
@@ -613,6 +622,14 @@ msgid ""
 "                    production system and migration to a new version to be "
 "straightforward."
 msgstr ""
+"O sistema é independente da plataforma e pode ser instalado sobre Windows, "
+"Mac OS X,\n"
+"                    e várias distribuições Linux e Unix. A sua arquitectura "
+"permite que novas\n"
+"                    funcionalidade sejam rapidamente desenvolvidas, que "
+"modificações sejam\n"
+"                    feitas em produção e que seja simples migrar para uma "
+"nova versão."
 
 #: controllers/templates/about.mako:57
 msgid ""
@@ -635,7 +652,7 @@ msgstr "Senha"
 #: controllers/templates/error_page.mako:82
 #, python-format
 msgid "An %(error_type)s has been reported."
-msgstr ""
+msgstr "Um %(error_type)s foi reportado."
 
 #: controllers/templates/error_page.mako:84
 msgid "Let me fix it"
@@ -711,15 +728,15 @@ msgstr "Exportar dados"
 
 #: controllers/templates/exp.mako:166
 msgid "Export Type:"
-msgstr ""
+msgstr "Tipo de Exportação:"
 
 #: controllers/templates/exp.mako:169
 msgid "Import Compatible Export"
-msgstr ""
+msgstr "Exportação Compatível com Importação"
 
 #: controllers/templates/exp.mako:172
 msgid "Export all Data"
-msgstr ""
+msgstr "Exportar Todos os Dados"
 
 #: controllers/templates/exp.mako:190
 msgid "Available fields"
@@ -744,7 +761,7 @@ msgstr "OK"
 
 #: controllers/templates/exp.mako:202
 msgid "Saved exports:"
-msgstr ""
+msgstr "Exportações Guardadas:"
 
 #: controllers/templates/exp.mako:211 controllers/templates/form.mako:136
 #: widgets/form/templates/one2many.mako:23 widgets/templates/sidebar.mako:67
@@ -769,7 +786,7 @@ msgstr "Excluir"
 
 #: controllers/templates/exp.mako:234
 msgid "Remove All"
-msgstr ""
+msgstr "Remover Tudo"
 
 #: controllers/templates/exp.mako:252
 msgid "Export to File"
@@ -1003,7 +1020,7 @@ msgstr "A importação falhou devido a: %(message)s"
 
 #: controllers/templates/imp.mako:132
 msgid "Here is a preview of the file we could not import:"
-msgstr ""
+msgstr "Aqui está uma previsão do ficheiro que não conseguiu ser importado:"
 
 #: controllers/templates/imp.mako:157
 msgid "CSV Options"
@@ -1284,7 +1301,7 @@ msgstr ""
 
 #: utils/rpc.py:355
 msgid "Not logged..."
-msgstr ""
+msgstr "Não logado....."
 
 #: utils/rpc.py:355
 msgid "Authorization Error"
@@ -1308,7 +1325,7 @@ msgstr "Vista de pesquisa..."
 
 #: widgets/listgrid.py:305
 msgid "Wrong on_change trigger"
-msgstr ""
+msgstr "Gatilho on_change errado"
 
 #: widgets/listgrid.py:368 widgets/form/_form.py:904
 #, python-format
@@ -1403,7 +1420,7 @@ msgstr "adicionar anexo"
 
 #: widgets/form/templates/image.mako:6
 msgid "Replace image"
-msgstr ""
+msgstr "Substituir imagem"
 
 #: widgets/form/templates/many2one.mako:2
 #: widgets/form/templates/reference.mako:30

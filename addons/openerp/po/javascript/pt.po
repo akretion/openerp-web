@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openobject-client-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-03-18 11:53+0100\n"
-"PO-Revision-Date: 2011-02-15 19:33+0000\n"
-"Last-Translator: Antony Lesuisse (OpenERP) <al@openerp.com>\n"
+"PO-Revision-Date: 2012-06-21 12:54+0000\n"
+"Last-Translator: ThinkOpen Solutions <Unknown>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-20 05:02+0000\n"
-"X-Generator: Launchpad (build 15435)\n"
+"X-Launchpad-Export-Date: 2012-06-22 04:56+0000\n"
+"X-Generator: Launchpad (build 15461)\n"
 
 #: static/javascript/form.js:92
 #, python-format
@@ -36,7 +36,7 @@ msgstr "Tem de seleccionar um ou vários registos!"
 
 #: static/javascript/form.js:995
 msgid "You must save this record to perform the action !"
-msgstr ""
+msgstr "Precisa gravar este registo para executar a acção !"
 
 #: static/javascript/form.js:1127
 msgid "Do you really want to delete the attachment"
@@ -77,7 +77,7 @@ msgstr "Quer realmente eliminar o registo?"
 
 #: static/javascript/search.js:285
 msgid "Invalid Value"
-msgstr ""
+msgstr "Valor Inválido"
 
 #: static/javascript/viewed.js:63
 msgid "Do you really want to remove this node?"
