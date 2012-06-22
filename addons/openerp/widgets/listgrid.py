@@ -256,7 +256,7 @@ class List(TinyWidget):
         self.data_dict = {}
         data = []
 
-        if ids and not isinstance(ids, list):
+        if ids and not isinstance(ids, (list, tuple)):
             ids = [ids]
 
         if ids and len(ids) > 0:
