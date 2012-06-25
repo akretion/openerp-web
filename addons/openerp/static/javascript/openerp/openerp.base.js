@@ -82,6 +82,8 @@ function loadingError(url) {
                     console.warn("Failed to load ", xhr.url, ":", xhr.status, xhr.statusText);
                 }
         }
+        form_hookStateChange();
+        form_hookAttrChange();
     };
 }
 
