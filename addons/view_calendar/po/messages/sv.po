@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2011-03-18 11:53+0100\n"
-"PO-Revision-Date: 2011-02-15 19:17+0000\n"
-"Last-Translator: Antony Lesuisse (OpenERP) <al@openerp.com>\n"
+"PO-Revision-Date: 2012-06-25 11:24+0000\n"
+"Last-Translator: Anders Wallenquist <anders.wallenquist@vertel.se>\n"
 "Language-Team: sv <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-20 05:02+0000\n"
-"X-Generator: Launchpad (build 15435)\n"
+"X-Launchpad-Export-Date: 2012-06-26 05:40+0000\n"
+"X-Generator: Launchpad (build 15482)\n"
 "Generated-By: Babel None\n"
 
 #: controllers/templates/calpopup.mako:83
@@ -44,79 +44,79 @@ msgstr "Ganttvy..."
 
 #: widgets/utils.py:26
 msgid "Monday"
-msgstr "Måndag"
+msgstr "måndag"
 
 #: widgets/utils.py:27
 msgid "Tuesday"
-msgstr "Tisdag"
+msgstr "tisdag"
 
 #: widgets/utils.py:28
 msgid "Wednesday"
-msgstr "Onsdag"
+msgstr "onsdag"
 
 #: widgets/utils.py:29
 msgid "Thursday"
-msgstr "Torsdag"
+msgstr "torsdag"
 
 #: widgets/utils.py:30
 msgid "Friday"
-msgstr "Fredag"
+msgstr "fredag"
 
 #: widgets/utils.py:31
 msgid "Saturday"
-msgstr "Lördag"
+msgstr "lördag"
 
 #: widgets/utils.py:32
 msgid "Sunday"
-msgstr "Söndag"
+msgstr "söndag"
 
 #: widgets/utils.py:35
 msgid "January"
-msgstr "Januari"
+msgstr "januari"
 
 #: widgets/utils.py:36
 msgid "February"
-msgstr "Februari"
+msgstr "februari"
 
 #: widgets/utils.py:37
 msgid "March"
-msgstr "Mars"
+msgstr "mars"
 
 #: widgets/utils.py:38
 msgid "April"
-msgstr "April"
+msgstr "april"
 
 #: widgets/utils.py:39
 msgid "May"
-msgstr "Maj"
+msgstr "maj"
 
 #: widgets/utils.py:40
 msgid "June"
-msgstr "Juni"
+msgstr "juni"
 
 #: widgets/utils.py:41
 msgid "July"
-msgstr "Juni"
+msgstr "juli"
 
 #: widgets/utils.py:42
 msgid "August"
-msgstr "Augusti"
+msgstr "augusti"
 
 #: widgets/utils.py:43
 msgid "September"
-msgstr "September"
+msgstr "september"
 
 #: widgets/utils.py:44
 msgid "October"
-msgstr "Oktober"
+msgstr "oktober"
 
 #: widgets/utils.py:45
 msgid "November"
-msgstr "November"
+msgstr "november"
 
 #: widgets/utils.py:46
 msgid "December"
-msgstr "December"
+msgstr "december"
 
 #: widgets/utils.py:173
 #, python-format
@@ -162,7 +162,7 @@ msgstr "Idag"
 #: widgets/templates/day.mako:21 widgets/templates/month.mako:15
 #: widgets/templates/week.mako:18
 msgid "Month Calendar..."
-msgstr "Månadskalender"
+msgstr "Månadskalender..."
 
 #: widgets/templates/day.mako:22 widgets/templates/month.mako:15
 #: widgets/templates/week.mako:19

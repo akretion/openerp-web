@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2011-03-18 11:53+0100\n"
-"PO-Revision-Date: 2012-04-24 10:33+0000\n"
+"PO-Revision-Date: 2012-06-25 11:44+0000\n"
 "Last-Translator: Anders Wallenquist <anders.wallenquist@vertel.se>\n"
 "Language-Team: sv <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-20 05:03+0000\n"
-"X-Generator: Launchpad (build 15435)\n"
+"X-Launchpad-Export-Date: 2012-06-26 05:40+0000\n"
+"X-Generator: Launchpad (build 15482)\n"
 "Generated-By: Babel None\n"
 
 #: validators.py:75
@@ -72,7 +72,7 @@ msgstr "Ange ett heltal"
 
 #: validators.py:261
 msgid "Please enter a number"
-msgstr "Ange ett numeriskt värde"
+msgstr "Ange nummer"
 
 #: controllers/actions.py:94
 msgid "Invalid View"
@@ -118,7 +118,7 @@ msgstr "Skapa"
 
 #: controllers/database.py:68
 msgid "Super admin password:"
-msgstr "Super admin lösenord:"
+msgstr "Superadmin lösenord:"
 
 #: controllers/database.py:68
 msgid ""
@@ -127,7 +127,7 @@ msgid ""
 "did not changed it, the password is 'admin' after installation."
 msgstr ""
 "Detta lösenord ger rätt att administrera databaserna. Detta är inte någon "
-"OpenERP-användare, bara en super administratör.  Om du inte ändrade det är "
+"OpenERP-användare, bara en superadministratör.  Om du inte ändrade det är "
 "lösenordet 'admin' direkt efter installationen."
 
 #: controllers/database.py:69 controllers/database.py:101
@@ -157,7 +157,7 @@ msgstr ""
 
 #: controllers/database.py:71
 msgid "Default Language:"
-msgstr "Standard språk:"
+msgstr "Standardspråk:"
 
 #: controllers/database.py:71
 msgid ""
@@ -170,7 +170,7 @@ msgstr ""
 
 #: controllers/database.py:72
 msgid "Administrator password:"
-msgstr "Admonistratörs lösenord:"
+msgstr "Admonistratörslösenord:"
 
 #: controllers/database.py:72
 msgid ""
@@ -181,7 +181,7 @@ msgstr ""
 
 #: controllers/database.py:73
 msgid "Confirm password:"
-msgstr "Upprepa lösenord:"
+msgstr "Bekräfta lösenordet:"
 
 #: controllers/database.py:73
 msgid ""
@@ -221,11 +221,11 @@ msgstr "Säkerhetskopia"
 
 #: controllers/database.py:96
 msgid "Restore database"
-msgstr "Läs tillbaka databas"
+msgstr "Återställ databasen"
 
 #: controllers/database.py:98 controllers/templates/database.mako:62
 msgid "Restore"
-msgstr "Läsa tillbaka"
+msgstr "Återställ"
 
 #: controllers/database.py:99
 msgid "File:"
@@ -233,11 +233,11 @@ msgstr "Fil:"
 
 #: controllers/database.py:105
 msgid "Change Administrator Password"
-msgstr "Ändra administratörs lösenord"
+msgstr "Ändra administratörslösenord"
 
 #: controllers/database.py:107 controllers/templates/preferences/index.mako:37
 msgid "Change Password"
-msgstr "Byt lösenord"
+msgstr "Ändra lösenord"
 
 #: controllers/database.py:108
 msgid "Old Password:"
@@ -249,7 +249,7 @@ msgstr "Nytt lösenord:"
 
 #: controllers/database.py:110
 msgid "Confirm Password:"
-msgstr "Godkänn lösenord:"
+msgstr "Bekräfta lösenord:"
 
 #: controllers/database.py:173
 msgid "You must avoid all accents, space or special characters."
@@ -274,11 +274,11 @@ msgstr "Fel när databasen skulle skapas"
 #: controllers/database.py:198 controllers/database.py:225
 #: controllers/database.py:271 controllers/database.py:294
 msgid "Bad super admin password"
-msgstr "Fel super admin lösenord"
+msgstr "Fel superadminlösenord"
 
 #: controllers/database.py:202
 msgid "Could not create database."
-msgstr "Kan inte skapa databas."
+msgstr "Kunde inte skapa databas."
 
 #: controllers/database.py:228
 msgid "Could not drop database"
@@ -286,11 +286,11 @@ msgstr "Kan inte makulera databasen"
 
 #: controllers/database.py:251
 msgid "Could not create backup."
-msgstr "Kan inte skapa databasen."
+msgstr "Kan inte skapa säkerhetskopia."
 
 #: controllers/database.py:275
 msgid "Could not restore database"
-msgstr "Kan inte läsa tillbaka databasen"
+msgstr "Kunde inte återläsa databasen"
 
 #: controllers/database.py:298
 msgid "Error, password not changed."
@@ -329,16 +329,16 @@ msgstr "Skriv ut skärmen"
 #: controllers/form.py:1016 widgets/listgrid.py:305 widgets/listgrid.py:366
 #: widgets/form/_form.py:910
 msgid "Application Error"
-msgstr "Applikationsfel"
+msgstr "Programfel"
 
 #: controllers/form.py:1016
 #, python-format
 msgid "Wrong on_change trigger: %s"
-msgstr "Felaktig on_change trigger: %s"
+msgstr "Felaktig on_change utlösare: %s"
 
 #: controllers/form.py:1121
 msgid "Open resource"
-msgstr "Ledig resurs"
+msgstr "Öppen resurs"
 
 #: controllers/form.py:1124
 msgid "Set to default value"
@@ -384,11 +384,13 @@ msgstr "Input fel."
 #, python-format
 msgid "You cannot import the field '%s', because we cannot auto-detect it"
 msgstr ""
+"Du kan inte importera fältet '%s', därför att vi inte kan automat-detektera "
+"det"
 
 #: controllers/impex.py:501
 #, python-format
 msgid "Error processing the first line of the file. Field \"%s\" is unknown"
-msgstr ""
+msgstr "Fel vid hanteringen av filens första rad. Fält '%s' är okänt"
 
 #: controllers/impex.py:72 controllers/impex.py:501
 msgid "Import Error."
@@ -396,7 +398,7 @@ msgstr "Importfel"
 
 #: controllers/impex.py:520
 msgid "The CSV delimiter must be a single character"
-msgstr ""
+msgstr "CSV-avskiljaren måste vara en enskild karaktär"
 
 #: controllers/impex.py:532
 msgid "File Format Error"
@@ -414,11 +416,11 @@ msgstr "Importerade %d objekt"
 #: controllers/impex.py:560
 #, python-format
 msgid "Error trying to import this record:%s. ErrorMessage:%s %s"
-msgstr ""
+msgstr "Fel vid försök att importera denna post: %s. Felmeddelande: %s %s"
 
 #: controllers/impex.py:561
 msgid "ImportationError"
-msgstr ""
+msgstr "Importfel"
 
 #: controllers/listgrid.py:52
 msgid "Parent record doesn't exists..."
@@ -446,7 +448,7 @@ msgstr "Kunde inte ändra ditt lösenord."
 
 #: controllers/preferences.py:105
 msgid "Original password incorrect, your password was not changed."
-msgstr ""
+msgstr "Ursprungligt lösenord felaktigt, lösenordet inte bytt."
 
 #: controllers/root.py:174
 #, python-format
@@ -596,6 +598,14 @@ msgid ""
 "                    project management, production, services, CRM, etc..\n"
 "                    "
 msgstr ""
+"%(openobject)s är ett fri  företagsanpassat programvara vars syfte är att "
+"öka\n"
+"                    produktivitet och vinst genom dataintegration. Den "
+"ansluter, förbättrar\n"
+"                    affärsprocesser inom områden som försäljning, finans, "
+"logistik, \n"
+"                    projektstöd, produktion, tjänster, CRM etc...\n"
+"                    "
 
 #: controllers/templates/about.mako:51
 msgid ""
@@ -608,6 +618,15 @@ msgid ""
 "                    production system and migration to a new version to be "
 "straightforward."
 msgstr ""
+"Systemet är plattformoberoende, och kan installeras på Windows, Mac OS X, \n"
+"                                                                             "
+"              och olika Linux och andra Unix-baserade distributioner. "
+"Arkitekturen tillåter\n"
+"                                                                             "
+"              att snabbt skapa nya funktioner, ändringar under drift i "
+"produktions-\n"
+"                                                                             "
+"              system och enkel migrering till en senare version."
 
 #: controllers/templates/about.mako:57
 msgid ""
@@ -653,7 +672,7 @@ msgstr ""
 
 #: controllers/templates/error_page.mako:104
 msgid "Summary of the problem:"
-msgstr ""
+msgstr "Problemsummering:"
 
 #: controllers/templates/error_page.mako:111
 msgid "Explain what you did:"
@@ -704,7 +723,7 @@ msgstr "Exportera data"
 
 #: controllers/templates/exp.mako:166
 msgid "Export Type:"
-msgstr ""
+msgstr "Exporttyp:"
 
 #: controllers/templates/exp.mako:169
 msgid "Import Compatible Export"
@@ -992,7 +1011,7 @@ msgstr "2. Kontrollera ditt filformat"
 #: controllers/templates/imp.mako:130
 #, python-format
 msgid "The import failed due to: %(message)s"
-msgstr ""
+msgstr "Importen misslyckades pga: %(message)s"
 
 #: controllers/templates/imp.mako:132
 msgid "Here is a preview of the file we could not import:"
@@ -1143,7 +1162,7 @@ msgstr "Sök"
 #: controllers/templates/search.mako:143
 #, python-format
 msgid "No record found : '%(searched_string)s'."
-msgstr ""
+msgstr "Inga poster funna : '%(searched_string)s'."
 
 #: controllers/templates/selection.mako:4
 msgid "Select action"
@@ -1299,7 +1318,7 @@ msgstr "Sökvy..."
 
 #: widgets/listgrid.py:305
 msgid "Wrong on_change trigger"
-msgstr ""
+msgstr "Fel on_change utlösare"
 
 #: widgets/listgrid.py:368 widgets/form/_form.py:904
 #, python-format
