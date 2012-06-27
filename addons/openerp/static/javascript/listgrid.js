@@ -49,6 +49,7 @@ ListView.prototype = {
         this.view_id = jQuery('[id="'+prefix + '_terp_view_id'+'"]').get() ? jQuery('[id="'+prefix + '_terp_view_id'+'"]').val() : null;
         this.view_mode = jQuery('[id*="'+prefix + '_terp_view_mode'+'"]').get() ? jQuery('[id*="'+prefix + '_terp_view_mode'+'"]').val() : null;
         this.view_type = jQuery('[id*="'+prefix + '_terp_view_type'+'"]').get() ? jQuery('[id*="'+prefix + '_terp_view_type'+'"]').val() : null;
+        this.context = jQuery('[id*="'+prefix + '_terp_context'+'"]').get() ? jQuery('[id*="'+prefix + '_terp_context'+'"]').val() : {};
 
         // if o2m
 
@@ -673,6 +674,7 @@ MochiKit.Base.update(ListView.prototype, {
         args['_terp_ids'] = $terp_ids.val()
         args['_terp_model'] = this.model;
         args['_terp_id'] = ids;
+        args['_terp_context'] = this.context
         var req = openobject.http.postJSON('/openerp/listgrid/remove', args);
 
         req.addCallback(function(obj) {
