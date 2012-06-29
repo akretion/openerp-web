@@ -280,7 +280,11 @@ function onBooleanClicked(name){
         name = name.slice(0, name.indexOf('_checkbox_'))
     }
     var $source = jQuery(openobject.dom.get(name + '_checkbox_'));
-    var $target = jQuery(openobject.dom.get(name));
+    if(name.indexOf('_terp_listfields') > -1) {
+        var $target = jQuery(idSelector(name)).filter(':hidden')
+    }else{
+        var $target = jQuery(openobject.dom.get(name));
+    }
     $target.val($source.is(':checked') ? 1 : '').change();
 }
 
