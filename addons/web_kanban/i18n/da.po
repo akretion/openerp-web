@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: openerp-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-29 17:46+0200\n"
-"PO-Revision-Date: 2012-07-01 08:57+0000\n"
+"PO-Revision-Date: 2012-07-01 08:56+0000\n"
 "Last-Translator: Aputsiaq Niels Janussen <aj@isit.gl>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,11 +18,36 @@ msgstr ""
 "X-Generator: Launchpad (build 15520)\n"
 
 #. openerp-web
-#: addons/web_gantt/static/src/js/gantt.js:11
-msgid "Gantt"
-msgstr "Gantt"
+#: addons/web_kanban/static/src/js/kanban.js:10
+msgid "Kanban"
+msgstr "Kanban"
 
 #. openerp-web
-#: addons/web_gantt/static/src/xml/web_gantt.xml:10
+#: addons/web_kanban/static/src/js/kanban.js:293
+msgid "Undefined"
+msgstr "Ikke defineret"
+
+#. openerp-web
+#: addons/web_kanban/static/src/js/kanban.js:468
+msgid "Are you sure you want to delete this record ?"
+msgstr ""
+
+#. openerp-web
+#: addons/web_kanban/static/src/xml/web_kanban.xml:5
 msgid "Create"
 msgstr "Opret"
+
+#. openerp-web
+#: addons/web_kanban/static/src/xml/web_kanban.xml:41
+msgid "Show more... ("
+msgstr ""
+
+#. openerp-web
+#: addons/web_kanban/static/src/xml/web_kanban.xml:41
+msgid "remaining)"
+msgstr ""
+
+#. openerp-web
+#: addons/web_kanban/static/src/xml/web_kanban.xml:59
+msgid "</tr><tr>"
+msgstr "</tr><tr>"
