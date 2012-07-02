@@ -666,8 +666,8 @@ ManyToOne.prototype.getOnclick = function(evt) {
         var $this;
         if(this == $) $this = $(window);
         else $this = $(this);
-        if(window != window.top) {
-            return window.top.jQuery.m2o.apply($this[0], arguments);
+        if(window != window.parent) {
+            return window.parent.jQuery.m2o.apply($this[0], arguments);
         }
         // We're at the top-level window, $this is the window from which the
         // original $.m2o call was performed, window being the current window

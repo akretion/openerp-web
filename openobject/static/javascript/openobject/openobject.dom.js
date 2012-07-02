@@ -144,8 +144,14 @@ function idSelector(nodeId) {
         var $this;
         if(this == $) $this = $(window);
         else $this = $(this);
-        if(window != window.top) {
-            return window.top.jQuery.frame_dialog.apply($this[0], arguments);
+        var form_controller = window.form_controller;
+        var is_root_window = false;
+        if (form_controller == '/openerp/openm2o' || form_controller == '/openerp/search/new') {
+            // stop unstacking window on M2O popup window, Search window 'New'
+            is_root_window = true;
+        }
+        if(window != window.parent && !is_root_window) {
+            return window.parent.jQuery.frame_dialog.apply($this[0], arguments);
         }
         return open($this, frame_attrs, data, options);
     }

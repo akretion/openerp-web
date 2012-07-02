@@ -190,6 +190,7 @@ One2Many.prototype = {
             _terp_parent_view_id: this.parent_view_id,
             _terp_o2m: o2m_name ? o2m_name : this.name,
             _terp_o2m_model: this.model,
+            _terp_o2m_fullname: this.name,
             _terp_parent_view_type: this.parent_view_type,
             _terp_editable: readonly ? 0 : 1,
             _terp_m2o: this.m2o
@@ -276,7 +277,7 @@ One2Many.prototype = {
             id: frame_identifier,
             name: frame_identifier
         }, {'source-window': $this[0],
-            'list': options['_terp_o2m']
+            'list': options['_terp_o2m_fullname']
         }, {
             width: '70%',
             height: '90%',
@@ -391,8 +392,14 @@ One2Many.prototype = {
         var $this;
         if(this == $) $this = $(window);
         else $this = $(this);
-        if(window != window.top) {
-            return window.top.jQuery.o2m.apply($this[0], arguments);
+        var form_controller = window.form_controller;
+        var is_root_window = false;
+        if (form_controller == '/openerp/openm2o' || form_controller == '/openerp/search/new') {
+            // stop unstacking window on M2O popup window
+            is_root_window = true;
+        }
+        if(window != window.parent && !is_root_window) {
+            return window.parent.jQuery.o2m.apply($this[0], arguments);
         }
         // We're at the top-level window, $this is the window from which the
         // original $.o2m call was performed, window being the current window
