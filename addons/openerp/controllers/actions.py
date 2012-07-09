@@ -350,6 +350,9 @@ def act_window_opener(action, data):
             cherrypy.response.headers['active_id'] = cherrypy.request.params.get('_terp_id')\
             or cherrypy.request.params.context.get('active_id')
 
+    # when action 'open a new tab', make sure we follow 'nodestroy' flag, if set.
+    no_destroy = (action.get('nodestroy') and open_new_tab) and 'true' or 'false'
+
     # Add 'opened' mark to indicate we're now within the popup and can
     # continue on during the second round of execution
     payload = str({
@@ -370,11 +373,12 @@ def act_window_opener(action, data):
         url = '/?' + urllib.urlencode({'next': url})
         
     cherrypy.response.headers['X-Target'] = action['target']
+    cherrypy.response.headers['X-No-Destroy'] = no_destroy
     cherrypy.response.headers['Location'] = url
     return """<script type="text/javascript">
-        window.top.openAction('%s', '%s');
+        window.top.openAction('%s', '%s', false, %s);
     </script>
-    """ % (url, action['target'])
+    """ % (url, action['target'], no_destroy)
 
 def execute(action, **data):
     """Execute the action with the provided data. for internal use only.
