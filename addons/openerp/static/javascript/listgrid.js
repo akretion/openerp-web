@@ -244,46 +244,50 @@ MochiKit.Base.update(ListView.prototype, {
                 sort_key = check_order[i];
             }
         }
-        if (group_by_context == '[]') {
-            jQuery('#' + record + '[parent_grp_id="' + id + '"]').toggle();
-        } else {
-            if (jQuery(group).hasClass('group-expand')) {
-                // get listview selectable value, so we know if we are in
-                // simple or multiple selection mode
-                var selectable = openobject.dom.get('_terp_selectable');
-                if (selectable) {
-                    selectable = selectable.value
-                }
-                jQuery.ajax({
-                    url: '/openerp/listgrid/multiple_groupby',
-                    type: 'POST',
-                    data: { 'model': this.model, 'name': this.name,
-                            'grp_domain': domain, 'group_by': group_by_context,
-                            'view_id': this.view_id,
-                            'view_type': this.view_type,
-                            'parent_group': record,
-                            'group_level': jQuery(group).index() + 1,
-                            'groups': total_groups,
-                            'no_leaf': no_leaf,
-                            'sort_order': sort_order,
-                            'sort_key': sort_key,
-                            '_terp_editable': openobject.dom.get('_terp_editable').value,
-                            '_terp_selectable': selectable,
-                            '_terp_context': openobject.dom.get('_terp_context').value},
-                    dataType: 'html',
-                    success: function(xmlHttp) {
-                        $group_record.after(xmlHttp);
-                    }
-                });
-            } else {
-                jQuery('[parent="' + record + '"]').each(function() {
-                    var parent_id = jQuery('[parent="' + record + '"]').attr('records');
-                    if (jQuery('[parent="' + parent_id + '"]').length > 0) {
-                        jQuery('[parent="' + parent_id + '"]').remove();
-                    }
-                    jQuery(this).remove();
-                })
+        if (group_by_context == '[]' && this.sort_order) {
+            sort_order = this.sort_order;
+            sort_key = this.sort_key;
+        }
+
+        if (jQuery(group).hasClass('group-expand')) {
+            // get listview selectable value, so we know if we are in
+            // simple or multiple selection mode
+            var selectable = openobject.dom.get('_terp_selectable');
+            if (selectable) {
+                selectable = selectable.value
             }
+            jQuery.ajax({
+                url: '/openerp/listgrid/multiple_groupby',
+                type: 'POST',
+                data: { 'model': this.model, 'name': this.name,
+                        'grp_domain': domain, 'group_by': group_by_context,
+                        'view_id': this.view_id,
+                        'view_type': this.view_type,
+                        'parent_group': record,
+                        'group_level': jQuery(group).index() + 1,
+                        'groups': total_groups,
+                        'no_leaf': no_leaf,
+                        'sort_order': sort_order,
+                        'sort_key': sort_key,
+                        '_terp_editable': openobject.dom.get('_terp_editable').value,
+                        '_terp_selectable': selectable,
+                        '_terp_context': openobject.dom.get('_terp_context').value,
+		    //'_terp_offset': openobject.dom.get('_terp_offset').value, // we force offset to 0 for multiple_groupby calls
+		    '_terp_limit': openobject.dom.get('_terp_limit').value,
+	    },
+                dataType: 'html',
+                success: function(xmlHttp) {
+                    $group_record.after(xmlHttp);
+                }
+            });
+        } else {
+            jQuery('[parent="' + record + '"]').each(function() {
+                var parent_id = jQuery('[parent="' + record + '"]').attr('records');
+                if (jQuery('[parent="' + parent_id + '"]').length > 0) {
+                    jQuery('[parent="' + parent_id + '"]').remove();
+                }
+                jQuery(this).remove();
+            })
         }
 
         jQuery(group).toggleClass('group-collapse group-expand');
