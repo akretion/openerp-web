@@ -77,7 +77,7 @@ def parse_groups(group_by, grp_records, headers, ids, model,  offset, limit, con
                     inner[key] = CELLTYPES[kind](value=grp.get(key), **head)
         grouped.append(inner)
 
-    child = len(group_by) == 1
+    child = len(group_by) == 0
     digits = (16,2)
     if fields:
         for key, val in fields.items():
