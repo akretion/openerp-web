@@ -162,8 +162,8 @@ class List(TinyWidget):
         if name != '_terp_list':
             self.source = self.name.replace('/', '/') or None
         
-        self.sort_order = ''
-        self.sort_key = ''
+        self.sort_order = kw.get('sort_order', '')
+        self.sort_key = kw.get('sort_key', '')
         #this Condition is for Dashboard to avoid new, edit, delete operation
         self.dashboard = 0
         
