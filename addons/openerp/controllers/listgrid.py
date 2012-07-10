@@ -189,12 +189,17 @@ class List(SecuredController):
         selectable = params.selectable or 2
         context = params.context or {}
         context.update({'group_by_no_leaf': int(no_leaf), 'group_by': group_by, '__domain': domain})
+        # we force offset to 0, as in group_by mode only 'limit' have an effect
+        # (offset pagination in only for base grouping - which is handled by ListGroup)
+        offset = 0
+        limit = params.limit or 20
         args = {'editable': editable,
                 'view_mode': ['tree', 'form', 'calendar', 'graph'],
                 'nolinks': 1, 'group_by_ctx': group_by,
                 'selectable': selectable,
                 'multiple_group_by': True,
                 'sort_key': kw.get('sort_key'),
+                'offset': offset, 'limit': limit,
                 'sort_order': kw.get('sort_order')}
 
         listgrp = listgroup.MultipleGroup(name, model, view, ids=None, domain= domain, parent_group=parent_group, group_level=group_level, groups=groups, context=context, **args)
