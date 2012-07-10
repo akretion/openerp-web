@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: openerp-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-29 17:46+0200\n"
-"PO-Revision-Date: 2012-07-07 10:52+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2012-07-09 15:04+0000\n"
+"Last-Translator: Konstantin Draginov <kdraginov@gmail.com>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-08 05:00+0000\n"
+"X-Launchpad-Export-Date: 2012-07-10 05:54+0000\n"
 "X-Generator: Launchpad (build 15558)\n"
 
 #. openerp-web
@@ -25,7 +25,7 @@ msgstr ""
 #: addons/web/static/src/js/view_form.js:1665
 #: addons/web/static/src/xml/base.xml:1641
 msgid "Ok"
-msgstr ""
+msgstr "ОК"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:178
@@ -35,60 +35,60 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:192
 msgid "Dont send"
-msgstr ""
+msgstr "Не изпращай"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:253
 #, python-format
 msgid "Loading (%d)"
-msgstr ""
+msgstr "Зареждане (%d)"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:276
 msgid "Invalid database name"
-msgstr ""
+msgstr "Невалидно име на база данни"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:393
 msgid "Create database"
-msgstr ""
+msgstr "Създаване на база данни"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:395
 #, python-format
 msgid "Database \"%s\" already exist"
-msgstr ""
+msgstr "База данни \"%s\" вече съществува"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:402
 msgid "Backed"
-msgstr ""
+msgstr "Архивиран"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:402
 msgid "Database backed up successfully"
-msgstr ""
+msgstr "Успешно архивиране на база данни"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:442
 msgid "Restored"
-msgstr ""
+msgstr "Възстановeн"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:442
 msgid "Database restored successfully"
-msgstr ""
+msgstr "База данни възстановена успешно"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:839
 msgid "About"
-msgstr ""
+msgstr "Относно"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:809
 #: addons/web/static/src/xml/base.xml:326
 msgid "Preferences"
-msgstr ""
+msgstr "Настройки"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:813
@@ -99,12 +99,12 @@ msgstr ""
 #: addons/web/static/src/xml/base.xml:1468
 #: addons/web/static/src/xml/base.xml:1478
 msgid "Cancel"
-msgstr ""
+msgstr "Отказ"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:812
 msgid "Change password"
-msgstr ""
+msgstr "Смяна на парола"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:814
@@ -113,14 +113,14 @@ msgstr ""
 #: addons/web/static/src/xml/base.xml:1384
 #: addons/web/static/src/xml/base.xml:1472
 msgid "Save"
-msgstr ""
+msgstr "Запис"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:735
 #: addons/web/static/src/xml/base.xml:259
 #: addons/web/static/src/xml/base.xml:367
 msgid "Change Password"
-msgstr ""
+msgstr "Смяна на парола"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:856
@@ -131,12 +131,12 @@ msgstr ""
 #: addons/web/static/src/js/chrome.js:212
 #: addons/web/static/src/js/chrome.js:914
 msgid "Client Error"
-msgstr ""
+msgstr "Грешка в клиента"
 
 #. openerp-web
 #: addons/web/static/src/js/data_export.js:6
 msgid "Export Data"
-msgstr ""
+msgstr "Експорт на данни"
 
 #. openerp-web
 #: addons/web/static/src/js/data_export.js:19
@@ -147,42 +147,42 @@ msgstr ""
 #: addons/web/static/src/js/view_form.js:3901
 #: addons/web/static/src/js/views.js:900
 msgid "Close"
-msgstr ""
+msgstr "Затваряне"
 
 #. openerp-web
 #: addons/web/static/src/js/data_export.js:20
 msgid "Export To File"
-msgstr ""
+msgstr "Експорт към файл"
 
 #. openerp-web
 #: addons/web/static/src/js/data_export.js:125
 msgid "Please enter save field list name"
-msgstr ""
+msgstr "Моля, въведете име на списъка с избраните полета"
 
 #. openerp-web
 #: addons/web/static/src/js/data_export.js:360
 msgid "Please select fields to save export list..."
-msgstr ""
+msgstr "Моля, изберете полета за запис в списъка за експорт..."
 
 #. openerp-web
 #: addons/web/static/src/js/data_export.js:373
 msgid "Please select fields to export..."
-msgstr ""
+msgstr "Изберете полета за експорт..."
 
 #. openerp-web
 #: addons/web/static/src/js/data_import.js:34
 msgid "Import Data"
-msgstr ""
+msgstr "Импортиране на данни"
 
 #. openerp-web
 #: addons/web/static/src/js/data_import.js:71
 msgid "Import File"
-msgstr ""
+msgstr "Импорт на файл"
 
 #. openerp-web
 #: addons/web/static/src/js/data_import.js:106
 msgid "External ID"
-msgstr ""
+msgstr "Външен ID"
 
 #. openerp-web
 #: addons/web/static/src/js/data_import.js:346
@@ -190,34 +190,36 @@ msgid ""
 "Destination fields should only be selected once, some fields are selected "
 "more than once:"
 msgstr ""
+"Назначените полета могат да бъдат избирани само введнъж, някои полета са "
+"избрани повече от един път:"
 
 #. openerp-web
 #: addons/web/static/src/js/data_import.js:383
 msgid "*Required Fields are not selected :"
-msgstr ""
+msgstr "*Задължителните полета не са избрани :"
 
 #. openerp-web
 #: addons/web/static/src/js/formats.js:141
 #, python-format
 msgid "(%d records)"
-msgstr ""
+msgstr "%d записи"
 
 #. openerp-web
 #: addons/web/static/src/js/formats.js:327
 #: addons/web/static/src/js/view_form.js:4301
 msgid "Download"
-msgstr ""
+msgstr "Изтегляне"
 
 #. openerp-web
 #: addons/web/static/src/js/formats.js:332
 #, python-format
 msgid "Download \"%s\""
-msgstr ""
+msgstr "Изтегляне \"%s\""
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:193
 msgid "Filter disabled due to invalid syntax"
-msgstr ""
+msgstr "Филтъра е дезактивиран поради невалиден синтаксис"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:239
@@ -228,28 +230,29 @@ msgstr ""
 #: addons/web/static/src/js/search.js:244
 #: addons/web/static/src/js/search.js:303
 msgid "OK"
-msgstr ""
+msgstr "ОК"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1392
 msgid "Add to Dashboard"
-msgstr ""
+msgstr "Добави към таблото"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:798
 msgid "Invalid Search"
-msgstr ""
+msgstr "Невалидно търсене"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:798
 msgid "triggered from search view"
-msgstr ""
+msgstr "Започнато от изгледа за търсене"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:839
 #, python-format
 msgid "Incorrect value for field %(fieldname)s: [%(value)s] is %(message)s"
 msgstr ""
+"Некоректна стойност за поле %(fieldname)s: [%(value)s] is %(message)s"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1301
@@ -265,22 +268,22 @@ msgstr ""
 #: addons/web/static/src/js/search.js:1398
 #: addons/web/static/src/xml/base.xml:840
 msgid "Yes"
-msgstr ""
+msgstr "Да"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1399
 msgid "No"
-msgstr ""
+msgstr "Не"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1888
 msgid "contains"
-msgstr ""
+msgstr "съдържа"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1889
 msgid "doesn't contain"
-msgstr ""
+msgstr "не съдържа"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1890
@@ -288,7 +291,7 @@ msgstr ""
 #: addons/web/static/src/js/search.js:1928
 #: addons/web/static/src/js/search.js:1952
 msgid "is equal to"
-msgstr ""
+msgstr "е равно на"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1891
@@ -296,35 +299,35 @@ msgstr ""
 #: addons/web/static/src/js/search.js:1929
 #: addons/web/static/src/js/search.js:1953
 msgid "is not equal to"
-msgstr ""
+msgstr "не е равно на"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1902
 #: addons/web/static/src/js/search.js:1930
 #: addons/web/static/src/js/search.js:1954
 msgid "greater than"
-msgstr ""
+msgstr "по-голямо от"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1903
 #: addons/web/static/src/js/search.js:1931
 #: addons/web/static/src/js/search.js:1955
 msgid "less than"
-msgstr ""
+msgstr "по-малко от"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1904
 #: addons/web/static/src/js/search.js:1932
 #: addons/web/static/src/js/search.js:1956
 msgid "greater or equal than"
-msgstr ""
+msgstr "по-голямо или равно на"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1905
 #: addons/web/static/src/js/search.js:1933
 #: addons/web/static/src/js/search.js:1957
 msgid "less or equal than"
-msgstr ""
+msgstr "по-малко или равно на"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1349
@@ -350,28 +353,28 @@ msgstr ""
 #: addons/web/static/src/js/search.js:1947
 #: addons/web/static/src/js/search.js:1973
 msgid "is"
-msgstr ""
+msgstr "е"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1974
 msgid "is not"
-msgstr ""
+msgstr "не е"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1988
 msgid "is true"
-msgstr ""
+msgstr "е вярно"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1989
 msgid "is false"
-msgstr ""
+msgstr "е грешно"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:20
 #, python-format
 msgid "Manage Views (%s)"
-msgstr ""
+msgstr "Управление на изгледи (%s)"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:46
@@ -380,7 +383,7 @@ msgstr ""
 #: addons/web/static/src/xml/base.xml:164
 #: addons/web/static/src/xml/base.xml:684
 msgid "Create"
-msgstr ""
+msgstr "Създаване"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:47
