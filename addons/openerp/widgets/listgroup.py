@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ###############################################################################
 #
 #  Copyright (C) 2007-TODAY OpenERP SA. All Rights Reserved.
@@ -226,7 +227,7 @@ class ListGroup(List):
 class MultipleGroup(List):
 
     template = "/openerp/widgets/templates/listgrid/multiple_group.mako"
-    params = ['grp_records', 'group_by_ctx', 'grouped', 'parent_group', 'group_level', 'group_by_no_leaf']
+    params = ['grp_records', 'grp_childs', 'group_by_ctx', 'grouped', 'parent_group', 'group_level', 'group_by_no_leaf']
 
     def __init__(self, name, model, view, ids=[], domain=[], parent_group=None, group_level=0, groups = [], context={}, **kw):
         self.context = context or {}
@@ -243,8 +244,8 @@ class MultipleGroup(List):
         self.link = kw.get('nolinks')
         self.parent_group = parent_group or None
         self.group_level = group_level or 0
-        sort_key = kw.get('sort_key')
-        sort_order = kw.get('sort_order')
+        sort_key = kw.get('sort_key') or ''
+        sort_order = kw.get('sort_order') or ''
         proxy = rpc.RPCProxy(model)
         if ids is None:
             if self.limit > 0:
@@ -276,11 +277,22 @@ class MultipleGroup(List):
             name=name, model=model, view=view, ids=self.ids, domain=self.domain,
             parent_group=parent_group, group_level=group_level, groups=groups, context=self.context, limit=self.limit,
             count=self.count,offset=self.offset, editable=self.editable,
-            selectable=self.selectable)
+            selectable=self.selectable, sort_order=sort_order, sort_key=sort_key)
 
         self.group_by_no_leaf = self.context.get('group_by_no_leaf', 0)
 
         self.group_by_ctx, self.hiddens, self.headers = parse(self.group_by_ctx, self.hiddens, self.headers, self.group_level, groups)
+
+        if not len(self.group_by_ctx):
+            # Display RAW records (i.e non grouped)
+            # NOTE: fetching of ids and data are done by List.__init__() - based on
+            #       provided domain, offset, limit, ... params
+            self.grp_childs = [{
+                'child_rec': self.data,
+                'groups_id': 'group_' + str(random.randrange(1, 10000)),
+                'group_by_id': parent_group,
+            }]
+            return
 
         self.grp_records = proxy.read_group(self.context.get('__domain', []),
                                                 fields.keys(), self.group_by_ctx, 0, False, self.context)
