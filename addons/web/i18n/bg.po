@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openerp-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-29 17:46+0200\n"
-"PO-Revision-Date: 2012-07-09 15:04+0000\n"
+"PO-Revision-Date: 2012-07-10 14:31+0000\n"
 "Last-Translator: Konstantin Draginov <kdraginov@gmail.com>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-10 05:54+0000\n"
-"X-Generator: Launchpad (build 15558)\n"
+"X-Launchpad-Export-Date: 2012-07-11 05:36+0000\n"
+"X-Generator: Launchpad (build 15593)\n"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:170
@@ -257,12 +257,12 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/js/search.js:1301
 msgid "not a valid integer"
-msgstr ""
+msgstr "не е валидно цяло число"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1315
 msgid "not a valid number"
-msgstr ""
+msgstr "не е валиден номер(брой)"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1398
@@ -337,7 +337,7 @@ msgstr "по-малко или равно на"
 #: addons/web/static/src/js/search.js:1430
 #: addons/web/static/src/js/search.js:1446
 msgid "is set"
-msgstr ""
+msgstr "е установен"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1350
@@ -347,7 +347,7 @@ msgstr ""
 #: addons/web/static/src/js/search.js:1431
 #: addons/web/static/src/js/search.js:1447
 msgid "is not set"
-msgstr ""
+msgstr "не е установен"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1947
@@ -390,187 +390,188 @@ msgstr "Създаване"
 #: addons/web/static/src/xml/base.xml:456
 #: addons/web/static/src/xml/base.xml:683
 msgid "Edit"
-msgstr ""
+msgstr "Редакция"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:48
 #: addons/web/static/src/xml/base.xml:1595
 msgid "Remove"
-msgstr ""
+msgstr "Премахване"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:72
 #, python-format
 msgid "Create a view (%s)"
-msgstr ""
+msgstr "Създаване на изглед (%s)"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:169
 msgid "Do you really want to remove this view?"
-msgstr ""
+msgstr "Сигурни ли сте, че искате да изтриете този изглед?"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:365
 #, python-format
 msgid "View Editor %d - %s"
-msgstr ""
+msgstr "Редактор на изглед %d - %s"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:368
 msgid "Inherited View"
-msgstr ""
+msgstr "Наследен изглед"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:372
 msgid "Do you really wants to create an inherited view here?"
-msgstr ""
+msgstr "Сигурни ли сте, че искате да създадете наследен изглед тук?"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:382
 msgid "Preview"
-msgstr ""
+msgstr "Преглед"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:502
 msgid "Do you really want to remove this node?"
-msgstr ""
+msgstr "Сигурни ли сте, че искате да премахнете този възел(разклонение) ?"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:811
 #: addons/web/static/src/js/view_editor.js:937
 msgid "Properties"
-msgstr ""
+msgstr "Свойства"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:814
 #: addons/web/static/src/js/view_editor.js:940
 msgid "Update"
-msgstr ""
+msgstr "Обновяване"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:43
 msgid "Form"
-msgstr ""
+msgstr "Форма"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:131
 #: addons/web/static/src/js/views.js:808
 msgid "Customize"
-msgstr ""
+msgstr "Персонализиране"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:149
 #: addons/web/static/src/js/view_form.js:885
 msgid "Set Default"
-msgstr ""
+msgstr "Установяване по подразбиране"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:657
 msgid ""
 "Warning, the record has been modified, your changes will be discarded."
 msgstr ""
+"Внимание, записът бе модифициран и вашите промени ще бъдат отхвърлени."
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:892
 msgid "Save default"
-msgstr ""
+msgstr "Запази по подразбиране"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:796
 msgid "Attachments"
-msgstr ""
+msgstr "Прикачени файлове"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:834
 #, python-format
 msgid "Do you really want to delete the attachment %s?"
-msgstr ""
+msgstr "Сигурни ли сте, че искате да изтриете прикачения файл %s?"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1402
 #, python-format
 msgid "Unknown operator %s in domain %s"
-msgstr ""
+msgstr "Непознат оператор %s в домейн %s"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1410
 #, python-format
 msgid "Unknown field %s in domain %s"
-msgstr ""
+msgstr "Непознато поле %s в домейн %s"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1448
 #, python-format
 msgid "Unsupported operator %s in domain %s"
-msgstr ""
+msgstr "Неподдържан оператор %s в домейн %s"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1657
 msgid "Confirm"
-msgstr ""
+msgstr "Потвърждаване"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1030
 #: addons/web/static/src/xml/base.xml:1082
 #: addons/web/static/src/xml/base.xml:1084
 msgid "Clear"
-msgstr ""
+msgstr "Изчистване"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1619
 msgid "Erase the current date"
-msgstr ""
+msgstr "Изтриване на текущата дата"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1620
 #: addons/web/static/src/js/view_form.js:1650
 msgid "Done"
-msgstr ""
+msgstr "Готово"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1621
 msgid "Close without change"
-msgstr ""
+msgstr "Затвори без промяна"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1622
 msgid "<Prev"
-msgstr ""
+msgstr "<Предишен"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1623
 msgid "Show the previous month"
-msgstr ""
+msgstr "Покажи предишният месец"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1624
 msgid "Next>"
-msgstr ""
+msgstr "Следващ>"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1625
 msgid "Show the next month"
-msgstr ""
+msgstr "Покажи следващият месец"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1626
 msgid "Today"
-msgstr ""
+msgstr "Днес"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1627
 msgid "Show the current month"
-msgstr ""
+msgstr "Покажи текущият месец"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1630
 msgid "Show a different month"
-msgstr ""
+msgstr "Покажи друг месец"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1631
 msgid "Show a different year"
-msgstr ""
+msgstr "Покажи друга година"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1632
@@ -580,7 +581,7 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1633
 msgid "Week of the year"
-msgstr ""
+msgstr "Седмица от годината"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1637
@@ -595,37 +596,37 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1640
 msgid "Select a date"
-msgstr ""
+msgstr "Избери дата"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1644
 msgid "Choose Time"
-msgstr ""
+msgstr "Избери време(час)"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1645
 msgid "Time"
-msgstr ""
+msgstr "Време(час)"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1646
 msgid "Hour"
-msgstr ""
+msgstr "Час"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1647
 msgid "Minute"
-msgstr ""
+msgstr "Минути"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1648
 msgid "Second"
-msgstr ""
+msgstr "Секунди"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1649
 msgid "Now"
-msgstr ""
+msgstr "Сега"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:2596
@@ -634,34 +635,34 @@ msgstr ""
 #: addons/web/static/src/js/view_form.js:3586
 #: addons/web/static/src/js/view_form.js:3702
 msgid "Open: "
-msgstr ""
+msgstr "Отвори: "
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:2478
 msgid "<em>   Search More...</em>"
-msgstr ""
+msgstr "<em>   Търси още...</em>"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:2488
 #, python-format
 msgid "<em>   Create \"<strong>%s</strong>\"</em>"
-msgstr ""
+msgstr "<em>   Създаване \"<strong>%s</strong>\"</em>"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:2494
 msgid "<em>   Create and Edit...</em>"
-msgstr ""
+msgstr "<em>   Създаване и редакция...</em>"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:2527
 msgid "Search: "
-msgstr ""
+msgstr "Търсене: "
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:2527
 #: addons/web/static/src/js/view_form.js:3210
 msgid "Create: "
-msgstr ""
+msgstr "Създаване: "
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:3517
@@ -669,65 +670,65 @@ msgstr ""
 #: addons/web/static/src/xml/base.xml:1184
 #: addons/web/static/src/xml/base.xml:1594
 msgid "Add"
-msgstr ""
+msgstr "Добавяне"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:3566
 #: addons/web/static/src/js/view_form.js:3684
 msgid "Add: "
-msgstr ""
+msgstr "Добавяне: "
 
 #. openerp-web
 #: addons/web/static/src/js/view_list.js:8
 msgid "List"
-msgstr ""
+msgstr "Списък"
 
 #. openerp-web
 #: addons/web/static/src/js/view_list.js:338
 msgid "Unlimited"
-msgstr ""
+msgstr "Неограничен"
 
 #. openerp-web
 #: addons/web/static/src/js/view_list.js:317
 #, python-format
 msgid "[%(first_record)d to %(last_record)d] of %(records_count)d"
-msgstr ""
+msgstr "[%(first_record)d до %(last_record)d] от %(records_count)d"
 
 #. openerp-web
 #: addons/web/static/src/js/view_list.js:436
 msgid "Group"
-msgstr ""
+msgstr "Група"
 
 #. openerp-web
 #: addons/web/static/src/js/view_list.js:623
 msgid "Do you really want to remove these records?"
-msgstr ""
+msgstr "Сигурни ли сте, че искате да изтриете тези записи?"
 
 #. openerp-web
 #: addons/web/static/src/js/view_list.js:1332
 msgid "Undefined"
-msgstr ""
+msgstr "Неопределен"
 
 #. openerp-web
 #: addons/web/static/src/js/view_list.js:1428
 #, python-format
 msgid "%(page)d/%(page_count)d"
-msgstr ""
+msgstr "%(page)d/%(page_count)d"
 
 #. openerp-web
 #: addons/web/static/src/js/view_page.js:8
 msgid "Page"
-msgstr ""
+msgstr "Страница"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:643
 msgid "Do you really want to delete this record?"
-msgstr ""
+msgstr "Сигурни ли сте, че искате да изтриете този запис?"
 
 #. openerp-web
 #: addons/web/static/src/js/view_tree.js:11
 msgid "Tree"
-msgstr ""
+msgstr "Дървовиден изглед"
 
 #. openerp-web
 #: addons/web/static/src/js/views.js:566 addons/web/static/src/xml/base.xml:452
@@ -744,194 +745,194 @@ msgstr ""
 #: addons/web/static/src/js/views.js:604
 #, python-format
 msgid "Model %s fields"
-msgstr ""
+msgstr "Модел %s полета"
 
 #. openerp-web
 #: addons/web/static/src/js/views.js:614 addons/web/static/src/xml/base.xml:455
 msgid "Manage Views"
-msgstr ""
+msgstr "Управление на изгледи"
 
 #. openerp-web
 #: addons/web/static/src/js/views.js:615
 msgid "Could not find current view declaration"
-msgstr ""
+msgstr "Не може да се намери актуална декларация на изгледа"
 
 #. openerp-web
 #: addons/web/static/src/js/views.js:726
 msgid "Translate"
-msgstr ""
+msgstr "Превод"
 
 #. openerp-web
 #: addons/web/static/src/js/views.js:726
 msgid "Technical translation"
-msgstr ""
+msgstr "Технически превод"
 
 #. openerp-web
 #: addons/web/static/src/js/views.js:816
 msgid "Other Options"
-msgstr ""
+msgstr "Други настройки"
 
 #. openerp-web
 #: addons/web/static/src/js/view_list.js:356
 #: addons/web/static/src/xml/base.xml:622
 #: addons/web/static/src/xml/base.xml:1657
 msgid "Import"
-msgstr ""
+msgstr "Импорт"
 
 #. openerp-web
 #: addons/web/static/src/js/view_list.js:357
 #: addons/web/static/src/xml/base.xml:1554
 msgid "Export"
-msgstr ""
+msgstr "Експорт"
 
 #. openerp-web
 #: addons/web/static/src/js/views.js:830
 msgid "Reports"
-msgstr ""
+msgstr "Доклади"
 
 #. openerp-web
 #: addons/web/static/src/js/views.js:830
 msgid "Actions"
-msgstr ""
+msgstr "Действия"
 
 #. openerp-web
 #: addons/web/static/src/js/views.js:830
 msgid "Links"
-msgstr ""
+msgstr "Връзки"
 
 #. openerp-web
 #: addons/web/static/src/js/views.js:820
 msgid "You must choose at least one record."
-msgstr ""
+msgstr "Трябва да изберете поне един запис."
 
 #. openerp-web
 #: addons/web/static/src/js/view_list.js:716
 #: addons/web/static/src/js/views.js:820
 msgid "Warning"
-msgstr ""
+msgstr "Внимание"
 
 #. openerp-web
 #: addons/web/static/src/js/views.js:894
 msgid "Translations"
-msgstr ""
+msgstr "Преводи"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:98 addons/web/static/src/xml/base.xml:389
 msgid "Powered by"
-msgstr ""
+msgstr "Осъществено от"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:98 addons/web/static/src/xml/base.xml:334
 msgid "OpenERP"
-msgstr ""
+msgstr "OpenERP"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:9
 msgid "Loading..."
-msgstr ""
+msgstr "Зареждане..."
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:131
 msgid "CREATE DATABASE"
-msgstr ""
+msgstr "СЪЗДАВАНЕ НА БАЗА ДАННИ"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:134
 #: addons/web/static/src/xml/base.xml:247
 msgid "Master password:"
-msgstr ""
+msgstr "Главна парола:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:138
 #: addons/web/static/src/xml/base.xml:233
 msgid "New database name:"
-msgstr ""
+msgstr "Ново име на база данни:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:142
 msgid "Load Demonstration data:"
-msgstr ""
+msgstr "Зареди демонстрационни данни:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:146
 msgid "Default language:"
-msgstr ""
+msgstr "Език по подразбиране:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:156
 msgid "Admin password:"
-msgstr ""
+msgstr "Администраторска парола:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:160
 msgid "Confirm password:"
-msgstr ""
+msgstr "Потвърждаване на парола:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:171
 msgid "DROP DATABASE"
-msgstr ""
+msgstr "ПРЕМАХВАНЕ НА БАЗА ДАННИ"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:84 addons/web/static/src/xml/base.xml:174
 #: addons/web/static/src/xml/base.xml:200
 msgid "Database:"
-msgstr ""
+msgstr "База данни:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:185
 #: addons/web/static/src/xml/base.xml:211
 #: addons/web/static/src/xml/base.xml:229
 msgid "Master Password:"
-msgstr ""
+msgstr "Главна парола:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:122
 #: addons/web/static/src/xml/base.xml:189
 msgid "Drop"
-msgstr ""
+msgstr "Премахване"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:197
 msgid "BACKUP DATABASE"
-msgstr ""
+msgstr "РЕЗЕРВНО КОПИЕ НА БАЗА ДАННИ"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:123
 #: addons/web/static/src/xml/base.xml:215
 msgid "Backup"
-msgstr ""
+msgstr "Резервно копие"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:222
 msgid "RESTORE DATABASE"
-msgstr ""
+msgstr "ВЪЗСТАНОВЯВАНЕ БАЗА ДАННИ"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:225
 msgid "File:"
-msgstr ""
+msgstr "Файл:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:124
 #: addons/web/static/src/xml/base.xml:237
 msgid "Restore"
-msgstr ""
+msgstr "Възстановяване"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:244
 msgid "CHANGE MASTER PASSWORD"
-msgstr ""
+msgstr "СМЯНА НА ГЛАВНА ПАРОЛА"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:251
 msgid "New master password:"
-msgstr ""
+msgstr "Нова главна парола:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:255
 msgid "Confirm new master password:"
-msgstr ""
+msgstr "Потвърждаване на нова главна парола:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:48
@@ -953,97 +954,97 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:54
 msgid "Your report will be sent to the OpenERP Enterprise team."
-msgstr ""
+msgstr "Вашият доклад бе изпратен до OpenERP Enterprise team."
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:56
 msgid "Summary:"
-msgstr ""
+msgstr "Сумарно:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:60
 msgid "Description:"
-msgstr ""
+msgstr "Описание:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:64
 msgid "What you did:"
-msgstr ""
+msgstr "Какво направихте:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:80
 msgid "Invalid username or password"
-msgstr ""
+msgstr "Невалидно потребителско име или парола"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:89
 msgid "Username"
-msgstr ""
+msgstr "Потребителско име"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:91 addons/web/static/src/xml/base.xml:125
 msgid "Password"
-msgstr ""
+msgstr "Парола"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:93
 msgid "Log in"
-msgstr ""
+msgstr "Вход"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:97
 msgid "Manage Databases"
-msgstr ""
+msgstr "Управление на бази данни"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:126
 msgid "Back to Login"
-msgstr ""
+msgstr "Обратно към вход"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:353
 msgid "Home"
-msgstr ""
+msgstr "Начало"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:363
 msgid "LOGOUT"
-msgstr ""
+msgstr "ИЗХОД"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:388
 msgid "Fold menu"
-msgstr ""
+msgstr "Сгънато меню"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:389
 msgid "Unfold menu"
-msgstr ""
+msgstr "Разгънато меню"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:454
 msgid "Hide this tip"
-msgstr ""
+msgstr "Скрий този съвет"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:455
 msgid "Disable all tips"
-msgstr ""
+msgstr "Дезактивирай всички съвети"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:463
 msgid "Add / Remove Shortcut..."
-msgstr ""
+msgstr "Добави / Премахни Пряк път..."
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:471
 msgid "More…"
-msgstr ""
+msgstr "Повече..."
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:448
 msgid "Debug View#"
-msgstr ""
+msgstr "Debug View#"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:449
@@ -1053,99 +1054,99 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:451
 msgid "View Fields"
-msgstr ""
+msgstr "Изглед Полета"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:456
 msgid "View"
-msgstr ""
+msgstr "Изглед"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:457
 msgid "Edit SearchView"
-msgstr ""
+msgstr "Редактиране изгледа за търсене"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:458
 msgid "Edit Action"
-msgstr ""
+msgstr "Редактиране на действието"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:459
 msgid "Edit Workflow"
-msgstr ""
+msgstr "Редактиране работен поток"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:464
 msgid "ID:"
-msgstr ""
+msgstr "ИД:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:467
 msgid "XML ID:"
-msgstr ""
+msgstr "XML ID:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:470
 msgid "Creation User:"
-msgstr ""
+msgstr "Създаване на потребител:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:473
 msgid "Creation Date:"
-msgstr ""
+msgstr "Задаване на дата:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:476
 msgid "Latest Modification by:"
-msgstr ""
+msgstr "Последна модификация от:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:479
 msgid "Latest Modification Date:"
-msgstr ""
+msgstr "Последна дата на модификация:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1159
 msgid "Field"
-msgstr ""
+msgstr "Поле"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:147
 #: addons/web/static/src/js/view_list.js:358
 #: addons/web/static/src/xml/base.xml:1653
 msgid "Delete"
-msgstr ""
+msgstr "Изтриване"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:148
 msgid "Duplicate"
-msgstr ""
+msgstr "Дублиране"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:775
 msgid "Add attachment"
-msgstr ""
+msgstr "Добави прикачен файл"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:704
 msgid "Default:"
-msgstr ""
+msgstr "По подразбиране:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:721
 msgid "Condition:"
-msgstr ""
+msgstr "Състояние:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:740
 msgid "Only you"
-msgstr ""
+msgstr "Само ти"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:747
 msgid "All users"
-msgstr ""
+msgstr "Всички потребители"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:797
@@ -1155,7 +1156,7 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:900
 msgid "Notebook Page \""
-msgstr ""
+msgstr "Страница Бележник \""
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:836
@@ -1170,17 +1171,17 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:808
 msgid "Field:"
-msgstr ""
+msgstr "Поле:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:812
 msgid "Object:"
-msgstr ""
+msgstr "Обект:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:816
 msgid "Type:"
-msgstr ""
+msgstr "Тип:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:820
@@ -1190,47 +1191,47 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:824
 msgid "Size:"
-msgstr ""
+msgstr "Размер:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:828
 msgid "Context:"
-msgstr ""
+msgstr "Контекст:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:832
 msgid "Domain:"
-msgstr ""
+msgstr "Домейн:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:840
 msgid "Change default:"
-msgstr ""
+msgstr "Промяна по подразбиране:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:844
 msgid "On change:"
-msgstr ""
+msgstr "При промяна:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:848
 msgid "Relation:"
-msgstr ""
+msgstr "Отношение:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:852
 msgid "Selection:"
-msgstr ""
+msgstr "Избор:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1021
 msgid "Send an e-mail with your default e-mail client"
-msgstr ""
+msgstr "Изпрати електронна поща с вашия  пощенски клиент"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:895
 msgid "Open this resource"
-msgstr ""
+msgstr "Отвори този ресурс"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:922
@@ -1240,51 +1241,51 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1092
 msgid "Open..."
-msgstr ""
+msgstr "Отваряне..."
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1093
 msgid "Create..."
-msgstr ""
+msgstr "Създаване..."
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1094
 msgid "Search..."
-msgstr ""
+msgstr "Търсене..."
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1097
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1026
 #: addons/web/static/src/xml/base.xml:1067
 msgid "Set Image"
-msgstr ""
+msgstr "Задай изображение"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1035
 #: addons/web/static/src/xml/base.xml:1092
 msgid "Uploading ..."
-msgstr ""
+msgstr "Качване(зареждане) ..."
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1069
 #: addons/web/static/src/xml/base.xml:1467
 msgid "Select"
-msgstr ""
+msgstr "Избор"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1075
 #: addons/web/static/src/xml/base.xml:1077
 msgid "Save As"
-msgstr ""
+msgstr "Запиши като"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1126
 msgid "Button"
-msgstr ""
+msgstr "Бутон"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1129
@@ -1294,17 +1295,17 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1136
 msgid "Special:"
-msgstr ""
+msgstr "Специален:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1141
 msgid "Button Type:"
-msgstr ""
+msgstr "Тип на бутона:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1145
 msgid "Method:"
-msgstr ""
+msgstr "Метод:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1149
@@ -1314,44 +1315,44 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1273
 msgid "Search"
-msgstr ""
+msgstr "Търсене"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1622
 #: addons/web/static/src/xml/base.xml:1229
 msgid "Filters"
-msgstr ""
+msgstr "Филтри"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1230
 msgid "-- Filters --"
-msgstr ""
+msgstr "-- Филтри --"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1239
 msgid "-- Actions --"
-msgstr ""
+msgstr "-- Действия --"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1240
 msgid "Add Advanced Filter"
-msgstr ""
+msgstr "Добави разширен филтър"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1241
 msgid "Save Filter"
-msgstr ""
+msgstr "Запазване на филтър"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:453
 #: addons/web/static/src/xml/base.xml:1242
 msgid "Manage Filters"
-msgstr ""
+msgstr "Управление на филтри"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1247
 msgid "Filter Name:"
-msgstr ""
+msgstr "Име на филтър:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1249
