@@ -203,6 +203,21 @@ function form_evalExpr(prefix, expr, ref_elem) {
         if (ref_elem.parents('table.grid').length) {
             var parent = ref_elem.parents('tr.grid-row');
             elem = parent.find(idSelector(prefix + ex[0]));
+
+            if (!elem || !elem.length) {
+                var parent_selector = '[name='+prefix + ex[0]+']';
+                elem = parent.find(parent_selector);
+            }
+
+            if (!elem || !elem.length) {
+                // try getting with _terp_listfields/TABLE_ID/FIELD_NAME
+                var parent_table_id = ref_elem.parents('table.grid')[0].id;
+                if (parent_table_id && parent_table_id.match('_grid$')) {
+                    parent_table_id = parent_table_id.slice(0, parent_table_id.length - 5);
+                }
+                var parent_relative_fieldname = '[name=_terp_listfields/' + parent_table_id + '/' + prefix + ex[0] + ']';
+                elem = parent.find(parent_relative_fieldname);
+            }
         }
         if (!elem || !elem.length) {
             elem = jQuery(idSelector(prefix + ex[0]));
