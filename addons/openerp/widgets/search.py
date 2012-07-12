@@ -116,7 +116,7 @@ class RangeWidget(TinyInputWidget):
 class Filter(TinyInputWidget):
     template = "/openerp/widgets/templates/search/filter.mako"
 
-    params = ['icon', 'filter_domain', 'help', 'filter_id', 'text_val', 'group_context', 'def_checked', 'filter_context']
+    params = ['icon', 'filter_name', 'filter_domain', 'help', 'filter_id', 'text_val', 'group_context', 'def_checked', 'filter_context', 'filter_status']
 
     def __init__(self, **attrs):
         super(Filter, self).__init__(**attrs)
@@ -127,6 +127,8 @@ class Filter(TinyInputWidget):
         self.filter_domain = attrs.get('domain', [])
         self.help = attrs.get('help')
         self.filter_id = 'filter_%s' % (random.randint(0,10000))
+        self.filter_name = attrs.get('name','')
+        self.filter_status = attrs.get('filter_status',{}).get(self.name)
         filter_context = attrs.get('context')
         screen_context = attrs.get('screen_context', {})
 
@@ -173,6 +175,12 @@ class Filter(TinyInputWidget):
         if not self.def_checked and attrs.get('group_by_ctx'):
             if self.group_context in attrs['group_by_ctx']:
                 self.def_checked = True
+
+        if self.filter_status is not None:
+            # if filter_status is defined that means user have manually
+            # check/unchecked the filter, so we override default choice
+            # by user's choice.
+            self.def_checked = bool(self.filter_status)
         
 class M2O_search(form.M2O):
     template = "/openerp/widgets/templates/search/many2one.mako"
@@ -194,6 +202,7 @@ class Search(TinyInputWidget):
         self.domain = copy.deepcopy(domain) or []
         self.listof_domain = domain or []
         self.filter_domain = filter_domain or []
+        self.filter_status = {}
         self.custom_filter_domain = []
         self.context = context or {}
         self.search_view = search_view or "{}"
@@ -214,6 +223,9 @@ class Search(TinyInputWidget):
         if not self.groupby and (values and values.get('group_by_ctx')):
             self.groupby = values['group_by_ctx']
         
+        if not self.filter_status and (values and values.get('filter_status')):
+            self.filter_status = values['filter_status']
+
         if isinstance (self.search_view, basestring):
             self.search_view = eval(self.search_view)
 
@@ -328,6 +340,9 @@ class Search(TinyInputWidget):
                     attrs['group_by_ctx'] = values['group_by_ctx']
                 elif self.groupby:
                     attrs['group_by_ctx'] = self.groupby
+
+                if values and values.get('filter_status'):
+                    attrs['filter_status'] = values['filter_status']
 
                 v = Filter(**attrs)
                 if v.groupcontext and v.groupcontext not in self.groupby:
