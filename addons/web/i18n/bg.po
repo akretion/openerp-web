@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: openerp-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-29 17:46+0200\n"
-"PO-Revision-Date: 2012-07-10 14:31+0000\n"
+"PO-Revision-Date: 2012-07-11 13:28+0000\n"
 "Last-Translator: Konstantin Draginov <kdraginov@gmail.com>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-11 05:36+0000\n"
+"X-Launchpad-Export-Date: 2012-07-12 05:08+0000\n"
 "X-Generator: Launchpad (build 15593)\n"
 
 #. openerp-web
@@ -30,7 +30,7 @@ msgstr "ОК"
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:178
 msgid "Send OpenERP Enterprise Report"
-msgstr ""
+msgstr "Изпрати OpenERP Enterprise доклад"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:192
@@ -125,7 +125,7 @@ msgstr "Смяна на парола"
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:856
 msgid "OpenERP - Unsupported/Community Version"
-msgstr ""
+msgstr "OpenERP - Unsupported/Community Version"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:212
@@ -224,7 +224,7 @@ msgstr "Филтъра е дезактивиран поради невалиде
 #. openerp-web
 #: addons/web/static/src/js/search.js:239
 msgid "Filter Entry"
-msgstr ""
+msgstr "Въведи филтър"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:244
@@ -576,7 +576,7 @@ msgstr "Покажи друга година"
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1632
 msgid "Wk"
-msgstr ""
+msgstr "Wk"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1633
@@ -586,12 +586,12 @@ msgstr "Седмица от годината"
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1637
 msgid "Set DD as first week day"
-msgstr ""
+msgstr "Установи DD като първи ден от седмицата"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1638
 msgid "Select D, M d"
-msgstr ""
+msgstr "Избери D, M d"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1640
@@ -733,13 +733,13 @@ msgstr "Дървовиден изглед"
 #. openerp-web
 #: addons/web/static/src/js/views.js:566 addons/web/static/src/xml/base.xml:452
 msgid "Fields View Get"
-msgstr ""
+msgstr "Изглед на полета"
 
 #. openerp-web
 #: addons/web/static/src/js/views.js:574
 #, python-format
 msgid "View Log (%s)"
-msgstr ""
+msgstr "Покажи дневник (%s)"
 
 #. openerp-web
 #: addons/web/static/src/js/views.js:604
@@ -940,16 +940,17 @@ msgid ""
 "Your version of OpenERP is unsupported. Support & maintenance services are "
 "available here:"
 msgstr ""
+"Вашата версия на OpenERP е неподдържана. Поддръжка и услуги са достъпни тук:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:48
 msgid "OpenERP Entreprise"
-msgstr ""
+msgstr "OpenERP Entreprise"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:53
 msgid "OpenERP Enterprise Contract."
-msgstr ""
+msgstr "OpenERP Enterprise контакт."
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:54
@@ -1049,7 +1050,7 @@ msgstr "Debug View#"
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:449
 msgid "View Log (perm_read)"
-msgstr ""
+msgstr "Покажи дневника"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:451
@@ -1151,7 +1152,7 @@ msgstr "Всички потребители"
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:797
 msgid "Unhandled widget"
-msgstr ""
+msgstr "Неподдържана приставка"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:900
@@ -1161,12 +1162,12 @@ msgstr "Страница Бележник \""
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:836
 msgid "Modifiers:"
-msgstr ""
+msgstr "Модификатори:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:803
 msgid "(nolabel)"
-msgstr ""
+msgstr "(без етикет)"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:808
@@ -1186,7 +1187,7 @@ msgstr "Тип:"
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:820
 msgid "Widget:"
-msgstr ""
+msgstr "Приставка:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:824
@@ -1236,7 +1237,7 @@ msgstr "Отвори този ресурс"
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:922
 msgid "Select date"
-msgstr ""
+msgstr "Избери дата"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1092
@@ -1290,7 +1291,7 @@ msgstr "Бутон"
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1129
 msgid "(no string)"
-msgstr ""
+msgstr "(няма низ)"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1136
@@ -1310,7 +1311,7 @@ msgstr "Метод:"
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1149
 msgid "Action ID:"
-msgstr ""
+msgstr "ID на действието"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1273
@@ -1357,57 +1358,57 @@ msgstr "Име на филтър:"
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1249
 msgid "(Any existing filter with the same name will be replaced)"
-msgstr ""
+msgstr "(Всеки съществуващ филтър със същото име ще бъде заменен)"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1307
 msgid "Select Dashboard to add this filter to:"
-msgstr ""
+msgstr "Избери табло към което да се добави филтъра:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1311
 msgid "Title of new Dashboard item:"
-msgstr ""
+msgstr "Заглавие на нов елемент от таблото:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1418
 msgid "Advanced Filters"
-msgstr ""
+msgstr "Разширени филтри"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1428
 msgid "Any of the following conditions must match"
-msgstr ""
+msgstr "Някои от изброените условия трябва да съвпадат"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1429
 msgid "All the following conditions must match"
-msgstr ""
+msgstr "Всички изброени условия трябва да съвпадат"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1430
 msgid "None of the following conditions must match"
-msgstr ""
+msgstr "Никое от изброените условия не трябва да съвпада"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1437
 msgid "Add condition"
-msgstr ""
+msgstr "Добави условие"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1438
 msgid "and"
-msgstr ""
+msgstr "и"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1475
 msgid "Save & New"
-msgstr ""
+msgstr "Запази и Нов"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1476
 msgid "Save & Close"
-msgstr ""
+msgstr "Запази и Затвори"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1559
@@ -1417,81 +1418,84 @@ msgid ""
 "            You can export all data or only the fields that can be "
 "reimported after modification."
 msgstr ""
+"Този съветник ще експортира всички данни по избрания критерии в CSV файл.\n"
+"            Вие можете да експортирате всички данни или само полетата които "
+"са реимпортирани след модификация."
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1566
 msgid "Export Type:"
-msgstr ""
+msgstr "Тип на експорта:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1568
 msgid "Import Compatible Export"
-msgstr ""
+msgstr "Импорт на съвместим експорт"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1569
 msgid "Export all Data"
-msgstr ""
+msgstr "Експорт на всички данни"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1572
 msgid "Export Formats"
-msgstr ""
+msgstr "Формати за експорт"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1578
 msgid "Available fields"
-msgstr ""
+msgstr "Налични полета"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1580
 msgid "Fields to export"
-msgstr ""
+msgstr "Полета за експорт"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1582
 msgid "Save fields list"
-msgstr ""
+msgstr "Запазване списък с полета"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1596
 msgid "Remove All"
-msgstr ""
+msgstr "Премахване на всичко"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1607
 msgid "Name"
-msgstr ""
+msgstr "Име"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1639
 msgid "Save as:"
-msgstr ""
+msgstr "Запис като:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1645
 msgid "Saved exports:"
-msgstr ""
+msgstr "Записани експорти:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:352
 msgid "Old Password:"
-msgstr ""
+msgstr "Стара парола:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:357
 msgid "New Password:"
-msgstr ""
+msgstr "Нова парола:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:362
 msgid "Confirm Password:"
-msgstr ""
+msgstr "Потвърждаване на парола:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1663
 msgid "1. Import a .CSV file"
-msgstr ""
+msgstr "1. Импорт на .CSV файл"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1664
@@ -1499,56 +1503,59 @@ msgid ""
 "Select a .CSV file to import. If you need a sample of file to import,\n"
 "       you should use the export tool with the \"Import Compatible\" option."
 msgstr ""
+"Избеи .CSV файл за импорт. Ако се нуждаете от извадка от файл за импорт,\n"
+"       вие трябва да използвате инструмента за експорт с опция \"Import "
+"Compatible\"."
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1668
 msgid "CSV File:"
-msgstr ""
+msgstr "CSV файл:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1671
 msgid "2. Check your file format"
-msgstr ""
+msgstr "Проверете формата на файла"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1674
 msgid "Import Options"
-msgstr ""
+msgstr "Опции за импорт"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1678
 msgid "Does your file have titles?"
-msgstr ""
+msgstr "Има ли файла заглавие?"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1684
 msgid "Separator:"
-msgstr ""
+msgstr "Разделител:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1686
 msgid "Delimiter:"
-msgstr ""
+msgstr "Разделител:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1690
 msgid "Encoding:"
-msgstr ""
+msgstr "Кодиране"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1693
 msgid "UTF-8"
-msgstr ""
+msgstr "UTF-8"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1694
 msgid "Latin 1"
-msgstr ""
+msgstr "Latin 1"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1697
 msgid "Lines to skip"
-msgstr ""
+msgstr "Редове за пропускане"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1697
@@ -1556,58 +1563,60 @@ msgid ""
 "For use if CSV files have titles on multiple lines, skips more than a single "
 "line during import"
 msgstr ""
+"Ако .CSV файлове имат заглавия на повече редове, използвай само първия ред "
+"при импорт"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1724
 msgid "The import failed due to:"
-msgstr ""
+msgstr "Импорта се провали поради:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1726
 msgid "Here is a preview of the file we could not import:"
-msgstr ""
+msgstr "Преглед на файла, който не се импортира:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1813
 msgid "Activate the developper mode"
-msgstr ""
+msgstr "Активиране на режим за разработчици"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:335
 msgid "Version"
-msgstr ""
+msgstr "Версия"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:336
 msgid "Copyright © 2004-TODAY OpenERP SA. All Rights Reserved."
-msgstr ""
+msgstr "Copyright © 2004-TODAY OpenERP SA. All Rights Reserved."
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:337
 msgid "OpenERP is a trademark of the"
-msgstr ""
+msgstr "OpenERP е запазена марка на"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:338
 msgid "OpenERP SA Company"
-msgstr ""
+msgstr "OpenERP SA Company"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:340
 msgid "Licenced under the terms of"
-msgstr ""
+msgstr "Лицензиран при условията на"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:341
 msgid "GNU Affero General Public License"
-msgstr ""
+msgstr "GNU Affero General Public License"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:343
 msgid "For more information visit"
-msgstr ""
+msgstr "За повече информация посетете"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:344
 msgid "OpenERP.com"
-msgstr ""
+msgstr "OpenERP.com"
