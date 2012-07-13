@@ -474,6 +474,9 @@ MochiKit.Base.update(ListView.prototype, {
     },
 
     onButtonClick: function(name, btype, id, sure, context) {
+        if (!validate_action()) {
+            return;
+        }
         if (sure && !confirm(sure)) {
             return;
         }
