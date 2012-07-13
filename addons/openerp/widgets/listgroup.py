@@ -110,7 +110,7 @@ def parse_groups(group_by, grp_records, headers, ids, model,  offset, limit, con
             ch_ids = []
             if child:
                 rec_dom =  rec.get('__domain')
-                dom = [('id', 'in', ids), rec_dom[0]]
+                dom = [('id', 'in', ids)] + rec_dom
                 ch_ids = [d for id in proxy.search(dom, offset, limit, 0, context)
                             for  d in data
                             if int(str(d.get('id'))) == id] # Need to convert in String and then Int.
