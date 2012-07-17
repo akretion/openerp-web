@@ -209,7 +209,7 @@ import itertools
             % if 'sequence' in map(lambda x: x[0], itertools.chain(headers,hiddens)):
                 <script type="text/javascript">
                     jQuery('#${name} tr.grid-row-group').draggable({
-                        revert: 'valid',
+                        revert: 'invalid',
                         connectToSortable: 'tr.grid-row-group',
                         helper: function() {
                            var htmlStr = jQuery(this).html();
