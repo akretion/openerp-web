@@ -52,7 +52,7 @@ import itertools
 
                 <tbody>
 					% for j, grp_row in enumerate(grp_records):
-					<tr class="grid-row-group" grp_by_id="${grp_row.get('group_by_id')}" records="${grp_row.get('groups_id')}" style="cursor: pointer; " ch_records="${map(lambda x: x['id'], grp_row['child_rec'])}" grp_domain="${grp_row['__domain']}" grp_context="${grp_row['__context']['group_by']}">
+					<tr class="grid-row-group" grp_by_id="${grp_row.get('group_by_id')}" records="${grp_row.get('groups_id')}" style="cursor: pointer; " ch_records="${map(lambda x: x['id'], grp_row['child_rec'])}" grp_domain="${grp_row['__domain']}" grp_context="${grp_row['__context']['group_by']}" grp_level="0">
                         % if editable or selectable:
 
                             % if len(group_by_ctx) == 1 and group_by_no_leaf:
@@ -206,27 +206,6 @@ import itertools
                     </tfoot>
                 % endif
             </table>
-            % if 'sequence' in map(lambda x: x[0], itertools.chain(headers,hiddens)):
-                <script type="text/javascript">
-                    jQuery('#${name} tr.grid-row-group').draggable({
-                        revert: 'invalid',
-                        connectToSortable: 'tr.grid-row-group',
-                        helper: function() {
-                           var htmlStr = jQuery(this).html();
-                           return jQuery('<table><tr class="ui-widget-header">'+htmlStr+'</tr></table>');
-                        },
-                        axis: 'y'
-                    });
-
-                    jQuery('#${name} tr.grid-row-group').droppable({
-                        accept : 'tr.grid-row-group',
-                        hoverClass: 'grid-rowdrop',
-                        drop: function(ev, ui) {
-                                new ListView('${name}').groupbyDrag(ui.draggable, jQuery(this), '${name}');
-                        }
-                    });
-                </script>
-            % endif
             % if editable or selectable:
                 <script type="text/javascript">
                     jQuery('table[id=${name}_grid] tr.grid-row').click(function(event) {

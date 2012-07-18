@@ -296,6 +296,8 @@ class MultipleGroup(List):
 
         self.grp_records = proxy.read_group(self.context.get('__domain', []),
                                                 fields.keys(), self.group_by_ctx, 0, False, self.context)
+        for grp_rec in self.grp_records:
+            grp_rec['__level'] = self.group_level
 
         if sort_key and sort_key in self.group_by_ctx and self.group_by_ctx.index(sort_key) == 0:
             if sort_order == 'desc':

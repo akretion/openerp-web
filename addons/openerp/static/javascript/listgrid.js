@@ -297,41 +297,48 @@ MochiKit.Base.update(ListView.prototype, {
         var _list_view = new ListView(view);
         var domain;
         var children;
+        var level = "0";
 
         var drop_record = drop.attr('record');
         var drag_record = drag.attr('record');
-        if(drop_record) {
-            var dropGroup = drop.attr('id').split('grid-row ')[1];
-            domain = jQuery('tr.grid-row-group[records="'+dropGroup+'"]').attr('grp_domain');
-        }
-        else {
+        if (drop_record) {
+            domain = jQuery('tr.grid-row-group[records="'+drop.attr('parent')+'"]').attr('grp_domain');
+            level = jQuery('tr.grid-row-group[records="'+drop.attr('parent')+'"]').attr('grp_level');
+        } else {
             domain = drop.attr('grp_domain');
+            level = drop.attr('grp_level');
         }
 
         var ch_records = drag.attr('ch_records');
-        if(ch_records) {
-            children = ch_records;
+        if (ch_records) {
+            children = drag.attr('grp_domain');
+        } else if (drag.attr('id') == drop.attr('id')) {
+            children = jQuery('tr.grid-row-group[records="'+drag.attr('parent')+'"]').attr('ch_records');
         }
         else {
-            if(drag.attr('id') == drop.attr('id')) {
-                var dragGroup = drag.attr('id').split('grid-row ')[1];
-                children = jQuery('tr.grid-row-group[records="'+dragGroup+'"]').attr('ch_records');
-            }
-            else {
-                children = drag_record;
-            }
+            children = "[('id','=',"+drag_record+")]";
         }
 
-        if((drag_record && drop_record) && (drag.attr('id')) == drop.attr('id')) {
+        if ((drag_record && drop_record) && (drag.attr('id') == drop.attr('id'))) {
+            // drag'n'drop within the same group
+            // - get group ids and new position
+            var drop_ids = [];
+            jQuery('[parent='+drop.attr('parent')+']').each(function() {
+                drop_ids.push(jQuery(this).attr('record'));
+            });
+	    // target position is always drop_position + 1,
+	    // exception when dropping on the 1st line where we force exclusive position of 0
+            var drop_position = drop_ids.indexOf(drop_record) > 0 ? drop_ids.indexOf(drop_record) + 1 : 0;
             this.dragRow(
                 drag.attr('record'),
-                drag.prevAll().length);
+                drop_position,
+                '['+drop_ids.join(',')+']');
         }
         else {
             jQuery.ajax({
                 url: '/openerp/listgrid/groupbyDrag',
                 type: 'POST',
-                data: {'model': _list_view.model, 'children': children, 'domain': domain},
+                data: {'model': _list_view.model, 'children': children, 'domain': domain, 'level': level},
                 dataType: 'json',
                 success: function () {
                     _list_view.reload();
@@ -340,13 +347,14 @@ MochiKit.Base.update(ListView.prototype, {
         }
     },
 
-    dragRow: function(id, to_index) {
+    dragRow: function(id, to_index, to_ids) {
+        var ids = to_ids ? to_ids : this.ids;
         jQuery.ajax({
             url: '/openerp/listgrid/dragRow',
             type: 'POST',
             context: this,
             data: {'_terp_model': this.model,
-                   '_terp_ids': this.ids,
+                   '_terp_ids': ids,
                    '_terp_id': id,
                    '_terp_destination_index': to_index
                   },
