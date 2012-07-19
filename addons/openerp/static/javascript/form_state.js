@@ -143,9 +143,7 @@ function form_hookAttrChange() {
                     // events disconnected during hook_onStateChange,
                     // don't redisconnect or may break onStateChange
                     var $field = jQuery(field).bind('onAttrChange', partial(form_onAttrChange, container, widget, attr, attrs[attr], $this));
-                    $field.change(function () {
-                        jQuery(this).trigger('onAttrChange');
-                    });
+                    $field.change(partial(form_onAttrChange, container, widget, attr, attrs[attr], $this));
                 }
             });
         }
@@ -427,9 +425,6 @@ function form_setVisible(container, field, visible) {
 
 jQuery(document).ready(function(){
     form_hookContextMenu();
-    form_hookStateChange();
-    form_hookAttrChange();
-}).ajaxStop(function () {
     form_hookStateChange();
     form_hookAttrChange();
 });
