@@ -213,7 +213,14 @@ function form_evalExpr(prefix, expr, ref_elem) {
                 if (parent_table_id && parent_table_id.match('_grid$')) {
                     parent_table_id = parent_table_id.slice(0, parent_table_id.length - 5);
                 }
-                var parent_relative_fieldname = '[name=_terp_listfields/' + parent_table_id + '/' + prefix + ex[0] + ']';
+                if (parent_table_id == '_terp_list') {
+                    // in case list name if '_terp_list' this means we're not inside a o2m/m2m fields,
+                    // and we no need need to prefix with parent_table_id name
+                    parent_table_id = ''
+                } else {
+                    parent_table_id = parent_table_id + '/'
+                }
+                var parent_relative_fieldname = '[name=_terp_listfields/' + parent_table_id + prefix + ex[0] + ']';
                 elem = parent.find(parent_relative_fieldname);
             }
         }
