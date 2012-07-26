@@ -191,7 +191,7 @@ function form_hookAttrChange() {
 }
 
 function list_hookAttrChange(list_name) {
-    jQuery('table[id=${name}_grid] [attrs]').each(function () {
+    jQuery('table[id='+list_name+'_grid] [attrs]').each(function () {
         var $this = jQuery(this);
         var attrs = $this.attr('attrs') || '{}';
         var widget = $this.attr('widget') || '';
