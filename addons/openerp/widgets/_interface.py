@@ -215,6 +215,7 @@ class TinyInputWidget(TinyWidget, InputWidget):
             editable=self.editable,
             inline=self.inline,
             attrs={
+                'attrs': self.attributes or None,
                 'change_default': self.change_default or None,
                 'callback': self.callback or None,
                 'onchange': self.onchange
