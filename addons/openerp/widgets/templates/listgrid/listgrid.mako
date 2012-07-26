@@ -374,43 +374,7 @@
                     <script type="text/javascript">
                         // force attrs evaluation after listgrid loading
                         // (otherwise this won't be catched by form_hookAttrChange() as we don't have any 'id')
-                        jQuery('table[id=${name}_grid] [attrs]').each(function () {
-                            var $this = jQuery(this);
-                            var attrs = $this.attr('attrs') || '{}';
-                            var widget = $this.attr('widget') || '';
-                            var container = this;
-                            var prefix = widget.slice(0, widget.lastIndexOf('/')+1) || '';
-
-                            // Convert Python statement into it's equivalent in JavaScript.
-                            attrs = attrs.replace(/\(/g, '[');
-                            attrs = attrs.replace(/\)/g, ']');
-                            attrs = attrs.replace(/True/g, '1');
-                            attrs = attrs.replace(/False/g, '0');
-                            attrs = attrs.replace(/\buid\b/g, window.USER_ID);
-
-                            try {
-                                attrs = eval('(' + attrs + ')');
-                            } catch(e){
-                                return;
-                            }
-
-                            var row_is_editable = $this.parents('tr.grid-row').is('.editors')
-                            for (var attr in attrs) {
-                                if (attrs[attr] == '') {
-                                    return form_onAttrChange(container, widget, attr, attrs[attr], $this);
-                                }
-                                forEach(attrs[attr], function(n) {
-                                    if (typeof(n) == "number") { // {'invisible': [1]}
-                                        return form_onAttrChange(container, widget, attr, n, $this);
-                                    }
-                                    if (row_is_editable) {
-                                        var $field = jQuery(this).bind('onAttrChange', partial(form_onAttrChange, container, widget, attr, attrs[attr], $this));
-                                        $field.change(partial(form_onAttrChange, container, widget, attr, attrs[attr], $this));
-                                    }
-                                    return form_onAttrChange(container, widget, attr, attrs[attr], $this);
-                                });
-                            }
-                        });
+			list_hookAttrChange('${name}');
                     </script>
                 </td>
             </tr>
