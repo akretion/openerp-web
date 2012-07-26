@@ -213,6 +213,12 @@ function list_hookAttrChange(list_name) {
 
         var row_is_editable = $this.parents('tr.grid-row').is('.editors')
         for (var attr in attrs) {
+            if (!row_is_editable && attr != 'invisible') {
+                // when row is not in editable mode we only care about invisible attributes
+                // as others attrs (readonly, required) won't have any effects.
+                console.log('skip attrs on: ', $this, ' with ', attr, ' = ', attrs[attr]);
+                continue;
+            }
             if (attrs[attr] == '') {
                 return form_onAttrChange(container, widget, attr, attrs[attr], $this);
             }
