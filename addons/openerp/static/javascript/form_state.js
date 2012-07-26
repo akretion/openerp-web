@@ -57,16 +57,14 @@ function form_hookStateChange() {
 
 function list_hookStateChange(list_name) {
     var fields = {};
-    jQuery('table[id='+list_name+'_grid] input.[states]').each(function() {
+    var list_fields_with_states = [ 'table[id='+list_name+'_grid] input.[states]',
+				    'table[id='+list_name+'_grid] selection.[states]' ].join(', ');
+    jQuery(list_fields_with_states).each(function() {
         var $this = jQuery(this);
         var attrs = $this.attr('attrs') || '{}';
         var widget = $this.attr('widget') || '';
         var container = this;
         var prefix = widget.slice(0, widget.lastIndexOf('/')+1) || '';
-
-        if (!$this.attr('name')) {
-            return;
-        }
 
         // convert states from Python serialization to JS/JSON
         var states = eval(
