@@ -224,6 +224,12 @@ class TinyInputWidget(TinyWidget, InputWidget):
             params['attrs']['autofocus'] = 'autofocus'
         if self.readonly:
             params['attrs']['disabled'] = 'disabled'
+        if self.states:
+            states = self.states
+            # convert into JS
+            if isinstance(states, dict):
+                states = dict([(k, dict(v)) for k, v in states.iteritems()])
+            params['attrs']['states'] = simplejson.dumps(states)
 
 
 class ConcurrencyInfo(TinyInputWidget):

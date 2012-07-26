@@ -55,6 +55,42 @@ function form_hookStateChange() {
     }
 }
 
+function list_hookStateChange(list_name) {
+    var fields = {};
+    jQuery('table[id='+list_name+'_grid] input.[states]').each(function() {
+        var $this = jQuery(this);
+        var attrs = $this.attr('attrs') || '{}';
+        var widget = $this.attr('widget') || '';
+        var container = this;
+        var prefix = widget.slice(0, widget.lastIndexOf('/')+1) || '';
+
+        if (!$this.attr('name')) {
+            return;
+        }
+
+        // convert states from Python serialization to JS/JSON
+        var states = eval(
+                '(' + $this.attr('states')
+                      .replace(/u'/g, "'")
+                      .replace(/True/g, '1')
+                      .replace(/False/g, '0') + ')');
+
+        var state = form_find_field_in_context(prefix, 'state', $this);
+        if (!state || !state.length) {
+            state = form_find_field_in_context(prefix, 'x_state', $this);
+        }
+
+        if (state && state.length) {
+            var $state = state.bind('onStateChange', MochiKit.Base.partial(form_onStateChange, container, this, states));
+            $state.change(function (){
+                jQuery(this).trigger('onStateChange');
+            });
+            state.trigger('onStateChange');
+        }
+
+    });
+}
+
 function form_onStateChange(container, widget, states, evt) {
     var src;
     if(evt.src)
