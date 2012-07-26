@@ -231,42 +231,48 @@ function matchArray(val,eval_value){
     return true;
 }
 
+function form_find_field_in_context(prefix, field, ref_elem) {
+    // try to find field in the context of reference element (ref_elem)
+    var elem = null;
+    if (ref_elem.parents('table.grid').length) {
+        var parent = ref_elem.parents('tr.grid-row');
+        elem = parent.find(idSelector(prefix + field));
+
+        if (!elem || !elem.length) {
+            var parent_selector = '[name='+prefix + field +']';
+            elem = parent.find(parent_selector);
+        }
+
+        if (!elem || !elem.length) {
+            // try getting with _terp_listfields/TABLE_ID/FIELD_NAME
+            var parent_table_id = ref_elem.parents('table.grid')[0].id;
+            if (parent_table_id && parent_table_id.match('_grid$')) {
+                parent_table_id = parent_table_id.slice(0, parent_table_id.length - 5);
+            }
+            if (parent_table_id == '_terp_list') {
+                // in case list name if '_terp_list' this means we're not inside a o2m/m2m fields,
+                // and we no need need to prefix with parent_table_id name
+                parent_table_id = ''
+            } else {
+                parent_table_id = parent_table_id + '/'
+            }
+            var parent_relative_fieldname = '[name=_terp_listfields/' + parent_table_id + prefix + field + ']';
+            elem = parent.find(parent_relative_fieldname);
+        }
+    }
+    if (!elem || !elem.length) {
+        elem = jQuery(idSelector(prefix + field));
+    }
+    return elem;
+}
+
 function form_evalExpr(prefix, expr, ref_elem) {
 
     var stack = [];
     for (var i = 0; i < expr.length; i++) {
 
         var ex = expr[i];
-        var elem = null;
-        if (ref_elem.parents('table.grid').length) {
-            var parent = ref_elem.parents('tr.grid-row');
-            elem = parent.find(idSelector(prefix + ex[0]));
-
-            if (!elem || !elem.length) {
-                var parent_selector = '[name='+prefix + ex[0]+']';
-                elem = parent.find(parent_selector);
-            }
-
-            if (!elem || !elem.length) {
-                // try getting with _terp_listfields/TABLE_ID/FIELD_NAME
-                var parent_table_id = ref_elem.parents('table.grid')[0].id;
-                if (parent_table_id && parent_table_id.match('_grid$')) {
-                    parent_table_id = parent_table_id.slice(0, parent_table_id.length - 5);
-                }
-                if (parent_table_id == '_terp_list') {
-                    // in case list name if '_terp_list' this means we're not inside a o2m/m2m fields,
-                    // and we no need need to prefix with parent_table_id name
-                    parent_table_id = ''
-                } else {
-                    parent_table_id = parent_table_id + '/'
-                }
-                var parent_relative_fieldname = '[name=_terp_listfields/' + parent_table_id + prefix + ex[0] + ']';
-                elem = parent.find(parent_relative_fieldname);
-            }
-        }
-        if (!elem || !elem.length) {
-            elem = jQuery(idSelector(prefix + ex[0]));
-        }
+        var elem = form_find_field_in_context(prefix, ex[0], ref_elem);
 
         if (ex.length==1) {
             stack.push(ex[0]);
