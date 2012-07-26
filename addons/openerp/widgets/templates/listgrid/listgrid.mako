@@ -394,6 +394,7 @@
                                 return;
                             }
 
+                            var row_is_editable = $this.parents('tr.grid-row').is('.editors')
                             for (var attr in attrs) {
                                 if (attrs[attr] == '') {
                                     return form_onAttrChange(container, widget, attr, attrs[attr], $this);
@@ -401,6 +402,10 @@
                                 forEach(attrs[attr], function(n) {
                                     if (typeof(n) == "number") { // {'invisible': [1]}
                                         return form_onAttrChange(container, widget, attr, n, $this);
+                                    }
+                                    if (row_is_editable) {
+                                        var $field = jQuery(this).bind('onAttrChange', partial(form_onAttrChange, container, widget, attr, attrs[attr], $this));
+                                        $field.change(partial(form_onAttrChange, container, widget, attr, attrs[attr], $this));
                                     }
                                     return form_onAttrChange(container, widget, attr, attrs[attr], $this);
                                 });
