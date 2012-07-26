@@ -518,6 +518,10 @@ function parse_filters(src, id) {
                $source.attr('filter_context') != '{}') {
                 filter_context.push($source.attr('filter_context'));
             }
+            if ($source.attr('filter_name') && $source.attr('filter_name') != '') {
+                $source.attr('filter_status', 1);
+            }
+	
         } else {
             $source.closest('td').removeClass('grop_box_active');
             $source.attr('checked', false);
@@ -533,6 +537,9 @@ function parse_filters(src, id) {
                 if(filter_index >= 0) {
                     filter_context.splice(filter_index, 1);
                 }
+            }
+            if ($source.attr('filter_name') && $source.attr('filter_name') != '') {
+                $source.attr('filter_status', 0);
             }
         }
         jQuery(id).toggleClass('active inactive');
@@ -600,6 +607,17 @@ function parse_filters(src, id) {
         check_domain = checked_button.length > 0? checked_button.replace(/(],\[)/g, ', ') : '[]';
         all_domains['check_domain'] = check_domain;
     }
+
+    // compute filter_status based on current filter states
+    var fl_status = {};
+    jQuery('[filter_status]').each(function() {
+        var $this = jQuery(this);
+        if ($this.attr('filter_name')) {
+            fl_status[$this.attr('filter_name')] = parseInt($this.attr('filter_status'));
+        }
+    });
+    all_domains['filter_status'] = serializeJSON(fl_status);
+
     all_domains = serializeJSON(all_domains);
     return all_domains;
 }
