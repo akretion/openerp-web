@@ -235,11 +235,20 @@ function form_evalExpr(prefix, expr, ref_elem) {
         var elem_value;
         if(elem.is(':input')) {
             elem_kind = elem.attr('kind')
-            if(elem_kind == 'float' || elem_kind == 'integer') {
-                elem_value = eval(elem.val());
-            } else {
-                elem_value = elem.val();
+            elem_value = elem.val();
+            var patt = /[^0-9]/g;
+            if(elem_kind == 'float'){
+                elem_value = elem_value.replace(patt,'.');
+                decimal_at = elem_value.lastIndexOf('.');
+                first_part = elem_value.substring(0, decimal_at);
+                first_part = first_part.replace(patt,'');
+                second_part = elem_value.substring(decimal_at);
+                elem_value = first_part + second_part;
             }
+            if(elem_kind == 'integer'){
+                elem_value = elem_value.replace(patt,'');
+            }
+            elem_value = elem.val()[0] == '-' ? ('-' + elem_value) : elem_value;
         } else if(elem[0].nodeName == "TABLE"){
             prefix = $(elem).attr('id')
             elem_value = eval($(idSelector(prefix+"/_terp_ids")).val())
