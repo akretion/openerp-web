@@ -215,6 +215,7 @@ class TinyInputWidget(TinyWidget, InputWidget):
             editable=self.editable,
             inline=self.inline,
             attrs={
+                'attrs': self.attributes or None,
                 'change_default': self.change_default or None,
                 'callback': self.callback or None,
                 'onchange': self.onchange
@@ -223,6 +224,12 @@ class TinyInputWidget(TinyWidget, InputWidget):
             params['attrs']['autofocus'] = 'autofocus'
         if self.readonly:
             params['attrs']['disabled'] = 'disabled'
+        if self.states:
+            states = self.states
+            # convert into JS
+            if isinstance(states, dict):
+                states = dict([(k, dict(v)) for k, v in states.iteritems()])
+            params['attrs']['states'] = simplejson.dumps(states)
 
 
 class ConcurrencyInfo(TinyInputWidget):
