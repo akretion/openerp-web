@@ -189,6 +189,10 @@ class M2O_search(form.M2O):
 
         super(M2O_search, self).__init__(**attrs)
 
+    def update_params(self, params):
+        super(M2O_search, self).update_params(params)
+        params['attrs']['m2o_filter_domain'] = self.m2o_filter_domain or None
+
 class Search(TinyInputWidget):
     template = "/openerp/widgets/templates/search/search.mako"
     javascript = [JSLink("openerp", "javascript/search.js", location=locations.bodytop)]

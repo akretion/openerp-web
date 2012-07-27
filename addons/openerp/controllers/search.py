@@ -289,7 +289,9 @@ class Search(Form):
 
         if check_domain and isinstance(check_domain, basestring):
             domain = expr_eval(check_domain, context) or []
-
+        m2o_filter_domain = all_domains.get('m2o_filter_domain', [])
+        for dom in m2o_filter_domain:
+            domain += expr_eval(dom['domain'], {'self': dom['self']}) or []
         search_data = {}
         model = kw.get('model')
         proxy = rpc.RPCProxy(model)
