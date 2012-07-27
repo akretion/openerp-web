@@ -234,11 +234,24 @@ function form_evalExpr(prefix, expr, ref_elem) {
 
         var elem_value;
         if(elem.is(':input')) {
-            elem_kind = elem.attr('kind')
+            elem_value = elem.val();
+            var elem_kind = elem.attr('kind')
+            var nan_pattern = /[^0-9]/g;
             if(elem_kind == 'float' || elem_kind == 'integer') {
-                elem_value = eval(elem.val());
-            } else {
-                elem_value = elem.val();
+                // extract sign and number from input value
+                var sign = elem_value[0] == '-' ? '-' : '';
+                var integer_part = elem_value.substring(sign.length), decimal_part = '';
+                if (elem_kind == 'float') {
+                    // split float integer and decimal parts on last non decimal char
+                    var decimal_sep_position = integer_part.replace(nan_pattern, '.').lastIndexOf('.');
+                    if (decimal_sep_position !== -1) {
+                        decimal_part = '.' + integer_part.substring(decimal_sep_position+1);
+                        integer_part = integer_part.substring(0, decimal_sep_position);
+                    }
+                }
+                // remove all non-decimal chars and evalute string to get a real number
+                integer_part = integer_part.replace(nan_pattern, '');
+                elem_value = eval(sign + integer_part + decimal_part);
             }
         } else if(elem[0].nodeName == "TABLE"){
             prefix = $(elem).attr('id')
