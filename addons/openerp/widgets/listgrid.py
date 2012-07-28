@@ -301,10 +301,14 @@ class List(TinyWidget):
         if self.pageable:
             self.pager = Pager(ids=self.ids, offset=self.offset, limit=self.limit, count=self.count)
             self.pager._name = self.name
-           
+        #Add prefix for the hidden fields otherwise same field name in parent and child will conflict
+        for f, fa in self.hiddens:
+            if not isinstance(fa, int):
+                fa['prefix'] = '_terp_listfields' + ((self.name != '_terp_list' or '') and '/' + self.name)
+
         if self.editable and context.get('set_editable'):#Treeview editable by default or set_editable in context
             attrs['editable'] = "bottom"
-        
+
         # make editors
         if self.editable and attrs.get('editable') in ('top', 'bottom'):
 

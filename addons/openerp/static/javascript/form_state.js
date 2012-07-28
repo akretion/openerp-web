@@ -403,7 +403,7 @@ function form_setReadonly(container, fieldName, readonly) {
 
     var $field = typeof(fieldName) == "string" ? jQuery(idSelector(fieldName)) : jQuery(fieldName);
 
-    if (!$field.length || parseInt($field.attr("fld_readonly"))) {
+    if (!$field.length) {
         return;
     }
 
