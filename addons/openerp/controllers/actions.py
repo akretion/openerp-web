@@ -312,7 +312,7 @@ def xml_report(action, data):
 def act_url(action, data):
     return execute_url(**dict(data,
         url=action['url'],
-        target=action['target'],
+        target=action.get('target','new'),
         type=action['type']
     ))
 
@@ -409,6 +409,9 @@ def execute_url(**data):
 
         # determine target for openAction()
         target = {'new': 'popup'}.get(data['target'], 'iframe')
+
+        cherrypy.response.headers['X-Target'] = target
+        cherrypy.response.headers['Location'] = url
 
         return """<script type="text/javascript">
                       openAction('%s', '%s')
