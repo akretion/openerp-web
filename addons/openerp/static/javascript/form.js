@@ -533,6 +533,13 @@ function onChange(caller){
         var fld;
         for (var domain in domains) {
             fld = openobject.dom.get(prefix + domain);
+            if (openobject.dom.get(prefix + domain + '_id')) {
+                f_id = openobject.dom.get(prefix + domain + '_id');
+                var kind = jQuery(f_id).attr('kind')
+                if (kind == "many2many"){
+                    fld = openobject.dom.get("_m2m_" + prefix + domain)
+                }
+            }
             if (fld) {
                 jQuery(fld).attr('domain', domains[domain]);
             }
