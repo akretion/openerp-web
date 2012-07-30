@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openerp-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-13 15:03+0200\n"
-"PO-Revision-Date: 2012-02-17 09:21+0000\n"
-"Last-Translator: Nikola Stojanoski <nstojanoski@vion.mk>\n"
+"PO-Revision-Date: 2012-07-29 23:38+0000\n"
+"Last-Translator: Fábio Martinelli <webmaster@guaru.net>\n"
 "Language-Team: Macedonian <mk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-14 06:44+0000\n"
-"X-Generator: Launchpad (build 15614)\n"
+"X-Launchpad-Export-Date: 2012-07-30 05:11+0000\n"
+"X-Generator: Launchpad (build 15702)\n"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:176
@@ -51,18 +51,18 @@ msgstr "Гречно име на база"
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:393
 msgid "Create database"
-msgstr ""
+msgstr "Criar banco de dados"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:395
 #, python-format
 msgid "Database \"%s\" already exist"
-msgstr ""
+msgstr "Já existe um Banco de Dados com o nome \"%s\""
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:455
 msgid "Backed"
-msgstr ""
+msgstr "Copiado"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:456
@@ -130,7 +130,7 @@ msgstr "Смени Лозинка"
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:1052
 msgid "OpenERP - Unsupported/Community Version"
-msgstr ""
+msgstr "Versão da Comunidade / Sem suporte oficial da OpenERP S/A"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:1119
@@ -161,12 +161,12 @@ msgstr "Експортирај во Датотека"
 #. openerp-web
 #: addons/web/static/src/js/data_export.js:126
 msgid "Please enter save field list name"
-msgstr ""
+msgstr "Por favor, entre o nome da lista de campos salva"
 
 #. openerp-web
 #: addons/web/static/src/js/data_export.js:362
 msgid "Please select fields to save export list..."
-msgstr ""
+msgstr "Por favor, selecione os campos para salvar na lista de exportação"
 
 #. openerp-web
 #: addons/web/static/src/js/data_export.js:375
@@ -186,7 +186,7 @@ msgstr "Импортирај датотека"
 #. openerp-web
 #: addons/web/static/src/js/data_import.js:106
 msgid "External ID"
-msgstr ""
+msgstr "ID Externo"
 
 #. openerp-web
 #: addons/web/static/src/js/data_import.js:346
@@ -198,13 +198,13 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/js/data_import.js:383
 msgid "*Required Fields are not selected :"
-msgstr ""
+msgstr "*Campos Obrigatórios não selecionados :"
 
 #. openerp-web
 #: addons/web/static/src/js/formats.js:139
 #, python-format
 msgid "(%d records)"
-msgstr ""
+msgstr "(%d registros)"
 
 #. openerp-web
 #: addons/web/static/src/js/formats.js:325
@@ -221,12 +221,12 @@ msgstr "Превземи \"%s\""
 #. openerp-web
 #: addons/web/static/src/js/search.js:193
 msgid "Filter disabled due to invalid syntax"
-msgstr ""
+msgstr "Filtro desativado devido a sintaxe inválida"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:239
 msgid "Filter Entry"
-msgstr ""
+msgstr "Filtrar Entrada"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:244
@@ -248,13 +248,13 @@ msgstr "Невалидно Пребарување"
 #. openerp-web
 #: addons/web/static/src/js/search.js:437
 msgid "triggered from search view"
-msgstr ""
+msgstr "desencadeada a partir da visão de busca"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:528
 #, python-format
 msgid "Incorrect value for field %(fieldname)s: [%(value)s] is %(message)s"
-msgstr ""
+msgstr "Valor incorreto para campo %(fieldname)s: [%(value)s] é %(message)s"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:869
@@ -349,7 +349,7 @@ msgstr "помало или еднакво од"
 #: addons/web/static/src/js/search.js:1430
 #: addons/web/static/src/js/search.js:1446
 msgid "is set"
-msgstr ""
+msgstr "está definido"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1350
@@ -359,7 +359,7 @@ msgstr ""
 #: addons/web/static/src/js/search.js:1431
 #: addons/web/static/src/js/search.js:1447
 msgid "is not set"
-msgstr ""
+msgstr "não está definido"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1419
@@ -386,7 +386,7 @@ msgstr "е грешно"
 #: addons/web/static/src/js/view_editor.js:20
 #, python-format
 msgid "Manage Views (%s)"
-msgstr ""
+msgstr "Administrar Visões (%s)"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:46
@@ -414,18 +414,18 @@ msgstr "Отстрани"
 #: addons/web/static/src/js/view_editor.js:71
 #, python-format
 msgid "Create a view (%s)"
-msgstr ""
+msgstr "Criar a visão (%s)"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:149
 #: addons/web/static/src/js/view_form.js:577
 msgid "The following fields are invalid :"
-msgstr ""
+msgstr "Os seguintes campos são inválidos :"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:168
 msgid "Do you really want to remove this view?"
-msgstr ""
+msgstr "Deseja remover essa visão?"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:248
