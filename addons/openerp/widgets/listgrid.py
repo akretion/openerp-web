@@ -500,7 +500,7 @@ class List(TinyWidget):
 
                     headers += [(name, fields[name])]
 
-        dataset = ListViewDataSet(data, list_fields, self.colors)
+        dataset = ListViewDataSet(data, copy.deepcopy(list_fields), self.colors)
 
         return headers, hiddens, dataset, field_total, buttons
 
