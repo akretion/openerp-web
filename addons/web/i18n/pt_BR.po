@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openerp-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-13 15:03+0200\n"
-"PO-Revision-Date: 2012-07-29 23:48+0000\n"
+"PO-Revision-Date: 2012-08-01 00:30+0000\n"
 "Last-Translator: Fábio Martinelli <webmaster@guaru.net>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-31 05:24+0000\n"
-"X-Generator: Launchpad (build 15702)\n"
+"X-Launchpad-Export-Date: 2012-08-01 05:29+0000\n"
+"X-Generator: Launchpad (build 15719)\n"
 
 #. openerp-web
 #: addons/web/static/src/js/chrome.js:176
@@ -1040,8 +1040,8 @@ msgid ""
 "Your version of OpenERP is unsupported. Support & maintenance services are "
 "available here:"
 msgstr ""
-"Sua versão do OpenERP não é suportada. Suporte e manutenção estão "
-"disponíveis aqui:"
+"Sem suporte oficial da OpenERP S/A - Suporte e manutenção estão disponíveis "
+"aqui:"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:251
