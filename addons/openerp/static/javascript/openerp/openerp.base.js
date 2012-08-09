@@ -136,7 +136,7 @@ function doLoadingSuccess(app, url) {
         }
         jQuery(window).trigger('before-appcontent-change');
         var data = xhr.responseText || data;
-        if (xhr.getResponseHeader && xhr.getResponseHeader('Content-Type').match(/text\/javascript/)) {
+        if (xhr.getResponseHeader && xhr.getResponseHeader('Content-Type') && xhr.getResponseHeader('Content-Type').match(/text\/javascript/)) {
             try {
                 var parsed = jQuery.parseJSON(data);
                 if (parsed.error) {
