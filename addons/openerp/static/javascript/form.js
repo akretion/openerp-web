@@ -1305,11 +1305,17 @@ function validateForm(){
 
 function validate_action() {
     var $form = jQuery('#view_form');
-    if ($form.data('is_form_changed')
-        && !confirm(_('Warning, the record has been modified,\nyour changes will be discarded.'))) {
-        return false;
+    if ($form.data('is_form_changed')) {
+        if (!confirm(_('Warning, the record has been modified,\nyour changes will be discarded.'))) {
+            return false;
+        } else {
+            // user accept to discard changes:
+            // - mark view as unchanged
+            // - disable all binary fields so that jQuery does not try to send them
+            $form.removeData('is_form_changed');
+            $form.find('input:file:enabled[value]').attr('disabled', 'disabled');
+        }
     }
-    $form.removeData('is_form_changed');
     if (arguments.length) {
         var params = arguments[0];
         var action = arguments[1];
