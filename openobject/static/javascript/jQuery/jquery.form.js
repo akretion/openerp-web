@@ -177,9 +177,18 @@ $.fn.ajaxSubmit = function(options) {
     var mp = 'multipart/form-data';
     var multipart = ($form.attr('enctype') == mp || $form.attr('encoding') == mp);
 
+    // extra check to disable usage of iframe hack under some conditions
+    // for OpenERP web client to behave correctly
+    var skipIframeHackForOpenERP = true;
+    if (hasFileInputs) {
+        // only allow usage of iframe hack only for form containing real <input type="file"/>
+        // (i.e this means containing fields.binary() in OpenERP terms.)
+        skipIframeHackForOpenERP = false;
+    }
+
     var fileAPI = feature.fileapi && feature.formdata;
     log("fileAPI :" + fileAPI);
-    var shouldUseFrame = (hasFileInputs || multipart) && !fileAPI;
+    var shouldUseFrame = (hasFileInputs || multipart) && !skipIframeHackForOpenERP && !fileAPI;
 
     // options.iframe allows user to force iframe mode
     // 06-NOV-09: now defaulting to iframe mode if file input is detected
