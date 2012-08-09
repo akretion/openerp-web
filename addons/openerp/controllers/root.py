@@ -19,6 +19,7 @@
 #
 ###############################################################################
 import cherrypy
+import re
 
 import openobject
 from openerp.controllers import SecuredController, unsecured, actions, login as tiny_login, form, widgets
@@ -29,12 +30,26 @@ from openobject.tools.ast import literal_eval
 
 _MAXIMUM_NUMBER_WELCOME_MESSAGES = 3
 
+def insert_xmlhttprequest_status_emulation(text, status=None):
+    """ insert http reponse status on document body,
+        so that XMLHttpRequest using <iframe/> hack when form
+        contains binary data, can work correctly """
+    if status is None:
+        status = cherrypy.response.status
+    body_starttag = re.search('<body.*?>', text)
+    if body_starttag:
+        # insert status attribute
+        insert_pos = body_starttag.end() - 1
+        return text[:insert_pos] + ' status="%s"' % (status) + text[insert_pos:]
+    return text
+
 def _cp_on_error():
     cherrypy.request.pool = openobject.pooler.get_pool()
 
     errorpage = cherrypy.request.pool.get_controller("/openerp/errorpage")
     message = errorpage.render()
     cherrypy.response.status = 500
+    message = insert_xmlhttprequest_status_emulation(message, 500)
     cherrypy.response.body = [message]
 
 cherrypy.config.update({'request.error_response': _cp_on_error})

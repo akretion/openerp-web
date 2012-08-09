@@ -2,6 +2,10 @@
 <%!
     MAINTENANCE_CONTRACTS_URL = 'http://www.openerp.com/support-or-publisher-warranty-contract'
 %>
+<%! import cherrypy
+def is_xmlhttprequest():
+    return cherrypy.request.headers.get('X-Requested-With') == 'XMLHttpRequest' and True or False
+%>
 <%def name="header()">
     <script type="text/javascript" src="/openerp/static/javascript/openerp/openerp.ui.textarea.js"></script>
 
@@ -83,7 +87,9 @@
 </%def>
 
 <%def name="content()">
-
+% if is_xmlhttprequest():
+<body>
+% endif
 <table class="view" border="0" width="100%">
     <tr>
         % if maintenance:
@@ -225,5 +231,8 @@ Choose:
         % endif
     </tr>
 </table>
+% if is_xmlhttprequest():
+</body>
+% endif
 
 </%def>
