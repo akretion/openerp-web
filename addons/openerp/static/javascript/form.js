@@ -297,13 +297,17 @@ function onBooleanClicked(name){
  * readonly fields (default: excludes disabled fields and fields with
  * readonly="True"
  */
-function getFormData(extended, include_readonly) {
+function getFormData(extended, include_readonly, source) {
 
     var parentNode = openobject.dom.get('_terp_list') || document.forms['view_form'];
 
     var frm = {};
+    var prefix = '';
+    if (source) {
+        prefix = source + '/';
+    }
 
-    var is_editable = jQuery('#_terp_editable').val() == 'True';
+    var is_editable = jQuery(idSelector(prefix+'_terp_editable')).val() == 'True';
 
     var $fields = jQuery(parentNode).find('img[kind=picture]');
     if (is_editable) {
@@ -734,7 +738,7 @@ function eval_domain_context_request(options){
     if (prefix[0] == '_terp_listfields') {
         prefix.shift();
     }
-    var params = jQuery.extend(getFormData(1, true), {
+    var params = jQuery.extend(getFormData(1, true, options.source), {
         '_terp_domain': options.domain,
         '_terp_context': options.context,
         '_terp_prefix': prefix.join('/'),
