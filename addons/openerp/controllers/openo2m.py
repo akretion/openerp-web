@@ -46,16 +46,16 @@ class OpenO2M(Form):
         # to get proper view, first generate form using the view_params
         vp = params.view_params
 
+        widget_prefix, _sep, widget_name = (params.o2m or '').rpartition('/')
+        if widget_prefix:
+            prefix_vp = vp.chain_get(widget_prefix)
+            if prefix_vp:
+                vp = prefix_vp
+
         form = tw.form_view.ViewForm(vp, name="view_form", action="/openerp/openo2m/save")
         cherrypy.request.terp_validators = {}
 
-        widname = params.o2m
-        try:
-            wid = form.screen.widget.get_widgets_by_name(widname)[0]
-        except IndexError:
-            if '/' in widname:
-                widname = widname.split('/')[-1]
-            wid = form.screen.widget.get_widgets_by_name(widname)[0]
+        wid = form.screen.widget.get_widgets_by_name(widget_name)[0]
 
         # save view_params for later phazes
         vp = vp.make_plain('_terp_view_params/')
