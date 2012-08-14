@@ -108,11 +108,11 @@ function idSelector(nodeId) {
     }
 
     function get_width(val) {
-        return get_size(val.toString(), $(window.top).width());
+        return get_size(val.toString(), $(window).width());
     }
 
     function get_height(val) {
-        return get_size(val.toString(), $(window.top).height());
+        return get_size(val.toString(), $(window).height());
     }
 
     function get_size(val, available_size) {
