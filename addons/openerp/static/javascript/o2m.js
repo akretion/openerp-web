@@ -253,7 +253,9 @@ One2Many.prototype = {
      * have nested o2ms somehow), as we need to get a frame we can target
      * with a form submission.
      */
-    var frame_counter = 0;
+    if (window.top.$.o2m_frame_counter === undefined) {
+        window.top.$.o2m_frame_counter = 0;
+    }
 
     function frame_data($this, data) {
         return $($this.attr('frameElement')).data(data);
@@ -269,7 +271,7 @@ One2Many.prototype = {
      * call.
      */
     function open($this, options) {
-        var frame_identifier = 'test-frame' + frame_counter++;
+        var frame_identifier = 'test-frame' + window.top.$.o2m_frame_counter++;
         var $frame = $.frame_dialog({
             src: 'about:blank',
             // never sure whether the iframe is targetted by name or by id,
