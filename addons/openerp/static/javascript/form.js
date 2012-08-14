@@ -69,7 +69,13 @@ function openRecord(id, src, target, readonly){
 
     if (kind == 'many2many') {
         args['source'] = src;
-        jQuery.frame_dialog({src:openobject.http.getURL(get_form_action('/openerp/openm2m/edit', args))});
+        jQuery.frame_dialog({
+                src: openobject.http.getURL(get_form_action('/openerp/openm2m/edit', args))
+            }, {}, {
+                width: '70%',
+                height: '90%',
+                max_height: 700
+            });
         return;
     }
 
