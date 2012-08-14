@@ -396,7 +396,7 @@ One2Many.prototype = {
         else $this = $(this);
         var form_controller = window.form_controller;
         var is_root_window = false;
-        if (form_controller == '/openerp/openm2o' || form_controller == '/openerp/search/new') {
+        if (form_controller == '/openerp/openm2o' || form_controller == '/openerp/search/new' || form_controller == '/openerp/openm2m') {
             // stop unstacking window on M2O popup window
             is_root_window = true;
         }
