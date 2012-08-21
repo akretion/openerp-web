@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-20 05:03+0000\n"
-"X-Generator: Launchpad (build 15435)\n"
+"X-Launchpad-Export-Date: 2012-07-26 04:55+0000\n"
+"X-Generator: Launchpad (build 15679)\n"
 
 #: validators.py:75
 msgid "Invalid literal for float"
@@ -74,7 +74,7 @@ msgstr "Indtast et nummer"
 
 #: controllers/actions.py:94
 msgid "Invalid View"
-msgstr ""
+msgstr "Ugyldig visning"
 
 #: controllers/actions.py:127
 msgid "Error no report"
@@ -82,7 +82,7 @@ msgstr ""
 
 #: controllers/actions.py:153
 msgid "Nothing to print"
-msgstr "Intat at udskrive"
+msgstr "Intet at udskrive"
 
 #: controllers/actions.py:173
 msgid "Printing aborted, too long delay"

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ###############################################################################
 #
 #  Copyright (C) 2007-TODAY OpenERP SA. All Rights Reserved.
@@ -77,7 +78,7 @@ def parse_groups(group_by, grp_records, headers, ids, model,  offset, limit, con
                     inner[key] = CELLTYPES[kind](value=grp.get(key), **head)
         grouped.append(inner)
 
-    child = len(group_by) == 1
+    child = len(group_by) == 0
     digits = (16,2)
     if fields:
         for key, val in fields.items():
@@ -110,7 +111,7 @@ def parse_groups(group_by, grp_records, headers, ids, model,  offset, limit, con
             ch_ids = []
             if child:
                 rec_dom =  rec.get('__domain')
-                dom = [('id', 'in', ids), rec_dom[0]]
+                dom = [('id', 'in', ids)] + rec_dom
                 ch_ids = [d for id in proxy.search(dom, offset, limit, 0, context)
                             for  d in data
                             if int(str(d.get('id'))) == id] # Need to convert in String and then Int.
@@ -185,6 +186,9 @@ class ListGroup(List):
 
         self.context.update(rpc.session.context.copy())
 
+        if self.group_by_no_leaf:
+            self.limit = -1
+
         super(ListGroup, self).__init__(
             name=name, model=model, view=view, ids=self.ids, domain=self.domain,
             context=self.context, limit=self.limit, count=self.count,
@@ -226,7 +230,7 @@ class ListGroup(List):
 class MultipleGroup(List):
 
     template = "/openerp/widgets/templates/listgrid/multiple_group.mako"
-    params = ['grp_records', 'group_by_ctx', 'grouped', 'parent_group', 'group_level', 'group_by_no_leaf']
+    params = ['grp_records', 'grp_childs', 'group_by_ctx', 'grouped', 'parent_group', 'group_level', 'group_by_no_leaf']
 
     def __init__(self, name, model, view, ids=[], domain=[], parent_group=None, group_level=0, groups = [], context={}, **kw):
         self.context = context or {}
@@ -243,8 +247,8 @@ class MultipleGroup(List):
         self.link = kw.get('nolinks')
         self.parent_group = parent_group or None
         self.group_level = group_level or 0
-        sort_key = kw.get('sort_key')
-        sort_order = kw.get('sort_order')
+        sort_key = kw.get('sort_key') or ''
+        sort_order = kw.get('sort_order') or ''
         proxy = rpc.RPCProxy(model)
         if ids is None:
             if self.limit > 0:
@@ -276,14 +280,27 @@ class MultipleGroup(List):
             name=name, model=model, view=view, ids=self.ids, domain=self.domain,
             parent_group=parent_group, group_level=group_level, groups=groups, context=self.context, limit=self.limit,
             count=self.count,offset=self.offset, editable=self.editable,
-            selectable=self.selectable)
+            selectable=self.selectable, sort_order=sort_order, sort_key=sort_key)
 
         self.group_by_no_leaf = self.context.get('group_by_no_leaf', 0)
 
         self.group_by_ctx, self.hiddens, self.headers = parse(self.group_by_ctx, self.hiddens, self.headers, self.group_level, groups)
 
+        if not len(self.group_by_ctx):
+            # Display RAW records (i.e non grouped)
+            # NOTE: fetching of ids and data are done by List.__init__() - based on
+            #       provided domain, offset, limit, ... params
+            self.grp_childs = [{
+                'child_rec': self.data,
+                'groups_id': 'group_' + str(random.randrange(1, 10000)),
+                'group_by_id': parent_group,
+            }]
+            return
+
         self.grp_records = proxy.read_group(self.context.get('__domain', []),
                                                 fields.keys(), self.group_by_ctx, 0, False, self.context)
+        for grp_rec in self.grp_records:
+            grp_rec['__level'] = self.group_level
 
         if sort_key and sort_key in self.group_by_ctx and self.group_by_ctx.index(sort_key) == 0:
             if sort_order == 'desc':

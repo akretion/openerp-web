@@ -189,12 +189,17 @@ class List(SecuredController):
         selectable = params.selectable or 2
         context = params.context or {}
         context.update({'group_by_no_leaf': int(no_leaf), 'group_by': group_by, '__domain': domain})
+        # we force offset to 0, as in group_by mode only 'limit' have an effect
+        # (offset pagination in only for base grouping - which is handled by ListGroup)
+        offset = 0
+        limit = params.limit or 20
         args = {'editable': editable,
                 'view_mode': ['tree', 'form', 'calendar', 'graph'],
                 'nolinks': 1, 'group_by_ctx': group_by,
                 'selectable': selectable,
                 'multiple_group_by': True,
                 'sort_key': kw.get('sort_key'),
+                'offset': offset, 'limit': limit,
                 'sort_order': kw.get('sort_order')}
 
         listgrp = listgroup.MultipleGroup(name, model, view, ids=None, domain= domain, parent_group=parent_group, group_level=group_level, groups=groups, context=context, **args)
@@ -383,14 +388,27 @@ class List(SecuredController):
             return dict(error = ustr(e))
 
     @expose('json', methods=('POST',))
-    def groupbyDrag(self, model, children, domain):
-        domain = ast.literal_eval(domain)[0]
+    def groupbyDrag(self, model, children, domain, level='0'):
+        """ update records represented by children domain based on groupby domain
+
+        :param model: model to update
+        :param children: children records domain or children record id
+        :param domain: group_by domain will be convert to values
+        """
+        domain = ast.literal_eval(domain)
         children = ast.literal_eval(children)
+        level = ast.literal_eval(level)
         if isinstance(children, list):
             children = list(children)
         else:
-            children = [children]
-        rpc.RPCProxy(model).write(children, {domain[0]: domain[2]})
+            children = [('id','=',children)]
+        # convert domain to values
+        values = {}
+        for i, d in enumerate(domain):
+            if len(d) == 3 and i <= level:
+                values[d[0]] = d[2]
+        children_ids = rpc.RPCProxy(model).search(children)
+        rpc.RPCProxy(model).write(children_ids, values)
         return {}
 
     @expose('json', methods=('POST',))

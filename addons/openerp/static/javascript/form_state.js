@@ -55,6 +55,40 @@ function form_hookStateChange() {
     }
 }
 
+function list_hookStateChange(list_name) {
+    var fields = {};
+    var list_fields_with_states = [ 'table[id='+list_name+'_grid] input.[states]',
+				    'table[id='+list_name+'_grid] selection.[states]' ].join(', ');
+    jQuery(list_fields_with_states).each(function() {
+        var $this = jQuery(this);
+        var attrs = $this.attr('attrs') || '{}';
+        var widget = $this.attr('widget') || '';
+        var container = this;
+        var prefix = widget.slice(0, widget.lastIndexOf('/')+1) || '';
+
+        // convert states from Python serialization to JS/JSON
+        var states = eval(
+                '(' + $this.attr('states')
+                      .replace(/u'/g, "'")
+                      .replace(/True/g, '1')
+                      .replace(/False/g, '0') + ')');
+
+        var state = form_find_field_in_context(prefix, 'state', $this);
+        if (!state || !state.length) {
+            state = form_find_field_in_context(prefix, 'x_state', $this);
+        }
+
+        if (state && state.length) {
+            var $state = state.bind('onStateChange', MochiKit.Base.partial(form_onStateChange, container, this, states));
+            $state.change(function (){
+                jQuery(this).trigger('onStateChange');
+            });
+            state.trigger('onStateChange');
+        }
+
+    });
+}
+
 function form_onStateChange(container, widget, states, evt) {
     var src;
     if(evt.src)
@@ -143,9 +177,7 @@ function form_hookAttrChange() {
                     // events disconnected during hook_onStateChange,
                     // don't redisconnect or may break onStateChange
                     var $field = jQuery(field).bind('onAttrChange', partial(form_onAttrChange, container, widget, attr, attrs[attr], $this));
-                    $field.change(function () {
-                        jQuery(this).trigger('onAttrChange');
-                    });
+                    $field.change(partial(form_onAttrChange, container, widget, attr, attrs[attr], $this));
                 }
             });
         }
@@ -154,6 +186,51 @@ function form_hookAttrChange() {
     for(var field in fields) {
         jQuery(idSelector(field)).trigger('onAttrChange');
     }
+}
+
+function list_hookAttrChange(list_name) {
+    jQuery('table[id='+list_name+'_grid] [attrs]').each(function () {
+        var $this = jQuery(this);
+        var attrs = $this.attr('attrs') || '{}';
+        var widget = $this.attr('widget') || '';
+        var container = this;
+        var prefix = widget.slice(0, widget.lastIndexOf('/')+1) || '';
+
+        // Convert Python statement into it's equivalent in JavaScript.
+        attrs = attrs.replace(/\(/g, '[');
+        attrs = attrs.replace(/\)/g, ']');
+        attrs = attrs.replace(/True/g, '1');
+        attrs = attrs.replace(/False/g, '0');
+        attrs = attrs.replace(/\buid\b/g, window.USER_ID);
+
+        try {
+            attrs = eval('(' + attrs + ')');
+        } catch(e){
+            return;
+        }
+
+        var row_is_editable = $this.parents('tr.grid-row').is('.editors')
+        for (var attr in attrs) {
+            if (!row_is_editable && attr != 'invisible') {
+                // when row is not in editable mode we only care about invisible attributes
+                // as others attrs (readonly, required) won't have any effects.
+                continue;
+            }
+            if (attrs[attr] == '') {
+                return form_onAttrChange(container, widget, attr, attrs[attr], $this);
+            }
+            forEach(attrs[attr], function(n) {
+                if (typeof(n) == "number") { // {'invisible': [1]}
+                    return form_onAttrChange(container, widget, attr, n, $this);
+                }
+                if (row_is_editable) {
+                    var $field = jQuery(this).bind('onAttrChange', partial(form_onAttrChange, container, widget, attr, attrs[attr], $this));
+                    $field.change(partial(form_onAttrChange, container, widget, attr, attrs[attr], $this));
+                }
+                return form_onAttrChange(container, widget, attr, attrs[attr], $this);
+            });
+        }
+    });
 }
 
 function form_onAttrChange(container, widgetName, attr, expr, elem) {
@@ -193,20 +270,48 @@ function matchArray(val,eval_value){
     return true;
 }
 
+function form_find_field_in_context(prefix, field, ref_elem) {
+    // try to find field in the context of reference element (ref_elem)
+    var elem = null;
+    if (ref_elem.parents('table.grid').length) {
+        var parent = ref_elem.parents('tr.grid-row');
+        elem = parent.find(idSelector(prefix + field));
+
+        if (!elem || !elem.length) {
+            var parent_selector = '[name='+prefix + field +']';
+            elem = parent.find(parent_selector);
+        }
+
+        if (!elem || !elem.length) {
+            // try getting with _terp_listfields/TABLE_ID/FIELD_NAME
+            var parent_table_id = ref_elem.parents('table.grid')[0].id;
+            if (parent_table_id && parent_table_id.match('_grid$')) {
+                parent_table_id = parent_table_id.slice(0, parent_table_id.length - 5);
+            }
+            if (parent_table_id == '_terp_list') {
+                // in case list name if '_terp_list' this means we're not inside a o2m/m2m fields,
+                // and we no need need to prefix with parent_table_id name
+                parent_table_id = ''
+            } else {
+                parent_table_id = parent_table_id + '/'
+            }
+            var parent_relative_fieldname = '[name=_terp_listfields/' + parent_table_id + prefix + field + ']';
+            elem = parent.find(parent_relative_fieldname);
+        }
+    }
+    if (!elem || !elem.length) {
+        elem = jQuery(idSelector(prefix + field));
+    }
+    return elem;
+}
+
 function form_evalExpr(prefix, expr, ref_elem) {
 
     var stack = [];
     for (var i = 0; i < expr.length; i++) {
 
         var ex = expr[i];
-        var elem = null;
-        if (ref_elem.parents('table.grid').length) {
-            var parent = ref_elem.parents('tr.grid-row');
-            elem = parent.find(idSelector(prefix + ex[0]));
-        }
-        if (!elem || !elem.length) {
-            elem = jQuery(idSelector(prefix + ex[0]));
-        }
+        var elem = form_find_field_in_context(prefix, ex[0], ref_elem);
 
         if (ex.length==1) {
             stack.push(ex[0]);
@@ -221,11 +326,24 @@ function form_evalExpr(prefix, expr, ref_elem) {
 
         var elem_value;
         if(elem.is(':input')) {
-            elem_kind = elem.attr('kind')
+            elem_value = elem.val();
+            var elem_kind = elem.attr('kind')
+            var nan_pattern = /[^0-9]/g;
             if(elem_kind == 'float' || elem_kind == 'integer') {
-                elem_value = eval(elem.val());
-            } else {
-                elem_value = elem.val();
+                // extract sign and number from input value
+                var sign = elem_value[0] == '-' ? '-' : '';
+                var integer_part = elem_value.substring(sign.length), decimal_part = '';
+                if (elem_kind == 'float') {
+                    // split float integer and decimal parts on last non decimal char
+                    var decimal_sep_position = integer_part.replace(nan_pattern, '.').lastIndexOf('.');
+                    if (decimal_sep_position !== -1) {
+                        decimal_part = '.' + integer_part.substring(decimal_sep_position+1);
+                        integer_part = integer_part.substring(0, decimal_sep_position);
+                    }
+                }
+                // remove all non-decimal chars and evalute string to get a real number
+                integer_part = integer_part.replace(nan_pattern, '');
+                elem_value = eval(sign + integer_part + decimal_part);
             }
         } else if(elem[0].nodeName == "TABLE"){
             prefix = $(elem).attr('id')
@@ -412,9 +530,6 @@ function form_setVisible(container, field, visible) {
 
 jQuery(document).ready(function(){
     form_hookContextMenu();
-    form_hookStateChange();
-    form_hookAttrChange();
-}).ajaxStop(function () {
     form_hookStateChange();
     form_hookAttrChange();
 });

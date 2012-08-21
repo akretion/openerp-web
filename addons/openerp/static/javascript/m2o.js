@@ -66,14 +66,13 @@ ManyToOne.prototype.__init__ = function(name) {
     jQuery(this.text).attr('autocomplete', 'OFF');
 
     if(this.editable) {
-        jQuery(this.field).change(jQuery.proxy(this, 'on_change'));
         jQuery(this.text).bind({
             keydown: jQuery.proxy(this, 'on_keydown'),
             keypress: jQuery.proxy(this, 'on_keypress'),
             keyup: jQuery.proxy(this, 'on_keyup'),
             focus: jQuery.proxy(this, 'gotFocus'),
             blur: jQuery.proxy(this, 'lostFocus')
-        }).removeAttr('callback');
+        });
 
         this.lastTextResult = this.text.value;
 
@@ -97,10 +96,12 @@ ManyToOne.prototype.__init__ = function(name) {
 };
 
 ManyToOne.prototype.gotFocus = function(evt) {
+    jQuery(this.text).removeAttr('callback');
     this.hasFocus = true;
 };
 
 ManyToOne.prototype.lostFocus = function() {
+    jQuery(this.text).removeAttr('callback');
     this.hasFocus = false;
     if(this.selectedResult || this.lastKey == 9) {
         this.lastKey = null;
@@ -234,6 +235,7 @@ ManyToOne.prototype.change_icon = function() {
 };
 
 ManyToOne.prototype.on_keyup = function() {
+    jQuery(this.text).removeAttr('callback');
     // Stop processing if a special key has been pressed. Or if the last search requested the same string
     if(this.specialKeyPressed || (this.text.value == this.lastSearch)) return false;
 
@@ -267,6 +269,7 @@ ManyToOne.prototype.setCompletionText = function ($selectedRow) {
 };
 
 ManyToOne.prototype.on_keydown = function(evt) {
+    jQuery(this.text).removeAttr('callback');
     this.lastKey = evt.which;
     // Used to stop processing of further key functions
     this.specialKeyPressed = false;
@@ -292,9 +295,6 @@ ManyToOne.prototype.on_keydown = function(evt) {
 
                 this.setCompletionText($selectedRow);
 
-                if(this.callback) {
-                    onChange(this.name);
-                }
                 $(this.field).change();
                 this.change_icon();
                 this.clearResults();
@@ -335,8 +335,6 @@ ManyToOne.prototype.on_keydown = function(evt) {
         this.text.value = '';
         this.field.value = '';
         $(this.field).change();
-        this.on_change(evt);
-        form_hookAttrChange();
     }
 
     //Tab
@@ -362,6 +360,7 @@ ManyToOne.prototype.on_keydown = function(evt) {
 };
 
 ManyToOne.prototype.on_keypress = function(evt) {
+    jQuery(this.text).removeAttr('callback');
     // We use 'keyCode' instead if 'which' because keypress is only triggered on 'character' keys except in firefox.
     if (evt.keyCode == 9 || evt.ctrlKey) {
         return true;
@@ -635,7 +634,6 @@ ManyToOne.prototype.getOnclick = function(evt) {
 	    } else if ($m2o_field[0]._m2o) {
 		$m2o_field[0]._m2o.on_change();
             } else {
-                self.on_change();
                 $m2o_field.change();
             }
         }

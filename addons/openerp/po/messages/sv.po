@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2011-03-18 11:53+0100\n"
-"PO-Revision-Date: 2012-06-25 11:44+0000\n"
+"PO-Revision-Date: 2012-07-16 15:34+0000\n"
 "Last-Translator: Anders Wallenquist <anders.wallenquist@vertel.se>\n"
 "Language-Team: sv <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-26 05:40+0000\n"
-"X-Generator: Launchpad (build 15482)\n"
+"X-Launchpad-Export-Date: 2012-07-26 04:56+0000\n"
+"X-Generator: Launchpad (build 15679)\n"
 "Generated-By: Babel None\n"
 
 #: validators.py:75
@@ -649,7 +649,7 @@ msgstr "Lösenord"
 #: controllers/templates/error_page.mako:82
 #, python-format
 msgid "An %(error_type)s has been reported."
-msgstr ""
+msgstr "Ett %(error_type)s har rapporterats."
 
 #: controllers/templates/error_page.mako:84
 msgid "Let me fix it"
@@ -669,6 +669,8 @@ msgid ""
 "Your request will be sent to OpenERP and publisher warranty team will reply "
 "you shortly."
 msgstr ""
+"Din anmodan kommer skickas till OpenERP och utgivargaranti-teamet svarar "
+"inom kort."
 
 #: controllers/templates/error_page.mako:104
 msgid "Summary of the problem:"
@@ -684,7 +686,7 @@ msgstr "Andra kommentarer:"
 
 #: controllers/templates/error_page.mako:132
 msgid "Send to Publisher Warranty Team"
-msgstr ""
+msgstr "Skicka till utgivargaranti-teamet"
 
 #: controllers/templates/error_page.mako:159
 msgid "Write concurrency warning :"

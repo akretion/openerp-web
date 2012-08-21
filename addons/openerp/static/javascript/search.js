@@ -474,6 +474,7 @@ function parse_filters(src, id) {
     var all_boxes = [];
     var $filter_list = jQuery('#filter_list');
     var domain = '[]';
+    var m2o_filter_domain = [];
     if (jQuery('div.group-data').length) {
         jQuery('div.group-data button').each(function(){
             if (jQuery(this).hasClass('active')) {
@@ -518,6 +519,10 @@ function parse_filters(src, id) {
                $source.attr('filter_context') != '{}') {
                 filter_context.push($source.attr('filter_context'));
             }
+            if ($source.attr('filter_name') && $source.attr('filter_name') != '') {
+                $source.attr('filter_status', 1);
+            }
+	
         } else {
             $source.closest('td').removeClass('grop_box_active');
             $source.attr('checked', false);
@@ -533,6 +538,9 @@ function parse_filters(src, id) {
                 if(filter_index >= 0) {
                     filter_context.splice(filter_index, 1);
                 }
+            }
+            if ($source.attr('filter_name') && $source.attr('filter_name') != '') {
+                $source.attr('filter_status', 0);
             }
         }
         jQuery(id).toggleClass('active inactive');
@@ -563,7 +571,7 @@ function parse_filters(src, id) {
         } else if(kind == 'many2one') {
             fld_name = $fld.attr('id').split('_text')[0]
             if($fld.attr('m2o_filter_domain')){
-                fld_value = 'm2o_'+ fld_value;
+                m2o_filter_domain.push({'domain':$fld.attr('m2o_filter_domain'), 'self': fld_value});
             }
             else {
             	fld_value = parseInt(jQuery(idSelector(fld_name)).val()) || fld_value;
@@ -580,12 +588,13 @@ function parse_filters(src, id) {
             domains[fld_name] = fld_value;
         }
 
-        if(fld_value && fld_value!='')
+        if(!$fld.attr('m2o_filter_domain') && fld_value && fld_value!='')
             domains[fld_name] = fld_value;
     });
     domains = serializeJSON(domains);
     all_domains['domains'] = domains;
     all_domains['search_context'] = search_context;
+    all_domains['m2o_filter_domain'] = m2o_filter_domain;
     var selected_boxes = getElementsByTagAndClassName('input', 'grid-domain-selector');
 
     forEach(selected_boxes, function(box){
@@ -600,6 +609,17 @@ function parse_filters(src, id) {
         check_domain = checked_button.length > 0? checked_button.replace(/(],\[)/g, ', ') : '[]';
         all_domains['check_domain'] = check_domain;
     }
+
+    // compute filter_status based on current filter states
+    var fl_status = {};
+    jQuery('[filter_status]').each(function() {
+        var $this = jQuery(this);
+        if ($this.attr('filter_name')) {
+            fl_status[$this.attr('filter_name')] = parseInt($this.attr('filter_status'));
+        }
+    });
+    all_domains['filter_status'] = serializeJSON(fl_status);
+
     all_domains = serializeJSON(all_domains);
     return all_domains;
 }

@@ -371,6 +371,12 @@
                             </script>
                         % endif
                     % endif
+                    <script type="text/javascript">
+                        // force attrs evaluation after listgrid loading
+                        // (otherwise this won't be catched by form_hookAttrChange() as we don't have any 'id')
+			list_hookStateChange('${name}');
+			list_hookAttrChange('${name}');
+                    </script>
                 </td>
             </tr>
             % if pageable:

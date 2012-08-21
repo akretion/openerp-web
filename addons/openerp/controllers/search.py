@@ -266,6 +266,10 @@ class Search(Form):
         if isinstance(group_by_ctx, str):
             group_by_ctx = cleanup_group_by(group_by_ctx).split(',')
 
+        filter_status = all_domains.get('filter_status')
+        if isinstance(filter_status, str):
+            filter_status = ast.literal_eval(filter_status)
+
         if domains:
             domains = eval(domains)
 
@@ -285,7 +289,9 @@ class Search(Form):
 
         if check_domain and isinstance(check_domain, basestring):
             domain = expr_eval(check_domain, context) or []
-
+        m2o_filter_domain = all_domains.get('m2o_filter_domain', [])
+        for dom in m2o_filter_domain:
+            domain += expr_eval(dom['domain'], {'self': dom['self']}) or []
         search_data = {}
         model = kw.get('model')
         proxy = rpc.RPCProxy(model)
@@ -412,6 +418,8 @@ class Search(Form):
             group_by_ctx = [group_by_ctx]
         if group_by_ctx:
             search_data['group_by_ctx'] = group_by_ctx
+        if filter_status:
+            search_data['filter_status'] = filter_status
         ncustom_domain = openobject.i18n.format.convert_date_format_in_domain(ncustom_domain, res, context)
         return dict(domain=ustr(domain), context=ustr(ctx), search_data=ustr(search_data), filter_domain=ustr(ncustom_domain))
 

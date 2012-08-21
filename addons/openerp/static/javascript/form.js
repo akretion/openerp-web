@@ -286,7 +286,11 @@ function onBooleanClicked(name){
         name = name.slice(0, name.indexOf('_checkbox_'))
     }
     var $source = jQuery(openobject.dom.get(name + '_checkbox_'));
-    var $target = jQuery(openobject.dom.get(name));
+    if(name.indexOf('_terp_listfields') > -1) {
+        var $target = jQuery(idSelector(name)).filter(':hidden')
+    }else{
+        var $target = jQuery(openobject.dom.get(name));
+    }
     $target.val($source.is(':checked') ? 1 : '').change();
 }
 
@@ -539,6 +543,13 @@ function onChange(caller){
         var fld;
         for (var domain in domains) {
             fld = openobject.dom.get(prefix + domain);
+            if (openobject.dom.get(prefix + domain + '_id')) {
+                f_id = openobject.dom.get(prefix + domain + '_id');
+                var kind = jQuery(f_id).attr('kind')
+                if (kind == "many2many"){
+                    fld = openobject.dom.get("_m2m_" + prefix + domain)
+                }
+            }
             if (fld) {
                 jQuery(fld).attr('domain', domains[domain]);
             }

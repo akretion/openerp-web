@@ -162,8 +162,8 @@ class List(TinyWidget):
         if name != '_terp_list':
             self.source = self.name.replace('/', '/') or None
         
-        self.sort_order = ''
-        self.sort_key = ''
+        self.sort_order = kw.get('sort_order', '')
+        self.sort_key = kw.get('sort_key', '')
         #this Condition is for Dashboard to avoid new, edit, delete operation
         self.dashboard = 0
         
@@ -301,7 +301,14 @@ class List(TinyWidget):
         if self.pageable:
             self.pager = Pager(ids=self.ids, offset=self.offset, limit=self.limit, count=self.count)
             self.pager._name = self.name
-           
+
+        # when view is editable, make sure all fields are correctly prefixed
+        # otherwise they may conflict with parent view fields
+        if self.editable:
+            for f, fa in self.headers + self.hiddens:
+                if not isinstance(fa, int):
+                    fa['prefix'] = '_terp_listfields' + ((self.name != '_terp_list' or '') and '/' + self.name)
+
         if self.editable and context.get('set_editable'):#Treeview editable by default or set_editable in context
             attrs['editable'] = "bottom"
         
@@ -493,7 +500,7 @@ class List(TinyWidget):
 
                     headers += [(name, fields[name])]
 
-        dataset = ListViewDataSet(data, list_fields, self.colors)
+        dataset = ListViewDataSet(data, copy.deepcopy(list_fields), self.colors)
 
         return headers, hiddens, dataset, field_total, buttons
 

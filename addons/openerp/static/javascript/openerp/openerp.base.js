@@ -82,6 +82,8 @@ function loadingError(url) {
                     console.warn("Failed to load ", xhr.url, ":", xhr.status, xhr.statusText);
                 }
         }
+        form_hookStateChange();
+        form_hookAttrChange();
     };
 }
 
@@ -111,10 +113,13 @@ function doLoadingSuccess(app, url) {
     return function (data, status, xhr) {
         var target;
         var active_id;
+        var nodestroy;
         if(xhr.getResponseHeader){
             target = xhr.getResponseHeader('X-Target');
+            nodestroy = xhr.getResponseHeader('X-No-Destroy');
             active_id = xhr.getResponseHeader('active_id');
         }
+        nodestroy = (nodestroy && nodestroy == 'true') ? true : false;
         if(target) {
             var _openAction;
             if (window.top.openAction) {
@@ -122,7 +127,7 @@ function doLoadingSuccess(app, url) {
             } else {
                 _openAction = openAction;
             }
-            _openAction(xhr.getResponseHeader('Location'), target, active_id);
+            _openAction(xhr.getResponseHeader('Location'), target, active_id, nodestroy);
             return;
         }
         if(url) {
@@ -158,6 +163,8 @@ function doLoadingSuccess(app, url) {
         if (jQuery('#_terp_id').val() == 'False') {
             initial_onchange_triggers();
         }
+        form_hookStateChange();
+        form_hookAttrChange();
     };
 }
 
@@ -167,7 +174,7 @@ function doLoadingSuccess(app, url) {
  * @param action_url the URL of the action to open
  * @param target the target, if any, defaults to 'current'
  */
-function openAction(action_url, target, terp_id) {
+function openAction(action_url, target, terp_id, nodestroy) {
     var $dialogs = jQuery('.action-dialog');
     switch(target) {
         case 'new':
@@ -206,7 +213,11 @@ function openAction(action_url, target, terp_id) {
         default:
             openLink(action_url);
     }
-    $dialogs.dialog('close');
+    if (!(nodestroy && nodestroy === true)) {
+        // close dialog only if 'nodestroy' flag is not set
+        // (_default_ behaviour is to close the dialog)
+        $dialogs.dialog('close');
+    }
 }
 function closeAction() {
     jQuery('.action-dialog').dialog('close');

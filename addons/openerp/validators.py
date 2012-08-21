@@ -215,7 +215,9 @@ class Email(formencode.validators.Email):
 
 class many2many(BaseValidator):
 
-    if_empty = [(6, 0, [])]
+    @property
+    def if_empty(self):
+        return [(6, 0, [])]
 
     def _to_python(self, value, state):
 
@@ -248,7 +250,9 @@ class many2one(BaseValidator):
     
 class one2many(formencode.validators.FancyValidator):
     
-    if_empty = []
+    @property
+    def if_empty(self):
+        return []
 
 
 # Let some FormEncode strings goes into message catalog.

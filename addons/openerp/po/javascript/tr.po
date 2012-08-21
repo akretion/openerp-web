@@ -8,23 +8,24 @@ msgstr ""
 "Project-Id-Version: openobject-client-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-03-18 11:53+0100\n"
-"PO-Revision-Date: 2011-04-27 13:36+0000\n"
-"Last-Translator: Caner Başaran <Unknown>\n"
+"PO-Revision-Date: 2012-07-29 20:56+0000\n"
+"Last-Translator: Ayhan KIZILTAN <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-20 05:02+0000\n"
-"X-Generator: Launchpad (build 15435)\n"
+"X-Launchpad-Export-Date: 2012-07-30 05:02+0000\n"
+"X-Generator: Launchpad (build 15702)\n"
 
 #: static/javascript/form.js:92
 #, python-format
 msgid "You selected to open %(tabs)s tabs - do you want to continue?"
-msgstr "Sekmelerini %(tabs) seçtiniz - Devam etmek istiyor musunuz?"
+msgstr ""
+"Açmak için %(tabs) sekmelerini seçtiniz - Devam etmek istiyor musunuz?"
 
 #: static/javascript/form.js:169
 msgid "Invalid form, correct red fields."
-msgstr "Hatalı form, kırmızı alanların düzeltiniz."
+msgstr "Geçersiz biçim, kırmızı alanları düzeltiniz."
 
 #: static/javascript/form.js:204
 msgid "Do you really want to delete this record?"
@@ -44,8 +45,7 @@ msgstr "Bu eki silmek istediğinden emin misin?"
 
 #: static/javascript/form.js:1161
 msgid "No record selected ! You can only attach to existing record."
-msgstr ""
-"Hiç Kayıt seçilmedi! Sadece oluşturulmuş bir kayda ek ekleyebilirsiniz."
+msgstr "Hiç kayıt seçilmedi! Sadece varolan kayıta ekleyebilirsiniz."
 
 #: static/javascript/form.js:1220
 msgid "OpenERP - Error"
@@ -56,20 +56,20 @@ msgid ""
 "Warning, the record has been modified,\n"
 "your changes will be discarded."
 msgstr ""
-"Dikkat, Bu kayıt değiştirilmiş,\n"
+"Uyarı, Bu kayıt değiştirilmiş,\n"
 "yaptığınız değişiklikler gözardı edilecek."
 
 #: static/javascript/listgrid.js:542 static/javascript/o2m.js:123
 msgid "To edit Record, please first save it."
-msgstr "Bu kaydı düzenlemek için önce kaydetmeniz gerekiyor."
+msgstr "Kaydı düzenlemek için lütfen önce kaydedin."
 
 #: static/javascript/listgrid.js:650
 msgid "Do you really want to delete selected record(s) ?"
-msgstr "Bu kayıt(lar)ı silmek istediğinden emin misin?"
+msgstr "Seçili kayıt(lar)ı silmek istediğinize emin misiniz?"
 
 #: static/javascript/m2o.js:526
 msgid "error in display::"
-msgstr "ekranda hata::"
+msgstr "görüntüde hata::"
 
 #: static/javascript/o2m.js:67
 msgid "Do you really want to delete record ?"
@@ -81,15 +81,15 @@ msgstr "Geçersiz Değer"
 
 #: static/javascript/viewed.js:63
 msgid "Do you really want to remove this node?"
-msgstr "Bu kayıtı gerçekten silmek istiyor musunuz?"
+msgstr "Bu düğümü silmek istediğinize emin misiniz?"
 
 #: static/javascript/viewed.js:329
 msgid "Do you really wants to create an inherited view here?"
-msgstr "Bağlantılı görünüm oluşturmak istediğinden emin misin?"
+msgstr "Devralınmış görünüm oluşturmak istediğinden emin misin?"
 
 #: static/javascript/openerp/openerp.base.js:127
 msgid "doLoadingSuccess: Cannot parse JSON"
-msgstr "doLoadingSuccess: Parse edilemedi JSON"
+msgstr "doLoadingSuccess: JSON ayrıştırılamıyor"
 
 #: static/javascript/openerp/openerp.base.js:335
 msgid "Loading"
