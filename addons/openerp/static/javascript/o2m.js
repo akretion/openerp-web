@@ -58,15 +58,13 @@ var One2Many = function(name, inline) {
 
     this.params_parent = false
     if (this.m2o == "False"){
-        var params_parent_prefix = '';
-        if (!openobject.dom.get('_terp_model')) {
+        var params_parent_prefix = parent_prefix;
+        if (!openobject.dom.get(parent_prefix + '_terp_model')) {
             // Handle case when we create a new one2many record over an unsaved
             // parent record - in that we not do have a valid '_terp_model'
             // within the document, so we just copy original information.
-            params_parent_prefix = '_terp_view_params/';
-        } else {
-            params_parent_prefix = parent_prefix;
-        }
+            params_parent_prefix = '_terp_view_params/' + params_parent_prefix;
+	}
         this.params_parent = {
             '_terp_view_params/_terp_model': openobject.dom.get(params_parent_prefix + '_terp_model').value,
             '_terp_view_params/_terp_id': openobject.dom.get(params_parent_prefix + '_terp_id').value,
@@ -174,6 +172,12 @@ One2Many.prototype = {
         while (names.length) {
             parents.push(names.shift());
             var prefix = parents.join('/');
+
+            if (!openobject.dom.get(prefix+'/_terp_model')) {
+		// allow skipping some as we only have current level - 1 datas,
+		// so starting on 3rd level we will not have the 1st level anymore
+                continue;
+            }
 
             params['_terp_view_params/' + prefix + '/_terp_model'] = openobject.dom.get(prefix + '/_terp_model').value;
             params['_terp_view_params/' + prefix + '/_terp_id'] = openobject.dom.get(prefix + '/_terp_id').value;
