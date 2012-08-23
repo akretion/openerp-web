@@ -317,7 +317,8 @@ function getFormData(extended, include_readonly, source) {
         prefix = source + '/';
     }
 
-    var is_editable = jQuery(idSelector(prefix+'_terp_editable')).val() == 'True';
+    var editable = jQuery(idSelector(prefix+'_terp_editable')).val();
+    var is_editable = (editable == 'True' || editable == '1') ? true : false;
 
     var $fields = jQuery(parentNode).find('img[kind=picture]');
     if (is_editable) {
