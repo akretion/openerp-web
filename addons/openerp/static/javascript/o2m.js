@@ -303,6 +303,7 @@ One2Many.prototype = {
         });
         setTimeout(function () {
             $form.submit();
+            $form.remove();
         });
         return $frame;
     }
