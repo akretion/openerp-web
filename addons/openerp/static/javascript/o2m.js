@@ -353,13 +353,14 @@ One2Many.prototype = {
      */
     function refresh($this, close_o2m) {
         setTimeout(function () {
-            frame_data($this, 'source-window')
-                .ListView(frame_data($this, 'list'))
-                    .reload(null, 1);
+            var source_window = frame_data($this, 'source-window');
+            var source_list = frame_data($this, 'list');
             if(close_o2m) {
+                // close popup before reloading the list, otherwise
+                // ListView.makeArgs() will be confused by content of frame window
                 close($this);
             }
-                
+            source_window.ListView(source_list).reload(null, 1);
         })
     }
 
