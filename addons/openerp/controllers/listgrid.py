@@ -22,7 +22,7 @@ import copy
 import simplejson
 
 import cherrypy
-from openerp.controllers import SecuredController
+from openerp.controllers import SecuredController, openo2m
 from openerp.utils import rpc, TinyDict, TinyForm, TinyFormError, context_with_concurrency_info, cache
 from openerp.widgets import listgrid, listgroup
 
@@ -298,6 +298,8 @@ class List(SecuredController):
         if params.wiz_id:
             res = wizard.Wizard().execute(params)
             frm = res['form']
+        elif params.o2m and len(params.o2m.split('/')) > 1:
+            frm = openo2m.OpenO2M().create_form(params)
         else:
             frm = form.Form().create_form(params)
 
