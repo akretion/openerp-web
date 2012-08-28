@@ -243,7 +243,7 @@ function form_onAttrChange(container, widgetName, attr, expr, elem) {
     switch (attr) {
         case 'readonly':
             var editable = openobject.dom.get(prefix + '_terp_editable');
-            if (editable && (editable.value == 0 || editable.value == 'False')) {
+            if (widget.tagName != 'BUTTON' && editable && (editable.value == 0 || editable.value == 'False')) {
                 // We are in 'non-editable' mode, so we force readonly = True
                 // whatever readonly attrs result
                 result = true;
