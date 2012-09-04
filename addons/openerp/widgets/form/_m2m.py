@@ -95,16 +95,17 @@ class M2M(TinyInputWidget):
         if not current:
             current = TinyDict()
 
+        search_ids = attrs.get('value')
         current.offset = current.offset or 0
         current.limit = current.limit or 50
-        current.count = len(ids or [])
+        current.count = len(search_ids or [])
 
         if isinstance(ids, tuple):
             ids = list(ids)
 
-        if ids and current.limit != -1 and not params.sort_key:
-            ids = ids[current.offset: current.offset+current.limit]
-        
+        if ids and current.limit != -1 and not params.sort_key and len(search_ids) > current.limit:
+            ids = search_ids[current.offset: current.offset+current.limit]
+
         if self.name == params.source and params.sort_key and ids:
             domain = current.domain or []
             domain.append(('id','in',ids))
