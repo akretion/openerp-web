@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openerp-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-08-31 15:54+0200\n"
-"PO-Revision-Date: 2012-09-09 20:20+0000\n"
+"PO-Revision-Date: 2012-09-11 02:06+0000\n"
 "Last-Translator: Fábio Martinelli - http://zupy.com.br "
 "<webmaster@guaru.net>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-09-10 05:00+0000\n"
+"X-Launchpad-Export-Date: 2012-09-11 05:18+0000\n"
 "X-Generator: Launchpad (build 15924)\n"
 
 #. openerp-web
@@ -509,13 +509,13 @@ msgstr "Formulário"
 #: addons/web/static/src/js/view_form.js:131
 #: addons/web/static/src/js/views.js:808
 msgid "Customize"
-msgstr "Customizar"
+msgstr "Personalizar"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:133
 #: addons/web/static/src/js/view_form.js:728
 msgid "Set Default"
-msgstr "Definir como Padrão"
+msgstr "Configurar Padrão"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:210
@@ -1053,7 +1053,7 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:251
 msgid "OpenERP Entreprise"
-msgstr "OpenERP Entreprise"
+msgstr "OpenERP Enterprise"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:256
@@ -1088,7 +1088,7 @@ msgstr "Nome de usuário ou senha inválidos"
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:306
 msgid "Username"
-msgstr "Nome do usuário"
+msgstr "Nome de usuário"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:308
@@ -1625,12 +1625,12 @@ msgstr "Arquivo CSV:"
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1756
 msgid "2. Check your file format"
-msgstr "Verifique seu formato de arquivo"
+msgstr "2. Verifique seu formato de arquivo"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1759
 msgid "Import Options"
-msgstr "Opções de importação"
+msgstr "Opções de Importação"
 
 #. openerp-web
 #: addons/web/static/src/xml/base.xml:1763
