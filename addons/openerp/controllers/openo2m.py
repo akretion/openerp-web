@@ -51,8 +51,6 @@ class OpenO2M(Form):
             prefix_vp = vp.chain_get(widget_prefix)
             if prefix_vp:
                 vp = prefix_vp
-        params.domain = vp.domain or []
-        params.context = vp.context or []
 
         form = tw.form_view.ViewForm(vp, name="view_form", action="/openerp/openo2m/save")
         cherrypy.request.terp_validators = {}
