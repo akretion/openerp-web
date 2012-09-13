@@ -57,6 +57,11 @@ class OpenO2M(Form):
 
         wid = form.screen.widget.get_widgets_by_name(widget_name)[0]
 
+        if widget_prefix and params.o2m:
+            prefix_params = params.chain_get(params.o2m)
+            if prefix_params:
+                params.update(prefix_params)
+
         # save view_params for later phazes
         vp = vp.make_plain('_terp_view_params/')
         hiddens = map(lambda x: tw.form.Hidden(name=x, default=ustr(vp[x])), vp)
