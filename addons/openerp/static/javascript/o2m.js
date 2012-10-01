@@ -58,15 +58,13 @@ var One2Many = function(name, inline) {
 
     this.params_parent = false
     if (this.m2o == "False"){
-        var params_parent_prefix = '';
-        if (!openobject.dom.get('_terp_model')) {
+        var params_parent_prefix = parent_prefix;
+        if (!openobject.dom.get(parent_prefix + '_terp_model')) {
             // Handle case when we create a new one2many record over an unsaved
             // parent record - in that we not do have a valid '_terp_model'
             // within the document, so we just copy original information.
-            params_parent_prefix = '_terp_view_params/';
-        } else {
-            params_parent_prefix = parent_prefix;
-        }
+            params_parent_prefix = '_terp_view_params/' + params_parent_prefix;
+	}
         this.params_parent = {
             '_terp_view_params/_terp_model': openobject.dom.get(params_parent_prefix + '_terp_model').value,
             '_terp_view_params/_terp_id': openobject.dom.get(params_parent_prefix + '_terp_id').value,
@@ -175,6 +173,12 @@ One2Many.prototype = {
             parents.push(names.shift());
             var prefix = parents.join('/');
 
+            if (!openobject.dom.get(prefix+'/_terp_model')) {
+		// allow skipping some as we only have current level - 1 datas,
+		// so starting on 3rd level we will not have the 1st level anymore
+                continue;
+            }
+
             params['_terp_view_params/' + prefix + '/_terp_model'] = openobject.dom.get(prefix + '/_terp_model').value;
             params['_terp_view_params/' + prefix + '/_terp_id'] = openobject.dom.get(prefix + '/_terp_id').value;
             params['_terp_view_params/' + prefix + '/_terp_ids'] = openobject.dom.get(prefix + '/_terp_ids').value;
@@ -190,6 +194,7 @@ One2Many.prototype = {
             _terp_parent_view_id: this.parent_view_id,
             _terp_o2m: o2m_name ? o2m_name : this.name,
             _terp_o2m_model: this.model,
+            _terp_o2m_fullname: this.name,
             _terp_parent_view_type: this.parent_view_type,
             _terp_editable: readonly ? 0 : 1,
             _terp_m2o: this.m2o
@@ -252,7 +257,9 @@ One2Many.prototype = {
      * have nested o2ms somehow), as we need to get a frame we can target
      * with a form submission.
      */
-    var frame_counter = 0;
+    if (window.top.$.o2m_frame_counter === undefined) {
+        window.top.$.o2m_frame_counter = 0;
+    }
 
     function frame_data($this, data) {
         return $($this.attr('frameElement')).data(data);
@@ -268,7 +275,7 @@ One2Many.prototype = {
      * call.
      */
     function open($this, options) {
-        var frame_identifier = 'test-frame' + frame_counter++;
+        var frame_identifier = 'test-frame' + window.top.$.o2m_frame_counter++;
         var $frame = $.frame_dialog({
             src: 'about:blank',
             // never sure whether the iframe is targetted by name or by id,
@@ -276,7 +283,7 @@ One2Many.prototype = {
             id: frame_identifier,
             name: frame_identifier
         }, {'source-window': $this[0],
-            'list': options['_terp_o2m']
+            'list': options['_terp_o2m_fullname']
         }, {
             width: '70%',
             height: '90%',
@@ -296,6 +303,7 @@ One2Many.prototype = {
         });
         setTimeout(function () {
             $form.submit();
+            $form.remove();
         });
         return $frame;
     }
@@ -345,13 +353,14 @@ One2Many.prototype = {
      */
     function refresh($this, close_o2m) {
         setTimeout(function () {
-            frame_data($this, 'source-window')
-                .ListView(frame_data($this, 'list'))
-                    .reload(null, 1);
+            var source_window = frame_data($this, 'source-window');
+            var source_list = frame_data($this, 'list');
             if(close_o2m) {
+                // close popup before reloading the list, otherwise
+                // ListView.makeArgs() will be confused by content of frame window
                 close($this);
             }
-                
+            source_window.ListView(source_list).reload(null, 1);
         })
     }
 
@@ -391,8 +400,14 @@ One2Many.prototype = {
         var $this;
         if(this == $) $this = $(window);
         else $this = $(this);
-        if(window != window.top) {
-            return window.top.jQuery.o2m.apply($this[0], arguments);
+        var form_controller = window.form_controller;
+        var is_root_window = false;
+        if (form_controller == '/openerp/openm2o' || form_controller == '/openerp/search/new' || form_controller == '/openerp/openm2m') {
+            // stop unstacking window on M2O popup window
+            is_root_window = true;
+        }
+        if(window != window.parent && !is_root_window) {
+            return window.parent.jQuery.o2m.apply($this[0], arguments);
         }
         // We're at the top-level window, $this is the window from which the
         // original $.o2m call was performed, window being the current window

@@ -752,6 +752,8 @@ MochiKit.Base.update(ListView.prototype, {
 
         var current_id = edit_inline ? (parseInt(edit_inline) || 0) : edit_inline;
         var prefix = this.name == '_terp_list' ? '' : this.name + '/';
+        var names = this.name.split('/');
+        var parent_prefix = names.length < 2 ? '' : names.slice(0, names.length - 1).join('/') + '/';
 
         var args = jQuery.extend(this.makeArgs(), {
             _terp_source: this.name,
@@ -766,7 +768,17 @@ MochiKit.Base.update(ListView.prototype, {
             jQuery.extend(args, {
                 _terp_search_domain: openobject.dom.get('_terp_search_domain').value,
                 _terp_search_data: openobject.dom.get('_terp_search_data').value,
-                _terp_filter_domain: openobject.dom.get('_terp_filter_domain').value
+                _terp_filter_domain: openobject.dom.get('_terp_filter_domain').value,
+                _terp_context: openobject.dom.get(prefix + '_terp_context').value,
+                _terp_domain: openobject.dom.get(prefix + '_terp_domain').value
+            });
+        } else {
+            jQuery.extend(args, {
+                _terp_search_domain: "[]",
+                _terp_search_data: "{}",
+                _terp_filter_domain: "[]",
+                _terp_context: openobject.dom.get(parent_prefix + "_terp_context").value,
+                _terp_domain: openobject.dom.get(parent_prefix + "_terp_domain").value
             });
         }
 

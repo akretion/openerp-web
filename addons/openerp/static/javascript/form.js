@@ -69,7 +69,13 @@ function openRecord(id, src, target, readonly){
 
     if (kind == 'many2many') {
         args['source'] = src;
-        jQuery.frame_dialog({src:openobject.http.getURL(get_form_action('/openerp/openm2m/edit', args))});
+        jQuery.frame_dialog({
+                src: openobject.http.getURL(get_form_action('/openerp/openm2m/edit', args))
+            }, {}, {
+                width: '70%',
+                height: '90%',
+                max_height: 700
+            });
         return;
     }
 
@@ -301,13 +307,18 @@ function onBooleanClicked(name){
  * readonly fields (default: excludes disabled fields and fields with
  * readonly="True"
  */
-function getFormData(extended, include_readonly) {
+function getFormData(extended, include_readonly, source) {
 
     var parentNode = openobject.dom.get('_terp_list') || document.forms['view_form'];
 
     var frm = {};
+    var prefix = '';
+    if (source) {
+        prefix = source + '/';
+    }
 
-    var is_editable = jQuery('#_terp_editable').val() == 'True';
+    var editable = jQuery(idSelector(prefix+'_terp_editable')).val();
+    var is_editable = (editable == 'True' || editable == '1') ? true : false;
 
     var $fields = jQuery(parentNode).find('img[kind=picture]');
     if (is_editable) {
@@ -745,7 +756,7 @@ function eval_domain_context_request(options){
     if (prefix[0] == '_terp_listfields') {
         prefix.shift();
     }
-    var params = jQuery.extend(getFormData(1, true), {
+    var params = jQuery.extend(getFormData(1, true, options.source), {
         '_terp_domain': options.domain,
         '_terp_context': options.context,
         '_terp_prefix': prefix.join('/'),

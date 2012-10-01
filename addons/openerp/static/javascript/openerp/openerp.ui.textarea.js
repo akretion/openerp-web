@@ -35,7 +35,7 @@ openerp.ui.TextArea = function(ta) {
 openerp.ui.TextArea.prototype = {
 
     __init__ : function(ta) {
-        this.textarea = jQuery('textarea#' + ta)[0];
+        this.textarea = jQuery('textarea' + idSelector(ta))[0];
         this.gripper = DIV({'class' : 'grip'});
 
         this.ta = this.textarea.cloneNode(true);
