@@ -95,24 +95,18 @@ class M2M(TinyInputWidget):
         if not current:
             current = TinyDict()
 
-        search_ids = attrs.get('value')
         current.offset = current.offset or 0
         current.limit = current.limit or 50
-        current.count = len(search_ids or [])
+        current.count = len(ids or [])
 
         if isinstance(ids, tuple):
             ids = list(ids)
 
-        if ids and current.limit != -1 and not params.sort_key and len(search_ids) > current.limit:
-            ids = search_ids[current.offset: current.offset+current.limit]
-
         if self.name == params.source and params.sort_key and ids:
+            # reorder ids based on supplier criteria (sort_key, sort_order)
             domain = current.domain or []
             domain.append(('id','in',ids))
-            limit = current.limit
-            if current.limit == -1:
-                limit = 0
-            ids = rpc.RPCProxy(self.model).search(domain, current.offset, limit, params.sort_key+ ' '+params.sort_order, current.context)
+            ids = rpc.RPCProxy(self.model).search(domain, 0, 0, params.sort_key+ ' '+params.sort_order, current.context)
             id = ids[0]
 
         if current.view_mode: view_mode = current.view_mode

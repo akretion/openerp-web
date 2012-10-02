@@ -253,6 +253,12 @@ class List(TinyWidget):
             else:
                 self.count = proxy.search_count(search_param, context)
 
+        if not default_data and self.m2m:
+            # prefilter datas for m2m
+            # XXX: make it explicit about how 'sum' are computed as this is going to change default behaviour
+            if ids and self.limit not in (0, -1):
+                ids = self.ids[self.offset:self.offset+self.limit]
+
         self.data_dict = {}
         data = []
 
@@ -281,7 +287,8 @@ class List(TinyWidget):
             for item in data:
                 self.data_dict[item['id']] = item.copy()
 
-            self.ids = ids
+            if not self.m2m:
+                self.ids = ids
         elif kw.get('default_data', []):
             data = kw['default_data']
 
