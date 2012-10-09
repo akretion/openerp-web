@@ -253,6 +253,12 @@ class List(TinyWidget):
             else:
                 self.count = proxy.search_count(search_param, context)
 
+        if not default_data and self.m2m and not self.view_using_sum_attrs(root):
+            # for many2many we limits 'ids' to be readed only when view is not
+            # using sum, otherwise we need to get all 'ids' to compute sums correctly
+            if ids and self.limit not in (0, -1):
+                ids = self.ids[self.offset:self.offset+self.limit]
+
         self.data_dict = {}
         data = []
 
@@ -281,7 +287,10 @@ class List(TinyWidget):
             for item in data:
                 self.data_dict[item['id']] = item.copy()
 
-            self.ids = ids
+            if not self.m2m:
+                # update active 'ids' except for many2many which need to get
+                # all known ids for update to work correctly
+                self.ids = ids
         elif kw.get('default_data', []):
             data = kw['default_data']
 
@@ -418,6 +427,16 @@ class List(TinyWidget):
                 self.editors[f].set_value(values[f])
 
         return super(List, self).display(value, **params)
+
+    def view_using_sum_attrs(self, root):
+        """ detect if supplied view is using <field sum=""/>
+
+        @return: True/False
+        """
+        for node in root.childNodes:
+            if node.nodeName == 'field' and 'attrs' in node_attributes(node):
+                return True
+        return False
 
     def parse(self, root, fields, data=[]):
         """Parse the given node to generate valid list headers.
