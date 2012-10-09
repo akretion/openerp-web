@@ -430,10 +430,12 @@ class Form(SecuredController):
                                 modified[field] = data[field]
 
                     ctx = utils.context_with_concurrency_info(params.context, params.concurrency_info)
-                    Model.write([params.id], modified, ctx)
+                    if modified:
+                        Model.write([params.id], modified, ctx)
                 else:
                     ctx = utils.context_with_concurrency_info(params.context, params.concurrency_info)
-                    Model.write([params.id], data, ctx)
+                    if data:
+                        Model.write([params.id], data, ctx)
 
             tw.ConcurrencyInfo.update(
                 params.model, Model.read([params.id], ['__last_update'], ctx)
