@@ -40,7 +40,7 @@ def insert_xmlhttprequest_status_emulation(text, status=None):
     if body_starttag:
         # insert status attribute
         insert_pos = body_starttag.end() - 1
-        return text[:insert_pos] + ' status="%s"' % (status) + text[insert_pos:]
+        return text[:insert_pos] + ' status="%d"' % (status) + text[insert_pos:]
     return text
 
 def _cp_on_error():
