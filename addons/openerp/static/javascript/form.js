@@ -655,6 +655,7 @@ function onChange(caller){
                         $(idSelector(fld_name+'/_terp_ids')).val(fld_val || '[]');
                         jQuery.ajax({
                             url: '/openerp/listgrid/get_m2m',
+                            async: false,
                             data: {
                                 'name': fld_name,
                                 'model': jQuery(fld).attr('relation'),
