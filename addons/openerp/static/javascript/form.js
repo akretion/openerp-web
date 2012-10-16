@@ -314,7 +314,15 @@ function getFormData(extended, include_readonly, source) {
     var frm = {};
     var prefix = '';
     if (source) {
-        prefix = source + '/';
+        var source_paths = source.split('/')
+        while (source_paths.length > 0) {
+            var sp = source_paths.join('/')+'/_terp_editable';
+            if (jQuery(idSelector(sp)).length > 0) {
+                prefix = source_paths.join('/') + '/'; 
+                break;
+            }
+            source_paths = source_paths.slice(0, source_paths.length - 1);
+        }
     }
 
     var editable = jQuery(idSelector(prefix+'_terp_editable')).val();
