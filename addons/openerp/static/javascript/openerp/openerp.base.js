@@ -184,6 +184,13 @@ function openAction(action_url, target, terp_id, nodestroy) {
             }, null, {
                 width: 800
             });
+            if (terp_id && !$dialogs.length) {
+                if (jQuery('#_terp_id').val() == 'False') {
+                    // we are opening an action on an unsaved record,
+                    // we have to reload the current view with the newly given id
+                    window.top.editRecord(terp_id);
+                }
+            }
             break;
         case 'download':
             var $form = jQuery('<form action="" target="_blank" method="POST"><input type="text" name="download" value="true"/></form>').appendTo("body");
