@@ -83,7 +83,7 @@ class FormDrop(DBForm):
     submit_text = _('Drop')
     form_attrs = {'onsubmit': 'return window.confirm(_("Do you really want to drop the selected database?"))'}
     fields = [openobject.widgets.SelectField(name='dbname', options=get_db_list, label=_('Database:'), validator=validators.String(not_empty=True)),
-              openobject.widgets.PasswordField(name='password', label=_('Password:'), validator=formencode.validators.NotEmpty())]
+              openobject.widgets.PasswordField(name='password', label=_('Super admin password:'), validator=formencode.validators.NotEmpty())]
 
 class FormBackup(DBForm):
     name = "backup"
@@ -91,7 +91,7 @@ class FormBackup(DBForm):
     action = '/openerp/database/do_backup'
     submit_text = _('Backup')
     fields = [openobject.widgets.SelectField(name='dbname', options=get_db_list, label=_('Database:'), validator=validators.String(not_empty=True)),
-              openobject.widgets.PasswordField(name='password', label=_('Password:'), validator=formencode.validators.NotEmpty())]
+              openobject.widgets.PasswordField(name='password', label=_('Super admin password:'), validator=formencode.validators.NotEmpty())]
 
 class FormRestore(DBForm):
     name = "restore"
@@ -99,7 +99,7 @@ class FormRestore(DBForm):
     action = '/openerp/database/do_restore'
     submit_text = _('Restore')
     fields = [openobject.widgets.FileField(name="filename", label=_('File:')),
-              openobject.widgets.PasswordField(name='password', label=_('Password:'), validator=formencode.validators.NotEmpty()),
+              openobject.widgets.PasswordField(name='password', label=_('Super admin password:'), validator=formencode.validators.NotEmpty()),
               openobject.widgets.TextField(name='dbname', label=_('New database name:'), validator=formencode.validators.NotEmpty())]
 
 class FormPassword(DBForm):
