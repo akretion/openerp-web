@@ -599,6 +599,9 @@ class Form(SecuredController):
     def duplicate(self, **kw):
         params, data = TinyDict.split(kw)
 
+        if not params.ids:
+            params.ids = []
+
         id = params.id
         ctx = params.context
         model = params.model
