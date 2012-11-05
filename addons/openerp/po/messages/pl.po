@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2011-03-18 11:53+0100\n"
-"PO-Revision-Date: 2011-11-16 18:39+0000\n"
-"Last-Translator: Łukasz Semler <lukasz.semler@gmail.com>\n"
+"PO-Revision-Date: 2012-11-04 13:04+0000\n"
+"Last-Translator: Łukasz Cieśluk <lukaszciesluk@gmail.com>\n"
 "Language-Team: pl <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-23 05:10+0000\n"
-"X-Generator: Launchpad (build 16179)\n"
+"X-Launchpad-Export-Date: 2012-11-05 04:50+0000\n"
+"X-Generator: Launchpad (build 16232)\n"
 "Generated-By: Babel None\n"
 
 #: validators.py:75
@@ -785,7 +785,7 @@ msgstr "Usuń wszystko"
 
 #: controllers/templates/exp.mako:252
 msgid "Export to File"
-msgstr ""
+msgstr "Eksportuj do pliku"
 
 #: controllers/templates/fieldpref.mako:4
 #: controllers/templates/fieldpref.mako:29
@@ -842,7 +842,7 @@ msgstr "Zamknij"
 #: controllers/templates/footer.mako:3
 #, python-format
 msgid "&copy; 2008-2010 %(ooweb)s  SA. All Rights Reserved "
-msgstr ""
+msgstr "&copy; 2008-2010 %(ooweb)s  SA. Wszystkie prawa zastrzeżone. "
 
 #: controllers/templates/footer.mako:6
 msgid "Significant contributions to the web client have been made by"
