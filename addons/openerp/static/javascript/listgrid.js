@@ -855,7 +855,12 @@ MochiKit.Base.update(ListView.prototype, {
                     $editors.each(function () {
                         var $this = jQuery(this);
                         if ($this.val() && $this.attr('callback')) {
-                            MochiKit.Signal.signal(this, 'onchange');
+                            if (($this.attr('kind') == 'many2one' && $this.attr('id').slice($this.attr('id').length - 5) == '_text')
+				|| ($this.attr('kind') == 'many2many' && $this.attr('id').slice($this.attr('id').length - 4) == '_set')) {
+                                // skip many2x 'text' element, onchange will be triggered from real many2x field
+                                return;
+                            }
+                            $this.trigger('change');
                         }
                     });
                 }
