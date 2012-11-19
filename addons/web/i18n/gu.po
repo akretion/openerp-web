@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: openerp-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-08-31 15:54+0200\n"
-"PO-Revision-Date: 2012-11-17 13:52+0000\n"
+"PO-Revision-Date: 2012-11-18 11:23+0000\n"
 "Last-Translator: Upal Patel(Prodesignz) <upalpatel@prodesignz.net>\n"
 "Language-Team: Gujarati <gu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-11-18 04:56+0000\n"
+"X-Launchpad-Export-Date: 2012-11-19 05:00+0000\n"
 "X-Generator: Launchpad (build 16278)\n"
 
 #. openerp-web
@@ -270,12 +270,12 @@ msgstr ""
 #: addons/web/static/src/js/search.js:962
 #: addons/web/static/src/xml/base.xml:973
 msgid "Yes"
-msgstr "હાં"
+msgstr "હા"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:963
 msgid "No"
-msgstr "નહીં"
+msgstr "ના"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1341
@@ -365,22 +365,22 @@ msgstr ""
 #: addons/web/static/src/js/search.js:1419
 #: addons/web/static/src/js/search.js:1444
 msgid "is"
-msgstr ""
+msgstr "છે"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1445
 msgid "is not"
-msgstr "એ નથી"
+msgstr "નથી"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1459
 msgid "is true"
-msgstr ""
+msgstr "સાચું છે"
 
 #. openerp-web
 #: addons/web/static/src/js/search.js:1460
 msgid "is false"
-msgstr ""
+msgstr "ખોટું છે"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:20
@@ -489,7 +489,7 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:936
 msgid "Position"
-msgstr ""
+msgstr "સ્થાન"
 
 #. openerp-web
 #: addons/web/static/src/js/view_editor.js:974
@@ -538,7 +538,7 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:796
 msgid "Attachments"
-msgstr "જોડાણો"
+msgstr "બિડાણો"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:803
@@ -624,7 +624,7 @@ msgstr ""
 #: addons/web/static/src/js/view_form.js:1625
 #: addons/web/static/src/js/view_form.js:1655
 msgid "Done"
-msgstr ""
+msgstr "પૂર્ણ"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1626
@@ -654,7 +654,7 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1631
 msgid "Today"
-msgstr ""
+msgstr "આજે"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1632
@@ -704,34 +704,34 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1650
 msgid "Time"
-msgstr ""
+msgstr "સમય"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1651
 msgid "Hour"
-msgstr ""
+msgstr "કલાક"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1652
 msgid "Minute"
-msgstr ""
+msgstr "મિનિટ"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1653
 msgid "Second"
-msgstr ""
+msgstr "સેકન્ડ"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:1654
 msgid "Now"
-msgstr ""
+msgstr "હમણાં"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:2062
 #: addons/web/static/src/js/view_form.js:2793
 #: addons/web/static/src/js/view_form.js:3018
 msgid "Open: "
-msgstr ""
+msgstr "ખોલો: "
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:2220
@@ -767,12 +767,12 @@ msgstr ""
 #: addons/web/static/src/xml/base.xml:777
 #: addons/web/static/src/xml/base.xml:1652
 msgid "Add"
-msgstr "ઉમેરવું"
+msgstr "ઉમેરો"
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:2998
 msgid "Add: "
-msgstr "ઉમેરવું: "
+msgstr "ઉમેરો: "
 
 #. openerp-web
 #: addons/web/static/src/js/view_form.js:3466
@@ -787,7 +787,7 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/js/view_list.js:8
 msgid "List"
-msgstr ""
+msgstr "યાદી"
 
 #. openerp-web
 #: addons/web/static/src/js/view_list.js:277
@@ -803,7 +803,7 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/js/view_list.js:374
 msgid "Group"
-msgstr "સમુદાય"
+msgstr "જૂથ"
 
 #. openerp-web
 #: addons/web/static/src/js/view_list.js:549
@@ -824,7 +824,7 @@ msgstr ""
 #. openerp-web
 #: addons/web/static/src/js/view_page.js:8
 msgid "Page"
-msgstr ""
+msgstr "પૃષ્ઠ"
 
 #. openerp-web
 #: addons/web/static/src/js/view_page.js:59
