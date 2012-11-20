@@ -161,6 +161,7 @@ def execute_report(name, **data):
         report_id = rpc.session.execute('report', 'report', name, ids, datas, ctx)
         state = False
         attempt = 0
+        max_attempt = cherrypy.config.get('openerp.server.timeout') or 200
         val = None
         while not state:
             val = rpc.session.execute('report', 'report_get', report_id)
@@ -170,7 +171,7 @@ def execute_report(name, **data):
             if not state:
                 time.sleep(1)
                 attempt += 1
-            if attempt>200:
+            if attempt>max_attempt:
                 raise common.message(_('Printing aborted, too long delay'))
 
         # report name
