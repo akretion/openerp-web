@@ -72,10 +72,22 @@ Many2Many.prototype = {
 
         // save the reference
         openobject.dom.get(name)._m2m = this;
+
+        var $this = jQuery(idSelector('_m2m_' + name));
+        var $list = jQuery(idSelector(name));
+        $list.attr({
+            'callback': $this.attr('callback'),
+            'change_default': $this.attr('change_default')
+        });
+        $list.bind('before-redisplay.m2m', function () {
+            // calls form.js onChange()
+            onChange(name);
+        });
+
     },
 
     onChange: function() {
-        this.setValue(this.id.value);
+        this.setValue(this.id.value, {'no_onchange': true});
     },
 
     selectAll: function() {
@@ -84,7 +96,8 @@ Many2Many.prototype = {
         }
     },
 
-    setValue: function(ids) {
+    setValue: function(ids, options) {
+        var options = options || {};
         ids = /^\[.*\]/.test(ids) ? ids : '[' + ids + ']';
         ids = eval(ids);
 
@@ -97,7 +110,7 @@ Many2Many.prototype = {
             jQuery(idSelector(this.name)).val(ids);
         }
 
-        if ($id.attr('callback')) {
+        if ($id.attr('callback') && !options.no_onchange) {
             onChange(this.id);
         }
         // Mark form as changed so save alert can appear

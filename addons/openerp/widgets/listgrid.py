@@ -390,37 +390,6 @@ class List(TinyWidget):
                         values[field] = value
                     elif operator == 'in' and len(value) == 1:
                         values[field] = value[0]
-                        
-            #call on_change methods
-            headers_index = dict([(item[0], item[1]) for item in self.headers])
-            to_check = values.keys()
-            for field_name in to_check:
-                if not field_name in headers_index:
-                    continue
-                props = headers_index[field_name]
-                if not "on_change" in props:
-                    continue
-                on_change_method = props["on_change"]
-                
-                match = re.match('^(.*?)\((.*)\)$', on_change_method)
-                if not match:
-                    raise common.error(_('Application Error'), _('Wrong on_change trigger'))
-                func_name = match.group(1)
-                arg_names = [n.strip() for n in match.group(2).split(',')]
-                
-                args = [values[arg] if arg in values else False for arg in arg_names]
-                
-                proxy = rpc.RPCProxy(self.model)
-                response = getattr(proxy, func_name)([], *args)
-                if response is False:
-                    response = {}
-                if 'value' not in response:
-                    response['value'] = {}
-                
-                new_values = response["value"]
-                for k, v in new_values.items():
-                    if v not in values or values[k] != v:
-                        values[k] = v
 
         for f in fields:
             if f in values:
