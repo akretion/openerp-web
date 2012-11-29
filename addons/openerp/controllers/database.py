@@ -107,8 +107,8 @@ class FormPassword(DBForm):
     string = _('Change Administrator Password')
     action = '/openerp/database/do_password'
     submit_text = _('Change Password')
-    fields = [openobject.widgets.PasswordField(name='old_password', label=_('Old Password:'), validator=formencode.validators.NotEmpty()),
-              openobject.widgets.PasswordField(name='new_password', label=_('New Password:'), validator=formencode.validators.NotEmpty()),
+    fields = [openobject.widgets.PasswordField(name='old_password', label=_('Old super admin password:'), validator=formencode.validators.NotEmpty()),
+              openobject.widgets.PasswordField(name='new_password', label=_('New super admin password:'), validator=formencode.validators.NotEmpty()),
               openobject.widgets.PasswordField(name='confirm_password', label=_('Confirm Password:'), validator=formencode.validators.NotEmpty())]
 
     validator = openobject.validators.Schema(chained_validators=[formencode.validators.FieldsMatch("new_password","confirm_password")])
