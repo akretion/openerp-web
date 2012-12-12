@@ -254,9 +254,7 @@ MochiKit.Base.update(ListView.prototype, {
             // get listview selectable value, so we know if we are in
             // simple or multiple selection mode
             var selectable = openobject.dom.get('_terp_selectable');
-            if (selectable) {
-                selectable = selectable.value
-            }
+            selectable = selectable ? selectable.value : undefined;
             jQuery.ajax({
                 url: '/openerp/listgrid/multiple_groupby',
                 type: 'POST',
