@@ -466,7 +466,7 @@ class Search(Form):
         model = kw.get('model')
         domain = kw.get('domain')
         group_by = kw.get('group_by', [])
-        if isinstance(group_by, str):
+        if isinstance(group_by, (str,unicode)):
             group_by = expr_eval(group_by)
         if group_by:
             context = {'group_by': group_by}
