@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openobject-client-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-11-29 11:40+0100\n"
-"PO-Revision-Date: 2012-03-01 16:57+0000\n"
-"Last-Translator: Dimitar Markov <dimitar.markov@gmail.com>\n"
+"PO-Revision-Date: 2013-01-26 08:42+0000\n"
+"Last-Translator: Iliyan Yordanov <inj@injener.net>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-12-21 05:11+0000\n"
-"X-Generator: Launchpad (build 16378)\n"
+"X-Launchpad-Export-Date: 2013-01-27 04:44+0000\n"
+"X-Generator: Launchpad (build 16451)\n"
 
 #: validators.py:84
 msgid "Invalid literal for float"
@@ -237,11 +237,11 @@ msgstr "Промяна на парола"
 
 #: controllers/database.py:110
 msgid "Old super admin password:"
-msgstr ""
+msgstr "Стара парола на Супер Администратор:"
 
 #: controllers/database.py:111
 msgid "New super admin password:"
-msgstr ""
+msgstr "Нова парола на Супер Администратор:"
 
 #: controllers/database.py:112
 msgid "Confirm Password:"
@@ -404,7 +404,7 @@ msgstr "Грешка във формата на файла"
 
 #: controllers/impex.py:528
 msgid "The file is empty !"
-msgstr ""
+msgstr "Файлът е празен !"
 
 #: controllers/impex.py:528
 msgid "Importation !"
@@ -833,7 +833,7 @@ msgstr "Затвори"
 #: controllers/templates/footer.mako:3
 #, python-format
 msgid "&copy; 2008-2010 %(ooweb)s  SA. All Rights Reserved "
-msgstr ""
+msgstr "&copy; 2008-2010 %(ooweb)s SA. Всички права запазени. "
 
 #: controllers/templates/footer.mako:6
 msgid "Significant contributions to the web client have been made by"
@@ -1330,7 +1330,7 @@ msgstr "не съдържа"
 
 #: widgets/search.py:294
 msgid "is equal to"
-msgstr ""
+msgstr "е равно на"
 
 #: widgets/search.py:294
 msgid "is not equal to"
