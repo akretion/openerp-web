@@ -286,14 +286,15 @@ instance.web.ActionManager = instance.web.Widget.extend({
         var type = action.type.replace(/\./g,'_');
         var popup = action.target === 'new';
         var inline = action.target === 'inline' || action.target === 'inlineview';
-        action.flags = _.extend({
+        action.flags = _.defaults(action.flags || {}, {
             views_switcher : !popup && !inline,
             search_view : !popup && !inline,
             action_buttons : !popup && !inline,
             sidebar : !popup && !inline,
             pager : !popup && !inline,
-            display_title : !popup
-        }, action.flags || {});
+            display_title : !popup,
+            search_disable_custom_filters: action.context && action.context.search_disable_custom_filters
+        });
         action.menu_id = options.action_menu_id;
         if (!(type in this)) {
             console.error("Action manager can't handle action of type " + action.type, action);
@@ -454,11 +455,14 @@ instance.web.ViewManager =  instance.web.Widget.extend({
         this.active_view = null;
         this.views_src = _.map(views, function(x) {
             if (x instanceof Array) {
-                var View = instance.web.views.get_object(x[1], true);
+                var view_type = x[1];
+                var View = instance.web.views.get_object(view_type, true);
+                var view_label = View ? View.prototype.display_name : (void 'nope');
                 return {
                     view_id: x[0],
-                    view_type: x[1],
-                    label: View ? View.prototype.display_name : (void 'nope')
+                    view_type: view_type,
+                    label: view_label,
+                    button_label: View ? _.str.sprintf(_t('%(view_type)s view'), {'view_type': (view_label || view_type)}) : (void 'nope'),
                 };
             } else {
                 return x;
@@ -524,7 +528,7 @@ instance.web.ViewManager =  instance.web.Widget.extend({
         }
 
         if (this.searchview) {
-            this.searchview[(view.controller.searchable === false || this.searchview.hidden) ? 'hide' : 'show']();
+            this.searchview[(view.controller.searchable === false || this.searchview.options.hidden) ? 'hide' : 'show']();
         }
 
         this.$el.find('.oe_view_manager_switch a').parent().removeClass('active');
@@ -682,7 +686,11 @@ instance.web.ViewManager =  instance.web.Widget.extend({
         if (this.searchview) {
             this.searchview.destroy();
         }
-        this.searchview = new instance.web.SearchView(this, this.dataset, view_id, search_defaults, this.flags.search_view === false);
+        var options = {
+            hidden: this.flags.search_view === false,
+            disable_custom_filters: this.flags.search_disable_custom_filters,
+        };
+        this.searchview = new instance.web.SearchView(this, this.dataset, view_id, search_defaults, options);
 
         this.searchview.on('search_data', self, this.do_searchview_search);
         return this.searchview.appendTo(this.$el.find(".oe_view_manager_view_search"));
@@ -1263,6 +1271,11 @@ instance.web.View = instance.web.Widget.extend({
                         active_ids: [record_id],
                         active_model: dataset.model
                     });
+                    if (("" + action.context).match(/\bactive_id\b/)) {
+                        // Special case: when the context is evaluted using
+                        // the active_id, we want to disable the custom filters.
+                        ncontext.add({ search_disable_custom_filters: true });
+                    }
                 }
                 ncontext.add(action.context || {});
                 action.context = ncontext;
