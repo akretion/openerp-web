@@ -1,14 +1,14 @@
 # Translations template for PROJECT.
-# Copyright (C) 2012 ORGANIZATION
+# Copyright (C) 2013 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-11-29 11:40+0100\n"
+"POT-Creation-Date: 2013-02-05 17:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -226,7 +226,7 @@ msgstr ""
 msgid "New super admin password:"
 msgstr ""
 
-#: controllers/database.py:112
+#: controllers/database.py:112 controllers/preferences.py:39
 msgid "Confirm Password:"
 msgstr ""
 
@@ -411,27 +411,35 @@ msgstr ""
 msgid "Parent record doesn't exists..."
 msgstr ""
 
-#: controllers/preferences.py:34
+#: controllers/preferences.py:36
 msgid "Change your password"
 msgstr ""
 
-#: controllers/preferences.py:64 controllers/templates/header.mako:59
+#: controllers/preferences.py:37
+msgid "Old Password:"
+msgstr ""
+
+#: controllers/preferences.py:38
+msgid "New Password:"
+msgstr ""
+
+#: controllers/preferences.py:69 controllers/templates/header.mako:59
 msgid "Preferences"
 msgstr ""
 
-#: controllers/preferences.py:91
+#: controllers/preferences.py:96
 msgid "All passwords have to be filled."
 msgstr ""
 
-#: controllers/preferences.py:93
+#: controllers/preferences.py:98
 msgid "The new password and its confirmation must be identical."
 msgstr ""
 
-#: controllers/preferences.py:102
+#: controllers/preferences.py:107
 msgid "Could not change your password."
 msgstr ""
 
-#: controllers/preferences.py:104
+#: controllers/preferences.py:109
 msgid "Original password incorrect, your password was not changed."
 msgstr ""
 

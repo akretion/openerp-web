@@ -20,6 +20,8 @@
 ###############################################################################
 import cherrypy
 import re
+import formencode
+import openobject
 import openerp.utils.rpc
 import openobject.errors
 from openobject.tools import expose, redirect
@@ -32,6 +34,9 @@ from form import Form
 class PrefsPassword(database.FormPassword):
     action = "/openerp/pref/password"
     string = _('Change your password')
+    fields = [openobject.widgets.PasswordField(name='old_password', label=_('Old Password:'), validator=formencode.validators.NotEmpty()),
+              openobject.widgets.PasswordField(name='new_password', label=_('New Password:'), validator=formencode.validators.NotEmpty()),
+              openobject.widgets.PasswordField(name='confirm_password', label=_('Confirm Password:'), validator=formencode.validators.NotEmpty())]
 
 int_pattern = re.compile(r'^\d+$')
 class Preferences(Form):
