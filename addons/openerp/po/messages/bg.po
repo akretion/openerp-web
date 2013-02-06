@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openobject-client-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-11-29 11:40+0100\n"
+"POT-Creation-Date: 2013-02-05 17:10+0100\n"
 "PO-Revision-Date: 2013-01-26 08:42+0000\n"
 "Last-Translator: Iliyan Yordanov <inj@injener.net>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-01-27 04:44+0000\n"
-"X-Generator: Launchpad (build 16451)\n"
+"X-Launchpad-Export-Date: 2013-02-06 05:28+0000\n"
+"X-Generator: Launchpad (build 16468)\n"
 
 #: validators.py:84
 msgid "Invalid literal for float"
@@ -243,7 +243,7 @@ msgstr "Стара парола на Супер Администратор:"
 msgid "New super admin password:"
 msgstr "Нова парола на Супер Администратор:"
 
-#: controllers/database.py:112
+#: controllers/database.py:112 controllers/preferences.py:39
 msgid "Confirm Password:"
 msgstr "Потвърдете паролата:"
 
@@ -432,27 +432,35 @@ msgstr "Важна грешка"
 msgid "Parent record doesn't exists..."
 msgstr ""
 
-#: controllers/preferences.py:34
+#: controllers/preferences.py:36
 msgid "Change your password"
 msgstr "Смяна на вашата парола"
 
-#: controllers/preferences.py:64 controllers/templates/header.mako:59
+#: controllers/preferences.py:37
+msgid "Old Password:"
+msgstr "Стара парола:"
+
+#: controllers/preferences.py:38
+msgid "New Password:"
+msgstr "Нова парола:"
+
+#: controllers/preferences.py:69 controllers/templates/header.mako:59
 msgid "Preferences"
 msgstr "Предпочитания"
 
-#: controllers/preferences.py:91
+#: controllers/preferences.py:96
 msgid "All passwords have to be filled."
 msgstr "Всички пароли следва да бъдато попълнени"
 
-#: controllers/preferences.py:93
+#: controllers/preferences.py:98
 msgid "The new password and its confirmation must be identical."
 msgstr "Новата парола и потвърждението на пароалта трябва да бъда идентични"
 
-#: controllers/preferences.py:102
+#: controllers/preferences.py:107
 msgid "Could not change your password."
 msgstr "Не може да се промени вашата парола"
 
-#: controllers/preferences.py:104
+#: controllers/preferences.py:109
 msgid "Original password incorrect, your password was not changed."
 msgstr "Оригиналната парола не е вярна, паролата ви не беше сменена."
 
@@ -1574,12 +1582,6 @@ msgstr "Добавяне на записи..."
 #: widgets/templates/listgrid/listgrid.mako:194
 msgid "Delete record(s)."
 msgstr "Изтриване на запис(и)."
-
-#~ msgid "Old Password:"
-#~ msgstr "Стара парола:"
-
-#~ msgid "New Password:"
-#~ msgstr "Нова парола:"
 
 #~ msgid "Wrong on_change trigger"
 #~ msgstr "Грешно задействане при промяна"

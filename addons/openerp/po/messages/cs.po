@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openobject-client-web\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-11-29 11:40+0100\n"
+"POT-Creation-Date: 2013-02-05 17:10+0100\n"
 "PO-Revision-Date: 2011-12-14 10:07+0000\n"
 "Last-Translator: Konki <pavel.konkol@seznam.cz>\n"
 "Language-Team: Czech\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-12-21 05:11+0000\n"
-"X-Generator: Launchpad (build 16378)\n"
+"X-Launchpad-Export-Date: 2013-02-06 05:28+0000\n"
+"X-Generator: Launchpad (build 16468)\n"
 "X-Poedit-Language: Czech\n"
 "Generated-By: Babel 0.9.5\n"
 
@@ -242,7 +242,7 @@ msgstr ""
 msgid "New super admin password:"
 msgstr ""
 
-#: controllers/database.py:112
+#: controllers/database.py:112 controllers/preferences.py:39
 msgid "Confirm Password:"
 msgstr "Potvrdit heslo:"
 
@@ -436,27 +436,35 @@ msgstr "ChybaImportování"
 msgid "Parent record doesn't exists..."
 msgstr "Nadřazený záznam neexistuje..."
 
-#: controllers/preferences.py:34
+#: controllers/preferences.py:36
 msgid "Change your password"
 msgstr "Změnit vaše heslo"
 
-#: controllers/preferences.py:64 controllers/templates/header.mako:59
+#: controllers/preferences.py:37
+msgid "Old Password:"
+msgstr "Staré heslo:"
+
+#: controllers/preferences.py:38
+msgid "New Password:"
+msgstr "Nové heslo:"
+
+#: controllers/preferences.py:69 controllers/templates/header.mako:59
 msgid "Preferences"
 msgstr "Předvolby"
 
-#: controllers/preferences.py:91
+#: controllers/preferences.py:96
 msgid "All passwords have to be filled."
 msgstr "Musí být vyplněna všechna hesla."
 
-#: controllers/preferences.py:93
+#: controllers/preferences.py:98
 msgid "The new password and its confirmation must be identical."
 msgstr "Nové heslo a jeho potvrzení musí být stejné."
 
-#: controllers/preferences.py:102
+#: controllers/preferences.py:107
 msgid "Could not change your password."
 msgstr "Nelze změnit vaše heslo."
 
-#: controllers/preferences.py:104
+#: controllers/preferences.py:109
 msgid "Original password incorrect, your password was not changed."
 msgstr "Neplatné původní heslo, vaše heslo nebylo změněno."
 
@@ -1597,12 +1605,6 @@ msgstr "Přidat záznamy..."
 #: widgets/templates/listgrid/listgrid.mako:194
 msgid "Delete record(s)."
 msgstr "Smazat záznam(y)."
-
-#~ msgid "Old Password:"
-#~ msgstr "Staré heslo:"
-
-#~ msgid "New Password:"
-#~ msgstr "Nové heslo:"
 
 #~ msgid "Wrong on_change trigger"
 #~ msgstr "Špatný spouštěč on_change"

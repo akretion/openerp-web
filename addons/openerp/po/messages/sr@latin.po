@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openobject-client-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-11-29 11:40+0100\n"
+"POT-Creation-Date: 2013-02-05 17:10+0100\n"
 "PO-Revision-Date: 2011-02-28 12:02+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Serbian latin <sr@latin@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-12-21 05:12+0000\n"
-"X-Generator: Launchpad (build 16378)\n"
+"X-Launchpad-Export-Date: 2013-02-06 05:29+0000\n"
+"X-Generator: Launchpad (build 16468)\n"
 
 #: validators.py:84
 msgid "Invalid literal for float"
@@ -242,7 +242,7 @@ msgstr ""
 msgid "New super admin password:"
 msgstr ""
 
-#: controllers/database.py:112
+#: controllers/database.py:112 controllers/preferences.py:39
 msgid "Confirm Password:"
 msgstr "Potvrdi lozinku:"
 
@@ -436,27 +436,35 @@ msgstr "GreškaUvoza"
 msgid "Parent record doesn't exists..."
 msgstr "Roditeljski zapis ne postoji"
 
-#: controllers/preferences.py:34
+#: controllers/preferences.py:36
 msgid "Change your password"
 msgstr "Promeni lozinku"
 
-#: controllers/preferences.py:64 controllers/templates/header.mako:59
+#: controllers/preferences.py:37
+msgid "Old Password:"
+msgstr "Stara lozinka:"
+
+#: controllers/preferences.py:38
+msgid "New Password:"
+msgstr "Nova lozinka:"
+
+#: controllers/preferences.py:69 controllers/templates/header.mako:59
 msgid "Preferences"
 msgstr "Podešavanja"
 
-#: controllers/preferences.py:91
+#: controllers/preferences.py:96
 msgid "All passwords have to be filled."
 msgstr "Sve lozinke moraju biti unete."
 
-#: controllers/preferences.py:93
+#: controllers/preferences.py:98
 msgid "The new password and its confirmation must be identical."
 msgstr "Nova lozinka i njena potvrda moraju biti istovetne."
 
-#: controllers/preferences.py:102
+#: controllers/preferences.py:107
 msgid "Could not change your password."
 msgstr "Nije bilo moguće promeniti lozinku."
 
-#: controllers/preferences.py:104
+#: controllers/preferences.py:109
 msgid "Original password incorrect, your password was not changed."
 msgstr "Prvobitna lozinka netačna, lozinka nije  promenjena."
 
@@ -1590,12 +1598,6 @@ msgstr "Dodaj zapise..."
 #: widgets/templates/listgrid/listgrid.mako:194
 msgid "Delete record(s)."
 msgstr "Izbriši zapis(e)."
-
-#~ msgid "Old Password:"
-#~ msgstr "Stara lozinka:"
-
-#~ msgid "New Password:"
-#~ msgstr "Nova lozinka:"
 
 #~ msgid "Wrong on_change trigger"
 #~ msgstr "Greška u on_change pokretaču"

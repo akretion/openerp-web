@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-11-29 11:40+0100\n"
+"POT-Creation-Date: 2013-02-05 17:10+0100\n"
 "PO-Revision-Date: 2013-01-08 22:16+0000\n"
 "Last-Translator: Numérigraphe <Unknown>\n"
 "Language-Team: fr <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-01-09 05:20+0000\n"
-"X-Generator: Launchpad (build 16412)\n"
+"X-Launchpad-Export-Date: 2013-02-06 05:28+0000\n"
+"X-Generator: Launchpad (build 16468)\n"
 "Generated-By: Babel None\n"
 
 #: validators.py:84
@@ -251,7 +251,7 @@ msgstr ""
 msgid "New super admin password:"
 msgstr ""
 
-#: controllers/database.py:112
+#: controllers/database.py:112 controllers/preferences.py:39
 msgid "Confirm Password:"
 msgstr "Confirmer le mot de passe:"
 
@@ -450,27 +450,35 @@ msgstr "Erreur à l'importation"
 msgid "Parent record doesn't exists..."
 msgstr "L'enregistrement parent n'existe pas..."
 
-#: controllers/preferences.py:34
+#: controllers/preferences.py:36
 msgid "Change your password"
 msgstr "Changer de mot de passe"
 
-#: controllers/preferences.py:64 controllers/templates/header.mako:59
+#: controllers/preferences.py:37
+msgid "Old Password:"
+msgstr "Ancien mot de passe:"
+
+#: controllers/preferences.py:38
+msgid "New Password:"
+msgstr "Nouveau mot de passe:"
+
+#: controllers/preferences.py:69 controllers/templates/header.mako:59
 msgid "Preferences"
 msgstr "Préférences"
 
-#: controllers/preferences.py:91
+#: controllers/preferences.py:96
 msgid "All passwords have to be filled."
 msgstr "Tous les mots de passe doivent être remplis."
 
-#: controllers/preferences.py:93
+#: controllers/preferences.py:98
 msgid "The new password and its confirmation must be identical."
 msgstr "Le nouveau mot de passe et sa confirmation doivent être identiques."
 
-#: controllers/preferences.py:102
+#: controllers/preferences.py:107
 msgid "Could not change your password."
 msgstr "Impossible de modifier votre mot de passe."
 
-#: controllers/preferences.py:104
+#: controllers/preferences.py:109
 msgid "Original password incorrect, your password was not changed."
 msgstr ""
 "Le mot de passe original est incorrect, votre mot de passe n'a pas été "
@@ -1619,12 +1627,6 @@ msgstr "Supprimer l'(es) enregistrement(s)."
 
 #~ msgid "Action not found!"
 #~ msgstr "Action non trouvée"
-
-#~ msgid "Old Password:"
-#~ msgstr "Ancien mot de passe:"
-
-#~ msgid "New Password:"
-#~ msgstr "Nouveau mot de passe:"
 
 #~ msgid "Wrong on_change trigger"
 #~ msgstr "Déclencheur 'on_change' erroné"
