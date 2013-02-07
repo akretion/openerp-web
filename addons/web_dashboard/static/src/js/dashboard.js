@@ -145,6 +145,23 @@ openerp.web.form.DashBoard = openerp.web.form.Widget.extend({
             action = result.result,
             view_mode = action_attrs.view_mode;
 
+        if (result.result.groups_id && result.result.groups_id.length) {
+            if (openerp.connection.user_groups_id) {
+                if (_.intersection(openerp.connection.user_groups_id, result.result.groups_id).length==0) {
+                    jQuery('#' + this.view.element_id + '_action_' + index).parent().remove();
+                    return;
+                }
+            }
+            else {
+                new openerp.web.Model('res.users').call('read', [openerp.connection.uid, ['groups_id']], {}).then(
+                    function(result2) {
+                        openerp.connection.user_groups_id=result2.groups_id;
+                        self.on_load_action(result, index, action_attrs);
+                    });
+                return;
+            }
+        }
+
         if (action_attrs.context && action_attrs.context['dashboard_merge_domains_contexts'] === false) {
             // TODO: replace this 6.1 workaround by attribute on <action/>
             action.context = action_attrs.context || {};
