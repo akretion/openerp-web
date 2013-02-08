@@ -1,0 +1,46 @@
+# Korean translation for openobject-client-web
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the openobject-client-web package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: openobject-client-web\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2011-03-18 11:53+0100\n"
+"PO-Revision-Date: 2013-02-08 03:51+0000\n"
+"Last-Translator: Josh Kim <joshkkim@gmail.com>\n"
+"Language-Team: Korean <ko@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2013-02-08 04:44+0000\n"
+"X-Generator: Launchpad (build 16482)\n"
+
+#: static/javascript/infobox.js:135
+msgid "Do you really want to delete this record?"
+msgstr "정말로 이 레코드를 삭제하길 원하십니까?"
+
+#: static/javascript/process.js:170
+msgid "Notes:"
+msgstr "메모:"
+
+#: static/javascript/process.js:178
+msgid "Subflows:"
+msgstr "하위 흐름:"
+
+#: static/javascript/process.js:182
+msgid "Related:"
+msgstr "관련:"
+
+#: static/javascript/process.js:266
+msgid "Help"
+msgstr "도움말"
+
+#: static/javascript/workflow.js:317
+msgid "state could not be created"
+msgstr "상태를 생성할 수 없었습니다"
+
+#: static/javascript/workflow.js:354
+msgid "Could not create transaction at server"
+msgstr "서버에서 거래를 생성할 수 없었음"

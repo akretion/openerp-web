@@ -1,0 +1,128 @@
+# Korean translation for openobject-client-web
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the openobject-client-web package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: openobject-client-web\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2011-03-18 11:53+0100\n"
+"PO-Revision-Date: 2013-02-08 03:50+0000\n"
+"Last-Translator: Josh Kim <joshkkim@gmail.com>\n"
+"Language-Team: Korean <ko@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2013-02-08 04:44+0000\n"
+"X-Generator: Launchpad (build 16482)\n"
+
+#: controllers/_diagram.py:89 controllers/_diagram.py:210
+msgid "Could not delete state"
+msgstr "상태를 삭제할 수 없었음"
+
+#: controllers/_diagram.py:274
+msgid "No workflow associated!"
+msgstr "연관된 작업 흐름이 없음!"
+
+#: controllers/process.py:46
+msgid "Help: Not Defined"
+msgstr "도움말: 정의되지 않음"
+
+#: controllers/process.py:89
+#, python-format
+msgid "%(name)s - Resource: %(resource)s, State: %(state)s"
+msgstr "%(name)s - 리소스: %(resource)s, 상태: %(state)s"
+
+#: controllers/process.py:101
+msgid "Last modified by:"
+msgstr "최근 수정한 사람:"
+
+#: controllers/templates/process.mako:4 controllers/templates/process.mako:87
+#: controllers/templates/process_tip.mako:5
+msgid "Process"
+msgstr "진행"
+
+#: controllers/templates/process.mako:55
+msgid "Documentation"
+msgstr "문서"
+
+#: controllers/templates/process.mako:56
+msgid "Read Documentation Online"
+msgstr "온라인으로 문서 읽기"
+
+#: controllers/templates/process.mako:62
+msgid "Forum"
+msgstr "포럼"
+
+#: controllers/templates/process.mako:63
+msgid "Community Discussion"
+msgstr "커뮤니티 토론"
+
+#: controllers/templates/process.mako:68
+msgid "Books"
+msgstr "도서"
+
+#: controllers/templates/process.mako:69
+msgid "Get the book on Amazon"
+msgstr "Amazon 에서 도서 획득하기"
+
+#: controllers/templates/process.mako:74
+msgid "Support / Publisher Warranty"
+msgstr "지원 / 출판자 보증"
+
+#: controllers/templates/process.mako:75
+msgid "Get the OpenERP Warranty"
+msgstr "OpenERP 보증 획득하기"
+
+#: controllers/templates/process.mako:97
+msgid "Select Process"
+msgstr "과정 선택"
+
+#: controllers/templates/process.mako:103
+msgid "Select"
+msgstr "선택"
+
+#: controllers/templates/process.mako:117
+msgid "[Edit Process]"
+msgstr "[과정 편집]"
+
+#: controllers/templates/process.mako:119
+msgid "[show fields]"
+msgstr "[필드 보이기]"
+
+#: controllers/templates/process.mako:120
+msgid "[hide fields]"
+msgstr "[필드 숨기기]"
+
+#: controllers/templates/process_open.mako:54
+#: controllers/templates/process_tip.mako:20
+#: controllers/templates/wkf_popup.mako:52
+msgid "Close"
+msgstr "닫기"
+
+#: controllers/templates/process_open.mako:55
+#: controllers/templates/wkf_popup.mako:49
+msgid "Save"
+msgstr "저장"
+
+#: controllers/templates/workflow.mako:4
+msgid "Workflow"
+msgstr "작업 흐름"
+
+#: controllers/templates/workflow.mako:20
+#, python-format
+msgid "Workflow (%s)"
+msgstr "작업 흐름 (%s)"
+
+#: widgets/_views.py:8
+msgid "Diagram"
+msgstr "도표"
+
+#: widgets/_views.py:9
+msgid "Diagram view..."
+msgstr "도표 화면..."
+
+#: widgets/templates/diagram.mako:27
+msgid "Loading..."
+msgstr "불러오는 중..."

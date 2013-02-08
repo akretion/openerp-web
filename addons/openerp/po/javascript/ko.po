@@ -1,0 +1,103 @@
+# Korean translation for openobject-client-web
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the openobject-client-web package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: openobject-client-web\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2011-03-18 11:53+0100\n"
+"PO-Revision-Date: 2013-02-08 04:13+0000\n"
+"Last-Translator: Josh Kim <joshkkim@gmail.com>\n"
+"Language-Team: Korean <ko@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2013-02-08 04:44+0000\n"
+"X-Generator: Launchpad (build 16482)\n"
+
+#: static/javascript/form.js:92
+#, python-format
+msgid "You selected to open %(tabs)s tabs - do you want to continue?"
+msgstr "%(tabs)s 탭을 열기로 선택했습니다 - 계속 하시겠습니까?"
+
+#: static/javascript/form.js:169
+msgid "Invalid form, correct red fields."
+msgstr "유효하지 않은 양식, 빨간색 필드를 정정하세요."
+
+#: static/javascript/form.js:204
+msgid "Do you really want to delete this record?"
+msgstr "정말로 이 레코드를 삭제하길 원하십니까?"
+
+#: static/javascript/form.js:960
+msgid "You must select one or several records !"
+msgstr "하나 또는 여러 개의 레코드를 선택하십시오 !"
+
+#: static/javascript/form.js:995
+msgid "You must save this record to perform the action !"
+msgstr "작동하기 위해서는 이 레코드를 저장해야 합니다!"
+
+#: static/javascript/form.js:1127
+msgid "Do you really want to delete the attachment"
+msgstr "정말로 첨부 파일을 삭제하길 원하십니까?"
+
+#: static/javascript/form.js:1161
+msgid "No record selected ! You can only attach to existing record."
+msgstr "레코드가 선택되지 않음 ! 기존 레코드에만 첨부할 수 있음."
+
+#: static/javascript/form.js:1220
+msgid "OpenERP - Error"
+msgstr "OpenERP - 오류"
+
+#: static/javascript/form.js:1291
+msgid ""
+"Warning, the record has been modified,\n"
+"your changes will be discarded."
+msgstr ""
+"경고, 레코드가 수정되었습니다,\n"
+"변경사항은 무시됩니다."
+
+#: static/javascript/listgrid.js:542 static/javascript/o2m.js:123
+msgid "To edit Record, please first save it."
+msgstr "편집하려면, 먼저 레코드를 저장하세요."
+
+#: static/javascript/listgrid.js:650
+msgid "Do you really want to delete selected record(s) ?"
+msgstr "정말로 선택한 레코드를 삭제하길 원하십니까?"
+
+#: static/javascript/m2o.js:526
+msgid "error in display::"
+msgstr "화면에 오류 발생::"
+
+#: static/javascript/o2m.js:67
+msgid "Do you really want to delete record ?"
+msgstr "정말로 레코드를 삭제하길 원하십니까?"
+
+#: static/javascript/search.js:285
+msgid "Invalid Value"
+msgstr "유효하지 않은 값"
+
+#: static/javascript/viewed.js:63
+msgid "Do you really want to remove this node?"
+msgstr "정말로 이 노드를 삭제하길 원하십니까?"
+
+#: static/javascript/viewed.js:329
+msgid "Do you really wants to create an inherited view here?"
+msgstr "정말로 여기에 전승된 화면을 생성하길 원하십니까?"
+
+#: static/javascript/openerp/openerp.base.js:127
+msgid "doLoadingSuccess: Cannot parse JSON"
+msgstr "doLoadingSuccess: JSON을 파스할 수 없음"
+
+#: static/javascript/openerp/openerp.base.js:335
+msgid "Loading"
+msgstr "읽어오는 중"
+
+#: static/javascript/openerp/openerp.ui.tips.js:51
+msgid "Object"
+msgstr "객체"
+
+#: static/javascript/openerp/openerp.ui.tips.js:52
+msgid "Field"
+msgstr "필드"

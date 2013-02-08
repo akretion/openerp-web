@@ -1,0 +1,1566 @@
+# Korean translation for openobject-client-web
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the openobject-client-web package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: openobject-client-web\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-02-05 17:10+0100\n"
+"PO-Revision-Date: 2013-02-08 04:44+0000\n"
+"Last-Translator: Josh Kim <joshkkim@gmail.com>\n"
+"Language-Team: Korean <ko@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2013-02-08 04:44+0000\n"
+"X-Generator: Launchpad (build 16482)\n"
+
+#: validators.py:84
+msgid "Invalid literal for float"
+msgstr "플로트에 유효하지 않은 문자"
+
+#: validators.py:123 validators.py:128 validators.py:275
+msgid "Invalid datetime format"
+msgstr "유효하지 않은 일시 형식"
+
+#: validators.py:175
+msgid "Please select a file."
+msgstr "파일을 선택하세요."
+
+#: validators.py:260
+msgid "Please enter an email address"
+msgstr "이메일 주소를 입력하세요"
+
+#: validators.py:261
+msgid "An email address must contain a single @"
+msgstr "이메일 주소는 하나의 @만 포함해야 합니다."
+
+#: validators.py:262
+#, python-format
+msgid ""
+"The username portion of the email address is invalid (the portion before the "
+"@: %(username)s)"
+msgstr "이메일 주소의 사용자 이름이 유효하지 않습니다. (@ 이전 부분: %(username)s)"
+
+#: validators.py:263
+#, python-format
+msgid ""
+"The domain portion of the email address is invalid (the portion after the @: "
+"%(domain)s)"
+msgstr "이메일 주소의 도메인이 유효하지 않습니다 (@ 이후 부분: %(domain)s)"
+
+#: validators.py:267
+msgid "You must start your URL with http://, https://, etc"
+msgstr "URL은  http://, https:// 등으로 시작해야 합니다."
+
+#: validators.py:268
+msgid "That is not a valid URL"
+msgstr "유효한 URL이 아닙니다"
+
+#: validators.py:269
+#, python-format
+msgid "You must provide a full domain name (like %(domain)s.com)"
+msgstr "전체 도메인명을 입력해야 합니다 (예: %(domain)s.com)"
+
+#: validators.py:273
+msgid "Please enter an integer value"
+msgstr "정수 값을 입력하세요"
+
+#: validators.py:274
+msgid "Please enter a number"
+msgstr "숫자를 입력하세요"
+
+#: controllers/actions.py:95
+msgid "Invalid View"
+msgstr "유효하지 않은 화면"
+
+#: controllers/actions.py:128
+msgid "Error no report"
+msgstr "오류 보고서가 없음"
+
+#: controllers/actions.py:154
+msgid "Nothing to print"
+msgstr "인쇄할게 없음"
+
+#: controllers/actions.py:174
+msgid "Printing aborted, too long delay"
+msgstr "인쇄 중단, 작업이 장시간 지연됨"
+
+#: controllers/actions.py:405
+msgid "Relative URLs are not supported"
+msgstr "관련 URL은 지원되지 않습니다"
+
+#: controllers/actions.py:438 widgets/form/_action.py:46
+msgid "Action not found"
+msgstr "작동을 찾지 못함"
+
+#: controllers/actions.py:492
+msgid "No action defined"
+msgstr "작동이 정의되지 않음"
+
+#: controllers/attachment.py:54
+msgid "No record selected, You can only attach to existing record..."
+msgstr "레코드가 선택되지 않음, 기존 레코드에만 첨부할 수 있습니다..."
+
+#: controllers/database.py:65
+msgid "Create database"
+msgstr "데이터베이스 생성"
+
+#: controllers/database.py:67 controllers/templates/database.mako:52
+#: controllers/templates/search.mako:145
+msgid "Create"
+msgstr "생성"
+
+#: controllers/database.py:70 controllers/database.py:86
+#: controllers/database.py:94 controllers/database.py:102
+msgid "Super admin password:"
+msgstr "슈퍼 관리자 암호:"
+
+#: controllers/database.py:70
+msgid ""
+"This is the password of the user that have the rights to administer "
+"databases. This is not a OpenERP user, just a super administrator. If you "
+"did not changed it, the password is 'admin' after installation."
+msgstr ""
+"이 암호는 관리자 데이터베이스 권한을 가진 사용자의 암호로서, OpenERP 사용자가 아니라 슈퍼 관리자의 암호입니다. 변경하지 않았다면 "
+"설치 후 암호는 'admin' 입니다."
+
+#: controllers/database.py:71 controllers/database.py:103
+msgid "New database name:"
+msgstr "새로운 데이터베이스 이름:"
+
+#: controllers/database.py:71
+msgid ""
+"Choose the name of the database that will be created. The name must not "
+"contain any special character. Exemple: 'terp'."
+msgstr "생성할 데이터베이스 이름을 선택하세요. 이름에는 특수 문자가 포함되면 안됩니다. 예: 'terp'."
+
+#: controllers/database.py:72
+msgid "Load Demonstration data:"
+msgstr "데모 데이터 읽어오기:"
+
+#: controllers/database.py:72
+msgid ""
+"Check this box if you want demonstration data to be installed on your new "
+"database. These data will help you to understand OpenERP, with predefined "
+"products, partners, etc."
+msgstr ""
+"새로운 데이터베이스에 데모 데이터 설치를 원할 경우, 이 상자를 체크하세요. 이 데이터는 사전에 정의된 상품, 협력업체 등에 대한 이해를 "
+"돕습니다."
+
+#: controllers/database.py:73
+msgid "Default Language:"
+msgstr "기본 언어:"
+
+#: controllers/database.py:73
+msgid ""
+"Choose the default language that will be installed for this database. You "
+"will be able to install new languages after installation through the "
+"administration menu."
+msgstr "이 데이터베이스의 기본 언어를 선택하세요. 관리자 메뉴를 통해 언제든지 새 언어를 추가할 수 있습니다."
+
+#: controllers/database.py:74
+msgid "Administrator password:"
+msgstr "관리자 암호:"
+
+#: controllers/database.py:74
+msgid ""
+"This is the password of the 'admin' user that will be created in your new "
+"database."
+msgstr "이것은 새로운 데이터베이스에 생성될 'admin' 사용자의 암호입니다."
+
+#: controllers/database.py:75
+msgid "Confirm password:"
+msgstr "비밀번호 확인:"
+
+#: controllers/database.py:75
+msgid ""
+"This is the password of the 'admin' user that will be created in your new "
+"database. It has to be the same than the above field."
+msgstr "이것은 새로운 데이터베이스에 생성될 'admin' 사용자의 암호이며, 상단 필드와 동일해야 합니다."
+
+#: controllers/database.py:81
+msgid "Drop database"
+msgstr "데이터베이스 삭제"
+
+#: controllers/database.py:83 controllers/templates/database.mako:54
+msgid "Drop"
+msgstr "삭제"
+
+#: controllers/database.py:85 controllers/database.py:93
+#: controllers/templates/login.mako:39
+msgid "Database:"
+msgstr "데이터베이스:"
+
+#: controllers/database.py:90
+msgid "Backup database"
+msgstr "데이터베이스 백업"
+
+#: controllers/database.py:92 controllers/templates/database.mako:56
+msgid "Backup"
+msgstr "백업"
+
+#: controllers/database.py:98
+msgid "Restore database"
+msgstr "데이터베이스 복원"
+
+#: controllers/database.py:100 controllers/templates/database.mako:58
+msgid "Restore"
+msgstr "복원"
+
+#: controllers/database.py:101
+msgid "File:"
+msgstr "파일:"
+
+#: controllers/database.py:107
+msgid "Change Administrator Password"
+msgstr "관리자 암호 변경"
+
+#: controllers/database.py:109 controllers/templates/preferences/index.mako:37
+msgid "Change Password"
+msgstr "암호 변경"
+
+#: controllers/database.py:110
+msgid "Old super admin password:"
+msgstr "예전 슈퍼 관리자 암호:"
+
+#: controllers/database.py:111
+msgid "New super admin password:"
+msgstr "새로운 슈퍼 관리자 암호:"
+
+#: controllers/database.py:112 controllers/preferences.py:39
+msgid "Confirm Password:"
+msgstr "암호 확인:"
+
+#: controllers/database.py:175
+msgid "You must avoid all accents, space or special characters."
+msgstr "모든 강조, 띄어쓰기 또는 특수 문자 사용을 삼가야 합니다."
+
+#: controllers/database.py:176
+msgid "Bad database name"
+msgstr "잘못된 데이터베이스 이름"
+
+#: controllers/database.py:196
+msgid ""
+"The server crashed during installation.\n"
+"We suggest you to drop this database."
+msgstr ""
+"서버가 설치 중에 예기치 않게 종료되었습니다.\n"
+"이 데이터베이스를 삭제할 것을 권장합니다."
+
+#: controllers/database.py:197
+msgid "Error during database creation"
+msgstr "데이터베이스 생성 중 오류 발생"
+
+#: controllers/database.py:200 controllers/database.py:227
+#: controllers/database.py:273 controllers/database.py:296
+msgid "Bad super admin password"
+msgstr "잘못된 슈퍼 관리자 암호"
+
+#: controllers/database.py:204
+msgid "Could not create database."
+msgstr "데이터베이스를 생성할 수 없음."
+
+#: controllers/database.py:230
+msgid "Could not drop database"
+msgstr "데이터베이스를 삭제할 수 없음"
+
+#: controllers/database.py:253
+msgid "Could not create backup."
+msgstr "백업을 생성할 수 없음"
+
+#: controllers/database.py:277
+msgid "Could not restore database"
+msgstr "데이터베이스를 복원할 수 없음"
+
+#: controllers/database.py:300
+msgid "Error, password not changed."
+msgstr "오류, 암호가 변경되지 않음."
+
+#: controllers/error_page.py:79
+msgid ""
+"Your problem has been sent to the quality team\n"
+"We will recontact you after analysing the problem."
+msgstr ""
+"문제가 품질 관리 부서에 전달되었습니다.\n"
+"문제 분석 후 다시 연락드리겠습니다."
+
+#: controllers/error_page.py:81
+#, python-format
+msgid ""
+"Your problem could not be sent to the quality team\n"
+"Please report this error manually at %s"
+msgstr ""
+"문제가 품질 관리 부서에 전달되지 못했습니다.\n"
+"%s에 이 오류를 직접 보고해주세요."
+
+#: controllers/form.py:596
+#, python-format
+msgid "Invalid button type \"%s\""
+msgstr "유효하지 않은 버튼 유형 \"%s\""
+
+#: controllers/form.py:983 controllers/tree.py:255
+msgid "No record selected"
+msgstr "선택된 레코드가 없음"
+
+#: controllers/form.py:988
+msgid "Print Screen"
+msgstr "화면 인쇄"
+
+#: controllers/form.py:1066 utils/rpc.py:123 utils/rpc.py:134 utils/rpc.py:137
+#: widgets/listgrid.py:450 widgets/form/_form.py:910
+msgid "Application Error"
+msgstr "응용 프로그램 오류"
+
+#: controllers/form.py:1066
+#, python-format
+msgid "Wrong on_change trigger: %s"
+msgstr "잘못된 on_change 트리거: %s"
+
+#: controllers/form.py:1178
+msgid "Open resource"
+msgstr "리소스 열기"
+
+#: controllers/form.py:1181
+msgid "Set to default value"
+msgstr "기본 값으로 설정"
+
+#: controllers/form.py:1182
+msgid "Set as default"
+msgstr "기본으로 설정"
+
+#: controllers/form.py:1189
+msgid "Action"
+msgstr "동작"
+
+#: controllers/form.py:1190
+msgid "Report"
+msgstr "보고서"
+
+#: controllers/impex.py:67
+msgid ""
+"Operation failed\n"
+"I/O error"
+msgstr ""
+"작업 실패\n"
+"I/O 오류"
+
+#: controllers/impex.py:116
+msgid "You cannot export these record(s) !"
+msgstr "이 레코드를 내보낼 수 없습니다!"
+
+#: controllers/impex.py:116 utils/common.py:24
+msgid "Error"
+msgstr "오류"
+
+#: controllers/impex.py:372
+msgid "Export Error"
+msgstr "내보내기 오류"
+
+#: controllers/impex.py:443
+msgid "Database ID"
+msgstr "데이터베이스 ID"
+
+#: controllers/impex.py:450
+msgid "Error opening .CSV file"
+msgstr ".CSV 파일 여는 중 오류 발생"
+
+#: controllers/impex.py:450
+msgid "Input Error."
+msgstr "입력 오류."
+
+#: controllers/impex.py:472
+#, python-format
+msgid "You cannot import the field '%s', because we cannot auto-detect it"
+msgstr "'%s' 필드를 자동으로 탐지할 수 없어 가져올 수 없습니다"
+
+#: controllers/impex.py:475
+#, python-format
+msgid "Error processing the first line of the file. Field \"%s\" is unknown"
+msgstr "파일의 첫 번째 줄 처리 중 오류 발생. \"%s\" 필드를 알 수 없습니다."
+
+#: controllers/impex.py:475
+msgid "Import Error."
+msgstr "가져오기 오류."
+
+#: controllers/impex.py:495
+msgid "The CSV delimiter must be a single character"
+msgstr "CSV 구분자는 단일 문자여야 합니다"
+
+#: controllers/impex.py:510
+msgid "File Format Error"
+msgstr "파일 형식 오류"
+
+#: controllers/impex.py:528
+msgid "The file is empty !"
+msgstr "파일이 비어 있습니다 !"
+
+#: controllers/impex.py:528
+msgid "Importation !"
+msgstr "가져오기 !"
+
+#: controllers/impex.py:535
+msgid "XML-RPC error"
+msgstr "XML-RPC 오류"
+
+#: controllers/impex.py:540
+#, python-format
+msgid "Imported %d objects"
+msgstr "%d개의 객체를 가져옴"
+
+#: controllers/impex.py:545
+#, python-format
+msgid "Error trying to import this record:%s. ErrorMessage:%s %s"
+msgstr "해당 레코드를 가져오기를 시도하는 도중 오류 발생: %s. 오류 메시지:%s %s"
+
+#: controllers/impex.py:546
+msgid "ImportationError"
+msgstr "가져오기 오류"
+
+#: controllers/listgrid.py:51
+msgid "Parent record doesn't exists..."
+msgstr "상위 레코드가 존재하지 않음..."
+
+#: controllers/preferences.py:36
+msgid "Change your password"
+msgstr "암호 변경"
+
+#: controllers/preferences.py:37
+msgid "Old Password:"
+msgstr "기존 암호:"
+
+#: controllers/preferences.py:38
+msgid "New Password:"
+msgstr "새 비밀번호:"
+
+#: controllers/preferences.py:69 controllers/templates/header.mako:59
+msgid "Preferences"
+msgstr "환경 설정"
+
+#: controllers/preferences.py:96
+msgid "All passwords have to be filled."
+msgstr "모든 암호는 입력되어야 합니다."
+
+#: controllers/preferences.py:98
+msgid "The new password and its confirmation must be identical."
+msgstr "새 암호와 확인 암호는 동일해야 합니다."
+
+#: controllers/preferences.py:107
+msgid "Could not change your password."
+msgstr "암호를 변경할 수 없음."
+
+#: controllers/preferences.py:109
+msgid "Original password incorrect, your password was not changed."
+msgstr "기존 암호 불일치, 암호가 변경되지 않았습니다."
+
+#: controllers/root.py:198
+#, python-format
+msgid "Version %s"
+msgstr "버전 %s"
+
+#: controllers/translator.py:135
+msgid "You need to save the resource before adding translations."
+msgstr "번역을 추가하기 전에 리소스를 저장해야 합니다."
+
+#: controllers/tree.py:286
+msgid "No resource selected"
+msgstr "리소스를 선택하지 않음"
+
+#: controllers/utils.py:44
+msgid "Could not connect to server"
+msgstr "서버에 연결할 수 없음"
+
+#: controllers/utils.py:131 controllers/templates/login_ajax.mako:111
+msgid "Bad username or password"
+msgstr "안좋은 사용자명 또는 암호"
+
+#: controllers/view_log.py:32
+msgid "ID"
+msgstr "아이디"
+
+#: controllers/view_log.py:33
+msgid "Creation User"
+msgstr "사용자 생성"
+
+#: controllers/view_log.py:34
+msgid "Creation Date"
+msgstr "생성일"
+
+#: controllers/view_log.py:35
+msgid "Latest Modification by"
+msgstr "최종 수정자:"
+
+#: controllers/view_log.py:36
+msgid "Latest Modification Date"
+msgstr "최종 수정일"
+
+#: controllers/view_log.py:37
+msgid "Owner"
+msgstr "소유자"
+
+#: controllers/view_log.py:38
+msgid "Group Owner"
+msgstr "그룹 소유자"
+
+#: controllers/view_log.py:39
+msgid "Access Level"
+msgstr "접근 수준"
+
+#: controllers/view_log.py:40
+msgid "Internal module data ID"
+msgstr "내부 모듈 데이터 ID"
+
+#: controllers/viewed.py:220
+msgid "Invalid view id."
+msgstr "유효하지 않은 ID 화면."
+
+#: controllers/viewed.py:498
+msgid "Unable to create inherited view."
+msgstr "전승된 화면을 생성할 수 없음"
+
+#: controllers/viewed.py:500
+msgid "Can't create inherited view here."
+msgstr "전승된 화면을 여기에 생성할 수 없음"
+
+#: controllers/viewed.py:503
+msgid "Not implemented yet!"
+msgstr "아직 구현되지 않음!"
+
+#: controllers/viewed.py:608
+msgid "Unable to update the view."
+msgstr "화면을 업데이트 할 수 없음"
+
+#: controllers/viewed.py:859
+msgid "New Window"
+msgstr "새 창"
+
+#: controllers/viewed.py:871
+msgid "Save Button"
+msgstr "저장 버튼"
+
+#: controllers/viewed.py:871
+msgid "Cancel Button"
+msgstr "취소 버튼"
+
+#: controllers/viewed.py:871
+msgid "Open Button"
+msgstr "열기 버튼"
+
+#: controllers/viewed.py:877
+msgid "Left"
+msgstr "왼쪽"
+
+#: controllers/viewed.py:877
+msgid "Center"
+msgstr "중앙"
+
+#: controllers/viewed.py:877
+msgid "Right"
+msgstr "오른쪽"
+
+#: controllers/templates/about.mako:4
+msgid "About the OpenERP Web"
+msgstr "OpenERP Web 정보"
+
+#: controllers/templates/about.mako:27
+msgid "OpenERP Web"
+msgstr "OpenERP Web"
+
+#: controllers/templates/about.mako:30
+msgid "Copyright &copy; 2006-TODAY OpenERP SA. All Rights Reserved."
+msgstr "저작권 소유자 &copy; 2006-TODAY OpenERP SA. 모든 권리 보유."
+
+#: controllers/templates/about.mako:31
+msgid "OpenERP is a trademark of the OpenERP SA Company."
+msgstr "OpenERP 는 OpenERP SA Company 의 상표입니다."
+
+#: controllers/templates/about.mako:33
+#, python-format
+msgid "%(ooweb)s is jointly developed by %(tiny)s and %(axelor)s."
+msgstr "%(ooweb)s 는  %(tiny)s 와 %(axelor)s 와 함께 협력하여 개발되었습니다."
+
+#: controllers/templates/about.mako:39
+#, python-format
+msgid "Licenced under the terms of %(license)s"
+msgstr "%(license)s 기간 동안 사용이 허가됨"
+
+#: controllers/templates/about.mako:42
+msgid "About OpenERP"
+msgstr "OpenERP 정보"
+
+#: controllers/templates/about.mako:44
+#, python-format
+msgid ""
+"%(openobject)s is a free enterprise-scale software system that is designed "
+"to boost\n"
+"                    productivity and profit through data integration. It "
+"connects, improves and\n"
+"                    manages business processes in areas such as sales, "
+"finance, supply chain,\n"
+"                    project management, production, services, CRM, etc..\n"
+"                    "
+msgstr ""
+
+#: controllers/templates/about.mako:51
+msgid ""
+"The system is platform-independent, and can be installed on Windows, Mac OS "
+"X,\n"
+"                    and various Linux and other Unix-based distributions. "
+"Its architecture enables\n"
+"                    new functionality to be rapidly created, modifications "
+"to be made to a\n"
+"                    production system and migration to a new version to be "
+"straightforward."
+msgstr ""
+
+#: controllers/templates/about.mako:57
+msgid ""
+"Depending on your needs, OpenERP is available through a web or application "
+"client."
+msgstr "필요에 따라 웹 또는 응용 프로그램 클라이언트로 이용 가능합니다."
+
+#: controllers/templates/database.mako:50 controllers/templates/login.mako:4
+#: controllers/templates/login.mako:67 controllers/templates/login_ajax.mako:85
+#: controllers/templates/login_ajax.mako:104
+msgid "Login"
+msgstr "로그인"
+
+#: controllers/templates/database.mako:60
+msgid "Password"
+msgstr "암호"
+
+#: controllers/templates/error_page.mako:106
+#, python-format
+msgid "An %(error_type)s has been reported."
+msgstr "%(error_type)s 가 보고되었습니다."
+
+#: controllers/templates/error_page.mako:108
+msgid "Let me fix it"
+msgstr "제가 해결해드리겠습니다"
+
+#: controllers/templates/error_page.mako:115
+#: controllers/templates/error_page.mako:117
+msgid "Fix it for me"
+msgstr "대신 해결해주세요"
+
+#: controllers/templates/error_page.mako:123
+msgid "Publisher warranty contract."
+msgstr "발행인 보증서"
+
+#: controllers/templates/error_page.mako:124
+msgid ""
+"Your request will be sent to OpenERP and publisher warranty team will reply "
+"you shortly."
+msgstr "귀하의 요청이 OpenERP로 전송되고 발행인 보증서 팀에서 빠른 시간 내에 회신하겠습니다."
+
+#: controllers/templates/error_page.mako:128
+msgid "Summary of the problem:"
+msgstr "문제 요약:"
+
+#: controllers/templates/error_page.mako:135
+msgid "Explain what you did:"
+msgstr "상황을 설명해주세요:"
+
+#: controllers/templates/error_page.mako:144
+msgid "Other Comments:"
+msgstr "기타 의견:"
+
+#: controllers/templates/error_page.mako:156
+msgid "Send to Publisher Warranty Team"
+msgstr "발행자 보증팀에 전송하기"
+
+#: controllers/templates/error_page.mako:183
+msgid "Write concurrency warning :"
+msgstr "동시 실행 경고 적기:"
+
+#: controllers/templates/error_page.mako:188
+msgid ""
+"This document has been modified while you were editing it.\n"
+"Choose:\n"
+"\n"
+"    - \"Cancel\" to cancel saving.\n"
+"    - \"Write anyway\" to save your current version."
+msgstr ""
+"이 문서는 편집하는 동안 수정되었습니다.\n"
+"다음을 선택하세요:"
+
+#: controllers/templates/error_page.mako:202 controllers/templates/exp.mako:244
+#: controllers/templates/form.mako:141 controllers/templates/openo2m.mako:41
+#: controllers/templates/selection.mako:43
+#: controllers/templates/viewlist.mako:160
+#: controllers/templates/preferences/index.mako:38
+#: widgets/templates/listgrid/listgrid.mako:37
+msgid "Cancel"
+msgstr "취소"
+
+#: controllers/templates/error_page.mako:203
+msgid "Write Anyway"
+msgstr "그래도 적기"
+
+#: controllers/templates/exp.mako:151
+msgid "Export Data"
+msgstr "데이터 내보내기"
+
+#: controllers/templates/exp.mako:166
+msgid "Export Type:"
+msgstr "내보내기 유형:"
+
+#: controllers/templates/exp.mako:169
+msgid "Import Compatible Export"
+msgstr "호환 가능한 내보낸 파일 가져오기"
+
+#: controllers/templates/exp.mako:172
+msgid "Export all Data"
+msgstr "모든 데이터 내보내기"
+
+#: controllers/templates/exp.mako:183
+msgid "Available fields"
+msgstr "가용 필드"
+
+#: controllers/templates/exp.mako:185
+msgid "Fields to export"
+msgstr "내보낼 필드"
+
+#: controllers/templates/exp.mako:187
+msgid "Save fields list"
+msgstr "필드 목록 저장하기"
+
+#: controllers/templates/exp.mako:189
+msgid "Save as:"
+msgstr "다른이름으로 저장:"
+
+#: controllers/templates/exp.mako:191 controllers/templates/fieldpref.mako:102
+#: controllers/templates/selection.mako:45
+msgid "OK"
+msgstr "확인"
+
+#: controllers/templates/exp.mako:195
+msgid "Saved exports:"
+msgstr "저장된 내보낸 파일:"
+
+#: controllers/templates/exp.mako:204 controllers/templates/form.mako:136
+#: widgets/form/templates/one2many.mako:23 widgets/templates/sidebar.mako:67
+#: widgets/templates/listgrid/listgrid.mako:119
+#: widgets/templates/listgrid/listgrid.mako:123
+#: widgets/templates/listgrid/listgrid.mako:127
+#: widgets/templates/listgrid/listgrid.mako:191
+#: widgets/templates/listgrid/listgrid.mako:196
+#: widgets/templates/listgrid/listgroup.mako:150
+#: widgets/templates/listgrid/multiple_group.mako:105
+#: widgets/templates/listgrid/multiple_group.mako:156
+msgid "Delete"
+msgstr "삭제"
+
+#: controllers/templates/exp.mako:217 widgets/templates/sidebar.mako:56
+#: widgets/templates/listgrid/listgrid.mako:153
+msgid "Add"
+msgstr "추가"
+
+#: controllers/templates/exp.mako:222 controllers/templates/viewlist.mako:125
+msgid "Remove"
+msgstr "제거"
+
+#: controllers/templates/exp.mako:227
+msgid "Remove All"
+msgstr "전체 삭제"
+
+#: controllers/templates/exp.mako:245
+msgid "Export to File"
+msgstr "파일로 내보내기"
+
+#: controllers/templates/fieldpref.mako:4
+#: controllers/templates/fieldpref.mako:29
+msgid "Field Preferences"
+msgstr "필드 설정"
+
+#: controllers/templates/fieldpref.mako:39
+msgid "Field Name:"
+msgstr "필드 이름:"
+
+#: controllers/templates/fieldpref.mako:43
+msgid "Domain:"
+msgstr "도메인:"
+
+#: controllers/templates/fieldpref.mako:47
+msgid "Default Value:"
+msgstr "기본 값:"
+
+#: controllers/templates/fieldpref.mako:57
+msgid "Value applicable for:"
+msgstr "다음에 값을 적용할 수 있음:"
+
+#: controllers/templates/fieldpref.mako:63
+msgid "Only for you"
+msgstr "나를 위한"
+
+#: controllers/templates/fieldpref.mako:67
+msgid "For all"
+msgstr "모두를 위한"
+
+#: controllers/templates/fieldpref.mako:76
+msgid "Value applicable if:"
+msgstr "다음 경우에 값을 적용할 수 있음:"
+
+#: controllers/templates/fieldpref.mako:79
+msgid "Always applicable!"
+msgstr "항상 적용할 수 있음!"
+
+#: controllers/templates/fieldpref.mako:99 controllers/templates/imp.mako:205
+#: controllers/templates/index.mako:198 controllers/templates/openm2.mako:52
+#: controllers/templates/save_filter.mako:42
+#: controllers/templates/search.mako:129
+#: controllers/templates/translator.mako:41
+#: controllers/templates/translator.mako:116
+#: controllers/templates/viewed.mako:37
+#: controllers/templates/viewed_new.mako:43
+#: controllers/templates/viewed_new_model.mako:42
+#: controllers/templates/viewed_preview.mako:28
+#: controllers/templates/viewlist.mako:129 widgets/templates/sidebar.mako:67
+#: widgets/templates/viewform.mako:37
+msgid "Close"
+msgstr "닫기"
+
+#: controllers/templates/footer.mako:3
+#, python-format
+msgid "&copy; 2008-2010 %(ooweb)s  SA. All Rights Reserved "
+msgstr "&copy; 2008-2010 %(ooweb)s SA. 모든 권리 보유 "
+
+#: controllers/templates/footer.mako:6
+msgid "Significant contributions to the web client have been made by"
+msgstr "다음은 웹 클라이언트에 중대한 공헌을 해주신 분들입니다:"
+
+#: controllers/templates/form.mako:64
+msgid "Disable all Tips"
+msgstr "모든 팁 비활성화하기"
+
+#: controllers/templates/form.mako:65
+msgid "Hide this Tip"
+msgstr "이 팁 숨기기"
+
+#: controllers/templates/form.mako:83
+msgid "Add / Remove Shortcut..."
+msgstr "추가 / 제거 바로가기"
+
+#: controllers/templates/form.mako:87
+#, python-format
+msgid "Search: %s"
+msgstr "검색: %s"
+
+#: controllers/templates/form.mako:94
+msgid "Corporate Intelligence..."
+msgstr "기업 지능..."
+
+#: controllers/templates/form.mako:100
+msgid "Show Logs..."
+msgstr "로그 보기..."
+
+#: controllers/templates/form.mako:112
+msgid "Create a new resource"
+msgstr "새 리소스 생성하기"
+
+#: controllers/templates/form.mako:113 controllers/templates/search.mako:128
+#: controllers/templates/viewed_new_model.mako:36
+#: controllers/templates/viewlist.mako:119 widgets/form/_o2m.py:97
+#: widgets/form/templates/one2many.mako:21
+#: widgets/templates/listgrid/listgrid.mako:158
+#: widgets/templates/listgrid/listgrid.mako:162
+#: widgets/templates/listgrid/listgroup.mako:20
+msgid "New"
+msgstr "새로 만들기"
+
+#: controllers/templates/form.mako:117
+msgid "Edit this resource"
+msgstr "해당 리소스 편집하기"
+
+#: controllers/templates/form.mako:118 controllers/templates/viewlist.mako:122
+#: widgets/templates/listgrid/listgrid.mako:79
+#: widgets/templates/listgrid/listgrid.mako:89
+#: widgets/templates/listgrid/listgroup.mako:116
+#: widgets/templates/listgrid/multiple_group.mako:72
+#: widgets/templates/listgrid/multiple_group.mako:122
+msgid "Edit"
+msgstr "편집"
+
+#: controllers/templates/form.mako:122
+msgid "Save this resource"
+msgstr "해당 리소스 저장하기"
+
+#: controllers/templates/form.mako:123 controllers/templates/openm2.mako:48
+#: controllers/templates/save_filter.mako:41
+#: controllers/templates/translator.mako:39
+#: controllers/templates/translator.mako:114
+#: controllers/templates/viewed_new.mako:40
+#: controllers/templates/viewed_new_model.mako:39
+#: controllers/templates/viewlist.mako:157
+#: controllers/templates/preferences/index.mako:39
+msgid "Save"
+msgstr "저장"
+
+#: controllers/templates/form.mako:125
+msgid "Save & Edit this resource"
+msgstr "해당 리소스 저장 & 편집"
+
+#: controllers/templates/form.mako:126
+msgid "Save & Edit"
+msgstr "저장 & 편집"
+
+#: controllers/templates/form.mako:130
+msgid "Duplicate this resource"
+msgstr "해당 리소스의 사본 생성하기"
+
+#: controllers/templates/form.mako:131
+msgid "Duplicate"
+msgstr "사본 생성하기"
+
+#: controllers/templates/form.mako:135
+msgid "Delete this resource"
+msgstr "본 리소스 삭제"
+
+#: controllers/templates/form.mako:140
+msgid "Cancel editing the current resource"
+msgstr "현재 리로스 편집을 취소하기"
+
+#: controllers/templates/form.mako:145
+msgid "Create new node"
+msgstr "새 노드 생성하기"
+
+#: controllers/templates/form.mako:146
+msgid "New Node"
+msgstr "새 노드"
+
+#: controllers/templates/form.mako:150
+msgid "Show grid in workflow canvas"
+msgstr "작업 흐름 캔버스에 격자 보이기"
+
+#: controllers/templates/form.mako:151
+msgid "Show grid"
+msgstr "격자 보이기"
+
+#: controllers/templates/header.mako:33
+#, python-format
+msgid "%(company)s"
+msgstr "%(company)s"
+
+#: controllers/templates/header.mako:34 controllers/templates/index.mako:218
+#, python-format
+msgid "%(user)s"
+msgstr "%(user)s"
+
+#: controllers/templates/header.mako:45 controllers/templates/header.mako:47
+msgid "Home"
+msgstr "홈"
+
+#: controllers/templates/header.mako:53
+msgid "Requests"
+msgstr "요청"
+
+#: controllers/templates/header.mako:62
+msgid "Edit Preferences"
+msgstr "설정 편집하기"
+
+#: controllers/templates/header.mako:66 controllers/templates/header.mako:69
+msgid "About"
+msgstr "정보"
+
+#: controllers/templates/header.mako:73 controllers/templates/header.mako:75
+msgid "Help"
+msgstr "도움말"
+
+#: controllers/templates/header.mako:81 controllers/templates/header.mako:84
+msgid "Clear Cache"
+msgstr "캐쉬 삭제하기"
+
+#: controllers/templates/header.mako:89
+msgid "Logout"
+msgstr "로그아웃하기"
+
+#: controllers/templates/imp.mako:80
+msgid "Import Data"
+msgstr "데이터 불러오기"
+
+#: controllers/templates/imp.mako:90
+msgid "1. Import a .CSV file"
+msgstr ".CSV 파일 불러오기"
+
+#: controllers/templates/imp.mako:106
+msgid "CSV File:"
+msgstr "CSV 파일:"
+
+#: controllers/templates/imp.mako:124
+msgid "2. Check your file format"
+msgstr "파일 형식을 확인하세요"
+
+#: controllers/templates/imp.mako:131
+#, python-format
+msgid "The import failed due to: %(message)s"
+msgstr "다음으로 인해 가져오기를 실패함: %(message)s"
+
+#: controllers/templates/imp.mako:133
+msgid "Here is a preview of the file we could not import:"
+msgstr "가져올 수 없었던 파일의 미리보기입니다:"
+
+#: controllers/templates/imp.mako:158
+msgid "CSV Options"
+msgstr "CSV 옵션"
+
+#: controllers/templates/imp.mako:161
+msgid "Separator:"
+msgstr "구분자:"
+
+#: controllers/templates/imp.mako:163
+msgid "Delimiter:"
+msgstr "구획자:"
+
+#: controllers/templates/imp.mako:167
+msgid "Encoding:"
+msgstr "암호화:"
+
+#: controllers/templates/imp.mako:174
+msgid "Lines to skip:"
+msgstr "건너 뛸 줄:"
+
+#: controllers/templates/imp.mako:188
+msgid "3. File imported"
+msgstr "가져온 파일"
+
+#: controllers/templates/imp.mako:206
+msgid "Import File"
+msgstr "파일 가져오기"
+
+#: controllers/templates/index.mako:164
+msgid "System Logs"
+msgstr "시스템 로그"
+
+#: controllers/templates/index.mako:189
+msgid "More"
+msgstr "더 보기"
+
+#: controllers/templates/index.mako:190
+msgid "Widgets"
+msgstr "위젯"
+
+#: controllers/templates/index.mako:221 controllers/templates/index.mako:226
+#, python-format
+msgid "Powered by %(openerp)s "
+msgstr "%(openerp)s (으)로 작동함 "
+
+#: controllers/templates/login.mako:53 controllers/templates/login_ajax.mako:72
+#: controllers/templates/login_ajax.mako:94
+msgid "User:"
+msgstr "사용자:"
+
+#: controllers/templates/login.mako:57 controllers/templates/login_ajax.mako:78
+#: controllers/templates/login_ajax.mako:98
+msgid "Password:"
+msgstr "암호:"
+
+#: controllers/templates/login.mako:64
+msgid "Databases"
+msgstr "데이터베이스"
+
+#: controllers/templates/login.mako:84
+msgid "Top Contributor:"
+msgstr "최대 공헌자:"
+
+#: controllers/templates/login.mako:94
+msgid ""
+"We think that daily job activities can be more intuitive, efficient, "
+"automated, .. and even fun."
+msgstr "우리는 일상에서의 업무가 직관적이고, 효율적이며, 자동적이고 심지어 즐거울 수도 있다고 생각합니다."
+
+#: controllers/templates/login.mako:95
+msgid "OpenERP's vision to be:"
+msgstr "OpenERP의 비전은 다음과 같습니다:"
+
+#: controllers/templates/login.mako:103
+msgid "Full featured"
+msgstr "전 기능 작동"
+
+#: controllers/templates/login.mako:104
+msgid ""
+"Today's enterprise challenges are multiple. We provide one module for each "
+"need."
+msgstr "오늘날 기업의 도전는 복합적입니다. 저희는 각각의 필요에 따라 모듈을 한 개씩 제공합니다."
+
+#: controllers/templates/login.mako:112
+msgid "Open Source"
+msgstr "오픈 소스"
+
+#: controllers/templates/login.mako:113
+msgid ""
+"To Build a great product, we rely on the knowledge of thousands of "
+"contributors."
+msgstr "저희는 뛰어난 제품을 만들기 위해 수많은 공헌자들의 지식에 의존합니다."
+
+#: controllers/templates/login.mako:121
+msgid "User Friendly"
+msgstr "사용자에게 친숙한"
+
+#: controllers/templates/login.mako:122
+msgid ""
+"In order to be productive, people need clean and easy to use interface."
+msgstr "사용자가 생산적으로 일하기 위해서는 깔끔하고 사용이 간편한 인터페이스가 필요합니다."
+
+#: controllers/templates/modules.mako:4
+msgid "Module Management"
+msgstr "모듈 관리"
+
+#: controllers/templates/modules.mako:17
+msgid "Web Modules"
+msgstr "웹 모듈"
+
+#: controllers/templates/openo2m.mako:34
+msgid "Save & Close"
+msgstr "저장 & 닫기"
+
+#: controllers/templates/openo2m.mako:37
+msgid "Save & New"
+msgstr "저장 & 새로 만들기"
+
+#: controllers/templates/save_filter.mako:18
+msgid "Save as Filter"
+msgstr "필터로 저장"
+
+#: controllers/templates/save_filter.mako:30
+msgid "Filter Name"
+msgstr "필터 이름"
+
+#: controllers/templates/search.mako:110
+#, python-format
+msgid "Search %(name)s"
+msgstr "%(name)s 검색"
+
+#: controllers/templates/search.mako:125 widgets/form/templates/datetime.mako:8
+msgid "Select"
+msgstr "선택"
+
+#: controllers/templates/search.mako:127 widgets/_views.py:87
+#: widgets/form/templates/many2one.mako:22
+#: widgets/form/templates/reference.mako:27 widgets/templates/viewform.mako:26
+msgid "Search"
+msgstr "검색"
+
+#: controllers/templates/search.mako:143
+#, python-format
+msgid "No record found : '%(searched_string)s'."
+msgstr "다음 레코드를 찾지 못함: '%(searched_string)s'."
+
+#: controllers/templates/selection.mako:4
+msgid "Select action"
+msgstr "작동 선택"
+
+#: controllers/templates/selection.mako:23
+msgid "Select your action"
+msgstr "작동을 선택하세요"
+
+#: controllers/templates/server_log.mako:4
+msgid "Server Actions..."
+msgstr "서버 작동..."
+
+#: controllers/templates/server_log.mako:14
+msgid "Server Actions"
+msgstr "서버 작동"
+
+#: controllers/templates/translator.mako:4
+msgid "Add Translations"
+msgstr "번역 추가"
+
+#: controllers/templates/translator.mako:17
+msgid "Add Translation"
+msgstr "번역 추가"
+
+#: controllers/templates/translator.mako:27
+msgid "Add Translation for:"
+msgstr "다음 번역을 추가:"
+
+#: controllers/templates/translator.mako:31
+msgid "Fields"
+msgstr "필드"
+
+#: controllers/templates/translator.mako:32
+msgid "Labels"
+msgstr "라벨"
+
+#: controllers/templates/translator.mako:33
+msgid "Relates"
+msgstr "관계"
+
+#: controllers/templates/translator.mako:34
+msgid "View"
+msgstr "화면"
+
+#: controllers/templates/translator.mako:53
+msgid "Field"
+msgstr "필드"
+
+#: controllers/templates/view_log.mako:4 controllers/templates/view_log.mako:12
+msgid "Information"
+msgstr "정보"
+
+#: controllers/templates/viewed.mako:17
+#, python-format
+msgid "View Editor %s - %s"
+msgstr "%s - %s 편집자 보기"
+
+#: controllers/templates/viewed.mako:31
+msgid "Create a new inherited view"
+msgstr "새로운 전승 화면 생성"
+
+#: controllers/templates/viewed.mako:31
+msgid "Inherited View"
+msgstr "전승 화면"
+
+#: controllers/templates/viewed.mako:34
+msgid "Preview"
+msgstr "미리 보기"
+
+#: controllers/templates/viewed_add.mako:6
+msgid "Node Type:"
+msgstr "노드 유형:"
+
+#: controllers/templates/viewed_add.mako:23
+msgid "New Field"
+msgstr "새 필드"
+
+#: controllers/templates/viewed_add.mako:27
+msgid "Position:"
+msgstr "위치:"
+
+#: controllers/templates/viewlist.mako:4
+#: controllers/templates/viewlist.mako:108
+#, python-format
+msgid "Manage Views (%s)"
+msgstr "화면 관리 (%s)"
+
+#: controllers/templates/viewlist.mako:146
+#, python-format
+msgid "Create a view (%s)"
+msgstr "화면 생성 (%s)"
+
+#: controllers/templates/viewlist.mako:174
+msgid "View Name:"
+msgstr "화면 이름:"
+
+#: controllers/templates/viewlist.mako:178
+msgid "View Type:"
+msgstr "화면 유형:"
+
+#: controllers/templates/viewlist.mako:189
+msgid "Priority:"
+msgstr "우선 순위:"
+
+#: utils/common.py:27
+msgid "Warning"
+msgstr "주의"
+
+#: utils/rpc.py:132
+msgid "Access Denied"
+msgstr "접근이 거부됨"
+
+#: utils/rpc.py:239
+msgid "Unsupported protocol."
+msgstr "지원되지 않는 프로토콜."
+
+#: utils/rpc.py:343
+msgid ""
+"You select a timezone but OpenERP could not find pytz library!\n"
+"The timezone functionality will be disable."
+msgstr ""
+"시간대를 선택했지만 OpenERP가 pytz 라이브러리를 찾지 못했습니다!\n"
+"시간대 기능은 비활성화됩니다."
+
+#: utils/rpc.py:356
+msgid "Not logged..."
+msgstr "접속되어 있지 않음..."
+
+#: utils/rpc.py:356
+msgid "Authorization Error"
+msgstr "인증 오류"
+
+#: utils/rpc.py:440
+msgid "== Access Denied =="
+msgstr "== 접근이 거부됨 =="
+
+#: widgets/_views.py:52
+msgid "Form"
+msgstr "양식"
+
+#: widgets/_views.py:53
+msgid "Form view..."
+msgstr "양식 화면"
+
+#: widgets/_views.py:88
+msgid "Search view..."
+msgstr "검색 화면..."
+
+#: widgets/listgrid.py:450 widgets/form/_form.py:910
+#, python-format
+msgid "Invalid view, duplicate field: %s"
+msgstr "유효하지 않은 화면, 중복된 필드: %s"
+
+#: widgets/pager.py:58
+#, python-format
+msgid "%s"
+msgstr "%s"
+
+#: widgets/pager.py:70
+#, python-format
+msgid "%s - %s"
+msgstr "%s - %s"
+
+#: widgets/search.py:293
+msgid "contains"
+msgstr "포함함"
+
+#: widgets/search.py:293
+msgid "doesn't contain"
+msgstr "포함하지 않음"
+
+#: widgets/search.py:294
+msgid "is equal to"
+msgstr "와 동일함"
+
+#: widgets/search.py:294
+msgid "is not equal to"
+msgstr "와 동일하지 않음"
+
+#: widgets/search.py:295
+msgid "greater than"
+msgstr "다음보다 큼"
+
+#: widgets/search.py:295
+msgid "less than"
+msgstr "다음보다 작음"
+
+#: widgets/search.py:296
+msgid "in"
+msgstr "안에 있음"
+
+#: widgets/search.py:296
+msgid "not in"
+msgstr "안에 있지 않음"
+
+#: widgets/search.py:407
+msgid "Yes"
+msgstr "예"
+
+#: widgets/search.py:407
+msgid "No"
+msgstr "아니요"
+
+#: widgets/form/_o2m.py:97 widgets/templates/listgrid/listgrid.mako:156
+#: widgets/templates/listgrid/listgrid.mako:162
+#: widgets/templates/listgrid/listgroup.mako:20
+msgid "Create new record."
+msgstr "새로운 레코드 생성"
+
+#: widgets/form/_o2m.py:110
+msgid "Save/New"
+msgstr "저장/새로 만들기"
+
+#: widgets/form/_o2m.py:110
+msgid "Save parent record."
+msgstr "상위 레코드 저장"
+
+#: widgets/form/_o2m.py:235
+#, python-format
+msgid "%d of %d"
+msgstr "%d 중 %d"
+
+#: widgets/form/_o2m.py:237
+#, python-format
+msgid "- of %d"
+msgstr "%d의 -"
+
+#: widgets/form/templates/binary.mako:28
+msgid "Save As"
+msgstr "다른 이름으로 저장"
+
+#: widgets/form/templates/binary.mako:31
+msgid "add attachment"
+msgstr "첨부 파일 추가"
+
+#: widgets/form/templates/image.mako:6
+msgid "Replace image"
+msgstr "이미지 대체"
+
+#: widgets/form/templates/many2one.mako:2
+#: widgets/form/templates/reference.mako:30
+msgid "Open"
+msgstr "열기"
+
+#: widgets/form/templates/many2one.mako:2
+#: widgets/form/templates/reference.mako:30
+msgid "Open a resource"
+msgstr "리소스 열기"
+
+#: widgets/form/templates/one2many.mako:21
+msgid "Create new record..."
+msgstr "새로운 레코드 생성하기"
+
+#: widgets/form/templates/one2many.mako:23
+msgid "Delete record..."
+msgstr "레코드 삭제..."
+
+#: widgets/form/templates/one2many.mako:29
+msgid "Translate me."
+msgstr "번역을 요청합니다."
+
+#: widgets/form/templates/one2many.mako:48
+msgid "Previous record..."
+msgstr "이전 레코드..."
+
+#: widgets/form/templates/one2many.mako:50
+msgid "Next record..."
+msgstr "다음 레코드..."
+
+#: widgets/templates/logs.mako:22
+msgid "More..."
+msgstr "더 보기..."
+
+#: widgets/templates/logs.mako:35
+msgid "Less..."
+msgstr "작게..."
+
+#: widgets/templates/pager.mako:9
+msgid "<< First"
+msgstr "<<첫 번째"
+
+#: widgets/templates/pager.mako:14
+msgid "< Previous"
+msgstr "< 이전"
+
+#: widgets/templates/pager.mako:19
+msgid "of"
+msgstr "의"
+
+#: widgets/templates/pager.mako:24
+msgid "Next >"
+msgstr "다음 >"
+
+#: widgets/templates/pager.mako:29
+msgid "Last >>"
+msgstr "마지막 >>"
+
+#: widgets/templates/pager.mako:37
+msgid "Change Limit:"
+msgstr "제한 변경:"
+
+#: widgets/templates/sidebar.mako:37
+msgid "Reports"
+msgstr "보고서"
+
+#: widgets/templates/sidebar.mako:41 widgets/templates/viewform.mako:51
+msgid "Actions"
+msgstr "동작"
+
+#: widgets/templates/sidebar.mako:45
+msgid "Links"
+msgstr "링크"
+
+#: widgets/templates/sidebar.mako:49
+msgid "Submenu"
+msgstr "하위 메뉴"
+
+#: widgets/templates/sidebar.mako:54
+msgid "Attachments"
+msgstr "첨부 파일"
+
+#: widgets/templates/sidebar.mako:74
+msgid "File"
+msgstr "파일"
+
+#: widgets/templates/sidebar.mako:83
+msgid "Customize"
+msgstr "사용자 설정"
+
+#: widgets/templates/sidebar.mako:87
+msgid "Manage views of the current object"
+msgstr "현재 객체의 화면 관리"
+
+#: widgets/templates/sidebar.mako:89
+msgid "Manage Views"
+msgstr "화면 관리"
+
+#: widgets/templates/sidebar.mako:93
+msgid "Edit workflow of the current object"
+msgstr "현재 객체의 작업 흐름 편집"
+
+#: widgets/templates/sidebar.mako:94
+msgid "Edit Workflow"
+msgstr "작업 흐름 편집"
+
+#: widgets/templates/sidebar.mako:98
+msgid "Customize current object or create a new object"
+msgstr "현재 객체를 사용자 설정하거나 새로운 객체 생성"
+
+#: widgets/templates/sidebar.mako:100
+msgid "Customize Object"
+msgstr "객체 사용자 설정"
+
+#: widgets/templates/sidebar.mako:106
+msgid "Other Options"
+msgstr "기타 옵션"
+
+#: widgets/templates/sidebar.mako:111
+msgid "Import"
+msgstr "가져오기"
+
+#: widgets/templates/sidebar.mako:114
+msgid "Export"
+msgstr "내보내기"
+
+#: widgets/templates/sidebar.mako:118
+msgid "Translate"
+msgstr "번역"
+
+#: widgets/templates/sidebar.mako:123
+msgid "View Log"
+msgstr "로그 보기"
+
+#: widgets/templates/viewform.mako:25
+msgid "Filter records."
+msgstr "레코드에 필터 적용하기."
+
+#: widgets/templates/viewform.mako:33
+msgid "Clear all."
+msgstr "모두 제거."
+
+#: widgets/templates/viewform.mako:35
+msgid "Clear"
+msgstr "제거"
+
+#: widgets/templates/viewform.mako:43
+msgid "Filters"
+msgstr "필터"
+
+#: widgets/templates/viewform.mako:45
+msgid "Saved Filters"
+msgstr "저장된 필터"
+
+#: widgets/templates/viewform.mako:52
+msgid "New Filter"
+msgstr "새로운 필터"
+
+#: widgets/templates/viewform.mako:53
+msgid "Save Filter"
+msgstr "필터 저장"
+
+#: widgets/templates/viewform.mako:54
+msgid "Manage Filters"
+msgstr "필터 관리"
+
+#: widgets/templates/listgrid/listgrid.mako:23
+msgid "Update"
+msgstr "업데이트"
+
+#: widgets/templates/listgrid/listgrid.mako:152
+msgid "Add records..."
+msgstr "레코드 추가..."
+
+#: widgets/templates/listgrid/listgrid.mako:190
+#: widgets/templates/listgrid/listgrid.mako:194
+msgid "Delete record(s)."
+msgstr "레코드 삭제."
