@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: openobject-client-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-02-05 17:10+0100\n"
-"PO-Revision-Date: 2013-02-08 04:44+0000\n"
+"PO-Revision-Date: 2013-02-08 04:49+0000\n"
 "Last-Translator: Josh Kim <joshkkim@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-02-08 04:44+0000\n"
+"X-Launchpad-Export-Date: 2013-02-09 05:13+0000\n"
 "X-Generator: Launchpad (build 16482)\n"
 
 #: validators.py:84
@@ -478,11 +478,11 @@ msgstr "안좋은 사용자명 또는 암호"
 
 #: controllers/view_log.py:32
 msgid "ID"
-msgstr "아이디"
+msgstr "ID"
 
 #: controllers/view_log.py:33
 msgid "Creation User"
-msgstr "사용자 생성"
+msgstr "생성한 사용자"
 
 #: controllers/view_log.py:34
 msgid "Creation Date"
@@ -514,7 +514,7 @@ msgstr "내부 모듈 데이터 ID"
 
 #: controllers/viewed.py:220
 msgid "Invalid view id."
-msgstr "유효하지 않은 ID 화면."
+msgstr "유효하지 않은 화면 ID."
 
 #: controllers/viewed.py:498
 msgid "Unable to create inherited view."
@@ -554,7 +554,7 @@ msgstr "왼쪽"
 
 #: controllers/viewed.py:877
 msgid "Center"
-msgstr "중앙"
+msgstr "가운데"
 
 #: controllers/viewed.py:877
 msgid "Right"
@@ -584,7 +584,7 @@ msgstr "%(ooweb)s 는  %(tiny)s 와 %(axelor)s 와 함께 협력하여 개발되
 #: controllers/templates/about.mako:39
 #, python-format
 msgid "Licenced under the terms of %(license)s"
-msgstr "%(license)s 기간 동안 사용이 허가됨"
+msgstr "%(license)s 조건에 의해 사용이 허가됨"
 
 #: controllers/templates/about.mako:42
 msgid "About OpenERP"
@@ -647,13 +647,13 @@ msgstr "대신 해결해주세요"
 
 #: controllers/templates/error_page.mako:123
 msgid "Publisher warranty contract."
-msgstr "발행인 보증서"
+msgstr "발행자 보증서"
 
 #: controllers/templates/error_page.mako:124
 msgid ""
 "Your request will be sent to OpenERP and publisher warranty team will reply "
 "you shortly."
-msgstr "귀하의 요청이 OpenERP로 전송되고 발행인 보증서 팀에서 빠른 시간 내에 회신하겠습니다."
+msgstr "귀하의 요청이 OpenERP 로 전송되고 발행자 보증서 팀에서 빠른 시간 내에 회신하겠습니다."
 
 #: controllers/templates/error_page.mako:128
 msgid "Summary of the problem:"
@@ -684,7 +684,7 @@ msgid ""
 "    - \"Write anyway\" to save your current version."
 msgstr ""
 "이 문서는 편집하는 동안 수정되었습니다.\n"
-"다음을 선택하세요:"
+"다음 중 선택하세요:"
 
 #: controllers/templates/error_page.mako:202 controllers/templates/exp.mako:244
 #: controllers/templates/form.mako:141 controllers/templates/openo2m.mako:41
