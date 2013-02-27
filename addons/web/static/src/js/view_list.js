@@ -1059,8 +1059,8 @@ instance.web.ListView.List = instance.web.Class.extend( /** @lends instance.web.
                     // 2. an array of ids
                     ids = value;
                 }
-                new instance.web.Model(column.relation)
-                    .call('name_get', [ids]).done(function (names) {
+                self.alive(new instance.web.Model(column.relation)
+                    .call('name_get', [ids])).done(function (names) {
                         // FIXME: nth horrible hack in this poor listview
                         record.set(column.id + '__display',
                                    _(names).pluck(1).join(', '));
@@ -2212,7 +2212,7 @@ instance.web.list.Binary = instance.web.list.Column.extend({
         if (value && value.substr(0, 10).indexOf(' ') == -1) {
             download_url = "data:application/octet-stream;base64," + value;
         } else {
-            download_url = this.session.url('/web/binary/saveas', {model: options.model, field: this.id, id: options.id});
+            download_url = instance.session.url('/web/binary/saveas', {model: options.model, field: this.id, id: options.id});
             if (this.filename) {
                 download_url += '&filename_field=' + this.filename;
             }
