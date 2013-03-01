@@ -50,7 +50,8 @@ def get_db_list():
 class DBForm(openobject.widgets.Form):
     strip_name = True
 
-    def post_init(self, *args, **kw):
+    def __init__(self, *args, **kw):
+        super(DBForm, self).__init__(*args, **kw)
         if self.validator is openobject.validators.DefaultValidator:
             self.validator = openobject.validators.Schema()
         for f in self.fields:
