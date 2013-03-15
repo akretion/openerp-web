@@ -3480,6 +3480,9 @@ openerp.web.form.FieldBinary = openerp.web.form.Field.extend({
         }
         return size.toFixed(2) + ' ' + units[i];
     },
+    validate: function() {
+        this.invalid = (this.required && this.value === false)
+    },
     on_file_change: function(e) {
         // TODO: on modern browsers, we could directly read the file locally on client ready to be used on image cropper
         // http://www.html5rocks.com/tutorials/file/dndfiles/
