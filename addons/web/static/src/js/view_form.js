@@ -2697,6 +2697,11 @@ openerp.web.form.FieldOne2Many = openerp.web.form.Field.extend({
 	    }, this));
     },
     is_valid: function() {
+        this.invalid = false;
+        if (this.required && _(this.dataset.ids).isEmpty()) {
+            this.invalid = true;
+            return;
+        }
         if (!this.viewmanager.views[this.viewmanager.active_view])
             return true;
         var view = this.viewmanager.views[this.viewmanager.active_view].controller;
