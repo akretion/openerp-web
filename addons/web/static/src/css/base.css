@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "UTF-8";
 @font-face {
   font-family: "mnmliconsRegular";
   src: url("/web/static/src/font/mnmliconsv21-webfont.eot") format("eot");
@@ -2138,7 +2138,7 @@
   min-height: 330px;
   padding: 16px;
 }
-.openerp .oe_form_sheet .oe_form_field_one2many, .openerp .oe_form_sheet .oe_form_field_many2many {
+.openerp .oe_form_sheet .oe_list {
   overflow-x: auto;
 }
 .openerp .oe_application .oe_form_sheetbg {
@@ -2190,8 +2190,8 @@
 .openerp .oe_form div.oe_chatter {
   box-sizing: border-box;
   min-width: 682px;
-  max-width: 892px;
-  margin: 0 auto;
+  max-width: 0 auto;
+  margin: 16px;
   padding: 16px 16px 48px;
 }
 .openerp .oe_form div.oe_form_configuration p, .openerp .oe_form div.oe_form_configuration ul, .openerp .oe_form div.oe_form_configuration ol {
@@ -2750,6 +2750,9 @@
 }
 .openerp .oe_form .oe_form_field_one2many > .oe_view_manager .oe_list_pager_single_page {
   display: none;
+}
+.openerp .oe_form_field_one2many, .openerp .oe_form_field_many2many {
+  overflow-x: auto;
 }
 .openerp .oe_form_field_one2many > .oe_view_manager .oe_list_pager_single_page, .openerp .oe_form_field_many2many > .oe_view_manager .oe_list_pager_single_page {
   display: none !important;
