@@ -118,6 +118,11 @@ class WebRequest(object):
         # we use _ as seprator where RFC2616 uses '-'
         self.lang = lang.replace('-', '_')
 
+    def wrap_transaction(self, fct):
+        from openerp.addons.web.com import transaction
+        with transaction.init(self.session._db, self.session._uid, self.session._password):
+            return fct()
+
 def reject_nonliteral(dct):
     if '__ref' in dct:
         raise ValueError(
@@ -200,7 +205,7 @@ class JsonRequest(WebRequest):
             if _logger.isEnabledFor(logging.DEBUG):
                 _logger.debug("--> %s.%s\n%s", method.im_class.__name__, method.__name__, pprint.pformat(self.jsonrequest))
             response['id'] = self.jsonrequest.get('id')
-            response["result"] = method(self, **self.params)
+            response["result"] = self.wrap_transaction(lambda: method(self, **self.params))
         except session.AuthenticationError, e:
             se = serialize_exception(e)
             error = {
@@ -294,7 +299,7 @@ class HttpRequest(WebRequest):
                 akw[key] = type(value)
         _logger.debug("%s --> %s.%s %r", self.httprequest.method, method.im_class.__name__, method.__name__, akw)
         try:
-            r = method(self, **self.params)
+            r = self.wrap_transaction(lambda: method(self, **self.params))
         except Exception, e:
             _logger.exception("An exception occured during an http request")
             se = serialize_exception(e)
@@ -563,7 +568,7 @@ class Root(object):
         controllers and configure them.  """
 
         for addons_path in openerp.modules.module.ad_paths:
-            for module in sorted(os.listdir(addons_path)):
+            for module in sorted(os.listdir(str(addons_path))):
                 if module not in addons_module:
                     manifest_path = os.path.join(addons_path, module, '__openerp__.py')
                     path_static = os.path.join(addons_path, module, 'static')
@@ -614,6 +619,9 @@ class Root(object):
                         elif exposed == 'http':
                             _logger.debug("Dispatch http to %s %s %s", ps, c, method_name)
                             return lambda request: HttpRequest(request).dispatch(method)
+                    elif method_name != "index":
+                        method_name = "index"
+                        continue
                 ps, _slash, method_name = ps.rpartition('/')
                 if not ps and method_name:
                     ps = '/'
