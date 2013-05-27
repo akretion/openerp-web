@@ -3469,7 +3469,6 @@ var commands = {
 };
 instance.web.form.FieldOne2Many = instance.web.form.AbstractField.extend({
     multi_selection: false,
-    disable_utility_classes: true,
     init: function(field_manager, node) {
         this._super(field_manager, node);
         lazy_build_o2m_kanban_view();
@@ -3738,6 +3737,9 @@ instance.web.form.FieldOne2Many = instance.web.form.AbstractField.extend({
             }
         }
         return $.when(false);
+    },
+    is_false: function() {
+        return this.dataset.ids.length == 0;
     },
     is_syntax_valid: function() {
         if (! this.viewmanager || ! this.viewmanager.views[this.viewmanager.active_view])
@@ -4232,7 +4234,6 @@ instance.web.form.FieldMany2ManyTags = instance.web.form.AbstractField.extend(in
 */
 instance.web.form.FieldMany2Many = instance.web.form.AbstractField.extend(instance.web.form.ReinitializeFieldMixin, {
     multi_selection: false,
-    disable_utility_classes: true,
     init: function(field_manager, node) {
         this._super(field_manager, node);
         this.is_loaded = $.Deferred();
