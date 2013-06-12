@@ -688,7 +688,7 @@
   cursor: pointer;
 }
 .openerp .oe_dropdown_toggle {
-  color: #4c4c4c;
+  color: #2b2b2b;
   font-weight: normal;
 }
 .openerp .oe_dropdown_hover:hover .oe_dropdown_menu, .openerp .oe_dropdown_menu.oe_opened {
@@ -1475,6 +1475,9 @@
   margin: 0px auto;
   text-align: center;
 }
+.openerp .oe_view_manager table.oe_view_manager_header .oe_view_manager_sidebar .oe_dropdown_arrow:after {
+  opacity: 0.9;
+}
 .openerp .oe_view_manager table.oe_view_manager_header td {
   line-height: 26px;
 }
@@ -2143,6 +2146,16 @@
 }
 .openerp .oe_form_readonly .oe_form .oe_form_field_date {
   width: auto;
+}
+.openerp .oe_form_readonly .oe_form_field_boolean .boolean{
+  position: relative;
+  top: -14px;
+  width: 14px;
+  height: 14px;
+  z-index:10000;
+  /* IE needs a color in order for the layer to respond to mouse events */
+  backgroundColor: "#fff";
+  opacity: 0;
 }
 .openerp .oe_form_nosheet {
   margin: 16px;
