@@ -597,7 +597,7 @@ $sheet-padding: 16px
         position: relative
         cursor: pointer
     .oe_dropdown_toggle
-        color: #4C4C4C
+        color: #2B2B2B
         font-weight: normal
     .oe_dropdown_hover:hover .oe_dropdown_menu, .oe_dropdown_menu.oe_opened
         display: block
@@ -1191,6 +1191,8 @@ $sheet-padding: 16px
             .oe_view_manager_sidebar
                 margin: 0px auto
                 text-align: center
+                .oe_dropdown_arrow:after
+                    opacity: 0.9
             td
                 line-height: 26px
             h2
@@ -1699,6 +1701,15 @@ $sheet-padding: 16px
             display: none !important
         .oe_form .oe_form_field_date
             width: auto
+        .oe_form_field_boolean.boolean
+            position: relative
+            top: -20px
+            width: 14px
+            height: 14px
+            z-index: 10000
+            // IE needs a color in order for the layer to respond to mouse events
+            backgroundColor: "#fff"
+            opacity: 0
     // Sheet and padding
     .oe_form_nosheet
         margin: 16px
