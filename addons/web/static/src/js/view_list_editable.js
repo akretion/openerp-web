@@ -136,9 +136,13 @@ openerp.web.list_editable = function (openerp) {
             }
             cancelled.then(function () {
                 self.view.unpad_columns();
-                self.edition_form.stop();
-                self.edition_form.$element.remove();
-                delete self.edition_form;
+                if (typeof self.edition_form != 'undefined') {
+                    if (self.edition_form) {
+                        self.edition_form.stop();
+                        self.edition_form.$element.remove();
+                        delete self.edition_form;
+                    }
+                }
                 self.dataset.index = null;
                 delete self.edition_id;
                 delete self.edition;
