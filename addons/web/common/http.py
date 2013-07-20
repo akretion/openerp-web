@@ -304,7 +304,7 @@ class HttpRequest(WebRequest):
         response = werkzeug.wrappers.Response(data, headers=headers)
         if cookies:
             for k, v in cookies.iteritems():
-                response.set_cookie(k, v)
+                response.set_cookie(k, str(v))
         return response
 
     def not_found(self, description=None):
@@ -500,7 +500,7 @@ class Root(object):
                     response = result
 
                 if hasattr(response, 'set_cookie'):
-                    response.set_cookie(self.session_cookie, session.sid)
+                    response.set_cookie(self.session_cookie, str(session.sid))
 
         return response(environ, start_response)
 
