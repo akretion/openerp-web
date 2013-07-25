@@ -359,7 +359,7 @@ openerp.testing = {};
 
                 return $.Deferred(function (d) {
                     $.when(result).then(function () {
-                        d.resolve.apply(d, arguments)
+                        d.resolve.apply(d, arguments);
                     }, function () {
                         d.reject.apply(d, arguments);
                     });
