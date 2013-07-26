@@ -141,6 +141,7 @@ instance.web.format_value = function (value, descriptor, value_if_empty) {
                 return '';
             }
             console.warn('Field', descriptor, 'had an empty string as value, treating as false...');
+            return value_if_empty === undefined ?  '' : value_if_empty;
         case false:
         case Infinity:
         case -Infinity:
@@ -199,7 +200,7 @@ instance.web.format_value = function (value, descriptor, value_if_empty) {
         case 'selection': case 'statusbar':
             // Each choice is [value, label]
             if(_.isArray(value)) {
-                 value = value[0]
+                 value = value[0];
             }
             var result = _(descriptor.selection).detect(function (choice) {
                 return choice[0] === value;
@@ -219,9 +220,9 @@ instance.web.parse_value = function (value, descriptor, value_if_empty) {
         case "":
             return value_if_empty === undefined ?  false : value_if_empty;
     }
+    var tmp;
     switch (descriptor.widget || descriptor.type || (descriptor.field && descriptor.field.type)) {
         case 'integer':
-            var tmp;
             do {
                 tmp = value;
                 value = value.replace(instance.web._t.database.parameters.thousands_sep, "");
@@ -231,7 +232,7 @@ instance.web.parse_value = function (value, descriptor, value_if_empty) {
                 throw new Error(_.str.sprintf(_t("'%s' is not a correct integer"), value));
             return tmp;
         case 'float':
-            var tmp = Number(value);
+            tmp = Number(value);
             if (!isNaN(tmp))
                 return tmp;
 
