@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openobject-client-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-02-05 17:10+0100\n"
-"PO-Revision-Date: 2011-02-28 12:02+0000\n"
-"Last-Translator: Csaba TOTH <csaba.toth@i3rendszerhaz.hu>\n"
+"PO-Revision-Date: 2013-09-02 07:48+0000\n"
+"Last-Translator: krnkris <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-04-02 05:27+0000\n"
-"X-Generator: Launchpad (build 16546)\n"
+"X-Launchpad-Export-Date: 2013-09-03 05:58+0000\n"
+"X-Generator: Launchpad (build 16753)\n"
 
 #: validators.py:84
 msgid "Invalid literal for float"
@@ -238,11 +238,11 @@ msgstr "Jelszó módosítása"
 
 #: controllers/database.py:110
 msgid "Old super admin password:"
-msgstr ""
+msgstr "Régi super admin jelszó:"
 
 #: controllers/database.py:111
 msgid "New super admin password:"
-msgstr ""
+msgstr "Új super admin jelszó:"
 
 #: controllers/database.py:112 controllers/preferences.py:39
 msgid "Confirm Password:"
@@ -363,7 +363,7 @@ msgstr ""
 
 #: controllers/impex.py:116
 msgid "You cannot export these record(s) !"
-msgstr ""
+msgstr "Nem tudja ezeket a rekordokat exportálni!"
 
 #: controllers/impex.py:116 utils/common.py:24
 msgid "Error"
@@ -402,19 +402,19 @@ msgstr "Import Hiba."
 
 #: controllers/impex.py:495
 msgid "The CSV delimiter must be a single character"
-msgstr ""
+msgstr "A CSV mező elválasztónak egyetlen karakternek kell lennie"
 
 #: controllers/impex.py:510
 msgid "File Format Error"
-msgstr ""
+msgstr "Hibás fájl formátum"
 
 #: controllers/impex.py:528
 msgid "The file is empty !"
-msgstr ""
+msgstr "A fájl üres !"
 
 #: controllers/impex.py:528
 msgid "Importation !"
-msgstr ""
+msgstr "Importálás !"
 
 #: controllers/impex.py:535
 msgid "XML-RPC error"
@@ -1430,7 +1430,7 @@ msgstr "melléklet hozzáadása"
 
 #: widgets/form/templates/image.mako:6
 msgid "Replace image"
-msgstr ""
+msgstr "Kép lecserélése"
 
 #: widgets/form/templates/many2one.mako:2
 #: widgets/form/templates/reference.mako:30
