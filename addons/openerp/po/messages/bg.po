@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openobject-client-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-02-05 17:10+0100\n"
-"PO-Revision-Date: 2013-01-26 08:42+0000\n"
-"Last-Translator: Iliyan Yordanov <inj@injener.net>\n"
+"PO-Revision-Date: 2013-09-04 20:01+0000\n"
+"Last-Translator: Boris <boris.t.ivanov@gmail.com>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-04-02 05:27+0000\n"
-"X-Generator: Launchpad (build 16546)\n"
+"X-Launchpad-Export-Date: 2013-09-05 04:48+0000\n"
+"X-Generator: Launchpad (build 16758)\n"
 
 #: validators.py:84
 msgid "Invalid literal for float"
@@ -296,6 +296,8 @@ msgid ""
 "Your problem has been sent to the quality team\n"
 "We will recontact you after analysing the problem."
 msgstr ""
+"Вашият случай е препратен към екипа  по качество.\n"
+"Ще се свържем с Вас след анализ на проблема."
 
 #: controllers/error_page.py:81
 #, python-format
