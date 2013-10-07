@@ -866,11 +866,6 @@ class Session(http.Controller):
             return {'error': _('The old password you provided is incorrect, your password was not changed.'), 'title': _('Change Password')}
         return {'error': _('Error, password not changed !'), 'title': _('Change Password')}
 
-    @http.route('/web/session/sc_list', type='json', auth="user")
-    def sc_list(self):
-        return request.session.model('ir.ui.view_sc').get_sc(
-            request.session.uid, "ir.ui.menu", request.context)
-
     @http.route('/web/session/get_lang_list', type='json', auth="none")
     def get_lang_list(self):
         try:
@@ -1015,13 +1010,6 @@ class Menu(http.Controller):
             :rtype: dict(menu_id: {'needaction_enabled': boolean, 'needaction_counter': int})
         """
         return request.session.model('ir.ui.menu').get_needaction_data(menu_ids, request.context)
-
-    @http.route('/web/menu/action', type='json', auth="user")
-    def action(self, menu_id):
-        # still used by web_shortcut
-        actions = load_actions_from_ir_values('action', 'tree_but_open',
-                                             [('ir.ui.menu', menu_id)], False)
-        return {"action": actions}
 
 class DataSet(http.Controller):
 
