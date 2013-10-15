@@ -400,21 +400,13 @@ class HttpRequest(WebRequest):
     def __init__(self, *args):
         super(HttpRequest, self).__init__(*args)
         params = dict(self.httprequest.args)
-        ex = set(["session_id"])
-        for k in params.keys():
-            if k in ex:
-                del params[k]
         params.update(self.httprequest.form)
         params.update(self.httprequest.files)
+
+        params.pop('session_id', None)
         self.params = params
 
     def dispatch(self):
-        akw = {}
-        for key, value in self.httprequest.args.iteritems():
-            if isinstance(value, basestring) and len(value) < 1024:
-                akw[key] = value
-            else:
-                akw[key] = type(value)
         try:
             r = self._call_function(**self.params)
         except werkzeug.exceptions.HTTPException, e:
@@ -477,18 +469,20 @@ from werkzeug.local import LocalStack
 
 _request_stack = LocalStack()
 
-def set_request(request):
-    class with_obj(object):
-        def __enter__(self):
-            _request_stack.push(request)
-        def __exit__(self, *args):
-            _request_stack.pop()
-    return with_obj()
 
+@contextlib.contextmanager
+def set_request(req):
+    _request_stack.push(req)
+    try:
+        yield
+    finally:
+        _request_stack.pop()
+
+
+request = _request_stack()
 """
     A global proxy that always redirect to the current request object.
 """
-request = _request_stack()
 
 #----------------------------------------------------------
 # Controller registration with a metaclass
