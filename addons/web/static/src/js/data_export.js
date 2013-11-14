@@ -1,4 +1,9 @@
-openerp.web.data_export = function(instance) {
+
+(function() {
+
+var instance = openerp;
+openerp.web.data_export = {};
+
 var QWeb = instance.web.qweb,
       _t = instance.web._t;
 instance.web.DataExport = instance.web.Dialog.extend({
@@ -57,8 +62,21 @@ instance.web.DataExport = instance.web.Dialog.extend({
             });
         }).change();
 
+        var got_domain = this.getParent().get_active_domain().then(function (domain) {
+            if (domain === undefined) {
+                self.ids_to_export = self.getParent().get_selected_ids();
+                self.domain = self.dataset.domain;
+            }
+            else {
+                self.ids_to_export = false;
+                self.domain = domain;
+            }
+            self.on_show_domain();
+        });
+
         return $.when(
             got_fields,
+            got_domain,
             this.rpc('/web/export/formats', {}).done(this.do_setup_export_formats),
             this.show_exports_list());
     },
@@ -71,7 +89,7 @@ instance.web.DataExport = instance.web.Dialog.extend({
                 opt.replaceChild(
                     document.createTextNode(
                         _.str.sprintf("%s — %s", format.label, format.error)),
-                    opt.childNodes[0])
+                    opt.childNodes[0]);
             }
             $fmts.append(opt);
         });
@@ -93,7 +111,7 @@ instance.web.DataExport = instance.web.Dialog.extend({
                 self.$el.find('#fields_list option').remove();
                 var export_id = self.$el.find('#saved_export_list option:selected').val();
                 if (export_id) {
-                    self.rpc('/web/export/namelist', {'model': self.dataset.model, export_id: parseInt(export_id)}).done(self.do_load_export_field);
+                    self.rpc('/web/export/namelist', {'model': self.dataset.model, export_id: parseInt(export_id, 10)}).done(self.do_load_export_field);
                 }
             });
             self.$el.find('#delete_export_list').click(function() {
@@ -191,6 +209,9 @@ instance.web.DataExport = instance.web.Dialog.extend({
             self.showcontent(record.id);
         }
     },
+    on_show_domain: function() {
+        this.$el.find('tr').first().find('td').append(QWeb.render('ExportTreeView-Domain', {'record': this}));
+    },
     on_show_data: function(result, after) {
         var self = this;
 
@@ -215,7 +236,7 @@ instance.web.DataExport = instance.web.Dialog.extend({
             self.$el.find("tr[id='treerow-" + record.id + "']").click(function(e) {
                 if (e.shiftKey) {
                     var frst_click, scnd_click = '';
-                    if (self.row_index == 0) {
+                    if (self.row_index === 0) {
                         self.row_index = this.rowIndex;
                         frst_click = self.$el.find("tr[id^='treerow-']")[self.row_index-1];
                         $(frst_click).addClass("ui-selected");
@@ -378,9 +399,6 @@ instance.web.DataExport = instance.web.Dialog.extend({
         exported_fields.unshift({name: 'id', label: 'External ID'});
 
         var export_format = this.$el.find("#export_format").val();
-        var ids_to_export = this.$('#export_selection_only').prop('checked')
-                ? this.getParent().get_selected_ids()
-                : this.dataset.ids;
 
         instance.web.blockUI();
         this.session.get_file({
@@ -388,8 +406,8 @@ instance.web.DataExport = instance.web.Dialog.extend({
             data: {data: JSON.stringify({
                 model: this.dataset.model,
                 fields: exported_fields,
-                ids: ids_to_export,
-                domain: this.dataset.domain,
+                ids: this.ids_to_export,
+                domain: this.domain,
                 import_compat: !!this.$el.find("#import_compat").val(),
             })},
             complete: instance.web.unblockUI,
@@ -401,4 +419,4 @@ instance.web.DataExport = instance.web.Dialog.extend({
     }
 });
 
-};
+})();

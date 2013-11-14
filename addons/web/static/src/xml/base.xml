@@ -40,7 +40,7 @@
         <td>
             <p>
                 <t t-js="d">
-                    var message = d.message ? d.message : d.error.data.fault_code;
+                    var message = d.message ? d.message : d.error.data.message;
                     d.html_error = context.engine.tools.html_escape(message)
                         .replace(/\n/g, '<br/>');
                 </t>
@@ -459,7 +459,7 @@
         <tr>
             <td class="oe_leftbar" valign="top">
                 <t t-set="debug" t-value="__debug__ ? '&amp;debug' : ''"/>
-                <a class="oe_logo" t-attf-href="/?ts=#{Date.now()}#{debug}">
+                <a class="oe_logo" t-attf-href="/?#{debug}">
                     <span class="oe_logo_edit">Edit Company data</span>
                     <img t-att-src='widget.session.url("/web/binary/company_logo")'/>
                 </a>
@@ -654,7 +654,7 @@
                             <t t-set="fileupload_action" t-translation="off">/web/binary/upload_attachment</t>
                             <input type="hidden" name="model" t-att-value="widget.dataset and widget.dataset.model"/>
                             <input type="hidden" name="id" t-att-value="widget.model_id"/>
-                            <input type="hidden" name="session_id" t-att-value="widget.session.session_id"/>
+                            <input type="hidden" name="session_id" t-att-value="widget.session.session_id" t-if="widget.session.override_session"/>
                             <span>Add...</span>
                         </t>
                     </li>
@@ -1113,6 +1113,34 @@
         </select>
     </span>
 </t>
+<t t-name="FieldRadio">
+    <span t-attf-class="oe_form_field oe_form_field_radio #{widget.options.horizontal ? 'oe_horizontal' : 'oe_vertical'}" t-att-style="widget.node.attrs.style">
+        <span t-if="!widget.get('effective_readonly')">
+            <t t-if="widget.options.horizontal">
+                <t t-set="width" t-value="Math.floor(100 / widget.selection.length)"/>
+                <t t-if="!widget.options.no_radiolabel">
+                    <t t-foreach="widget.selection" t-as="selection">
+                        <label t-att-for="widget.uniqueId + '_' + selection[0]" t-att-style="'width: ' + width + '%;'"><t t-esc="selection[1]"/></label>
+                    </t>
+                    <br/>
+                </t>
+                <t t-foreach="widget.selection" t-as="selection">
+                    <div t-att-style="'width: ' + width + '%;'">
+                        <span class="oe_radio_input"><input type="radio" t-att-name="widget.uniqueId" t-att-id="widget.uniqueId + '_' + selection[0]" t-att-value="selection[0]"/></span>
+                    </div>
+                </t>
+            </t>
+            <t t-if="!widget.options.horizontal">
+                <t t-foreach="widget.selection" t-as="selection">
+                    <div>
+                        <span class="oe_radio_input"><input type="radio" t-att-id="widget.uniqueId + '_' + selection[0]" t-att-name="widget.uniqueId" t-att-value="selection[0]"/></span><label t-if="!widget.options.no_radiolabel" t-att-for="widget.uniqueId + '_' + selection[0]"><t t-esc="selection[1]"/></label>
+                    </div>
+                </t>
+            </t>
+        </span>
+        <span t-if="widget.get('effective_readonly')" class="oe_radio_readonly"><t t-esc="widget.get('value')[1]"/></span>
+    </span>
+</t>
 <t t-name="FieldMany2One">
     <span class="oe_form_field oe_form_field_many2one oe_form_field_with_button" t-att-style="widget.node.attrs.style">
         <t t-if="widget.get('effective_readonly')">
@@ -1192,11 +1220,23 @@
     <ul t-att-class="'oe_form_field_status ' + (widget.options.clickable ? 'oe_form_status_clickable' : 'oe_form_status')" t-att-style="widget.node.attrs.style"/>
 </t>
 <t t-name="FieldStatus.content">
-    <t t-foreach="widget.selection" t-as="i">
+    <t t-foreach="widget.selection.unfolded" t-as="i">
         <li t-att-class="i[0] === widget.get('value') ? 'oe_active' : ''" t-att-data-id="i[0]">
             <span class="label"><t t-esc="i[1]"/></span>
             <!-- are you mit ? -->
             <span class="arrow"><span></span></span>
+        </li>
+    </t>
+    <t t-if="widget.selection.folded.length">
+        <li>
+            <span class="label oe_dropdown_toggle oe_dropdown_arrow">More</span>
+            <ul class="oe_dropdown_menu">
+                <t t-foreach="widget.selection.folded" t-as="i">
+                    <li t-att-class="i[0] === widget.get('value') ? 'oe_active' : ''" t-att-data-id="i[0]">
+                        <span class="label"><t t-esc="i[1]"/></span>
+                    </li>
+                </t>
+            </ul>
         </li>
     </t>
 </t>
@@ -1281,7 +1321,7 @@
     <div t-attf-class="oe_hidden_input_file #{fileupload_class or ''}" t-att-style="fileupload_style">
         <form class="oe_form_binary_form" t-att-target="fileupload_id"
             method="post" enctype="multipart/form-data" t-att-action="fileupload_action || '/web/binary/upload'">
-            <input type="hidden" name="session_id" value=""/>
+            <input type="hidden" name="session_id" value="" t-if="widget.session.override_session"/>
             <input type="hidden" name="callback" t-att-value="fileupload_id"/>
             <t t-raw="__content__"/>
             <input type="file" class="oe_form_binary_file" name="ufile" t-if="widget.widget!='image'"/>
@@ -1292,8 +1332,9 @@
 </t>
 <t t-name="FieldBinaryFileUploader.files">
     <div class="oe_attachments">
-        <t t-if="widget.get('value')">
-            <t t-if="!widget.get('effective_readonly')" t-foreach="widget.get('value')" t-as="file">
+        <t t-if="!widget.get('effective_readonly')">
+            <t t-foreach="widget.get('value')" t-as="id">
+                <t t-set="file" t-value="widget.data[id]"/>
                 <div class="oe_attachment">
                     <span t-if="(file.upload or file.percent_loaded&lt;100)" t-attf-title="{(file.name || file.filename) + (file.date?' \n('+file.date+')':'' )}" t-attf-name="{file.name || file.filename}">
                         <span class="oe_fileuploader_in_process">...Upload in progress...</span>
@@ -1307,7 +1348,10 @@
                     </t>
                 </div>
             </t>
-            <t t-if="widget.get('effective_readonly')" t-foreach="widget.get('value')" t-as="file">
+        </t>
+        <t t-if="widget.get('effective_readonly')">
+            <t t-foreach="widget.get('value')" t-as="id">
+                <t t-set="file" t-value="widget.data[id]"/>
                 <div>
                     <a t-att-href="file.url" t-attf-title="{(file.name || file.filename) + (file.date?' \n('+file.date+')':'' )}">
                         <t t-raw="file.name || file.filename"/>
@@ -1329,7 +1373,7 @@
                 <t t-set="fileupload_action" t-translation="off">/web/binary/upload_attachment</t>
                 <input type="hidden" name="model" t-att-value="widget.view.model"/>
                 <input type="hidden" name="id" value="0"/>
-                <input type="hidden" name="session_id" t-att-value="widget.session.session_id"/>
+                <input type="hidden" name="session_id" t-att-value="widget.session.session_id" t-if="widget.session.override_session"/>
             </t>
         </div>
     </div>
@@ -1701,9 +1745,6 @@
 
             <label for="export_format">Export Formats</label>
             <select id="export_format" name="export_format"></select>
-
-            <label for="export_selection_only">Only export selection:</label>
-            <input type="checkbox" id="export_selection_only"/>
         </td>
     </tr>
 
@@ -1734,6 +1775,14 @@
         </td>
     </tr>
 </table>
+<t t-name="ExportTreeView-Domain">
+    <t t-if="! record.ids_to_export">
+        <p><strong>Please pay attention that all records matching your search filter will be exported. Not only the selected ids.</strong></p>
+    </t>
+    <t t-if="record.ids_to_export">
+        <p><strong>Please note that only the selected ids will be exported.</strong></p>
+    </t>
+</t>
 <table t-name="ExportTreeView-Secondary"
        id="field-tree-structure" class="oe_export_fields_selector_export"
        cellspacing="0" cellpadding="0">
@@ -1792,7 +1841,7 @@
 <t t-name="ImportDataView">
 <form name="import_data" id="import_data" action="" method="post" enctype="multipart/form-data"
         class="oe_import oe_import_no_result">
-    <input type="hidden" name="session_id" t-att-value="widget.session.session_id"/>
+    <input type="hidden" name="session_id" t-att-value="widget.session.session_id" t-if="widget.session.override_session"/>
     <h2 class="separator horizontal">1. Import a .CSV file</h2>
     <p>Select a .CSV file to import. If you need a sample of file to import,
        you should use the export tool with the "Import Compatible" option.

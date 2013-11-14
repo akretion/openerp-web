@@ -1,21 +1,21 @@
 # Spanish (Ecuador) translation for openerp-web
-# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
 # This file is distributed under the same license as the openerp-web package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: openerp-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-06-07 19:37+0000\n"
-"PO-Revision-Date: 2012-12-21 23:00+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-12-21 17:06+0000\n"
+"PO-Revision-Date: 2012-12-20 18:15+0000\n"
+"Last-Translator: Cristian Salamea (Gnuthink) <ovnicraft@gmail.com>\n"
 "Language-Team: Spanish (Ecuador) <es_EC@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-06-08 07:50+0000\n"
-"X-Generator: Launchpad (build 16667)\n"
+"X-Launchpad-Export-Date: 2013-09-14 05:41+0000\n"
+"X-Generator: Launchpad (build 16761)\n"
 
 #. module: web_calendar
 #. openerp-web
@@ -30,13 +30,6 @@ msgstr "Nuevo evento"
 #, python-format
 msgid "Details"
 msgstr "Detalles"
-
-#. module: web_calendar
-#. openerp-web
-#: code:addons/web_calendar/static/src/js/calendar.js:512
-#, python-format
-msgid "Edit: %s"
-msgstr ""
 
 #. module: web_calendar
 #. openerp-web
@@ -105,6 +98,13 @@ msgstr "Fecha"
 
 #. module: web_calendar
 #. openerp-web
+#: code:addons/web_calendar/static/src/js/calendar.js:470
+#, python-format
+msgid "Edit: "
+msgstr "Editar: "
+
+#. module: web_calendar
+#. openerp-web
 #: code:addons/web_calendar/static/src/js/calendar.js:158
 #, python-format
 msgid "Day"
@@ -155,13 +155,6 @@ msgstr "Agenda"
 
 #. module: web_calendar
 #. openerp-web
-#: code:addons/web_calendar/static/src/js/calendar.js:475
-#, python-format
-msgid "Create: %s"
-msgstr ""
-
-#. module: web_calendar
-#. openerp-web
 #: code:addons/web_calendar/static/src/js/calendar.js:170
 #, python-format
 msgid "Time period"
@@ -187,6 +180,13 @@ msgstr "Mes"
 #, python-format
 msgid "Disabled"
 msgstr "Inhabilitado"
+
+#. module: web_calendar
+#. openerp-web
+#: code:addons/web_calendar/static/src/js/calendar.js:435
+#, python-format
+msgid "Create: "
+msgstr "Crear: "
 
 #. module: web_calendar
 #. openerp-web
@@ -216,10 +216,5 @@ msgstr "Calendario"
 msgid "Calendar view has not defined 'date_start' attribute."
 msgstr "La vista calendario no tiene definido el atributo 'date_start'"
 
-#, python-format
-#~ msgid "Edit: "
-#~ msgstr "Editar: "
-
-#, python-format
-#~ msgid "Create: "
-#~ msgstr "Crear: "
+#~ msgid "Navigator"
+#~ msgstr "Navegador"

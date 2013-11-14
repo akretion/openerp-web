@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 7.0\n"
+"Project-Id-Version: OpenERP Server 7.0alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-07 19:38+0000\n"
-"PO-Revision-Date: 2013-06-07 19:38+0000\n"
+"POT-Creation-Date: 2012-12-21 17:06+0000\n"
+"PO-Revision-Date: 2012-12-21 17:06+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,21 +31,21 @@ msgstr ""
 
 #. module: web_view_editor
 #. openerp-web
-#: code:addons/web_view_editor/static/src/js/view_editor.js:994
+#: code:addons/web_view_editor/static/src/js/view_editor.js:986
 #, python-format
 msgid "New Field"
 msgstr ""
 
 #. module: web_view_editor
 #. openerp-web
-#: code:addons/web_view_editor/static/src/js/view_editor.js:387
+#: code:addons/web_view_editor/static/src/js/view_editor.js:386
 #, python-format
 msgid "Do you really wants to create an inherited view here?"
 msgstr ""
 
 #. module: web_view_editor
 #. openerp-web
-#: code:addons/web_view_editor/static/src/js/view_editor.js:397
+#: code:addons/web_view_editor/static/src/js/view_editor.js:396
 #, python-format
 msgid "Preview"
 msgstr ""
@@ -66,22 +66,22 @@ msgstr ""
 
 #. module: web_view_editor
 #. openerp-web
-#: code:addons/web_view_editor/static/src/js/view_editor.js:394
+#: code:addons/web_view_editor/static/src/js/view_editor.js:393
 #, python-format
 msgid "Select an element"
 msgstr ""
 
 #. module: web_view_editor
 #. openerp-web
-#: code:addons/web_view_editor/static/src/js/view_editor.js:836
-#: code:addons/web_view_editor/static/src/js/view_editor.js:962
+#: code:addons/web_view_editor/static/src/js/view_editor.js:828
+#: code:addons/web_view_editor/static/src/js/view_editor.js:954
 #, python-format
 msgid "Update"
 msgstr ""
 
 #. module: web_view_editor
 #. openerp-web
-#: code:addons/web_view_editor/static/src/js/view_editor.js:264
+#: code:addons/web_view_editor/static/src/js/view_editor.js:263
 #, python-format
 msgid "Please select view in list :"
 msgstr ""
@@ -102,8 +102,8 @@ msgstr ""
 
 #. module: web_view_editor
 #. openerp-web
-#: code:addons/web_view_editor/static/src/js/view_editor.js:833
-#: code:addons/web_view_editor/static/src/js/view_editor.js:959
+#: code:addons/web_view_editor/static/src/js/view_editor.js:825
+#: code:addons/web_view_editor/static/src/js/view_editor.js:951
 #, python-format
 msgid "Properties"
 msgstr ""
@@ -124,7 +124,7 @@ msgstr ""
 
 #. module: web_view_editor
 #. openerp-web
-#: code:addons/web_view_editor/static/src/js/view_editor.js:383
+#: code:addons/web_view_editor/static/src/js/view_editor.js:382
 #, python-format
 msgid "Inherited View"
 msgstr ""
@@ -138,21 +138,21 @@ msgstr ""
 
 #. module: web_view_editor
 #. openerp-web
-#: code:addons/web_view_editor/static/src/js/view_editor.js:517
+#: code:addons/web_view_editor/static/src/js/view_editor.js:516
 #, python-format
 msgid "Do you really want to remove this node?"
 msgstr ""
 
 #. module: web_view_editor
 #. openerp-web
-#: code:addons/web_view_editor/static/src/js/view_editor.js:391
+#: code:addons/web_view_editor/static/src/js/view_editor.js:390
 #, python-format
 msgid "Can't Update View"
 msgstr ""
 
 #. module: web_view_editor
 #. openerp-web
-#: code:addons/web_view_editor/static/src/js/view_editor.js:380
+#: code:addons/web_view_editor/static/src/js/view_editor.js:379
 #, python-format
 msgid "View Editor %d - %s"
 msgstr ""
@@ -160,8 +160,8 @@ msgstr ""
 #. module: web_view_editor
 #. openerp-web
 #: code:addons/web_view_editor/static/src/js/view_editor.js:112
-#: code:addons/web_view_editor/static/src/js/view_editor.js:854
-#: code:addons/web_view_editor/static/src/js/view_editor.js:982
+#: code:addons/web_view_editor/static/src/js/view_editor.js:846
+#: code:addons/web_view_editor/static/src/js/view_editor.js:974
 #, python-format
 msgid "Cancel"
 msgstr ""
@@ -169,7 +169,7 @@ msgstr ""
 #. module: web_view_editor
 #. openerp-web
 #: code:addons/web_view_editor/static/src/js/view_editor.js:66
-#: code:addons/web_view_editor/static/src/js/view_editor.js:414
+#: code:addons/web_view_editor/static/src/js/view_editor.js:413
 #, python-format
 msgid "Close"
 msgstr ""

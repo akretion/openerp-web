@@ -1,7 +1,10 @@
 /*
  * py.js helpers and setup
  */
-openerp.web.pyeval = function (instance) {
+(function() {
+
+    var instance = openerp;
+
     instance.web.pyeval = {};
 
     var obj = function () {};
@@ -97,7 +100,7 @@ openerp.web.pyeval = function (instance) {
                     divmod(n, 365, function (_n1, n) {
                         n1 = _n1;
                         n0 = n;
-                    })
+                    });
                 });
             });
         });
@@ -139,7 +142,7 @@ openerp.web.pyeval = function (instance) {
         if (microsecond < 0 || microsecond > 999999) {
             divmod(microsecond, 1000000, function (carry, ms) {
                 microsecond = ms;
-                second += carry
+                second += carry;
             });
         }
         if (second < 0 || second > 59) {
@@ -152,13 +155,13 @@ openerp.web.pyeval = function (instance) {
             divmod(minute, 60, function (carry, m) {
                 minute = m;
                 hour += carry;
-            })
+            });
         }
         if (hour < 0 || hour > 23) {
             divmod(hour, 24, function (carry, h) {
                 hour = h;
                 day += carry;
-            })
+            });
         }
         // That was easy.  Now it gets muddy:  the proper range for day
         // can't be determined without knowing the correct month and year,
@@ -170,7 +173,7 @@ openerp.web.pyeval = function (instance) {
             divmod(month-1, 12, function (carry, m) {
                 month = m + 1;
                 year += carry;
-            })
+            });
         }
         // Now only day can be out of bounds (year may also be out of bounds
         // for a datetime object, but we don't care about that here).
@@ -247,7 +250,7 @@ openerp.web.pyeval = function (instance) {
             });
             divmod(seconds, 24*3600, function (days, seconds) {
                 d += days;
-                s += seconds
+                s += seconds;
             });
             // seconds isn't referenced again before redefinition
 
@@ -358,7 +361,7 @@ openerp.web.pyeval = function (instance) {
             return py.float.fromJSON(
                 this.days * 86400
               + this.seconds
-              + this.microseconds / 1000000)
+              + this.microseconds / 1000000);
         },
         __nonzero__: function () {
             return (!!this.days || !!this.seconds || !!this.microseconds)
@@ -466,7 +469,7 @@ openerp.web.pyeval = function (instance) {
             return py.float.fromJSON(ymd2ord(this.year, this.month, this.day));
         },
         fromJSON: function (year, month, day) {
-            return py.PY_call(datetime.date, [year, month, day])
+            return py.PY_call(datetime.date, [year, month, day]);
         }
     });
     /**
@@ -505,7 +508,7 @@ openerp.web.pyeval = function (instance) {
     var args = _.map(('year month day hour minute second microsecond '
                     + 'years months weeks days hours minutes secondes microseconds '
                     + 'weekday leakdays yearday nlyearday').split(' '), function (arg) {
-        return [arg, null]
+        return [arg, null];
     });
     args.unshift('*');
     var relativedelta = py.type('relativedelta', null, {
@@ -795,13 +798,20 @@ openerp.web.pyeval = function (instance) {
 
         //noinspection FallthroughInSwitchStatementJS
         switch(type) {
-        case 'context': object = [object];
-        case 'contexts': return eval_contexts((options.no_user_context ? [] : [instance.session.user_context]).concat(object), context);
-        case 'domain': object = [object];
-        case 'domains': return eval_domains(object, context);
-        case 'groupbys': return eval_groupbys(object, context);
+        case 'context':
+        case 'contexts':
+            if (type === 'context')
+                object = [object];
+            return eval_contexts((options.no_user_context ? [] : [instance.session.user_context]).concat(object), context);
+        case 'domain':
+        case 'domains':
+            if (type === 'domain')
+                object = [object];
+            return eval_domains(object, context);
+        case 'groupbys':
+            return eval_groupbys(object, context);
         }
-        throw new Error("Unknow evaluation type " + type)
+        throw new Error("Unknow evaluation type " + type);
     };
 
     var eval_arg = function (arg) {
@@ -856,5 +866,5 @@ openerp.web.pyeval = function (instance) {
                 }});
             }
         }, 0); });
-    }
-};
+    };
+})();

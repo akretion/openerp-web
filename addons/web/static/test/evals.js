@@ -1,5 +1,5 @@
 openerp.testing.section('eval.types', {
-    dependencies: ['web.coresetup'],
+    dependencies: ['web.core'],
     setup: function (instance) {
         instance.session.uid = 42;
     }
@@ -9,9 +9,9 @@ openerp.testing.section('eval.types', {
         return function (expr, func, message) {
             // evaluate expr between two calls to new Date(), and check that
             // the result is between the transformed dates
-            var d0 = new Date;
+            var d0 = new Date();
             var result = py.eval(expr, context);
-            var d1 = new Date;
+            var d1 = new Date();
             ok(func(d0) <= result && result <= func(d1), message);
         };
     };
@@ -118,7 +118,7 @@ openerp.testing.section('eval.types', {
         // Issue #11576
         eq('td(999999999, 86399, 999999) - td(999999999, 86399, 999998)', 'td(0, 0, 1)');
         eq('td(999999999, 1, 1) - td(999999999, 1, 0)',
-           'td(0, 0, 1)')
+           'td(0, 0, 1)');
     });
     test('timedelta.test_basic_attributes', function (instance) {
         var ctx = instance.web.pyeval.context();
@@ -264,7 +264,7 @@ openerp.testing.section('eval.types', {
             py.eval("(datetime.date(2012, 2, 15) + relativedelta(days=-1)).strftime('%Y-%m-%d 23:59:59')",
                     instance.web.pyeval.context()),
             "2012-02-14 23:59:59");
-    })
+    });
 });
 openerp.testing.section('eval.edc', {
     dependencies: ['web.data'],
@@ -562,7 +562,7 @@ openerp.testing.section('eval.edc.nonliterals', {
     });
 });
 openerp.testing.section('eval.contexts', {
-    dependencies: ['web.coresetup']
+    dependencies: ['web.core']
 }, function (test) {
     test('context_recursive', function (instance) {
         var context_to_eval = [{
@@ -773,7 +773,7 @@ openerp.testing.section('eval.contexts', {
     });
 });
 openerp.testing.section('eval.domains', {
-    dependencies: ['web.coresetup', 'web.dates']
+    dependencies: ['web.core', 'web.dates']
 }, function (test) {
     test('current_date', function (instance) {
         var current_date = instance.web.date_to_str(new Date());
@@ -802,7 +802,7 @@ openerp.testing.section('eval.domains', {
     });
 });
 openerp.testing.section('eval.groupbys', {
-    dependencies: ['web.coresetup']
+    dependencies: ['web.core']
 }, function (test) {
     test('groupbys_00', function (instance) {
         var result = instance.web.pyeval.eval('groupbys', [

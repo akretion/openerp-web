@@ -1,4 +1,9 @@
-openerp.web.search = function(instance) {
+
+(function() {
+
+var instance = openerp;
+openerp.web.search = {};
+
 var QWeb = instance.web.qweb,
       _t =  instance.web._t,
      _lt = instance.web._lt;
@@ -65,7 +70,7 @@ my.SearchQuery = B.Collection.extend({
         }, this);
     },
     add: function (values, options) {
-        options || (options = {});
+        options = options || {};
         if (!(values instanceof Array)) {
             values = [values];
         }
@@ -85,7 +90,7 @@ my.SearchQuery = B.Collection.extend({
         return this;
     },
     toggle: function (value, options) {
-        options || (options = {});
+        options = options || {};
 
         var facet = this.detect(function (facet) {
             return facet.get('category') === value.category
@@ -148,7 +153,7 @@ my.InputView = instance.web.Widget.extend({
             range.setStart(root, 0);
         }
         if (range.endContainer === this.el && range.endOffset === 1) {
-            range.setEnd(root, root.length)
+            range.setEnd(root, root.length);
         }
         assert(range.startContainer === root,
                "selection should be in the input view");
@@ -157,7 +162,7 @@ my.InputView = instance.web.Widget.extend({
         return {
             start: range.startOffset,
             end: range.endOffset
-        }
+        };
     },
     onKeydown: function (e) {
         this.el.normalize();
@@ -236,6 +241,8 @@ my.InputView = instance.web.Widget.extend({
         setTimeout(function () {
             // Read text content (ignore pasted HTML)
             var data = this.$el.text();
+            if (!data)
+                return; 
             // paste raw text back in
             this.$el.empty().text(data);
             this.el.normalize();
@@ -357,13 +364,6 @@ instance.web.SearchView = instance.web.Widget.extend(/** @lends instance.web.Sea
      * @param {Boolean} [options.disable_custom_filters=false] do not load custom filters from ir.filters
      */
     init: function(parent, dataset, view_id, defaults, options) {
-        // Backward compatibility - Can be removed when forward porting
-        if (Object(options) !== options) {
-            options = {
-                hidden: !!options
-            };
-        }
-        // End of Backward compatibility
         this.options = _.defaults(options || {}, {
             hidden: false,
             disable_custom_filters: false,
@@ -408,7 +408,7 @@ instance.web.SearchView = instance.web.Widget.extend(/** @lends instance.web.Sea
             });
 
             $.when(load_view).then(function (r) {
-                return self.search_view_loaded(r)
+                return self.search_view_loaded(r);
             }).fail(function () {
                 self.ready.reject.apply(null, arguments);
             });
@@ -957,7 +957,7 @@ instance.web.search.Input = instance.web.search.Widget.extend( /** @lends instan
      * @returns {jQuery.Deferred<null|Array>}
      */
     complete: function (value) {
-        return $.when(null)
+        return $.when(null);
     },
     /**
      * Returns a Facet instance for the provided defaults if they apply to
@@ -1080,7 +1080,7 @@ instance.web.search.FilterGroup = instance.web.search.Input.extend(/** @lends in
             icon: this.icon,
             values: values,
             field: this
-        }
+        };
     },
     make_value: function (filter) {
         return {
@@ -1114,7 +1114,7 @@ instance.web.search.FilterGroup = instance.web.search.Input.extend(/** @lends in
 
         if (!contexts.length) { return; }
         if (contexts.length === 1) { return contexts[0]; }
-        return _.extend(new instance.web.CompoundContext, {
+        return _.extend(new instance.web.CompoundContext(), {
             __contexts: contexts
         });
     },
@@ -1183,7 +1183,7 @@ instance.web.search.FilterGroup = instance.web.search.Input.extend(/** @lends in
                 label: _.str.sprintf(self.completion_label.toString(),
                                      _.escape(facet_value.label)),
                 facet: self.make_facet([facet_value])
-            }
+            };
         }));
     }
 });
@@ -1205,7 +1205,7 @@ instance.web.search.GroupbyGroup = instance.web.search.FilterGroup.extend({
                 get_context: this.proxy('get_context'),
                 get_domain: this.proxy('get_domain'),
                 get_groupby: this.proxy('get_groupby')
-            }
+            };
         }
     },
     match_facet: function (facet) {
@@ -1283,7 +1283,7 @@ instance.web.search.Field = instance.web.search.Input.extend( /** @lends instanc
 
         if (contexts.length === 1) { return contexts[0]; }
 
-        return _.extend(new instance.web.CompoundContext, {
+        return _.extend(new instance.web.CompoundContext(), {
             __contexts: contexts
         });
     },
@@ -1328,7 +1328,7 @@ instance.web.search.Field = instance.web.search.Input.extend( /** @lends instanc
             domains.unshift(['|']);
         }
 
-        return _.extend(new instance.web.CompoundDomain, {
+        return _.extend(new instance.web.CompoundDomain(), {
             __domains: domains
         });
     }
@@ -1571,7 +1571,7 @@ instance.web.search.ManyToOneField = instance.web.search.CharField.extend({
         return this.model.call('name_get', [value]).then(function (names) {
             if (_(names).isEmpty()) { return null; }
             return facet_from(self, names[0]);
-        })
+        });
     },
     value_from: function (facetValue) {
         return facetValue.get('label');
@@ -1929,7 +1929,7 @@ instance.web.search.ExtendedSearchProposition = instance.web.Widget.extend(/** @
     },
     changed: function() {
         var nval = this.$(".searchview_extended_prop_field").val();
-        if(this.attrs.selected == null || nval != this.attrs.selected.name) {
+        if(this.attrs.selected === null || this.attrs.selected === undefined || nval != this.attrs.selected.name) {
             this.select_field(_.detect(this.fields, function(x) {return x.name == nval;}));
         }
     },
@@ -1951,13 +1951,13 @@ instance.web.search.ExtendedSearchProposition = instance.web.Widget.extend(/** @
      */
     select_field: function(field) {
         var self = this;
-        if(this.attrs.selected != null) {
+        if(this.attrs.selected !== null && this.attrs.selected !== undefined) {
             this.value.destroy();
             this.value = null;
             this.$('.searchview_extended_prop_op').html('');
         }
         this.attrs.selected = field;
-        if(field == null) {
+        if(field === null || field === undefined) {
             return;
         }
 
@@ -1977,7 +1977,7 @@ instance.web.search.ExtendedSearchProposition = instance.web.Widget.extend(/** @
 
     },
     get_proposition: function() {
-        if ( this.attrs.selected == null)
+        if (this.attrs.selected === null || this.attrs.selected === undefined)
             return null;
         var field = this.attrs.selected;
         var op_select = this.$('.searchview_extended_prop_op')[0];
@@ -2107,7 +2107,7 @@ instance.web.search.ExtendedSearchProposition.Integer = instance.web.search.Exte
     get_value: function() {
         try {
             var val =this.$el.val();
-            return instance.web.parse_value(val == "" ? 0 : val, {'widget': 'integer'});
+            return instance.web.parse_value(val === "" ? 0 : val, {'widget': 'integer'});
         } catch (e) {
             return "";
         }
@@ -2134,7 +2134,7 @@ instance.web.search.ExtendedSearchProposition.Float = instance.web.search.Extend
     get_value: function() {
         try {
             var val =this.$el.val();
-            return instance.web.parse_value(val == "" ? 0.0 : val, {'widget': 'float'});
+            return instance.web.parse_value(val === "" ? 0.0 : val, {'widget': 'float'});
         } catch (e) {
             return "";
         }
@@ -2189,6 +2189,6 @@ instance.web.search.custom_filters = new instance.web.Registry({
     'id': 'instance.web.search.ExtendedSearchProposition.Id'
 });
 
-};
+})();
 
 // vim:et fdc=0 fdl=0 foldnestmax=3 fdm=syntax:

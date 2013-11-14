@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openerp-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-06-07 19:37+0000\n"
-"PO-Revision-Date: 2013-11-11 04:03+0000\n"
-"Last-Translator: Yoshi Tashiro <yostashiro@gmail.com>\n"
+"POT-Creation-Date: 2012-12-21 17:06+0000\n"
+"PO-Revision-Date: 2012-07-19 01:18+0000\n"
+"Last-Translator: Akira Hiyama <Unknown>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-11-12 06:23+0000\n"
-"X-Generator: Launchpad (build 16820)\n"
+"X-Launchpad-Export-Date: 2013-09-14 05:39+0000\n"
+"X-Generator: Launchpad (build 16761)\n"
 
 #. module: web
 #. openerp-web
@@ -36,7 +36,7 @@ msgstr "%d分前"
 #: code:addons/web/static/src/js/coresetup.js:620
 #, python-format
 msgid "Still loading...<br />Please be patient."
-msgstr "ロード中です...<br />今しばらくお待ちください。"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -56,15 +56,9 @@ msgstr "次より小さいか等しい"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:114
+#: code:addons/web/static/src/js/chrome.js:410
 #, python-format
-msgid ""
-"Fill in this form to create an OpenERP database. You can\n"
-"                    create databases for different companies or for "
-"different\n"
-"                    goals (testing, production). Once the database is "
-"created,\n"
-"                    you will be able to install your first application."
+msgid "Please enter your previous password"
 msgstr ""
 
 #. module: web
@@ -81,21 +75,14 @@ msgstr "マスタパスワード："
 #: code:addons/web/static/src/xml/base.xml:292
 #, python-format
 msgid "Change Master Password"
-msgstr "マスターパスワードを変更"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2439
-#, python-format
-msgid "Today"
-msgstr "本日"
+msgstr ""
 
 #. module: web
 #. openerp-web
 #: code:addons/web/static/src/js/chrome.js:513
 #, python-format
 msgid "Do you really want to delete the database: %s ?"
-msgstr "データベース %s を本当に削除しますか？"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -109,13 +96,13 @@ msgstr "%(field)s の検索：%(value)s"
 #: code:addons/web/static/src/js/chrome.js:559
 #, python-format
 msgid "Access Denied"
-msgstr "アクセスが拒否されました。"
+msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2462
+#: code:addons/web/static/src/js/view_form.js:5220
 #, python-format
-msgid "Now"
+msgid "Uploading error"
 msgstr ""
 
 #. module: web
@@ -127,19 +114,12 @@ msgstr "1時間前"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2446
-#, python-format
-msgid "Week of the year"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/controllers/main.py:811
 #: code:addons/web/static/src/js/chrome.js:536
 #: code:addons/web/static/src/xml/base.xml:234
 #, python-format
 msgid "Backup Database"
-msgstr "データベースをバックアップ"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -158,13 +138,6 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2437
-#, python-format
-msgid "Next>"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1858
 #, python-format
 msgid "Here is a preview of the file we could not import:"
@@ -172,17 +145,17 @@ msgstr "インポートできなかったファイルのプレビュー："
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:410
-#, python-format
-msgid "Please enter your previous password"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/coresetup.js:591
 #, python-format
 msgid "about a minute ago"
 msgstr "1分前"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:1306
+#, python-format
+msgid "File"
+msgstr ""
 
 #. module: web
 #: code:addons/web/controllers/main.py:869
@@ -251,17 +224,10 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:134
+#: code:addons/web/static/src/xml/base.xml:1626
 #, python-format
-msgid "e.g. mycompany"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_list_editable.js:793
-#, python-format
-msgid "The form's data can not be discarded"
-msgstr ""
+msgid "Share with all users"
+msgstr "全てのユーザと共有"
 
 #. module: web
 #. openerp-web
@@ -393,13 +359,6 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:189
-#, python-format
-msgid "Original database name:"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_form.js:5082
 #: code:addons/web/static/src/js/view_list.js:2204
 #, python-format
@@ -419,13 +378,6 @@ msgstr ""
 #, python-format
 msgid "Group"
 msgstr "グループ"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2445
-#, python-format
-msgid "Wk"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -452,13 +404,6 @@ msgstr ""
 #: code:addons/web/controllers/main.py:890
 #, python-format
 msgid "Languages"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2438
-#, python-format
-msgid "Show the next month"
 msgstr ""
 
 #. module: web
@@ -576,24 +521,10 @@ msgstr "数十秒前"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2453
-#, python-format
-msgid "Select a date"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:873
 #, python-format
 msgid "Condition:"
 msgstr "状態:"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2458
-#, python-format
-msgid "Time"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -635,6 +566,13 @@ msgstr ""
 #: code:addons/web/static/src/js/pyeval.js:736
 #, python-format
 msgid "Unknown nonliteral type "
+msgstr ""
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/view_form.js:2359
+#, python-format
+msgid "Resource error"
 msgstr ""
 
 #. module: web
@@ -702,17 +640,6 @@ msgstr "モデル %s 項目"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2046
-#: code:addons/web/static/src/js/search.js:2062
-#: code:addons/web/static/src/js/search.js:2098
-#: code:addons/web/static/src/js/search.js:2125
-#: code:addons/web/static/src/js/search.js:2145
-#, python-format
-msgid "is set"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_list.js:906
 #, python-format
 msgid "Setting 'id' attribute on existing record %s"
@@ -736,10 +663,11 @@ msgstr "次より大きい"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:585
+#: code:addons/web/static/src/js/view_list.js:2258
+#: code:addons/web/static/src/xml/base.xml:568
 #, python-format
-msgid "Changed Password"
-msgstr ""
+msgid "View"
+msgstr "ビュー"
 
 #. module: web
 #. openerp-web
@@ -813,25 +741,11 @@ msgstr "保存して新規"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2432
-#, python-format
-msgid "Erase the current date"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1251
 #: code:addons/web/static/src/xml/base.xml:1253
 #, python-format
 msgid "Save As"
 msgstr "名前を付けて保存"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:109
-#, python-format
-msgid "Create a New Database"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -842,17 +756,17 @@ msgstr ""
 
 #. module: web
 #. openerp-web
+#: code:addons/web/static/src/js/view_form.js:2330
+#, python-format
+msgid "E-mail error"
+msgstr ""
+
+#. module: web
+#. openerp-web
 #: code:addons/web/static/src/js/coresetup.js:595
 #, python-format
 msgid "a day ago"
 msgstr "1日前"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:138
-#, python-format
-msgid "Load demonstration data:"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -884,13 +798,6 @@ msgstr ""
 #, python-format
 msgid "Search: "
 msgstr "検索: "
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:141
-#, python-format
-msgid "Check this box to evaluate OpenERP."
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -939,10 +846,10 @@ msgstr "追加"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1795
+#: code:addons/web/static/src/xml/base.xml:558
 #, python-format
-msgid "1. Import a .CSV file"
-msgstr "1. CVSファイルのインポート"
+msgid "Toggle Form Layout Outline"
+msgstr "トグル形式のレイアウトの概観"
 
 #. module: web
 #. openerp-web
@@ -974,13 +881,6 @@ msgstr "個人設定"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1704
-#, python-format
-msgid "Only export selection:"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_form.js:435
 #, python-format
 msgid "Wrong on change format: %s"
@@ -993,15 +893,6 @@ msgstr ""
 #, python-format
 msgid "Drop Database"
 msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/data_export.js:30
-#: code:addons/web/static/src/js/view_form.js:1077
-#: code:addons/web/static/src/xml/base.xml:1422
-#, python-format
-msgid "Close"
-msgstr "閉じる"
 
 #. module: web
 #. openerp-web
@@ -1065,16 +956,9 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2379
+#: code:addons/web/static/src/js/view_list_editable.js:793
 #, python-format
-msgid "Resource Error"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2459
-#, python-format
-msgid "Hour"
+msgid "The form's data can not be discarded"
 msgstr ""
 
 #. module: web
@@ -1099,13 +983,6 @@ msgstr "ログイン"
 #, python-format
 msgid "Delete"
 msgstr "削除"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:425
-#, python-format
-msgid "My OpenERP.com account"
-msgstr "OpenERP.comアカウント"
 
 #. module: web
 #. openerp-web
@@ -1169,11 +1046,17 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_list.js:2258
-#: code:addons/web/static/src/xml/base.xml:568
+#: code:addons/web/static/src/xml/base.xml:635
 #, python-format
-msgid "View"
-msgstr "ビュー"
+msgid "/web/binary/upload_attachment"
+msgstr ""
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/chrome.js:585
+#, python-format
+msgid "Changed Password"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1184,26 +1067,14 @@ msgstr "検索"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2435
+#: code:addons/web/static/src/js/view_form.js:3139
+#: code:addons/web/static/src/js/view_form.js:3785
+#: code:addons/web/static/src/js/view_form.js:3906
+#: code:addons/web/static/src/js/view_form.js:4358
+#: code:addons/web/static/src/js/view_form.js:4482
 #, python-format
-msgid "<Prev"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2450
-#, python-format
-msgid "Set DD as first week day"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:120
-#, python-format
-msgid ""
-"By default, the master password is 'admin'. This password\n"
-"                    is required to created, delete dump or restore databases."
-msgstr ""
+msgid "Open: "
+msgstr "開く: "
 
 #. module: web
 #. openerp-web
@@ -1288,13 +1159,6 @@ msgstr ""
 #, python-format
 msgid "Unknown operator %s in domain %s"
 msgstr "ドメイン  %s に無効な演算  %s があります"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2436
-#, python-format
-msgid "Show the previous month"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1409,13 +1273,6 @@ msgstr "グループ：%s"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2443
-#, python-format
-msgid "Show a different month"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_form.js:154
 #, python-format
 msgid "No data provided."
@@ -1473,13 +1330,6 @@ msgstr "全てを削除"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:253
-#, python-format
-msgid "Your OpenERP session expired. Please refresh the current web page."
-msgstr "OpenERPのセッションが無効になりました。画面をリフレッシュしてください。"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1368
 #, python-format
 msgid "Method:"
@@ -1504,7 +1354,7 @@ msgstr ""
 #: code:addons/web/static/src/xml/base.xml:463
 #, python-format
 msgid "Edit Company data"
-msgstr "会社データを編集"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1545,17 +1395,10 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:427
+#: code:addons/web/static/src/xml/base.xml:1795
 #, python-format
-msgid "Help"
-msgstr "ヘルプ"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:558
-#, python-format
-msgid "Toggle Form Layout Outline"
-msgstr "トグル形式のレイアウトの概観"
+msgid "1. Import a .CSV file"
+msgstr "1. CVSファイルのインポート"
 
 #. module: web
 #. openerp-web
@@ -1580,10 +1423,10 @@ msgstr "デフォルトの変更："
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1879
+#: code:addons/web/static/src/xml/base.xml:189
 #, python-format
-msgid "Advanced"
-msgstr "高度"
+msgid "Original database name:"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1657,24 +1500,19 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2434
+#: code:addons/web/static/src/xml/base.xml:145
 #, python-format
-msgid "Close without change"
-msgstr ""
+msgid "Admin password:"
+msgstr "アドミン用パスワード："
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:159
+#: code:addons/web/static/src/js/data_export.js:30
+#: code:addons/web/static/src/js/view_form.js:1077
+#: code:addons/web/static/src/xml/base.xml:1422
 #, python-format
-msgid "Choose a password:"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2451
-#, python-format
-msgid "Select D, M d"
-msgstr ""
+msgid "Close"
+msgstr "閉じる"
 
 #. module: web
 #. openerp-web
@@ -1693,10 +1531,10 @@ msgstr "CSVファイル："
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2460
+#: code:addons/web/static/src/js/search.js:1879
 #, python-format
-msgid "Minute"
-msgstr ""
+msgid "Advanced"
+msgstr "高度"
 
 #. module: web
 #. openerp-web
@@ -1759,7 +1597,7 @@ msgstr ""
 #: code:addons/web/static/src/xml/base.xml:467
 #, python-format
 msgid "Powered by"
-msgstr "Powered by"
+msgstr "で動く"
 
 #. module: web
 #. openerp-web
@@ -1768,13 +1606,6 @@ msgstr "Powered by"
 #, python-format
 msgid "Yes"
 msgstr "はい"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:1350
-#, python-format
-msgid "Timezone Mismatch"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1863,13 +1694,6 @@ msgstr "ビューの管理"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2349
-#, python-format
-msgid "E-mail Error"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1822
 #, python-format
 msgid "Encoding:"
@@ -1953,14 +1777,6 @@ msgstr "フィルタ：%s"
 #, python-format
 msgid "Create: "
 msgstr "作成: "
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2433
-#: code:addons/web/static/src/js/view_form.js:2463
-#, python-format
-msgid "Done"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -2081,11 +1897,12 @@ msgstr "--フィルタ--"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1998
-#: code:addons/web/static/src/js/search.js:2165
+#: code:addons/web/static/src/js/view_form.js:2431
+#: code:addons/web/static/src/xml/base.xml:1258
+#: code:addons/web/static/src/xml/base.xml:1260
 #, python-format
-msgid "%(field)s %(operator)s"
-msgstr ""
+msgid "Clear"
+msgstr "クリア"
 
 #. module: web
 #. openerp-web
@@ -2132,13 +1949,6 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2444
-#, python-format
-msgid "Show a different year"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1498
 #, python-format
 msgid "Filter Name:"
@@ -2175,13 +1985,6 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2440
-#, python-format
-msgid "Show the current month"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/coresetup.js:599
 #, python-format
 msgid "about a year ago"
@@ -2204,22 +2007,6 @@ msgstr "は次と一致しない"
 msgid ""
 "The type of the field '%s' must be a many2many field with a relation to "
 "'ir.attachment' model."
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2431
-#: code:addons/web/static/src/xml/base.xml:1258
-#: code:addons/web/static/src/xml/base.xml:1260
-#, python-format
-msgid "Clear"
-msgstr "クリア"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:132
-#, python-format
-msgid "Select a database name:"
 msgstr ""
 
 #. module: web
@@ -2270,6 +2057,13 @@ msgstr "OK"
 #, python-format
 msgid "Uploading..."
 msgstr "アップロード中..."
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:125
+#, python-format
+msgid "Load Demonstration data:"
+msgstr "デモ用のデータを読込み中："
 
 #. module: web
 #. openerp-web
@@ -2329,7 +2123,7 @@ msgstr "は正しい"
 #: code:addons/web/static/src/js/view_form.js:4030
 #, python-format
 msgid "Add an item"
-msgstr "項目を追加"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -2420,28 +2214,10 @@ msgstr "エクスポートする項目を選んでください"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2047
-#: code:addons/web/static/src/js/search.js:2063
-#: code:addons/web/static/src/js/search.js:2099
-#: code:addons/web/static/src/js/search.js:2126
-#: code:addons/web/static/src/js/search.js:2146
-#, python-format
-msgid "is not set"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:304
 #, python-format
 msgid "New master password:"
 msgstr "新しいマスタパスワード："
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1626
-#, python-format
-msgid "Share with all users"
-msgstr "全ユーザと共有"
 
 #. module: web
 #. openerp-web
@@ -2551,13 +2327,6 @@ msgstr "破棄"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:5314
-#, python-format
-msgid "Uploading Error"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1642
 #, python-format
 msgid "Add a condition"
@@ -2596,18 +2365,7 @@ msgstr "バックアップされました"
 #: code:addons/web/static/src/xml/base.xml:1628
 #, python-format
 msgid "Use by default"
-msgstr "デフォルト使用"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:3139
-#: code:addons/web/static/src/js/view_form.js:3785
-#: code:addons/web/static/src/js/view_form.js:3906
-#: code:addons/web/static/src/js/view_form.js:4358
-#: code:addons/web/static/src/js/view_form.js:4482
-#, python-format
-msgid "Open: "
-msgstr "オープン： "
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -2643,14 +2401,6 @@ msgstr "ウィジェット:"
 #, python-format
 msgid "Edit Action"
 msgstr "アクションの編集"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/search.js:1681
-#, python-format
-msgid ""
-"This filter is global and will be removed for everybody if you continue."
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -2760,13 +2510,6 @@ msgstr "このレコードを削除しますか？"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:318
-#, python-format
-msgid "Back to Login"
-msgstr "ログインへ戻る"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1413
 #, python-format
 msgid "Save & Close"
@@ -2786,13 +2529,6 @@ msgstr ""
 #, python-format
 msgid "Password"
 msgstr "パスワード"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2457
-#, python-format
-msgid "Choose Time"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -2855,10 +2591,10 @@ msgstr "区切り文字："
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2461
+#: code:addons/web/static/src/xml/base.xml:318
 #, python-format
-msgid "Second"
-msgstr ""
+msgid "Back to Login"
+msgstr "ログインへ戻る"
 
 #. module: web
 #. openerp-web
@@ -2868,10 +2604,254 @@ msgstr ""
 msgid "Filters"
 msgstr "フィルタ"
 
-#, python-format
-#~ msgid "Load Demonstration data:"
-#~ msgstr "デモ用のデータを読込み中："
+#~ msgid "Send OpenERP Enterprise Report"
+#~ msgstr "OpenERPエンタープライズレポートを送る"
+
+#~ msgid "Dont send"
+#~ msgstr "送らない"
+
+#~ msgid "OpenERP - Unsupported/Community Version"
+#~ msgstr "OpenERP - サポート無し/コミュニティバージョン"
+
+#~ msgid "Change password"
+#~ msgstr "パスワードの変更"
+
+#~ msgid "Filter Entry"
+#~ msgstr "フィルター項目"
+
+#~ msgid "External ID"
+#~ msgstr "外部ID"
+
+#~ msgid "Import File"
+#~ msgstr "ファイルをインポート"
+
+#~ msgid "Import Data"
+#~ msgstr "データをインポート"
+
+#~ msgid "Add to Dashboard"
+#~ msgstr "ダッシュボードに追加"
+
+#~ msgid "Filter disabled due to invalid syntax"
+#~ msgstr "指定が正しくないためフィルタは無効になりました"
+
+#~ msgid "Inherited View"
+#~ msgstr "継承ビュー"
+
+#~ msgid "Do you really want to remove this view?"
+#~ msgstr "このビューを削除しますか？"
 
 #, python-format
-#~ msgid "Admin password:"
-#~ msgstr "アドミン用パスワード："
+#~ msgid "View Editor %d - %s"
+#~ msgstr "ビューエディタ %d - %s"
+
+#~ msgid "Do you really wants to create an inherited view here?"
+#~ msgstr "継承ビューを作成しますか？"
+
+#, python-format
+#~ msgid "Manage Views (%s)"
+#~ msgstr "管理ビュー (%s)"
+
+#, python-format
+#~ msgid "Create a view (%s)"
+#~ msgstr "ビュー (%s) を作成"
+
+#~ msgid "Do you really want to remove this node?"
+#~ msgstr "このノードを削除しますか？"
+
+#~ msgid "Update"
+#~ msgstr "更新"
+
+#~ msgid "Preview"
+#~ msgstr "プレビュー"
+
+#~ msgid "Properties"
+#~ msgstr "属性"
+
+#~ msgid "Customize"
+#~ msgstr "カスタマイズ"
+
+#~ msgid "Attachments"
+#~ msgstr "添付"
+
+#, python-format
+#~ msgid "Do you really want to delete the attachment %s?"
+#~ msgstr "添付 %s を削除しますか？"
+
+#, python-format
+#~ msgid "<em>   Create \"<strong>%s</strong>\"</em>"
+#~ msgstr "<em>   作成 \"<strong>%s</strong>\"</em>"
+
+#~ msgid "Page"
+#~ msgstr "ページ"
+
+#, python-format
+#~ msgid "[%(first_record)d to %(last_record)d] of %(records_count)d"
+#~ msgstr "%(records_count)d の [%(first_record)d から %(last_record)d]"
+
+#~ msgid "Could not find current view declaration"
+#~ msgstr "このビューの定義が見つかりません"
+
+#~ msgid "Other Options"
+#~ msgstr "その他のオプション"
+
+#~ msgid "Translate"
+#~ msgstr "翻訳"
+
+#~ msgid "Links"
+#~ msgstr "リンク"
+
+#~ msgid "Reports"
+#~ msgstr "レポート"
+
+#~ msgid "Translations"
+#~ msgstr "翻訳"
+
+#~ msgid "Actions"
+#~ msgstr "アクション"
+
+#~ msgid "CREATE DATABASE"
+#~ msgstr "データベース作成"
+
+#~ msgid "CHANGE MASTER PASSWORD"
+#~ msgstr "マスタパスワードの変更"
+
+#~ msgid "RESTORE DATABASE"
+#~ msgstr "データベースをリストア"
+
+#~ msgid "BACKUP DATABASE"
+#~ msgstr "データベースをバックアップ"
+
+#~ msgid "OpenERP Entreprise"
+#~ msgstr "OpenERPエンタープライズ"
+
+#~ msgid "OpenERP Enterprise Contract."
+#~ msgstr "OpenERPエンタープライズ契約"
+
+#~ msgid "What you did:"
+#~ msgstr "あなたが行ったこと："
+
+#~ msgid "Add / Remove Shortcut..."
+#~ msgstr "ショートカットを追加 / 削除…"
+
+#~ msgid "Home"
+#~ msgstr "ホーム"
+
+#~ msgid "Unfold menu"
+#~ msgstr "メニューを広げる"
+
+#~ msgid "Fold menu"
+#~ msgstr "メニューをたたむ"
+
+#~ msgid "LOGOUT"
+#~ msgstr "ログアウト"
+
+#~ msgid "Disable all tips"
+#~ msgstr "全ての説明を無効にする"
+
+#~ msgid "Hide this tip"
+#~ msgstr "この説明を隠す"
+
+#~ msgid "More…"
+#~ msgstr "もっと…"
+
+#~ msgid "Add attachment"
+#~ msgstr "添付を追加"
+
+#~ msgid "Notebook Page \""
+#~ msgstr "ノートブックのページ \""
+
+#~ msgid "Open this resource"
+#~ msgstr "このリソースを開く"
+
+#~ msgid "Send an e-mail with your default e-mail client"
+#~ msgstr "デフォルトのeメールクライアントとしてeメールを送信"
+
+#~ msgid "Search..."
+#~ msgstr "検索…"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Open..."
+#~ msgstr "開く..."
+
+#~ msgid "Create..."
+#~ msgstr "作成..."
+
+#~ msgid "Any of the following conditions must match"
+#~ msgstr "次のいずれかの条件を満たさなければなりません"
+
+#~ msgid "All the following conditions must match"
+#~ msgstr "次の全ての条件を満たさなければなりません"
+
+#~ msgid "Advanced Filters"
+#~ msgstr "高度なフィルタ"
+
+#~ msgid "Select Dashboard to add this filter to:"
+#~ msgstr "このフィルタを追加するためのダッシュボードを選んでください："
+
+#~ msgid "Title of new Dashboard item:"
+#~ msgstr "新しいダッシュボード項目のタイトル："
+
+#~ msgid "None of the following conditions must match"
+#~ msgstr "次のいずれの条件も満たしてはいけません"
+
+#~ msgid "Add condition"
+#~ msgstr "条件の追加"
+
+#~ msgid "and"
+#~ msgstr "と"
+
+#~ msgid "Import Compatible Export"
+#~ msgstr "インポートと互換性があるエクスポート"
+
+#, python-format
+#~ msgid "Confirm Password:"
+#~ msgstr "パスワードの確認:"
+
+#~ msgid "Activate the developper mode"
+#~ msgstr "開発者モードに設定してください"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "*Required Fields are not selected :"
+#~ msgstr "* 必須項目が選択されていません："
+
+#~ msgid ""
+#~ "Destination fields should only be selected once, some fields are selected "
+#~ "more than once:"
+#~ msgstr "宛先項目の選択は1回のみです。幾つかの項目は複数回選択されます："
+
+#~ msgid ""
+#~ "Warning, the record has been modified, your changes will be discarded."
+#~ msgstr "警告，レコードは変更されて，あなたが行った変更は無視されます。"
+
+#~ msgid "<em>   Search More...</em>"
+#~ msgstr "<em>   さらに検索…</em>"
+
+#~ msgid "<em>   Create and Edit...</em>"
+#~ msgstr "<em>   作成＆編集…</em>"
+
+#~ msgid "Your report will be sent to the OpenERP Enterprise team."
+#~ msgstr "あなたのレポートをOpenERPエンタープライズチームに送ります。"
+
+#~ msgid "Summary:"
+#~ msgstr "要約："
+
+#~ msgid ""
+#~ "Your version of OpenERP is unsupported. Support & maintenance services are "
+#~ "available here:"
+#~ msgstr "このOpenERPのバージョンはサポートされていません。サポート保守サービスはこちらから："
+
+#~ msgid "Description:"
+#~ msgstr "説明："
+
+#~ msgid "DROP DATABASE"
+#~ msgstr "データベースを削除"
+
+#~ msgid "Set Image"
+#~ msgstr "画像をセット"
+
+#~ msgid "Field"
+#~ msgstr "項目"

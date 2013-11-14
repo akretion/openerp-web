@@ -1,7 +1,11 @@
 /*---------------------------------------------------------
  * OpenERP Web chrome
  *---------------------------------------------------------*/
-openerp.web.chrome = function(instance) {
+(function() {
+
+var instance = openerp;
+openerp.web.chrome = {};
+
 var QWeb = instance.web.qweb,
     _t = instance.web._t;
 
@@ -247,21 +251,17 @@ instance.web.CrashManager = instance.web.Class.extend({
         if (!this.active) {
             return;
         }
-        // yes, exception handling is shitty
-        if (error.code === 300 && error.data && error.data.type == "client_exception" && error.data.debug.match("SessionExpiredException")) {
-            this.show_warning({type: "Session Expired", data: {
-                fault_code: _t("Your OpenERP session expired. Please refresh the current web page.")
-            }});
+        var handler = instance.web.crash_manager_registry.get_object(error.data.name, true);
+        if (handler) {
+            new (handler)(this, error).display();
             return;
         }
-        if (error.data.fault_code) {
-            var split = ("" + error.data.fault_code).split('\n')[0].split(' -- ');
-            if (split.length > 1) {
-                error.type = split.shift();
-                error.data.fault_code = error.data.fault_code.substr(error.type.length + 4);
-            }
+        if (error.data.name === "openerp.addons.web.session SessionExpiredException") {
+            this.show_warning({type: "Session Expired", data: { message: _t("Your OpenERP session expired. Please refresh the current web page.") }});
+            return;
         }
-        if (error.code === 200 && error.type) {
+        if (error.data.exception_type === "except_osv" || error.data.exception_type === "warning"
+                || error.data.exception_type === "access_error") {
             this.show_warning(error);
         } else {
             this.show_error(error);
@@ -271,8 +271,11 @@ instance.web.CrashManager = instance.web.Class.extend({
         if (!this.active) {
             return;
         }
+        if (error.data.exception_type === "except_osv") {
+            error = _.extend({}, error, {data: _.extend({}, error.data, {message: error.data.arguments[0] + "\n\n" + error.data.arguments[1]})});
+        }
         instance.web.dialog($('<div>' + QWeb.render('CrashManager.warning', {error: error}) + '</div>'), {
-            title: "OpenERP " + _.str.capitalize(error.type),
+            title: "OpenERP " + (_.str.capitalize(error.type) || "Warning"),
             buttons: [
                 {text: _t("Ok"), click: function() { $(this).dialog("close"); }}
             ]
@@ -304,6 +307,57 @@ instance.web.CrashManager = instance.web.Class.extend({
         });
     },
 });
+
+/**
+    An interface to implement to handle exceptions. Register implementation in instance.web.crash_manager_registry.
+*/
+instance.web.ExceptionHandler = {
+    /**
+        @param parent The parent.
+        @param error The error object as returned by the JSON-RPC implementation.
+    */
+    init: function(parent, error) {},
+    /**
+        Called to inform to display the widget, if necessary. A typical way would be to implement
+        this interface in a class extending instance.web.Dialog and simply display the dialog in this
+        method.
+    */
+    display: function() {},
+};
+
+/**
+    The registry to handle exceptions. It associate a fully qualified python exception name with a class implementing
+    instance.web.ExceptionHandler.
+*/
+instance.web.crash_manager_registry = new instance.web.Registry();
+
+/**
+ * Handle redirection warnings, which behave more or less like a regular
+ * warning, with an additional redirection button.
+ */
+instance.web.RedirectWarningHandler = instance.web.Dialog.extend(instance.web.ExceptionHandler, {
+    init: function(parent, error) {
+        this._super(parent);
+        this.error = error;
+    },
+    display: function() {
+        error = this.error;
+        error.data.message = error.data.arguments[0];
+
+        instance.web.dialog($('<div>' + QWeb.render('CrashManager.warning', {error: error}) + '</div>'), {
+            title: "OpenERP " + (_.str.capitalize(error.type) || "Warning"),
+            buttons: [
+                {text: _t("Ok"), click: function() { $(this).dialog("close"); }},
+                {text: error.data.arguments[2], click: function() {
+                    window.location.href='#action='+error.data.arguments[1];
+                    $(this).dialog("close");
+                }}
+            ]
+        });
+        this.destroy();
+    }
+});
+instance.web.crash_manager_registry.add('openerp.exceptions.RedirectWarning', 'instance.web.RedirectWarningHandler');
 
 instance.web.Loading = instance.web.Widget.extend({
     template: _t("Loading"),
@@ -388,7 +442,7 @@ instance.web.DatabaseManager = instance.web.Widget.extend({
         self.$el.html(QWeb.render("DatabaseManager", { widget : self }));
         $('.oe_user_menu_placeholder').append(QWeb.render("DatabaseManager.user_menu",{ widget : self }));
         $('.oe_secondary_menus_container').append(QWeb.render("DatabaseManager.menu",{ widget : self }));
-        $('ul.oe_secondary_submenu > li:first').addClass('oe_active')
+        $('ul.oe_secondary_submenu > li:first').addClass('oe_active');
         $('ul.oe_secondary_submenu > li').bind('click', function (event) {
             var menuitem = $(this);
             menuitem.addClass('oe_active').siblings().removeClass('oe_active');
@@ -665,20 +719,9 @@ instance.web.Login =  instance.web.Widget.extend({
         }
         return d;
     },
-    remember_last_used_database: function(db) {
-        // This cookie will be used server side in order to avoid db reloading on first visit
-        var ttl = 24 * 60 * 60 * 365;
-        document.cookie = [
-            'last_used_database=' + db,
-            'path=/',
-            'max-age=' + ttl,
-            'expires=' + new Date(new Date().getTime() + ttl * 1000).toGMTString()
-        ].join(';');
-    },
     database_selected: function(db) {
         var params = $.deparam.querystring();
         params.db = db;
-        this.remember_last_used_database(db);
         this.$('.oe_login_dbpane').empty().text(_t('Loading...'));
         this.$('[name=login], [name=password]').prop('readonly', true);
         instance.web.redirect('/?' + $.param(params));
@@ -699,7 +742,7 @@ instance.web.Login =  instance.web.Widget.extend({
         }
     },
     on_db_failed: function (error, event) {
-        if (error.data.fault_code === 'AccessDenied') {
+        if (error.data.name === 'openerp.exceptions.AccessDenied') {
             event.preventDefault();
         }
     },
@@ -729,7 +772,6 @@ instance.web.Login =  instance.web.Widget.extend({
         self.hide_error();
         self.$(".oe_login_pane").fadeOut("slow");
         return this.session.session_authenticate(db, login, password).then(function() {
-            self.remember_last_used_database(db);
             if (self.has_local_storage && self.remember_credentials) {
                 localStorage.setItem(db + '|last_login', login);
             }
@@ -761,10 +803,18 @@ instance.web.redirect = function(url, wait) {
         instance.client.crashmanager.active = false;
     }
 
+    var load = function() {
+        var old = "" + window.location;
+        var old_no_hash = old.split("#")[0];
+        var url_no_hash = url.split("#")[0];
+        location.assign(url);
+        if (old_no_hash === url_no_hash) {
+            location.reload(true);
+        }
+    };
+
     var wait_server = function() {
-        instance.session.rpc("/web/webclient/version_info", {}).done(function() {
-            window.location = url;
-        }).fail(function() {
+        instance.session.rpc("/web/webclient/version_info", {}).done(load).fail(function() {
             setTimeout(wait_server, 250);
         });
     };
@@ -772,7 +822,7 @@ instance.web.redirect = function(url, wait) {
     if (wait) {
         setTimeout(wait_server, 1000);
     } else {
-        window.location = url;
+        load();
     }
 };
 
@@ -787,7 +837,6 @@ instance.web.Reload = function(parent, action) {
     var l = window.location;
 
     var sobj = $.deparam(l.search.substr(1));
-    sobj.ts = new Date().getTime();
     if (params.url_search) {
         sobj = _.extend(sobj, params.url_search);
     }
@@ -832,7 +881,7 @@ instance.web.ChangePassword =  instance.web.Widget.extend({
         $button.appendTo(this.getParent().$buttons);
         $button.eq(2).click(function(){
            self.getParent().close();
-        })
+        });
         $button.eq(0).click(function(){
           self.rpc("/web/session/change_password",{
                'fields': $("form[name=change_password_form]").serializeArray()
@@ -844,7 +893,7 @@ instance.web.ChangePassword =  instance.web.Widget.extend({
                    instance.webclient.on_logout();
                }
           });
-       })
+       });
     },
     display_error: function (error) {
         return instance.web.dialog($('<div>'), {
@@ -855,7 +904,7 @@ instance.web.ChangePassword =  instance.web.Widget.extend({
             ]
         }).html(error.error);
     },
-})
+});
 instance.web.client_actions.add("change_password", "instance.web.ChangePassword");
 
 instance.web.Menu =  instance.web.Widget.extend({
@@ -1071,7 +1120,7 @@ instance.web.Menu =  instance.web.Widget.extend({
                     add_menu_ids(menu);
                 });
             }
-        };
+        }
         add_menu_ids(menu);
         self.do_load_needaction(menu_ids).then(function () {
             self.trigger("need_action_reloaded");
@@ -1198,6 +1247,7 @@ instance.web.Client = instance.web.Widget.extend({
         this.$el.on('click', '.oe_dropdown_toggle', function(ev) {
             ev.preventDefault();
             var $toggle = $(this);
+            var doc_width = $(document).width();
             var $menu = $toggle.siblings('.oe_dropdown_menu');
             $menu = $menu.size() >= 1 ? $menu : $toggle.find('.oe_dropdown_menu');
             var state = $menu.is('.oe_opened');
@@ -1206,7 +1256,6 @@ instance.web.Client = instance.web.Widget.extend({
                 $toggle.add($menu).toggleClass('oe_opened', !state);
                 if (!state) {
                     // Move $menu if outside window's edge
-                    var doc_width = $(document).width();
                     var offset = $menu.offset();
                     var menu_width = $menu.width();
                     var x = doc_width - offset.left - menu_width - 2;
@@ -1252,16 +1301,15 @@ instance.web.WebClient = instance.web.Client.extend({
         this._current_state = null;
         this.menu_dm = new instance.web.DropMisordered();
         this.action_mutex = new $.Mutex();
+        this.set('title_part', {"zopenerp": "OpenERP"});
     },
     start: function() {
         var self = this;
+        this.on("change:title_part", this, this._title_changed);
+        this._title_changed();
         return $.when(this._super()).then(function() {
-            if (jQuery.param !== undefined && jQuery.deparam(jQuery.param.querystring()).kitten !== undefined) {
-                $("body").addClass("kitten-mode-activated");
-                $("body").css("background-image", "url(" + instance.session.origin + "/web/static/src/img/back-enable.jpg" + ")");
-                if ($.blockUI) {
-                    $.blockUI.defaults.message = '<img src="http://www.amigrave.com/kitten.gif">';
-                }
+            if (jQuery.deparam !== undefined && jQuery.deparam(jQuery.param.querystring()).kitten !== undefined) {
+                self.to_kitten();
             }
             if (!self.session.session_is_valid()) {
                 self.show_login();
@@ -1270,10 +1318,41 @@ instance.web.WebClient = instance.web.Client.extend({
             }
         });
     },
+    to_kitten: function() {
+        this.kitten = true;
+        $("body").addClass("kitten-mode-activated");
+        $("body").css("background-image", "url(" + instance.session.origin + "/web/static/src/img/back-enable.jpg" + ")");
+        if ($.blockUI) {
+            var imgkit = Math.floor(Math.random() * 2 + 1);
+            $.blockUI.defaults.message = '<img src="http://www.amigrave.com/loading-kitten/' + imgkit + '.gif" class="loading-kitten">';
+        }
+    },
+    /**
+        Sets the first part of the title of the window, dedicated to the current action.
+    */
     set_title: function(title) {
-        title = _.str.clean(title);
-        var sep = _.isEmpty(title) ? '' : ' - ';
-        document.title = title + sep + 'OpenERP';
+        this.set_title_part("action", title);
+    },
+    /**
+        Sets an arbitrary part of the title of the window. Title parts are identified by strings. Each time
+        a title part is changed, all parts are gathered, ordered by alphabetical order and displayed in the
+        title of the window separated by '-'.
+    */
+    set_title_part: function(part, title) {
+        var tmp = _.clone(this.get("title_part"));
+        tmp[part] = title;
+        this.set("title_part", tmp);
+    },
+    _title_changed: function() {
+        var parts = _.sortBy(_.keys(this.get("title_part")), function(x) { return x; });
+        var tmp = "";
+        _.each(parts, function(part) {
+            var str = this.get("title_part")[part];
+            if (str) {
+                tmp = tmp ? tmp + " - " + str : str;
+            }
+        }, this);
+        document.title = tmp;
     },
     show_common: function() {
         var self = this;
@@ -1530,7 +1609,7 @@ instance.web.EmbeddedClient = instance.web.Client.extend({
         if (s.session_is_valid() && s.db === this.dbname && s.login === this.login) {
             return $.when();
         }
-        return instance.session.session_authenticate(this.dbname, this.login, this.key, true);
+        return instance.session.session_authenticate(this.dbname, this.login, this.key);
     },
 
     bind_credentials: function(dbname, login, key) {
@@ -1556,6 +1635,6 @@ instance.web.embed = function (origin, dbname, login, key, action, options) {
     client.insertAfter(currentScript);
 };
 
-};
+})();
 
 // vim:et fdc=0 fdl=0 foldnestmax=3 fdm=syntax:

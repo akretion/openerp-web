@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openerp-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-06-07 19:37+0000\n"
-"PO-Revision-Date: 2013-04-09 07:44+0000\n"
-"Last-Translator: Paul Korotkov <korotkov.paul@gmail.com>\n"
+"POT-Creation-Date: 2012-12-21 17:06+0000\n"
+"PO-Revision-Date: 2012-12-25 06:26+0000\n"
+"Last-Translator: Chertykov Denis <chertykov@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-06-08 07:50+0000\n"
-"X-Generator: Launchpad (build 16667)\n"
+"X-Launchpad-Export-Date: 2013-09-14 05:41+0000\n"
+"X-Generator: Launchpad (build 16761)\n"
 
 #. module: web_calendar
 #. openerp-web
@@ -30,13 +30,6 @@ msgstr "Новое событие"
 #, python-format
 msgid "Details"
 msgstr "Подробности"
-
-#. module: web_calendar
-#. openerp-web
-#: code:addons/web_calendar/static/src/js/calendar.js:512
-#, python-format
-msgid "Edit: %s"
-msgstr "Изменить: %s"
 
 #. module: web_calendar
 #. openerp-web
@@ -105,6 +98,13 @@ msgstr "Дата"
 
 #. module: web_calendar
 #. openerp-web
+#: code:addons/web_calendar/static/src/js/calendar.js:470
+#, python-format
+msgid "Edit: "
+msgstr "Изменить: "
+
+#. module: web_calendar
+#. openerp-web
 #: code:addons/web_calendar/static/src/js/calendar.js:158
 #, python-format
 msgid "Day"
@@ -155,13 +155,6 @@ msgstr "Повестка дня"
 
 #. module: web_calendar
 #. openerp-web
-#: code:addons/web_calendar/static/src/js/calendar.js:475
-#, python-format
-msgid "Create: %s"
-msgstr "Создать: %s"
-
-#. module: web_calendar
-#. openerp-web
 #: code:addons/web_calendar/static/src/js/calendar.js:170
 #, python-format
 msgid "Time period"
@@ -187,6 +180,13 @@ msgstr "Месяц"
 #, python-format
 msgid "Disabled"
 msgstr "Отключено"
+
+#. module: web_calendar
+#. openerp-web
+#: code:addons/web_calendar/static/src/js/calendar.js:435
+#, python-format
+msgid "Create: "
+msgstr "Создать: "
 
 #. module: web_calendar
 #. openerp-web
@@ -216,10 +216,5 @@ msgstr "Календарь"
 msgid "Calendar view has not defined 'date_start' attribute."
 msgstr "Вид календаря имеет не определенный 'date_start' аттрибут."
 
-#, python-format
-#~ msgid "Edit: "
-#~ msgstr "Изменить: "
-
-#, python-format
-#~ msgid "Create: "
-#~ msgstr "Создать: "
+#~ msgid "Navigator"
+#~ msgstr "Навигатор"

@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openerp-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-06-07 19:37+0000\n"
-"PO-Revision-Date: 2013-11-12 19:52+0000\n"
-"Last-Translator: Jan Jurkus (GCE CAD-Service) <ict@gcecad-service.nl>\n"
+"POT-Creation-Date: 2012-12-21 17:06+0000\n"
+"PO-Revision-Date: 2012-12-21 19:38+0000\n"
+"Last-Translator: Erwin van der Ploeg (BAS Solutions) <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-11-13 06:08+0000\n"
-"X-Generator: Launchpad (build 16820)\n"
+"X-Launchpad-Export-Date: 2013-09-14 05:39+0000\n"
+"X-Generator: Launchpad (build 16761)\n"
 
 #. module: web
 #. openerp-web
@@ -56,22 +56,10 @@ msgstr "is kleiner of gelijk aan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:114
+#: code:addons/web/static/src/js/chrome.js:410
 #, python-format
-msgid ""
-"Fill in this form to create an OpenERP database. You can\n"
-"                    create databases for different companies or for "
-"different\n"
-"                    goals (testing, production). Once the database is "
-"created,\n"
-"                    you will be able to install your first application."
-msgstr ""
-"Vul dit formulier in om een OpenERP database aan te maken. U kunt\n"
-"                    verschillende databases aanmaken voor verschillende "
-"bedrijven\n"
-"                    of voor verschillende doeleinden (test, productie). "
-"Wanneer een database is aangemaakt,\n"
-"                    kunt u, uw eerste applicatie installeren."
+msgid "Please enter your previous password"
+msgstr "Geef uw vorige wachtwoord in"
 
 #. module: web
 #. openerp-web
@@ -88,13 +76,6 @@ msgstr "Hoofdwachtwoord:"
 #, python-format
 msgid "Change Master Password"
 msgstr "Wijzig hoofdwachtwoord"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2439
-#, python-format
-msgid "Today"
-msgstr "Vandaag"
 
 #. module: web
 #. openerp-web
@@ -119,10 +100,10 @@ msgstr "Toegang geweigerd"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2462
+#: code:addons/web/static/src/js/view_form.js:5220
 #, python-format
-msgid "Now"
-msgstr "Nu"
+msgid "Uploading error"
+msgstr "Fout bij uploaden"
 
 #. module: web
 #. openerp-web
@@ -133,19 +114,12 @@ msgstr "ongeveer 1 uur geleden"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2446
-#, python-format
-msgid "Week of the year"
-msgstr "Week van het jaar"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/controllers/main.py:811
 #: code:addons/web/static/src/js/chrome.js:536
 #: code:addons/web/static/src/xml/base.xml:234
 #, python-format
 msgid "Backup Database"
-msgstr "Backup Database"
+msgstr "Back-up database"
 
 #. module: web
 #. openerp-web
@@ -164,13 +138,6 @@ msgstr "'%s' is geen geldige datum"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2437
-#, python-format
-msgid "Next>"
-msgstr ">Volgende"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1858
 #, python-format
 msgid "Here is a preview of the file we could not import:"
@@ -178,17 +145,17 @@ msgstr "Hier is een voorbeeld van het bestand dat we niet konden importeren:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:410
-#, python-format
-msgid "Please enter your previous password"
-msgstr "Geef uw vorige wachtwoord in"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/coresetup.js:591
 #, python-format
 msgid "about a minute ago"
 msgstr "ongeveer 1 minuut geleden"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:1306
+#, python-format
+msgid "File"
+msgstr "Bestand"
 
 #. module: web
 #: code:addons/web/controllers/main.py:869
@@ -210,7 +177,7 @@ msgstr "Ongeldige gebruikersnaam of wachtwoord"
 #: code:addons/web/static/src/xml/base.xml:278
 #, python-format
 msgid "Master Password:"
-msgstr "Hoofdwachtwoord:"
+msgstr "Hoofdwachtwoord"
 
 #. module: web
 #. openerp-web
@@ -246,28 +213,21 @@ msgstr "Laatst datum aangepast:"
 #: code:addons/web/static/src/js/search.js:1566
 #, python-format
 msgid "M2O search fields do not currently handle multiple default values"
-msgstr "M2O zoek velden kunnen momenteel geen meerdere standaard waardes aan"
+msgstr "M2O zoek velden behandelen momenteel geen meerdere standaard waardes"
 
 #. module: web
 #. openerp-web
 #: code:addons/web/static/src/js/view_form.js:1241
 #, python-format
 msgid "Widget type '%s' is not implemented"
-msgstr "Widget type '%s' is niet geïmplementeerd"
+msgstr "Widget type '%s' is niet geimplementeerd"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:134
+#: code:addons/web/static/src/xml/base.xml:1626
 #, python-format
-msgid "e.g. mycompany"
-msgstr "bijv. mijnbedrijf"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_list_editable.js:793
-#, python-format
-msgid "The form's data can not be discarded"
-msgstr "De gegevens van het formulier kunnen niet worden verwijderd."
+msgid "Share with all users"
+msgstr "Deel met alle gebruikers"
 
 #. module: web
 #. openerp-web
@@ -324,14 +284,14 @@ msgstr "Te exporteren velden"
 #: code:addons/web/static/src/js/view_list.js:1350
 #, python-format
 msgid "Undefined"
-msgstr "Niet gedefinieerd"
+msgstr "Onbepaald"
 
 #. module: web
 #. openerp-web
 #: code:addons/web/static/src/js/view_form.js:5002
 #, python-format
 msgid "File Upload"
-msgstr "Bestand uploaden"
+msgstr "Bestand upload"
 
 #. module: web
 #. openerp-web
@@ -366,7 +326,7 @@ msgstr "OpenERP SA"
 #: code:addons/web/static/src/js/search.js:1663
 #, python-format
 msgid "Custom Filter"
-msgstr "Aangepast filter"
+msgstr "Aangepaste Filter"
 
 #. module: web
 #. openerp-web
@@ -399,13 +359,6 @@ msgstr "Weergave type '%s' wordt niet ondersteund in One2Many."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:189
-#, python-format
-msgid "Original database name:"
-msgstr "Naam originele database:"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_form.js:5082
 #: code:addons/web/static/src/js/view_list.js:2204
 #, python-format
@@ -417,7 +370,7 @@ msgstr "Downloaden"
 #: code:addons/web/static/src/js/formats.js:270
 #, python-format
 msgid "'%s' is not a correct datetime"
-msgstr "'%s' is geen geldige datum/tijd"
+msgstr "'%s' is geen geldinge datum/tijd"
 
 #. module: web
 #. openerp-web
@@ -425,13 +378,6 @@ msgstr "'%s' is geen geldige datum/tijd"
 #, python-format
 msgid "Group"
 msgstr "Groep"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2445
-#, python-format
-msgid "Wk"
-msgstr "Wk"
 
 #. module: web
 #. openerp-web
@@ -462,13 +408,6 @@ msgstr "Talen"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2438
-#, python-format
-msgid "Show the next month"
-msgstr "Weergeven volgende maand"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1298
 #, python-format
 msgid "...Upload in progress..."
@@ -493,7 +432,7 @@ msgstr "Het was niet mogelijk om de database te herstellen"
 #: code:addons/web/static/src/js/view_form.js:4982
 #, python-format
 msgid "File upload"
-msgstr "Bestand uploaden"
+msgstr "Bestand upload"
 
 #. module: web
 #. openerp-web
@@ -522,8 +461,7 @@ msgstr "bevat"
 #: code:addons/web/static/src/js/coresetup.js:623
 #, python-format
 msgid "Take a minute to get a coffee,<br />because it's loading..."
-msgstr ""
-"Neem een minuutje om koffie te halen,<br />want het is aan het laden..."
+msgstr "Neem een minuutje voor een koffie,<br />want het is aan het laden..."
 
 #. module: web
 #. openerp-web
@@ -551,7 +489,7 @@ msgstr "Groepeer op"
 #: code:addons/web/static/src/js/view_list.js:699
 #, python-format
 msgid "You must select at least one record."
-msgstr "U dient tenminste één record te selecteren."
+msgstr "U dient tenminste één record te selecteren"
 
 #. module: web
 #. openerp-web
@@ -565,7 +503,7 @@ msgstr "Weergeven Log (perm_read)"
 #: code:addons/web/static/src/js/view_form.js:1071
 #, python-format
 msgid "Set Default"
-msgstr "Als standaard instellen"
+msgstr "Gebruik als standaard"
 
 #. module: web
 #. openerp-web
@@ -583,24 +521,10 @@ msgstr "minder dan een minuut geleden"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2453
-#, python-format
-msgid "Select a date"
-msgstr "Selecteer een datum"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:873
 #, python-format
 msgid "Condition:"
 msgstr "Voorwaarde:"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2458
-#, python-format
-msgid "Time"
-msgstr "Tijd"
 
 #. module: web
 #. openerp-web
@@ -628,7 +552,7 @@ msgstr "Teruggezet"
 #: code:addons/web/static/src/js/view_list.js:409
 #, python-format
 msgid "%d-%d of %d"
-msgstr "%d-%d van %d"
+msgstr "%d-%d of %d"
 
 #. module: web
 #. openerp-web
@@ -643,6 +567,13 @@ msgstr "Aanmaken en Bewerken..."
 #, python-format
 msgid "Unknown nonliteral type "
 msgstr "Onbekend nonliteral type "
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/view_form.js:2359
+#, python-format
+msgid "Resource error"
+msgstr "Resource fout"
 
 #. module: web
 #. openerp-web
@@ -663,7 +594,7 @@ msgstr "Afdrukken Workflow"
 #: code:addons/web/static/src/js/chrome.js:413
 #, python-format
 msgid "Please confirm your new password"
-msgstr "Bevestig uw nieuwe wachtwoord"
+msgstr "Bevestig uw wachtwoord"
 
 #. module: web
 #. openerp-web
@@ -709,17 +640,6 @@ msgstr "Model %s velden"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2046
-#: code:addons/web/static/src/js/search.js:2062
-#: code:addons/web/static/src/js/search.js:2098
-#: code:addons/web/static/src/js/search.js:2125
-#: code:addons/web/static/src/js/search.js:2145
-#, python-format
-msgid "is set"
-msgstr "is ingesteld"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_list.js:906
 #, python-format
 msgid "Setting 'id' attribute on existing record %s"
@@ -743,10 +663,11 @@ msgstr "is groter dan"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:585
+#: code:addons/web/static/src/js/view_list.js:2258
+#: code:addons/web/static/src/xml/base.xml:568
 #, python-format
-msgid "Changed Password"
-msgstr "Wachtwoord gewijzigd"
+msgid "View"
+msgstr "Weergave"
 
 #. module: web
 #. openerp-web
@@ -760,7 +681,7 @@ msgstr "Filter opslaan"
 #: code:addons/web/static/src/xml/base.xml:1372
 #, python-format
 msgid "Action ID:"
-msgstr "Actie ID:"
+msgstr "Action ID:"
 
 #. module: web
 #. openerp-web
@@ -823,25 +744,11 @@ msgstr "Opslaan & Nieuw"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2432
-#, python-format
-msgid "Erase the current date"
-msgstr "Wis de huidige datum"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1251
 #: code:addons/web/static/src/xml/base.xml:1253
 #, python-format
 msgid "Save As"
 msgstr "Opslaan als"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:109
-#, python-format
-msgid "Create a New Database"
-msgstr "Aanmaken nieuwe database"
 
 #. module: web
 #. openerp-web
@@ -852,17 +759,17 @@ msgstr "00:00:00"
 
 #. module: web
 #. openerp-web
+#: code:addons/web/static/src/js/view_form.js:2330
+#, python-format
+msgid "E-mail error"
+msgstr "E-mail fout"
+
+#. module: web
+#. openerp-web
 #: code:addons/web/static/src/js/coresetup.js:595
 #, python-format
 msgid "a day ago"
 msgstr "een dag geleden"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:138
-#, python-format
-msgid "Load demonstration data:"
-msgstr "Laad demonstratie gegevens:"
 
 #. module: web
 #. openerp-web
@@ -897,13 +804,6 @@ msgstr ""
 #, python-format
 msgid "Search: "
 msgstr "Zoeken: "
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:141
-#, python-format
-msgid "Check this box to evaluate OpenERP."
-msgstr "Vink dit aan om OpenERP te proberen."
 
 #. module: web
 #. openerp-web
@@ -952,10 +852,10 @@ msgstr "Toevoegen"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1795
+#: code:addons/web/static/src/xml/base.xml:558
 #, python-format
-msgid "1. Import a .CSV file"
-msgstr "1. Importeer een .CSV bestand"
+msgid "Toggle Form Layout Outline"
+msgstr "Wissel schermweergave"
 
 #. module: web
 #. openerp-web
@@ -969,7 +869,7 @@ msgstr "OpenERP.com"
 #: code:addons/web/static/src/js/view_form.js:2349
 #, python-format
 msgid "Can't send email to invalid e-mail address"
-msgstr "Kan geen email versturen naar ongeldig emailadres"
+msgstr "Kan de e-mail niet versturen. Het adres is ongelding."
 
 #. module: web
 #. openerp-web
@@ -987,13 +887,6 @@ msgstr "Voorkeuren"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1704
-#, python-format
-msgid "Only export selection:"
-msgstr "Exporteer alleen selectie:"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_form.js:435
 #, python-format
 msgid "Wrong on change format: %s"
@@ -1006,15 +899,6 @@ msgstr "Fout bij het wijzigen van het formaat: %s"
 #, python-format
 msgid "Drop Database"
 msgstr "Verwijder database"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/data_export.js:30
-#: code:addons/web/static/src/js/view_form.js:1077
-#: code:addons/web/static/src/xml/base.xml:1422
-#, python-format
-msgid "Close"
-msgstr "Sluiten"
 
 #. module: web
 #. openerp-web
@@ -1074,21 +958,14 @@ msgstr "Dupliceer database"
 #: code:addons/web/static/src/js/chrome.js:585
 #, python-format
 msgid "Password has been changed successfully"
-msgstr "Wachtwoord is succesvol gewijzigd"
+msgstr "Uw wachtwoord is succesvol gewijzigd."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2379
+#: code:addons/web/static/src/js/view_list_editable.js:793
 #, python-format
-msgid "Resource Error"
-msgstr "Resource fout"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2459
-#, python-format
-msgid "Hour"
-msgstr "Uur"
+msgid "The form's data can not be discarded"
+msgstr "De gegevens van het formulier kunnen niet worden verwijderd."
 
 #. module: web
 #. openerp-web
@@ -1115,13 +992,6 @@ msgstr "Verwijderen"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:425
-#, python-format
-msgid "My OpenERP.com account"
-msgstr "Mijn OpenERP account"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/pyeval.js:774
 #, python-format
 msgid ""
@@ -1130,7 +1000,7 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"Lokale evaluatie fout\n"
+"Locale evaluatie fout\n"
 "%s\n"
 "\n"
 "%s"
@@ -1187,11 +1057,17 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_list.js:2258
-#: code:addons/web/static/src/xml/base.xml:568
+#: code:addons/web/static/src/xml/base.xml:635
 #, python-format
-msgid "View"
-msgstr "Weergave"
+msgid "/web/binary/upload_attachment"
+msgstr "/web/binary/upload_attachment"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/chrome.js:585
+#, python-format
+msgid "Changed Password"
+msgstr "Wachtwoord gewijzigd"
 
 #. module: web
 #. openerp-web
@@ -1202,29 +1078,14 @@ msgstr "Zoeken"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2435
+#: code:addons/web/static/src/js/view_form.js:3139
+#: code:addons/web/static/src/js/view_form.js:3785
+#: code:addons/web/static/src/js/view_form.js:3906
+#: code:addons/web/static/src/js/view_form.js:4358
+#: code:addons/web/static/src/js/view_form.js:4482
 #, python-format
-msgid "<Prev"
-msgstr "<Vorige"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2450
-#, python-format
-msgid "Set DD as first week day"
-msgstr "Stel DD in als eerste dag van de week"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:120
-#, python-format
-msgid ""
-"By default, the master password is 'admin'. This password\n"
-"                    is required to created, delete dump or restore databases."
-msgstr ""
-"Standaard is het hoofdwachtwoord 'admin'. Dit wachtwoord\n"
-"                    is nodig voor het aanmaken, verwijderen en het maken of "
-"terugplaatsen van een backup"
+msgid "Open: "
+msgstr "Open: "
 
 #. module: web
 #. openerp-web
@@ -1312,13 +1173,6 @@ msgstr "Onbekend operator% s in domein% s"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2436
-#, python-format
-msgid "Show the previous month"
-msgstr "Weergeven vorige maand"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_form.js:427
 #, python-format
 msgid "%d / %d"
@@ -1384,7 +1238,7 @@ msgstr "Het nieuwe wachtwoord en haar bevestiging moeten identiek zijn."
 #: code:addons/web/static/src/xml/base.xml:266
 #, python-format
 msgid "Restore Database"
-msgstr "Database terugplaatsen"
+msgstr "Herstel database"
 
 #. module: web
 #. openerp-web
@@ -1428,13 +1282,6 @@ msgstr "Afmelden"
 #, python-format
 msgid "Group by: %s"
 msgstr "Groepeer op: %s"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2443
-#, python-format
-msgid "Show a different month"
-msgstr "Weergeven andere maand"
 
 #. module: web
 #. openerp-web
@@ -1492,13 +1339,6 @@ msgstr "Het id kan niet worden gevonden in de dataset."
 #, python-format
 msgid "Remove All"
 msgstr "Alles verwijderen"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:253
-#, python-format
-msgid "Your OpenERP session expired. Please refresh the current web page."
-msgstr "Uw OpenERP sessie is verlopen. Ververs de huidige pagina."
 
 #. module: web
 #. openerp-web
@@ -1569,17 +1409,10 @@ msgstr "99+"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:427
+#: code:addons/web/static/src/xml/base.xml:1795
 #, python-format
-msgid "Help"
-msgstr "Help"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:558
-#, python-format
-msgid "Toggle Form Layout Outline"
-msgstr "Wissel schermweergave"
+msgid "1. Import a .CSV file"
+msgstr "1. Importeer een .CSV bestand"
 
 #. module: web
 #. openerp-web
@@ -1604,10 +1437,10 @@ msgstr "Wijzig standaard"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1879
+#: code:addons/web/static/src/xml/base.xml:189
 #, python-format
-msgid "Advanced"
-msgstr "Uitgebreid"
+msgid "Original database name:"
+msgstr "Naam originele database:"
 
 #. module: web
 #. openerp-web
@@ -1682,24 +1515,19 @@ msgstr "Toevoegen %s"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2434
+#: code:addons/web/static/src/xml/base.xml:145
 #, python-format
-msgid "Close without change"
-msgstr "Afsluiten zonder wijzigingen"
+msgid "Admin password:"
+msgstr "Admin wachtwoord:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:159
+#: code:addons/web/static/src/js/data_export.js:30
+#: code:addons/web/static/src/js/view_form.js:1077
+#: code:addons/web/static/src/xml/base.xml:1422
 #, python-format
-msgid "Choose a password:"
-msgstr "Kies een wachtwoord:"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2451
-#, python-format
-msgid "Select D, M d"
-msgstr "Selecteer D, M d"
+msgid "Close"
+msgstr "Sluiten"
 
 #. module: web
 #. openerp-web
@@ -1720,10 +1548,10 @@ msgstr "CSV bestand:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2460
+#: code:addons/web/static/src/js/search.js:1879
 #, python-format
-msgid "Minute"
-msgstr "Minuut"
+msgid "Advanced"
+msgstr "Uitgebreid"
 
 #. module: web
 #. openerp-web
@@ -1795,13 +1623,6 @@ msgstr "Powered by"
 #, python-format
 msgid "Yes"
 msgstr "Ja"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:1350
-#, python-format
-msgid "Timezone Mismatch"
-msgstr "Tijdzone komt niet overeen"
 
 #. module: web
 #. openerp-web
@@ -1886,14 +1707,7 @@ msgstr "Het veld is leeg. Er is niets om op te slaan!"
 #: code:addons/web/static/src/xml/base.xml:567
 #, python-format
 msgid "Manage Views"
-msgstr "Weergaves beheren"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2349
-#, python-format
-msgid "E-mail Error"
-msgstr "E-mail fout"
+msgstr "Weergaven beheren"
 
 #. module: web
 #. openerp-web
@@ -1921,7 +1735,7 @@ msgstr "Aanmaken \"<strong>%s</strong>\""
 #: code:addons/web/static/src/js/data_export.js:362
 #, python-format
 msgid "Please select fields to save export list..."
-msgstr "Selecteer velden voor opslaan export lijst..."
+msgstr "Selecteer aub velden voor opslaan export lijst"
 
 #. module: web
 #. openerp-web
@@ -1980,14 +1794,6 @@ msgstr "Filter op: %s"
 #, python-format
 msgid "Create: "
 msgstr "Maken: "
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2433
-#: code:addons/web/static/src/js/view_form.js:2463
-#, python-format
-msgid "Done"
-msgstr "Gereed"
 
 #. module: web
 #. openerp-web
@@ -2108,11 +1914,12 @@ msgstr "-- Filters --"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1998
-#: code:addons/web/static/src/js/search.js:2165
+#: code:addons/web/static/src/js/view_form.js:2431
+#: code:addons/web/static/src/xml/base.xml:1258
+#: code:addons/web/static/src/xml/base.xml:1260
 #, python-format
-msgid "%(field)s %(operator)s"
-msgstr "%(field)s %(operator)s"
+msgid "Clear"
+msgstr "Wis"
 
 #. module: web
 #. openerp-web
@@ -2163,13 +1970,6 @@ msgstr "Het record kan niet worden gevonden in de database."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2444
-#, python-format
-msgid "Show a different year"
-msgstr "Weergeven ander jaar"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1498
 #, python-format
 msgid "Filter Name:"
@@ -2206,13 +2006,6 @@ msgstr "Bezig met laden…"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2440
-#, python-format
-msgid "Show the current month"
-msgstr "Weergeven huidige maand"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/coresetup.js:599
 #, python-format
 msgid "about a year ago"
@@ -2241,26 +2034,10 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2431
-#: code:addons/web/static/src/xml/base.xml:1258
-#: code:addons/web/static/src/xml/base.xml:1260
-#, python-format
-msgid "Clear"
-msgstr "Wis"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:132
-#, python-format
-msgid "Select a database name:"
-msgstr "Selecteer een database naam:"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/coresetup.js:594
 #, python-format
 msgid "%d hours ago"
-msgstr "%d uur geleden"
+msgstr "%d uren geleden"
 
 #. module: web
 #. openerp-web
@@ -2306,6 +2083,13 @@ msgstr "Uploaden..."
 
 #. module: web
 #. openerp-web
+#: code:addons/web/static/src/xml/base.xml:125
+#, python-format
+msgid "Load Demonstration data:"
+msgstr "Demonstratiegegevens laden:"
+
+#. module: web
+#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:637
 #, python-format
 msgid "Created by :"
@@ -2317,7 +2101,7 @@ msgstr "Aangemaakt door:"
 #: code:addons/web/static/src/js/dates.js:26
 #, python-format
 msgid "'%s' is not a valid datetime"
-msgstr "'%s' is geen geldige datum/tijd"
+msgstr "'%s' is geen correcte datum/tijd"
 
 #. module: web
 #. openerp-web
@@ -2449,18 +2233,7 @@ msgstr "OpenERP is een handelsmerk van"
 #: code:addons/web/static/src/js/data_export.js:375
 #, python-format
 msgid "Please select fields to export..."
-msgstr "Selecteer velden om te exporteren..."
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/search.js:2047
-#: code:addons/web/static/src/js/search.js:2063
-#: code:addons/web/static/src/js/search.js:2099
-#: code:addons/web/static/src/js/search.js:2126
-#: code:addons/web/static/src/js/search.js:2146
-#, python-format
-msgid "is not set"
-msgstr "is niet ingesteld"
+msgstr "Selecteer velden voor export"
 
 #. module: web
 #. openerp-web
@@ -2468,13 +2241,6 @@ msgstr "is niet ingesteld"
 #, python-format
 msgid "New master password:"
 msgstr "Nieuw hoofdwachtwoord:"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1626
-#, python-format
-msgid "Share with all users"
-msgstr "Deel met alle gebruikers"
 
 #. module: web
 #. openerp-web
@@ -2585,13 +2351,6 @@ msgstr "Negeren"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:5314
-#, python-format
-msgid "Uploading Error"
-msgstr "Upload fout"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1642
 #, python-format
 msgid "Add a condition"
@@ -2617,8 +2376,7 @@ msgstr "Onjuiste waarde bij veld %(fieldname)s: [%(value)s] is %(message)s"
 #, python-format
 msgid "The o2m record must be saved before an action can be used"
 msgstr ""
-"Het o2m record dient opgeslagen te worden alvorens een actie kan worden "
-"gebruikt"
+"Het O2M record dient bewaard te worden alvorens een actie kan gebruikt worden"
 
 #. module: web
 #. openerp-web
@@ -2633,17 +2391,6 @@ msgstr "Back-up gereed"
 #, python-format
 msgid "Use by default"
 msgstr "Gebruik als standaard"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:3139
-#: code:addons/web/static/src/js/view_form.js:3785
-#: code:addons/web/static/src/js/view_form.js:3906
-#: code:addons/web/static/src/js/view_form.js:4358
-#: code:addons/web/static/src/js/view_form.js:4482
-#, python-format
-msgid "Open: "
-msgstr "Open: "
 
 #. module: web
 #. openerp-web
@@ -2679,16 +2426,6 @@ msgstr "Widget:"
 #, python-format
 msgid "Edit Action"
 msgstr "Bewerkingsactie"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/search.js:1681
-#, python-format
-msgid ""
-"This filter is global and will be removed for everybody if you continue."
-msgstr ""
-"Dit filter is voor iedereen en zal dus ook voor iedereen worden verwijderd "
-"als u doorgaat."
 
 #. module: web
 #. openerp-web
@@ -2773,7 +2510,7 @@ msgstr "Afdrukken"
 #: code:addons/web/static/src/xml/base.xml:1359
 #, python-format
 msgid "Special:"
-msgstr "Speciaal:"
+msgstr "Special:"
 
 #. module: web
 #: code:addons/web/controllers/main.py:877
@@ -2781,7 +2518,7 @@ msgstr "Speciaal:"
 msgid ""
 "The old password you provided is incorrect, your password was not changed."
 msgstr ""
-"Het oude wachtwoord wat u heeft ingevoerd is niet correct. Uw wachtwoord is "
+"Het oude wachtwoord wat u heft ingevoerd is niet correct. Uw wachtwoord is "
 "niet gewijzigd."
 
 #. module: web
@@ -2797,13 +2534,6 @@ msgstr "Gebruiker aanmaken:"
 #, python-format
 msgid "Do you really want to delete this record?"
 msgstr "Wilt u dit record werkelijk verwijderen?"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:318
-#, python-format
-msgid "Back to Login"
-msgstr "Terug naar login"
 
 #. module: web
 #. openerp-web
@@ -2826,13 +2556,6 @@ msgstr "Zoek meer..."
 #, python-format
 msgid "Password"
 msgstr "Wachtwoord"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2457
-#, python-format
-msgid "Choose Time"
-msgstr "Kies tijd"
 
 #. module: web
 #. openerp-web
@@ -2895,10 +2618,10 @@ msgstr "Scheidingsteken:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2461
+#: code:addons/web/static/src/xml/base.xml:318
 #, python-format
-msgid "Second"
-msgstr "Seconde"
+msgid "Back to Login"
+msgstr "Terug naar login"
 
 #. module: web
 #. openerp-web
@@ -2908,30 +2631,258 @@ msgstr "Seconde"
 msgid "Filters"
 msgstr "Filters"
 
-#, python-format
-#~ msgid "Admin password:"
-#~ msgstr "Admin wachtwoord:"
+#~ msgid ""
+#~ "Warning, the record has been modified, your changes will be discarded."
+#~ msgstr "Letop: het record is gewijzigd; uw wijzigingen gaan verloren."
+
+#~ msgid "<em>   Search More...</em>"
+#~ msgstr "<em>   Zoek verder...</em>"
+
+#~ msgid "Translations"
+#~ msgstr "Vertalingen"
+
+#~ msgid "<em>   Create and Edit...</em>"
+#~ msgstr "<em>   Maak en wijzig...</em>"
 
 #, python-format
-#~ msgid "Load Demonstration data:"
-#~ msgstr "Demonstratiegegevens laden:"
+#~ msgid "<em>   Create \"<strong>%s</strong>\"</em>"
+#~ msgstr "<em>   Maak \"<strong>%s</strong>\"</em>"
+
+#~ msgid "DROP DATABASE"
+#~ msgstr "DATABASE VERWIJDEREN"
+
+#~ msgid "CREATE DATABASE"
+#~ msgstr "DATABASE MAKEN"
+
+#~ msgid "CHANGE MASTER PASSWORD"
+#~ msgstr "MASTER WACHTWOORD WIJZIGEN"
+
+#~ msgid "RESTORE DATABASE"
+#~ msgstr "DATABASE TERUGZETTEN"
+
+#~ msgid "BACKUP DATABASE"
+#~ msgstr "DATABASE BACKUP"
+
+#~ msgid "LOGOUT"
+#~ msgstr "AFMELDEN"
+
+#~ msgid "Disable all tips"
+#~ msgstr "Alle tips uitzetten"
+
+#~ msgid "Hide this tip"
+#~ msgstr "Verberg deze tip"
+
+#~ msgid "Field"
+#~ msgstr "Veld"
+
+#~ msgid "Open..."
+#~ msgstr "Openen..."
+
+#~ msgid "Create..."
+#~ msgstr "Aanmaken…"
+
+#~ msgid "Search..."
+#~ msgstr "Zoeken…"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Add condition"
+#~ msgstr "Voorwaarde toevoegen"
+
+#~ msgid "and"
+#~ msgstr "en"
+
+#~ msgid "Any of the following conditions must match"
+#~ msgstr "Één van de volgende voorwaarden moet voldoen"
+
+#~ msgid "All the following conditions must match"
+#~ msgstr "Alle volgende voorwaarden moeten voldoen"
+
+#~ msgid "None of the following conditions must match"
+#~ msgstr "Geen van de volgende voorwaarden mag voldoen"
+
+#~ msgid "Import Compatible Export"
+#~ msgstr "Import compatibele export"
 
 #, python-format
-#~ msgid "/web/binary/upload_attachment"
-#~ msgstr "/web/binary/upload_attachment"
+#~ msgid "Confirm Password:"
+#~ msgstr "Bevestig wachtwoord:"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Filter Entry"
+#~ msgstr "Filter regel"
+
+#~ msgid "External ID"
+#~ msgstr "Externe ID"
+
+#~ msgid "Import File"
+#~ msgstr "Bestand importeren"
+
+#~ msgid "Add to Dashboard"
+#~ msgstr "Aan dashboard toevoegen"
+
+#~ msgid "Do you really want to remove this view?"
+#~ msgstr "Wilt u deze weergave werkelijk verwijderen?"
+
+#~ msgid "Attachments"
+#~ msgstr "Bijlages"
+
+#~ msgid "Do you really want to remove this node?"
+#~ msgstr "Wilt u dit knooppunt werkelijk verwijderen?"
+
+#~ msgid "Customize"
+#~ msgstr "Aanpassen"
+
+#~ msgid "Translate"
+#~ msgstr "Vertalen"
+
+#~ msgid "Other Options"
+#~ msgstr "Overige opties"
+
+#~ msgid "More…"
+#~ msgstr "Meer..."
+
+#~ msgid "Links"
+#~ msgstr "Verwijzingen"
+
+#~ msgid "Actions"
+#~ msgstr "Acties"
+
+#~ msgid "Select Dashboard to add this filter to:"
+#~ msgstr "Selecteer Dashboard om dit filter aan toe te voegen:"
+
+#~ msgid "Title of new Dashboard item:"
+#~ msgstr "Titel van nieuw dashboard item:"
+
+#~ msgid "Send OpenERP Enterprise Report"
+#~ msgstr "Verstuur OpenERP Enterprise rapport"
+
+#~ msgid "Dont send"
+#~ msgstr "Niet versturen"
+
+#~ msgid "Import Data"
+#~ msgstr "Gegevens importeren"
+
+#~ msgid "Change password"
+#~ msgstr "Wachtwoord wijzigen"
+
+#~ msgid "Preview"
+#~ msgstr "Voorbeeld"
+
+#~ msgid "Properties"
+#~ msgstr "Eigenschappen"
 
 #, python-format
-#~ msgid "E-mail error"
-#~ msgstr "E-mail fout"
+#~ msgid "Manage Views (%s)"
+#~ msgstr "Weergaven beheren (%s)"
 
 #, python-format
-#~ msgid "Resource error"
-#~ msgstr "Resource fout"
+#~ msgid "Create a view (%s)"
+#~ msgstr "Een weergave maken (%s)"
+
+#~ msgid "Do you really wants to create an inherited view here?"
+#~ msgstr "Wilt u hier werkelijk een overerfde weergave maken?"
+
+#~ msgid "Inherited View"
+#~ msgstr "Afgeleide weergave"
+
+#~ msgid "Filter disabled due to invalid syntax"
+#~ msgstr "Filter uitgeschakeld vanwege ongeldige syntaxis"
+
+#~ msgid "OpenERP - Unsupported/Community Version"
+#~ msgstr "OpenERP - Unsupported/Community Version"
+
+#~ msgid "Update"
+#~ msgstr "Bijwerken"
 
 #, python-format
-#~ msgid "File"
-#~ msgstr "Bestand"
+#~ msgid "View Editor %d - %s"
+#~ msgstr "Bekijk editor %d - %s"
 
 #, python-format
-#~ msgid "Uploading error"
-#~ msgstr "Fout bij uploaden"
+#~ msgid "Do you really want to delete the attachment %s?"
+#~ msgstr "Weet u zeker dat u deze bijlage %s wilt verwijderen?"
+
+#~ msgid "Page"
+#~ msgstr "Pagina"
+
+#~ msgid "OpenERP Entreprise"
+#~ msgstr "OpenERP Entreprise"
+
+#~ msgid "Summary:"
+#~ msgstr "Samenvatting:"
+
+#~ msgid "Home"
+#~ msgstr "Home"
+
+#~ msgid "OpenERP Enterprise Contract."
+#~ msgstr "OpenERP Enterprise Contract."
+
+#~ msgid "What you did:"
+#~ msgstr "Wat u deed:"
+
+#~ msgid "Description:"
+#~ msgstr "Beschrijving:"
+
+#~ msgid "Add / Remove Shortcut..."
+#~ msgstr "Toevoegen/verwijderen snelkoppeling"
+
+#~ msgid "Unfold menu"
+#~ msgstr "Uitvouwen menu"
+
+#~ msgid "Fold menu"
+#~ msgstr "Mappen menu"
+
+#~ msgid "Add attachment"
+#~ msgstr "Bijlage toevoegen"
+
+#~ msgid "Set Image"
+#~ msgstr "Afbeelding instellen"
+
+#~ msgid "Open this resource"
+#~ msgstr "Open deze hulpbron"
+
+#~ msgid "Send an e-mail with your default e-mail client"
+#~ msgstr "Stuur een e-mail met uw standaard e-mail client"
+
+#~ msgid "Advanced Filters"
+#~ msgstr "Geavanceerd filtes"
+
+#~ msgid "Activate the developper mode"
+#~ msgstr "Activeer de ontwikkelaars mode"
+
+#~ msgid ""
+#~ "Your version of OpenERP is unsupported. Support & maintenance services are "
+#~ "available here:"
+#~ msgstr ""
+#~ "Uw versie van OpenERP wordt niet ondersteund. Ondersteuning en onderhoud "
+#~ "service zijn hier beschikbaar:"
+
+#~ msgid "Notebook Page \""
+#~ msgstr "Notebook Pagina \""
+
+#~ msgid "Could not find current view declaration"
+#~ msgstr "Kan huidige weergave declaratie niet vinden"
+
+#, python-format
+#~ msgid "[%(first_record)d to %(last_record)d] of %(records_count)d"
+#~ msgstr "[%(first_record)d t/m %(last_record)d] van %(records_count)d"
+
+#~ msgid "Reports"
+#~ msgstr "Rapportages"
+
+#~ msgid "Your report will be sent to the OpenERP Enterprise team."
+#~ msgstr "Uw rapport wordt verzonden naar het OpenERP Enterprise team."
+
+#~ msgid "*Required Fields are not selected :"
+#~ msgstr "*Verplichte velden zijn niet geselecteerd:"
+
+#~ msgid ""
+#~ "Destination fields should only be selected once, some fields are selected "
+#~ "more than once:"
+#~ msgstr ""
+#~ "Bestemming velden kunnen maar één keer worden geselecteerd. Een aantal "
+#~ "velden zijn meer dan één keer geselecteerd:"

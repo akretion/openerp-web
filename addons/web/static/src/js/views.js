@@ -2,7 +2,10 @@
  * OpenERP web library
  *---------------------------------------------------------*/
 
-openerp.web.views = function(instance) {
+(function() {
+
+var instance = openerp;
+openerp.web.views = {};
 var QWeb = instance.web.qweb,
     _t = instance.web._t;
 
@@ -49,7 +52,7 @@ instance.web.ActionManager = instance.web.Widget.extend({
         if (last) {
             last.hide();
         }
-        var item = _.extend({
+        item = _.extend({
             show: function(index) {
                 this.widget.$el.show();
             },
@@ -241,6 +244,7 @@ instance.web.ActionManager = instance.web.Widget.extend({
                     } else if (state.active_id) {
                         add_context.active_ids = [state.active_id];
                     }
+                    add_context.params = state;
                     this.null_action();
                     action_loaded = this.do_action(state.action, { additional_context: add_context });
                     $.when(action_loaded || null).done(function() {
@@ -432,7 +436,7 @@ instance.web.ActionManager = instance.web.Widget.extend({
 
         if (!(ClientWidget.prototype instanceof instance.web.Widget)) {
             var next;
-            if (next = ClientWidget(this, action)) {
+            if ((next = ClientWidget(this, action))) {
                 return this.do_action(next, options);
             }
             return $.when();
@@ -468,7 +472,7 @@ instance.web.ActionManager = instance.web.Widget.extend({
             action_id: action.id,
             context: action.context || {}
         }).done(function (action) {
-            self.do_action(action, options)
+            self.do_action(action, options);
         });
     },
     ir_actions_report_xml: function(action, options) {
@@ -487,8 +491,8 @@ instance.web.ActionManager = instance.web.Widget.extend({
                 var params = {
                     action: JSON.stringify(action),
                     token: new Date().getTime()
-                }
-                var url = self.session.url('/web/report', params)
+                };
+                var url = self.session.url('/web/report', params);
                 instance.web.unblockUI();
                 $('<a href="'+url+'" target="_blank"></a>')[0].click();
                 return;
@@ -511,7 +515,7 @@ instance.web.ActionManager = instance.web.Widget.extend({
                         c.rpc_error.apply(c, arguments);
                         d.reject();
                     }
-                })
+                });
             });
         });
     },
@@ -686,14 +690,7 @@ instance.web.ViewManager =  instance.web.Widget.extend({
         this.$el.find('.oe_view_title_text:first').text(title);
     },
     add_breadcrumb: function(options) {
-        var options = options || {};
-        // 7.0 backward compatibility
-        if (typeof options == 'function') {
-            options = {
-                on_reverse_breadcrumb: options
-            };
-        }
-        // end of 7.0 backward compatibility
+        options = options || {};
         var self = this;
         var views = [this.active_view || this.views_src[0].view_type];
         this.on('switch_mode', self, function(mode) {
@@ -974,7 +971,6 @@ instance.web.ViewManagerAction = instance.web.ViewManager.extend({
                     view_type : 'list',
                     view_mode : 'list'
                 });
-                break;
             case 'edit':
                 this.do_edit_resource($option.data('model'), $option.data('id'), { name : $option.text() });
                 break;
@@ -1016,7 +1012,7 @@ instance.web.ViewManagerAction = instance.web.ViewManager.extend({
         evt.currentTarget.selectedIndex = 0;
     },
     do_edit_resource: function(model, id, action) {
-        var action = _.extend({
+        action = _.extend({
             res_model : model,
             res_id : id,
             type : 'ir.actions.act_window',
@@ -1054,7 +1050,7 @@ instance.web.ViewManagerAction = instance.web.ViewManager.extend({
     },
     get_action_manager: function() {
         var cur = this;
-        while (cur = cur.getParent()) {
+        while ((cur = cur.getParent())) {
             if (cur instanceof instance.web.ActionManager) {
                 return cur;
             }
@@ -1138,7 +1134,7 @@ instance.web.Sidebar = instance.web.Widget.extend({
         self.$("[title]").tipsy({
             'html': true,
             'delayIn': 500,
-        })
+        });
     },
     /**
      * For each item added to the section:
@@ -1182,7 +1178,7 @@ instance.web.Sidebar = instance.web.Widget.extend({
                         label: items[i]['name'],
                         action: items[i],
                         classname: 'oe_sidebar_' + type
-                    }
+                    };
                 }
                 self.add_items(type=='print' ? 'print' : 'other', items);
             }
@@ -1192,32 +1188,46 @@ instance.web.Sidebar = instance.web.Widget.extend({
         var self = this;
         self.getParent().sidebar_eval_context().done(function (sidebar_eval_context) {
             var ids = self.getParent().get_selected_ids();
-            if (ids.length == 0) {
+            var domain;
+            if (self.getParent().get_active_domain) {
+                domain = self.getParent().get_active_domain();
+            }
+            else {
+                domain = $.Deferred().resolve(undefined);
+            }
+            if (ids.length === 0) {
                 instance.web.dialog($("<div />").text(_t("You must choose at least one record.")), { title: _t("Warning"), modal: true });
                 return false;
             }
             var active_ids_context = {
                 active_id: ids[0],
                 active_ids: ids,
-                active_model: self.getParent().dataset.model
-            }; 
-            var c = instance.web.pyeval.eval('context',
+                active_model: self.getParent().dataset.model,
+            };
+
+            $.when(domain).done(function (domain) {
+                if (domain !== undefined) {
+                    active_ids_context.active_domain = domain;
+                }
+                var c = instance.web.pyeval.eval('context',
                 new instance.web.CompoundContext(
                     sidebar_eval_context, active_ids_context));
-            self.rpc("/web/action/load", {
-                action_id: item.action.id,
-                context: c
-            }).done(function(result) {
-                result.context = new instance.web.CompoundContext(
-                    result.context || {}, active_ids_context)
-                        .set_eval_context(c);
-                result.flags = result.flags || {};
-                result.flags.new_window = true;
-                self.do_action(result, {
-                    on_close: function() {
-                        // reload view
-                        self.getParent().reload();
-                    },
+
+                self.rpc("/web/action/load", {
+                    action_id: item.action.id,
+                    context: c
+                }).done(function(result) {
+                    result.context = new instance.web.CompoundContext(
+                        result.context || {}, active_ids_context)
+                            .set_eval_context(c);
+                    result.flags = result.flags || {};
+                    result.flags.new_window = true;
+                    self.do_action(result, {
+                        on_close: function() {
+                            // reload view
+                            self.getParent().reload();
+                        },
+                    });
                 });
             });
         });
@@ -1355,7 +1365,17 @@ instance.web.View = instance.web.Widget.extend({
                 return self.getParent().on_action_executed.apply(null, arguments);
             }
         };
-        var context = new instance.web.CompoundContext(dataset.get_context(), action_data.context || {});
+        var context = dataset.get_context();
+        if (action_data.model !== dataset.model) {
+            // filter out context keys that are specific to the action model.
+            // Wrong default_ and search_default values will no give the expected views
+            // Wrong group_by values will simply fail and forbid rendering of the destination view
+            context = _.object(_.reject(_.pairs(context.eval()), function(pair) {
+                return pair[0].match('^(?:(?:default_|search_default_).+|group_by|group_by_no_leaf)$') !== null;
+            }));
+        }
+
+        context = new instance.web.CompoundContext(context, action_data.context || {});
         var handler = function (action) {
             if (action && action.constructor == Object) {
                 var ncontext = new instance.web.CompoundContext(context);
@@ -1400,7 +1420,7 @@ instance.web.View = instance.web.Widget.extend({
         } else if (action_data.type=="action") {
             return this.rpc('/web/action/load', {
                 action_id: action_data.name,
-                context: instance.web.pyeval.eval('context', context),
+                context: _.extend({'active_model': dataset.model, 'active_ids': dataset.ids, 'active_id': record_id}, instance.web.pyeval.eval('context', context)),
                 do_not_eval: true
             }).then(handler);
         } else  {
@@ -1442,7 +1462,7 @@ instance.web.View = instance.web.Widget.extend({
             if (self.is_active()) {
                 fn.apply(self, arguments);
             }
-        }
+        };
     },
     do_push_state: function(state) {
         if (this.getParent() && this.getParent().do_push_state) {
@@ -1488,7 +1508,7 @@ instance.web.View = instance.web.Widget.extend({
     is_action_enabled: function(action) {
         var attrs = this.fields_view.arch.attrs;
         return (action in attrs) ? JSON.parse(attrs[action]) : true;
-    }
+    },
 });
 
 /**
@@ -1553,9 +1573,10 @@ instance.web.xml_to_json = function(node, strip_whitespace) {
                 children: _.compact(_.map(node.childNodes, function(node) {
                     return instance.web.xml_to_json(node, strip_whitespace);
                 })),
-            }
+            };
     }
-}
+};
+
 instance.web.json_node_to_xml = function(node, human_readable, indent) {
     // For debugging purpose, this function will convert a json node back to xml
     indent = indent || 0;
@@ -1624,6 +1645,6 @@ instance.web.xml_to_str = function(node) {
  */
 instance.web.views = new instance.web.Registry();
 
-};
+})();
 
 // vim:et fdc=0 fdl=0 foldnestmax=3 fdm=syntax:

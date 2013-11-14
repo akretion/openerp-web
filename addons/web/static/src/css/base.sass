@@ -9,7 +9,7 @@ $tag-border: #afafb6
 $tag-border-selected: #a6a6fe
 $hover-background: #f0f0fa
 $link-color: #7C7BAD
-$sheet-max-width: auto
+$sheet-max-width: 860px
 $sheet-min-width: 650px
 $sheet-padding: 16px
 // }}}
@@ -482,7 +482,28 @@ $sheet-padding: 16px
     .oe_tag_dark
         background: $tag-bg-dark
         color: #eee
-
+    .oe_form_field_radio
+        &.oe_horizontal
+            white-space: nowrap
+            label
+                display: inline-block
+                text-align: center
+                height: 16px
+        &.oe_vertical
+            label
+                margin-left: 4px
+        &.oe_form_required
+            .oe_radio_input
+                border: 2px solid transparent
+                display: inline-block
+                height: 12px
+                width: 12px
+                vertical-align: bottom
+                border-radius: 10px
+                margin: 1px 0
+            &.oe_form_invalid
+                .oe_radio_input
+                    border-color: red
     .oe_tags
         &.oe_inline
             min-width: 250px
@@ -578,17 +599,15 @@ $sheet-padding: 16px
         position: relative
         cursor: pointer
     .oe_dropdown_toggle
-        color: #4C4C4C
+        color: #2B2B2B
         font-weight: normal
     .oe_dropdown_hover:hover .oe_dropdown_menu, .oe_dropdown_menu.oe_opened
         display: block
     .oe_dropdown_menu
         display: none
         position: absolute
-        top: 26px
         z-index: 3
         margin: 0
-        padding: 0
         border: 1px solid $tag-border
         background: white
         padding: 4px 0
@@ -890,7 +909,7 @@ $sheet-padding: 16px
             border-color: #999
             border-color: rgba(0, 0, 0, 0.2)
             border-style: solid
-            border-width: 0 1px 1px
+            border-width: 0 2px 1px
             @include radius(0 0 6px 6px)
             @include background-clip()
             li
@@ -1168,6 +1187,8 @@ $sheet-padding: 16px
             .oe_view_manager_sidebar
                 margin: 0px auto
                 text-align: center
+                .oe_dropdown_arrow:after
+                    opacity: 0.9
             td
                 line-height: 26px
             h2
@@ -1460,11 +1481,11 @@ $sheet-padding: 16px
                 border-top: none
                 margin: 0
             h3
-                margin: 8px 4px 4px 12px
+                margin: 8px 4px 4px 0px
                 color: $section-title-color
                 font-size: 13px
             h4, h4 *
-                margin: 0
+                margin: 0 0 0 2px
                 cursor: pointer
                 font-weight: normal
                 display: inline-block
@@ -1520,6 +1541,10 @@ $sheet-padding: 16px
                     margin: 0 0 8px 0
             .oe_searchview_custom
                 padding: 0 8px 8px 8px
+                div
+                    padding: 0
+                    h4
+                        margin: 0
                 form
                     display: none
                 li
@@ -1644,15 +1669,6 @@ $sheet-padding: 16px
     .oe_form_dropdown_section
         position: relative
         display: inline-block
-    .oe_form_editable
-        .oe_form_required
-            &.oe_form_field_one2many, &.oe_form_field_many2many
-                table.oe_list_content
-                    background-color: #d2d2ff !important
-        .oe_form_invalid
-            &.oe_form_field_one2many, &.oe_form_field_many2many
-                table.oe_list_content
-                    background-color: #ff6666 !important
     .oe_form_invalid
         input, select, textarea
             background-color: #F66 !important
@@ -1672,11 +1688,23 @@ $sheet-padding: 16px
             @include box-shadow((0 1px 2px rgba(0, 0, 0, .1), 0 1px 1px rgba(255, 255, 255, .8) inset))
     .oe_form_invisible
         display: none !important
+    .oe_form_editable
+        .oe_read_only
+            display: none !important
     .oe_form_readonly
         .oe_edit_only, .oe_form_field:empty
             display: none !important
         .oe_form .oe_form_field_date
             width: auto
+        .oe_form_field_boolean.boolean
+            position: relative
+            top: -20px
+            width: 14px
+            height: 14px
+            z-index: 10000
+            // IE needs a color in order for the layer to respond to mouse events
+            backgroundColor: "#fff"
+            opacity: 0
     // Sheet and padding
     .oe_form_nosheet
         margin: 16px
@@ -1692,7 +1720,7 @@ $sheet-padding: 16px
     .oe_form_sheet_width
         min-width: 650px
         max-width: $sheet-max-width
-        margin: 16px
+        margin: 0 auto
     .oe_form_sheet
         background: white
         min-height: 330px
@@ -1738,8 +1766,8 @@ $sheet-padding: 16px
         div.oe_chatter
             box-sizing: border-box
             min-width: $sheet-min-width + 2* $sheet-padding
-            max-width: 0 auto
-            margin: 16px
+            max-width: $sheet-max-width + 2* $sheet-padding
+            margin: 0 auto
             padding: 16px 16px 48px
         div.oe_form_configuration
             p, ul, ol
@@ -1894,6 +1922,7 @@ $sheet-padding: 16px
             background: white
             min-width: 60px
             color: #1f1f1f
+            font-family: "Lucida Grande", Helvetica, Verdana, Arial, sans-serif
         input[readonly], select[readonly], textarea[readonly], input[disabled], select[disabled]
             background: #E5E5E5 !important
             color: #666
@@ -1902,6 +1931,7 @@ $sheet-padding: 16px
             padding-left: 8px
             @include box-shadow(none)
             @include radius(0px)
+            color: #4c4c4c
         textarea.oe_inline[disabled]
             border-left: 8px solid #eee
         .oe_form_field_url button img
@@ -1911,7 +1941,6 @@ $sheet-padding: 16px
         .oe_form_field_datetime
             white-space: nowrap
         .oe_form_field_boolean
-            padding-top: 4px
             width: auto
         .oe_datepicker_container
             display: none
@@ -2106,16 +2135,16 @@ $sheet-padding: 16px
             margin: 0 -18px 0 0
             padding: 0
             @include vertical-gradient(#fcfcfc, #dedede)
-            &:first-child .label
+            &:first-child > .label
                 border-left: 1px solid #cacaca
                 padding-left: 14px
             &:last-child
                 border-right: 1px solid #cacaca
-                .label
+                > .label
                     padding-right: 14px
-                .arrow
+                > .arrow
                     display: none
-            .label
+            > .label
                 color: #4c4c4c
                 text-shadow: 0 1px 1px #fcfcfc, 0 -1px 1px #dedede
                 padding: 7px
@@ -2123,7 +2152,7 @@ $sheet-padding: 16px
                 padding-left: 24px
                 margin: 0
                 position: relative
-            .arrow
+            > .arrow
                 width: 17px
                 display: inline-block
                 vertical-align: top
@@ -2140,11 +2169,23 @@ $sheet-padding: 16px
                     @include skew-gradient(#fcfcfc, #dedede)
                     @include radius(3px)
                     @include transform(rotate(45deg))
+        ul.oe_dropdown_menu
+            display: none
+            padding: 0
+            min-width: 0
+            &.oe_opened
+                display: block
+            li
+                margin: 0
+                width: 100%
+                span.label
+                    padding-left: 14px
+
         li.oe_active
             @include vertical-gradient(#729fcf, #3465a4)
-            .arrow span
+            > .arrow span
                 @include skew-gradient(#729fcf, #3465a4)
-            .label
+            > .label
                 color: white
                 text-shadow: 0 1px 1px #729fcf, 0 -1px 1px #3465a4
     ul.oe_form_status_clickable
@@ -2152,18 +2193,18 @@ $sheet-padding: 16px
             cursor: pointer
             &:hover
                 @include vertical-gradient(darken(#fcfcfc, 8%), darken(#dedede, 8%))
-                .label
+                > .label
                     text-shadow: 0 -1px 1px #fcfcfc, 0 1px 1px #dedede
-                .arrow span
+                > .arrow span
                     @include vertical-gradient(darken(#fcfcfc, 8%), darken(#dedede, 8%))
-            .label
+            > .label
                 color: $link-color
         li.oe_active
             &:hover
                 @include vertical-gradient(darken(#729fcf, 10%), darken(#3465a4, 10%))
-                .label
+                > .label
                     text-shadow: 0 -1px 1px #729fcf, 0 1px 1px #3465a4
-                .arrow span
+                > .arrow span
                     @include skew-gradient(darken(#729fcf, 10%), darken(#3465a4, 10%))
     // }}}
     // FormView.one2many {{{
@@ -2172,7 +2213,6 @@ $sheet-padding: 16px
             display: none
     .oe_form_field_one2many,.oe_form_field_many2many
         // TODO: oe_form_field_one2many_list?
-        overflow-x: auto
         > .oe_view_manager
             .oe_list_pager_single_page
                 display: none !important
@@ -2476,12 +2516,27 @@ $sheet-padding: 16px
         float: right
         color: #333
     // }}}
+@-moz-document url-prefix()
+    .openerp
+        .oe_searchview .oe_searchview_search
+            top: -1px
+        .oe_form_field_many2one .oe_m2o_cm_button
+            line-height: 18px
+        .oe_secondary_submenu
+            line-height: 14px
+        .oe_webclient
+            .oe_star_on, .oe_star_off
+                top: 0px
+
 // Kitten Mode {{{
 .kitten-mode-activated
     background-size: cover
     background-attachment: fixed
     >*
         opacity: 0.70
+.loading-kitten
+    @include radius(15px)
+    @include box-shadow(0 0 5px 5px #999)
 // }}}
 
 // jQueryUI top level {{{
@@ -2611,26 +2666,26 @@ div.ui-widget-overlay
             &:last-child
                 overflow: hidden
                 border-right: 1px solid #cacaca
-                .label
+                > .label
                     padding-right: 14px
                     border-right: none
-                .arrow
+                > .arrow
                     display: inline-block
                     opacity: 0
                     filter: alpha(opacity = 0)
                     border: none
                     width: 0
-                    border-right: none
-        .label
-            border-bottom: 1px solid #cacaca
-            background: transparent
-        .arrow
-            span
-                background-color: #fefefe !important
+                    border-right: none 
+            > .label
+                border-bottom: 1px solid #cacaca
+                background: transparent
+            > .arrow
+                span
+                    background-color: #fefefe !important
         li.oe_active
-            .label
+            > .label
                 border-bottom: 1px solid #729fcf
-            .arrow span
+            > .arrow span
                 background-color: #729fcf !important
 
     // jquery ui for ie

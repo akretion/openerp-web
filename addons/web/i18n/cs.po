@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openerp-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-06-07 19:37+0000\n"
-"PO-Revision-Date: 2013-08-25 07:34+0000\n"
-"Last-Translator: Jan B. Krejčí <Unknown>\n"
+"POT-Creation-Date: 2012-12-21 17:06+0000\n"
+"PO-Revision-Date: 2012-03-22 09:44+0000\n"
+"Last-Translator: Jiří Hajda <robie@centrum.cz>\n"
 "Language-Team: openerp-i18n-czech <openerp-i18n-czech@lists.launchpad.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-08-26 05:12+0000\n"
-"X-Generator: Launchpad (build 16738)\n"
+"X-Launchpad-Export-Date: 2013-09-14 05:39+0000\n"
+"X-Generator: Launchpad (build 16761)\n"
 "X-Poedit-Language: Czech\n"
 
 #. module: web
@@ -57,22 +57,10 @@ msgstr "menší než nebo rovno"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:114
+#: code:addons/web/static/src/js/chrome.js:410
 #, python-format
-msgid ""
-"Fill in this form to create an OpenERP database. You can\n"
-"                    create databases for different companies or for "
-"different\n"
-"                    goals (testing, production). Once the database is "
-"created,\n"
-"                    you will be able to install your first application."
-msgstr ""
-"Vyplňte tento formulář pro vytvoření databáze OpenERP. Můžete pro\n"
-"                    různé společnosti nebo úkony (testování, výroba) "
-"vytvářet\n"
-"                    samostatné databáze. Jakmile je databáze vytvořena, "
-"můžete\n"
-"                    nainstalovat svou první aplikaci."
+msgid "Please enter your previous password"
+msgstr "Prosím zadejte vaše předchozí heslo"
 
 #. module: web
 #. openerp-web
@@ -89,13 +77,6 @@ msgstr "Hlavní heslo:"
 #, python-format
 msgid "Change Master Password"
 msgstr "Změnit hlavní heslo"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2439
-#, python-format
-msgid "Today"
-msgstr "Dnes"
 
 #. module: web
 #. openerp-web
@@ -120,10 +101,10 @@ msgstr "Přístup odepřen"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2462
+#: code:addons/web/static/src/js/view_form.js:5220
 #, python-format
-msgid "Now"
-msgstr "Nyní"
+msgid "Uploading error"
+msgstr "Chyba při nahrávání"
 
 #. module: web
 #. openerp-web
@@ -131,13 +112,6 @@ msgstr "Nyní"
 #, python-format
 msgid "about an hour ago"
 msgstr "asi před hodinou"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2446
-#, python-format
-msgid "Week of the year"
-msgstr "Týden v roce"
 
 #. module: web
 #. openerp-web
@@ -165,13 +139,6 @@ msgstr "'%s' není platné datum"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2437
-#, python-format
-msgid "Next>"
-msgstr "Další>"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1858
 #, python-format
 msgid "Here is a preview of the file we could not import:"
@@ -179,17 +146,17 @@ msgstr "Zde je náhled souboru, který nemůžeme importovat:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:410
-#, python-format
-msgid "Please enter your previous password"
-msgstr "Prosím zadejte vaše předchozí heslo"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/coresetup.js:591
 #, python-format
 msgid "about a minute ago"
 msgstr "asi před minutou"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:1306
+#, python-format
+msgid "File"
+msgstr "Soubor"
 
 #. module: web
 #: code:addons/web/controllers/main.py:869
@@ -259,17 +226,10 @@ msgstr "Druh widgetu '%s' není implementován"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:134
+#: code:addons/web/static/src/xml/base.xml:1626
 #, python-format
-msgid "e.g. mycompany"
-msgstr "např. mojespolecnost"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_list_editable.js:793
-#, python-format
-msgid "The form's data can not be discarded"
-msgstr "Data formuláře nemohou být zahozena"
+msgid "Share with all users"
+msgstr "Sdílet se všemi uživateli"
 
 #. module: web
 #. openerp-web
@@ -401,13 +361,6 @@ msgstr "Typ pohledu '%s' není podporován v One2Many"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:189
-#, python-format
-msgid "Original database name:"
-msgstr "Název zdrojové databáze:"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_form.js:5082
 #: code:addons/web/static/src/js/view_list.js:2204
 #, python-format
@@ -427,13 +380,6 @@ msgstr "'%s' není platné datum/čas"
 #, python-format
 msgid "Group"
 msgstr "Skupina"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2445
-#, python-format
-msgid "Wk"
-msgstr "T"
 
 #. module: web
 #. openerp-web
@@ -461,13 +407,6 @@ msgstr "Následující pole jsou neplatná:"
 #, python-format
 msgid "Languages"
 msgstr "Jazyky"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2438
-#, python-format
-msgid "Show the next month"
-msgstr "Zobrazit další měsíc"
 
 #. module: web
 #. openerp-web
@@ -584,24 +523,10 @@ msgstr "méně než před minutou"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2453
-#, python-format
-msgid "Select a date"
-msgstr "Vybrat datum"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:873
 #, python-format
 msgid "Condition:"
 msgstr "Podmínka:"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2458
-#, python-format
-msgid "Time"
-msgstr "Čas"
 
 #. module: web
 #. openerp-web
@@ -644,6 +569,13 @@ msgstr "Vytvořit a upravit..."
 #, python-format
 msgid "Unknown nonliteral type "
 msgstr "Neznámý typ nonliterálu "
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/view_form.js:2359
+#, python-format
+msgid "Resource error"
+msgstr "Chyba zdroje"
 
 #. module: web
 #. openerp-web
@@ -710,17 +642,6 @@ msgstr "Pole modelu %s"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2046
-#: code:addons/web/static/src/js/search.js:2062
-#: code:addons/web/static/src/js/search.js:2098
-#: code:addons/web/static/src/js/search.js:2125
-#: code:addons/web/static/src/js/search.js:2145
-#, python-format
-msgid "is set"
-msgstr "je nastaveno"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_list.js:906
 #, python-format
 msgid "Setting 'id' attribute on existing record %s"
@@ -744,10 +665,11 @@ msgstr "větší než"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:585
+#: code:addons/web/static/src/js/view_list.js:2258
+#: code:addons/web/static/src/xml/base.xml:568
 #, python-format
-msgid "Changed Password"
-msgstr "Změněné heslo"
+msgid "View"
+msgstr "Zobrazení"
 
 #. module: web
 #. openerp-web
@@ -823,25 +745,11 @@ msgstr "Uložit & Nový"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2432
-#, python-format
-msgid "Erase the current date"
-msgstr "Smazat aktuální datum"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1251
 #: code:addons/web/static/src/xml/base.xml:1253
 #, python-format
 msgid "Save As"
 msgstr "Uložit jako"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:109
-#, python-format
-msgid "Create a New Database"
-msgstr "Vytvořit novou databázi"
 
 #. module: web
 #. openerp-web
@@ -852,17 +760,17 @@ msgstr "00:00:00"
 
 #. module: web
 #. openerp-web
+#: code:addons/web/static/src/js/view_form.js:2330
+#, python-format
+msgid "E-mail error"
+msgstr "Chyba e-mailu"
+
+#. module: web
+#. openerp-web
 #: code:addons/web/static/src/js/coresetup.js:595
 #, python-format
 msgid "a day ago"
 msgstr "včera"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:138
-#, python-format
-msgid "Load demonstration data:"
-msgstr "Nahrát ukázková data:"
 
 #. module: web
 #. openerp-web
@@ -897,13 +805,6 @@ msgstr ""
 #, python-format
 msgid "Search: "
 msgstr "Hledat: "
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:141
-#, python-format
-msgid "Check this box to evaluate OpenERP."
-msgstr "Zaškrtněte toto pole, pokud si chcete OpenERP vyzkoušet."
 
 #. module: web
 #. openerp-web
@@ -952,10 +853,10 @@ msgstr "Přidat"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1795
+#: code:addons/web/static/src/xml/base.xml:558
 #, python-format
-msgid "1. Import a .CSV file"
-msgstr "1. Import souboru .CSV"
+msgid "Toggle Form Layout Outline"
+msgstr "Přepnout osnovu rozložení formuláře"
 
 #. module: web
 #. openerp-web
@@ -987,13 +888,6 @@ msgstr "Předvolby"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1704
-#, python-format
-msgid "Only export selection:"
-msgstr "Exportovat jen výběr:"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_form.js:435
 #, python-format
 msgid "Wrong on change format: %s"
@@ -1006,15 +900,6 @@ msgstr "Neplatný formát: %s"
 #, python-format
 msgid "Drop Database"
 msgstr "Smazat databázi"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/data_export.js:30
-#: code:addons/web/static/src/js/view_form.js:1077
-#: code:addons/web/static/src/xml/base.xml:1422
-#, python-format
-msgid "Close"
-msgstr "Zavřít"
 
 #. module: web
 #. openerp-web
@@ -1078,17 +963,10 @@ msgstr "Heslo bylo úspěšně změněno"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2379
+#: code:addons/web/static/src/js/view_list_editable.js:793
 #, python-format
-msgid "Resource Error"
-msgstr "Chyba zdroje"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2459
-#, python-format
-msgid "Hour"
-msgstr "Hodina"
+msgid "The form's data can not be discarded"
+msgstr "Data formuláře nemohou být zahozena"
 
 #. module: web
 #. openerp-web
@@ -1112,13 +990,6 @@ msgstr "Přihlásit se"
 #, python-format
 msgid "Delete"
 msgstr "Smazat"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:425
-#, python-format
-msgid "My OpenERP.com account"
-msgstr "Můj účet na OpenERP.com"
 
 #. module: web
 #. openerp-web
@@ -1186,11 +1057,17 @@ msgstr "Zvolený soubor překračuje maximální velikost %s."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_list.js:2258
-#: code:addons/web/static/src/xml/base.xml:568
+#: code:addons/web/static/src/xml/base.xml:635
 #, python-format
-msgid "View"
-msgstr "Zobrazení"
+msgid "/web/binary/upload_attachment"
+msgstr "/web/binary/upload_attachment"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/chrome.js:585
+#, python-format
+msgid "Changed Password"
+msgstr "Změněné heslo"
 
 #. module: web
 #. openerp-web
@@ -1201,28 +1078,14 @@ msgstr "Hledat"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2435
+#: code:addons/web/static/src/js/view_form.js:3139
+#: code:addons/web/static/src/js/view_form.js:3785
+#: code:addons/web/static/src/js/view_form.js:3906
+#: code:addons/web/static/src/js/view_form.js:4358
+#: code:addons/web/static/src/js/view_form.js:4482
 #, python-format
-msgid "<Prev"
-msgstr "<Předchozí"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2450
-#, python-format
-msgid "Set DD as first week day"
-msgstr "Nastavit DD jako první den v týdnu"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:120
-#, python-format
-msgid ""
-"By default, the master password is 'admin'. This password\n"
-"                    is required to created, delete dump or restore databases."
-msgstr ""
-"Ve výchozím stavu je hlavní heslo 'admin'. Toto heslo\n"
-"                    je potřeba pro vytváření, mazání nebo obnovu databází."
+msgid "Open: "
+msgstr "Otevřít: "
 
 #. module: web
 #. openerp-web
@@ -1307,13 +1170,6 @@ msgstr "Neshoda časových zón"
 #, python-format
 msgid "Unknown operator %s in domain %s"
 msgstr "Neznámý operátor %s v doméně %s"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2436
-#, python-format
-msgid "Show the previous month"
-msgstr "Zobrazit předchozí měsíc"
 
 #. module: web
 #. openerp-web
@@ -1428,13 +1284,6 @@ msgstr "Seskupit podle: %s"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2443
-#, python-format
-msgid "Show a different month"
-msgstr "Zobrazit jiný měsíc"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_form.js:154
 #, python-format
 msgid "No data provided."
@@ -1489,14 +1338,6 @@ msgstr "Nemohu najít id v datasetu"
 #, python-format
 msgid "Remove All"
 msgstr "Odstranit vše"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:253
-#, python-format
-msgid "Your OpenERP session expired. Please refresh the current web page."
-msgstr ""
-"Vaše sezení OpenERP vypršelo. Prosím, obnovte aktuální webovou stránku."
 
 #. module: web
 #. openerp-web
@@ -1567,17 +1408,10 @@ msgstr "99+"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:427
+#: code:addons/web/static/src/xml/base.xml:1795
 #, python-format
-msgid "Help"
-msgstr "Nápověda"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:558
-#, python-format
-msgid "Toggle Form Layout Outline"
-msgstr "Přepnout osnovu rozložení formuláře"
+msgid "1. Import a .CSV file"
+msgstr "1. Import souboru .CSV"
 
 #. module: web
 #. openerp-web
@@ -1602,10 +1436,10 @@ msgstr "Změnit výchozí:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1879
+#: code:addons/web/static/src/xml/base.xml:189
 #, python-format
-msgid "Advanced"
-msgstr "Pokročilé"
+msgid "Original database name:"
+msgstr "Název zdrojové databáze:"
 
 #. module: web
 #. openerp-web
@@ -1679,24 +1513,19 @@ msgstr "Přidat %s"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2434
+#: code:addons/web/static/src/xml/base.xml:145
 #, python-format
-msgid "Close without change"
-msgstr "Zavřit beze změn"
+msgid "Admin password:"
+msgstr "Heslo správce:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:159
+#: code:addons/web/static/src/js/data_export.js:30
+#: code:addons/web/static/src/js/view_form.js:1077
+#: code:addons/web/static/src/xml/base.xml:1422
 #, python-format
-msgid "Choose a password:"
-msgstr "Zvolte heslo:"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2451
-#, python-format
-msgid "Select D, M d"
-msgstr "Zvolte D, M d"
+msgid "Close"
+msgstr "Zavřít"
 
 #. module: web
 #. openerp-web
@@ -1715,10 +1544,10 @@ msgstr "Soubor CSV:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2460
+#: code:addons/web/static/src/js/search.js:1879
 #, python-format
-msgid "Minute"
-msgstr "Minuta"
+msgid "Advanced"
+msgstr "Pokročilé"
 
 #. module: web
 #. openerp-web
@@ -1790,13 +1619,6 @@ msgstr ""
 #, python-format
 msgid "Yes"
 msgstr "Ano"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:1350
-#, python-format
-msgid "Timezone Mismatch"
-msgstr "Neshoda časových pásem"
 
 #. module: web
 #. openerp-web
@@ -1885,13 +1707,6 @@ msgstr "Spravovat zobrazení"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2349
-#, python-format
-msgid "E-mail Error"
-msgstr "Chyba e-mailu"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1822
 #, python-format
 msgid "Encoding:"
@@ -1975,14 +1790,6 @@ msgstr "Filtrovat: %s"
 #, python-format
 msgid "Create: "
 msgstr "Vytvořit: "
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2433
-#: code:addons/web/static/src/js/view_form.js:2463
-#, python-format
-msgid "Done"
-msgstr "Hotovo"
 
 #. module: web
 #. openerp-web
@@ -2103,11 +1910,12 @@ msgstr "-- Filtry --"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1998
-#: code:addons/web/static/src/js/search.js:2165
+#: code:addons/web/static/src/js/view_form.js:2431
+#: code:addons/web/static/src/xml/base.xml:1258
+#: code:addons/web/static/src/xml/base.xml:1260
 #, python-format
-msgid "%(field)s %(operator)s"
-msgstr "%(field)s %(operator)s"
+msgid "Clear"
+msgstr "Vyčistit"
 
 #. module: web
 #. openerp-web
@@ -2158,13 +1966,6 @@ msgstr "Záznam nebyl v databázi nalezen."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2444
-#, python-format
-msgid "Show a different year"
-msgstr "Zobrazit jiný rok"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1498
 #, python-format
 msgid "Filter Name:"
@@ -2201,13 +2002,6 @@ msgstr "Načítám"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2440
-#, python-format
-msgid "Show the current month"
-msgstr "Zobrazit aktuální měsíc"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/coresetup.js:599
 #, python-format
 msgid "about a year ago"
@@ -2231,22 +2025,6 @@ msgid ""
 "The type of the field '%s' must be a many2many field with a relation to "
 "'ir.attachment' model."
 msgstr "Typ pole '%s' musí být many2many s relací k modelu 'ir.attachment'."
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2431
-#: code:addons/web/static/src/xml/base.xml:1258
-#: code:addons/web/static/src/xml/base.xml:1260
-#, python-format
-msgid "Clear"
-msgstr "Vyčistit"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:132
-#, python-format
-msgid "Select a database name:"
-msgstr "Zvolte název databáze:"
 
 #. module: web
 #. openerp-web
@@ -2296,6 +2074,13 @@ msgstr "OK"
 #, python-format
 msgid "Uploading..."
 msgstr "Nahrávání..."
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:125
+#, python-format
+msgid "Load Demonstration data:"
+msgstr "Načíst ukázková data:"
 
 #. module: web
 #. openerp-web
@@ -2446,28 +2231,10 @@ msgstr "Prosíme vyberte pole k exportu..."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2047
-#: code:addons/web/static/src/js/search.js:2063
-#: code:addons/web/static/src/js/search.js:2099
-#: code:addons/web/static/src/js/search.js:2126
-#: code:addons/web/static/src/js/search.js:2146
-#, python-format
-msgid "is not set"
-msgstr "není nastaveno"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:304
 #, python-format
 msgid "New master password:"
 msgstr "Nové hlavní heslo:"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1626
-#, python-format
-msgid "Share with all users"
-msgstr "Sdílet se všemi uživateli"
 
 #. module: web
 #. openerp-web
@@ -2577,13 +2344,6 @@ msgstr "Zrušit"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:5314
-#, python-format
-msgid "Uploading Error"
-msgstr "Chyba nahrávání"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1642
 #, python-format
 msgid "Add a condition"
@@ -2626,17 +2386,6 @@ msgstr "Použít ve výchozím stavu"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:3139
-#: code:addons/web/static/src/js/view_form.js:3785
-#: code:addons/web/static/src/js/view_form.js:3906
-#: code:addons/web/static/src/js/view_form.js:4358
-#: code:addons/web/static/src/js/view_form.js:4482
-#, python-format
-msgid "Open: "
-msgstr "Otevřít: "
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_list.js:1358
 #, python-format
 msgid "%s (%d)"
@@ -2669,16 +2418,6 @@ msgstr "Widget:"
 #, python-format
 msgid "Edit Action"
 msgstr "Upravit akci"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/search.js:1681
-#, python-format
-msgid ""
-"This filter is global and will be removed for everybody if you continue."
-msgstr ""
-"Tento filtr je globální, a pokud budete pokračovat, bude odebrán všem "
-"uživatelům."
 
 #. module: web
 #. openerp-web
@@ -2789,13 +2528,6 @@ msgstr "Opravdu chcete smazat tento záznam?"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:318
-#, python-format
-msgid "Back to Login"
-msgstr "Zpět k přihlášení"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1413
 #, python-format
 msgid "Save & Close"
@@ -2815,13 +2547,6 @@ msgstr "Vyhledat více..."
 #, python-format
 msgid "Password"
 msgstr "Heslo"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2457
-#, python-format
-msgid "Choose Time"
-msgstr "Zvolte čas"
 
 #. module: web
 #. openerp-web
@@ -2884,10 +2609,10 @@ msgstr "Oddělovač:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2461
+#: code:addons/web/static/src/xml/base.xml:318
 #, python-format
-msgid "Second"
-msgstr "Vteřina"
+msgid "Back to Login"
+msgstr "Zpět k přihlášení"
 
 #. module: web
 #. openerp-web
@@ -2897,30 +2622,248 @@ msgstr "Vteřina"
 msgid "Filters"
 msgstr "Filtry"
 
-#, python-format
-#~ msgid "Load Demonstration data:"
-#~ msgstr "Načíst ukázková data:"
+#~ msgid "Send OpenERP Enterprise Report"
+#~ msgstr "Zaslat hlášení OpenERP Enterprise"
+
+#~ msgid "Dont send"
+#~ msgstr "Neodesílat"
+
+#~ msgid "Change password"
+#~ msgstr "Změnit heslo"
+
+#~ msgid "OpenERP - Unsupported/Community Version"
+#~ msgstr "OpenERP - nepodporovaná/komunitní verze"
+
+#~ msgid "Import Data"
+#~ msgstr "Importovat data"
+
+#~ msgid "Import File"
+#~ msgstr "Importovat soubor"
+
+#~ msgid "External ID"
+#~ msgstr "Vnější ID"
+
+#~ msgid "Filter disabled due to invalid syntax"
+#~ msgstr "Filtr zakázán kvůli neplatné syntaxi"
+
+#~ msgid "Filter Entry"
+#~ msgstr "Položka filtru"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Add to Dashboard"
+#~ msgstr "Přidat na nástěnku"
 
 #, python-format
-#~ msgid "Admin password:"
-#~ msgstr "Heslo správce:"
+#~ msgid "Manage Views (%s)"
+#~ msgstr "Spravovat pohledy (%s)"
 
 #, python-format
-#~ msgid "Uploading error"
-#~ msgstr "Chyba při nahrávání"
+#~ msgid "Create a view (%s)"
+#~ msgstr "Vytvořit pohled (%s)"
+
+#~ msgid "Do you really want to remove this view?"
+#~ msgstr "Opravdu chcete odstranit pohled?"
 
 #, python-format
-#~ msgid "File"
-#~ msgstr "Soubor"
+#~ msgid "View Editor %d - %s"
+#~ msgstr "Editor pohledů %d - %s"
+
+#~ msgid "Inherited View"
+#~ msgstr "Zděděný pohled"
+
+#~ msgid "Do you really wants to create an inherited view here?"
+#~ msgstr "Opravdu zde chcete vytvořit zděděný pohled?"
+
+#~ msgid "Preview"
+#~ msgstr "Náhled"
+
+#~ msgid "Do you really want to remove this node?"
+#~ msgstr "Opravdu chcete odstranit tento uzel?"
+
+#~ msgid "Properties"
+#~ msgstr "Vlastnosti"
+
+#~ msgid "Update"
+#~ msgstr "Aktualizovat"
+
+#~ msgid "Customize"
+#~ msgstr "Přizpůsobit"
+
+#~ msgid ""
+#~ "Warning, the record has been modified, your changes will be discarded."
+#~ msgstr "Varování, záznam byl upraven, vaše změny budou zahozeny."
+
+#~ msgid "Attachments"
+#~ msgstr "Přílohy"
 
 #, python-format
-#~ msgid "E-mail error"
-#~ msgstr "Chyba e-mailu"
+#~ msgid "Do you really want to delete the attachment %s?"
+#~ msgstr "Opravdu chcete smazat přílohu %s?"
+
+#~ msgid "<em>   Search More...</em>"
+#~ msgstr "<em>  Hledat další...</em>"
 
 #, python-format
-#~ msgid "/web/binary/upload_attachment"
-#~ msgstr "/web/binary/upload_attachment"
+#~ msgid "<em>   Create \"<strong>%s</strong>\"</em>"
+#~ msgstr "<em>   Vytvořit \"<strong>%s</strong>\"</em>"
+
+#~ msgid "<em>   Create and Edit...</em>"
+#~ msgstr "<em>   Vytvořit nebo upravit...</em>"
 
 #, python-format
-#~ msgid "Resource error"
-#~ msgstr "Chyba zdroje"
+#~ msgid "[%(first_record)d to %(last_record)d] of %(records_count)d"
+#~ msgstr "[%(first_record)d po %(last_record)d] z %(records_count)d"
+
+#~ msgid "Page"
+#~ msgstr "Stránka"
+
+#~ msgid "Could not find current view declaration"
+#~ msgstr "Nelze nalézt definici aktuálního pohledu"
+
+#~ msgid "Translate"
+#~ msgstr "Přeložit"
+
+#~ msgid "Other Options"
+#~ msgstr "Jiné volby"
+
+#~ msgid "Reports"
+#~ msgstr "Výkazy"
+
+#~ msgid "Actions"
+#~ msgstr "Akce"
+
+#~ msgid "Links"
+#~ msgstr "Odkazy"
+
+#~ msgid "Translations"
+#~ msgstr "Překlady"
+
+#~ msgid "CREATE DATABASE"
+#~ msgstr "VYTVOŘIT DATABÁZI"
+
+#~ msgid "DROP DATABASE"
+#~ msgstr "ODSTRANIT DATABÁZI"
+
+#~ msgid "BACKUP DATABASE"
+#~ msgstr "ZÁLOHOVAT DATABÁZI"
+
+#~ msgid "RESTORE DATABASE"
+#~ msgstr "OBNOVIT DATABÁZI"
+
+#~ msgid "CHANGE MASTER PASSWORD"
+#~ msgstr "ZMĚNIT HLAVNÍ HESLO"
+
+#~ msgid ""
+#~ "Your version of OpenERP is unsupported. Support & maintenance services are "
+#~ "available here:"
+#~ msgstr ""
+#~ "Vaše verze OpenERP není podporována. Služby podpory & údržby jsou dostupné "
+#~ "zde:"
+
+#~ msgid "OpenERP Entreprise"
+#~ msgstr "OpenERP Enterprise"
+
+#~ msgid "OpenERP Enterprise Contract."
+#~ msgstr "Smlouva OpenERP Enterprise"
+
+#~ msgid "Your report will be sent to the OpenERP Enterprise team."
+#~ msgstr "Váše hlášení bude odesláno týmu OpenERP Enterprise."
+
+#~ msgid "Summary:"
+#~ msgstr "Shrnutí:"
+
+#~ msgid "Description:"
+#~ msgstr "Popis:"
+
+#~ msgid "What you did:"
+#~ msgstr "Co jste udělal:"
+
+#~ msgid "Home"
+#~ msgstr "Domov"
+
+#~ msgid "LOGOUT"
+#~ msgstr "ODHLÁSIT"
+
+#~ msgid "Fold menu"
+#~ msgstr "Sbalit nabídku"
+
+#~ msgid "Unfold menu"
+#~ msgstr "Rozbalit nabídku"
+
+#~ msgid "Hide this tip"
+#~ msgstr "Skrýt tento tip"
+
+#~ msgid "Disable all tips"
+#~ msgstr "Zakázat všechny tipy"
+
+#~ msgid "Add / Remove Shortcut..."
+#~ msgstr "Přidat / Odebrat zkratku..."
+
+#~ msgid "More…"
+#~ msgstr "Více..."
+
+#~ msgid "Field"
+#~ msgstr "Pole"
+
+#~ msgid "Add attachment"
+#~ msgstr "Přidat přílohu"
+
+#~ msgid "Notebook Page \""
+#~ msgstr "Stránka zápisníku \""
+
+#~ msgid "Send an e-mail with your default e-mail client"
+#~ msgstr "Odeslat e-mail s vaším výchozím e-mailovým klientem"
+
+#~ msgid "Open this resource"
+#~ msgstr "Otevřít tento zdroj"
+
+#~ msgid "Open..."
+#~ msgstr "Otevřít..."
+
+#~ msgid "Create..."
+#~ msgstr "Vytvořit..."
+
+#~ msgid "Search..."
+#~ msgstr "Hledat..."
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Set Image"
+#~ msgstr "Nastavit obrázek"
+
+#~ msgid "Select Dashboard to add this filter to:"
+#~ msgstr "Vyberte nástěnku pro přidání tohoto filtru na:"
+
+#~ msgid "Title of new Dashboard item:"
+#~ msgstr "Nadpis nové položky nástěnky:"
+
+#~ msgid "Advanced Filters"
+#~ msgstr "Pokročilé filtry"
+
+#~ msgid "Any of the following conditions must match"
+#~ msgstr "Jakákoliv z následujících podmínek musí odpovídat"
+
+#~ msgid "All the following conditions must match"
+#~ msgstr "Všechny následující podmínky musí odpovídat"
+
+#~ msgid "None of the following conditions must match"
+#~ msgstr "Žádná z následujících podmínek nesmí odpovídat"
+
+#~ msgid "Add condition"
+#~ msgstr "Přidat podmínku"
+
+#~ msgid "and"
+#~ msgstr "a"
+
+#~ msgid "Import Compatible Export"
+#~ msgstr "Importovat slučitelný export"
+
+#, python-format
+#~ msgid "Confirm Password:"
+#~ msgstr "Potvrdit heslo:"
+
+#~ msgid "Activate the developper mode"
+#~ msgstr "Aktivovat vývojářský režim"

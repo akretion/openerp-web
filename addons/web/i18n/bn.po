@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openerp-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-06-07 19:37+0000\n"
-"PO-Revision-Date: 2012-12-21 23:00+0000\n"
+"POT-Creation-Date: 2012-12-21 17:06+0000\n"
+"PO-Revision-Date: 2011-11-24 12:45+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Bengali <bn@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-06-08 07:49+0000\n"
-"X-Generator: Launchpad (build 16667)\n"
+"X-Launchpad-Export-Date: 2013-09-14 05:39+0000\n"
+"X-Generator: Launchpad (build 16761)\n"
 
 #. module: web
 #. openerp-web
@@ -56,15 +56,9 @@ msgstr "কম অথবা সমান"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:114
+#: code:addons/web/static/src/js/chrome.js:410
 #, python-format
-msgid ""
-"Fill in this form to create an OpenERP database. You can\n"
-"                    create databases for different companies or for "
-"different\n"
-"                    goals (testing, production). Once the database is "
-"created,\n"
-"                    you will be able to install your first application."
+msgid "Please enter your previous password"
 msgstr ""
 
 #. module: web
@@ -81,13 +75,6 @@ msgstr "মুখ্য শব্দচাবি:"
 #: code:addons/web/static/src/xml/base.xml:292
 #, python-format
 msgid "Change Master Password"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2439
-#, python-format
-msgid "Today"
 msgstr ""
 
 #. module: web
@@ -113,9 +100,9 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2462
+#: code:addons/web/static/src/js/view_form.js:5220
 #, python-format
-msgid "Now"
+msgid "Uploading error"
 msgstr ""
 
 #. module: web
@@ -123,13 +110,6 @@ msgstr ""
 #: code:addons/web/static/src/js/coresetup.js:593
 #, python-format
 msgid "about an hour ago"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2446
-#, python-format
-msgid "Week of the year"
 msgstr ""
 
 #. module: web
@@ -158,13 +138,6 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2437
-#, python-format
-msgid "Next>"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1858
 #, python-format
 msgid "Here is a preview of the file we could not import:"
@@ -172,16 +145,16 @@ msgstr "এখানে ফাইলটির প্রাকদর্শন আ
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:410
+#: code:addons/web/static/src/js/coresetup.js:591
 #, python-format
-msgid "Please enter your previous password"
+msgid "about a minute ago"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/coresetup.js:591
+#: code:addons/web/static/src/xml/base.xml:1306
 #, python-format
-msgid "about a minute ago"
+msgid "File"
 msgstr ""
 
 #. module: web
@@ -251,16 +224,9 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:134
+#: code:addons/web/static/src/xml/base.xml:1626
 #, python-format
-msgid "e.g. mycompany"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_list_editable.js:793
-#, python-format
-msgid "The form's data can not be discarded"
+msgid "Share with all users"
 msgstr ""
 
 #. module: web
@@ -393,13 +359,6 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:189
-#, python-format
-msgid "Original database name:"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_form.js:5082
 #: code:addons/web/static/src/js/view_list.js:2204
 #, python-format
@@ -419,13 +378,6 @@ msgstr ""
 #, python-format
 msgid "Group"
 msgstr "দল"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2445
-#, python-format
-msgid "Wk"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -452,13 +404,6 @@ msgstr ""
 #: code:addons/web/controllers/main.py:890
 #, python-format
 msgid "Languages"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2438
-#, python-format
-msgid "Show the next month"
 msgstr ""
 
 #. module: web
@@ -576,24 +521,10 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2453
-#, python-format
-msgid "Select a date"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:873
 #, python-format
 msgid "Condition:"
 msgstr "শর্ত:"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2458
-#, python-format
-msgid "Time"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -635,6 +566,13 @@ msgstr ""
 #: code:addons/web/static/src/js/pyeval.js:736
 #, python-format
 msgid "Unknown nonliteral type "
+msgstr ""
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/view_form.js:2359
+#, python-format
+msgid "Resource error"
 msgstr ""
 
 #. module: web
@@ -702,17 +640,6 @@ msgstr "গঠন %s ক্ষেত্রগুলির"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2046
-#: code:addons/web/static/src/js/search.js:2062
-#: code:addons/web/static/src/js/search.js:2098
-#: code:addons/web/static/src/js/search.js:2125
-#: code:addons/web/static/src/js/search.js:2145
-#, python-format
-msgid "is set"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_list.js:906
 #, python-format
 msgid "Setting 'id' attribute on existing record %s"
@@ -736,10 +663,11 @@ msgstr "তুলনায় বেশি"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:585
+#: code:addons/web/static/src/js/view_list.js:2258
+#: code:addons/web/static/src/xml/base.xml:568
 #, python-format
-msgid "Changed Password"
-msgstr ""
+msgid "View"
+msgstr "দৃশ্য"
 
 #. module: web
 #. openerp-web
@@ -813,25 +741,11 @@ msgstr "সংরক্ষন এবং নতুন"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2432
-#, python-format
-msgid "Erase the current date"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1251
 #: code:addons/web/static/src/xml/base.xml:1253
 #, python-format
 msgid "Save As"
 msgstr "নতুন রূপে সংরক্ষণ করুন"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:109
-#, python-format
-msgid "Create a New Database"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -842,16 +756,16 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/coresetup.js:595
+#: code:addons/web/static/src/js/view_form.js:2330
 #, python-format
-msgid "a day ago"
+msgid "E-mail error"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:138
+#: code:addons/web/static/src/js/coresetup.js:595
 #, python-format
-msgid "Load demonstration data:"
+msgid "a day ago"
 msgstr ""
 
 #. module: web
@@ -884,13 +798,6 @@ msgstr ""
 #, python-format
 msgid "Search: "
 msgstr "অনুসন্ধান: "
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:141
-#, python-format
-msgid "Check this box to evaluate OpenERP."
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -939,10 +846,10 @@ msgstr "যোগ করুন"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1795
+#: code:addons/web/static/src/xml/base.xml:558
 #, python-format
-msgid "1. Import a .CSV file"
-msgstr "1. একটি .CSV ফাইল আনায়ন করুন"
+msgid "Toggle Form Layout Outline"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -974,13 +881,6 @@ msgstr "পছন্দসমূহ"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1704
-#, python-format
-msgid "Only export selection:"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_form.js:435
 #, python-format
 msgid "Wrong on change format: %s"
@@ -993,15 +893,6 @@ msgstr ""
 #, python-format
 msgid "Drop Database"
 msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/data_export.js:30
-#: code:addons/web/static/src/js/view_form.js:1077
-#: code:addons/web/static/src/xml/base.xml:1422
-#, python-format
-msgid "Close"
-msgstr "বন্ধ করুন"
 
 #. module: web
 #. openerp-web
@@ -1065,16 +956,9 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2379
+#: code:addons/web/static/src/js/view_list_editable.js:793
 #, python-format
-msgid "Resource Error"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2459
-#, python-format
-msgid "Hour"
+msgid "The form's data can not be discarded"
 msgstr ""
 
 #. module: web
@@ -1099,13 +983,6 @@ msgstr "প্রবেশ"
 #, python-format
 msgid "Delete"
 msgstr "মুছে ফেলুন"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:425
-#, python-format
-msgid "My OpenERP.com account"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1169,11 +1046,17 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_list.js:2258
-#: code:addons/web/static/src/xml/base.xml:568
+#: code:addons/web/static/src/xml/base.xml:635
 #, python-format
-msgid "View"
-msgstr "দৃশ্য"
+msgid "/web/binary/upload_attachment"
+msgstr ""
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/chrome.js:585
+#, python-format
+msgid "Changed Password"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1184,26 +1067,14 @@ msgstr "খুঁজুন"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2435
+#: code:addons/web/static/src/js/view_form.js:3139
+#: code:addons/web/static/src/js/view_form.js:3785
+#: code:addons/web/static/src/js/view_form.js:3906
+#: code:addons/web/static/src/js/view_form.js:4358
+#: code:addons/web/static/src/js/view_form.js:4482
 #, python-format
-msgid "<Prev"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2450
-#, python-format
-msgid "Set DD as first week day"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:120
-#, python-format
-msgid ""
-"By default, the master password is 'admin'. This password\n"
-"                    is required to created, delete dump or restore databases."
-msgstr ""
+msgid "Open: "
+msgstr "খুলুন: "
 
 #. module: web
 #. openerp-web
@@ -1288,13 +1159,6 @@ msgstr ""
 #, python-format
 msgid "Unknown operator %s in domain %s"
 msgstr "এলাকার মধ্যে %s অজানা পরিচালক %s"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2436
-#, python-format
-msgid "Show the previous month"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1411,13 +1275,6 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2443
-#, python-format
-msgid "Show a different month"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_form.js:154
 #, python-format
 msgid "No data provided."
@@ -1472,13 +1329,6 @@ msgstr ""
 #, python-format
 msgid "Remove All"
 msgstr "সব সরান"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:253
-#, python-format
-msgid "Your OpenERP session expired. Please refresh the current web page."
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1549,17 +1399,10 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:427
+#: code:addons/web/static/src/xml/base.xml:1795
 #, python-format
-msgid "Help"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:558
-#, python-format
-msgid "Toggle Form Layout Outline"
-msgstr ""
+msgid "1. Import a .CSV file"
+msgstr "1. একটি .CSV ফাইল আনায়ন করুন"
 
 #. module: web
 #. openerp-web
@@ -1584,9 +1427,9 @@ msgstr "অবিকল্প পরিবর্তন করুন:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1879
+#: code:addons/web/static/src/xml/base.xml:189
 #, python-format
-msgid "Advanced"
+msgid "Original database name:"
 msgstr ""
 
 #. module: web
@@ -1661,24 +1504,19 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2434
+#: code:addons/web/static/src/xml/base.xml:145
 #, python-format
-msgid "Close without change"
-msgstr ""
+msgid "Admin password:"
+msgstr "প্রশাসনিক শব্দচাবি:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:159
+#: code:addons/web/static/src/js/data_export.js:30
+#: code:addons/web/static/src/js/view_form.js:1077
+#: code:addons/web/static/src/xml/base.xml:1422
 #, python-format
-msgid "Choose a password:"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2451
-#, python-format
-msgid "Select D, M d"
-msgstr ""
+msgid "Close"
+msgstr "বন্ধ করুন"
 
 #. module: web
 #. openerp-web
@@ -1697,9 +1535,9 @@ msgstr "CSV ফাইল:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2460
+#: code:addons/web/static/src/js/search.js:1879
 #, python-format
-msgid "Minute"
+msgid "Advanced"
 msgstr ""
 
 #. module: web
@@ -1772,13 +1610,6 @@ msgstr "কর্তৃত্বে"
 #, python-format
 msgid "Yes"
 msgstr "হ্যাঁ"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:1350
-#, python-format
-msgid "Timezone Mismatch"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1867,13 +1698,6 @@ msgstr "দৃশ্যগুলি পরিচালনা করুন"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2349
-#, python-format
-msgid "E-mail Error"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1822
 #, python-format
 msgid "Encoding:"
@@ -1958,14 +1782,6 @@ msgstr ""
 #, python-format
 msgid "Create: "
 msgstr "তৈরি করুন: "
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2433
-#: code:addons/web/static/src/js/view_form.js:2463
-#, python-format
-msgid "Done"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -2086,11 +1902,12 @@ msgstr "-- পরিশোধকগুলি --"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1998
-#: code:addons/web/static/src/js/search.js:2165
+#: code:addons/web/static/src/js/view_form.js:2431
+#: code:addons/web/static/src/xml/base.xml:1258
+#: code:addons/web/static/src/xml/base.xml:1260
 #, python-format
-msgid "%(field)s %(operator)s"
-msgstr ""
+msgid "Clear"
+msgstr "পরিষ্কার"
 
 #. module: web
 #. openerp-web
@@ -2140,13 +1957,6 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2444
-#, python-format
-msgid "Show a different year"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1498
 #, python-format
 msgid "Filter Name:"
@@ -2183,13 +1993,6 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2440
-#, python-format
-msgid "Show the current month"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/coresetup.js:599
 #, python-format
 msgid "about a year ago"
@@ -2212,22 +2015,6 @@ msgstr "সমান নয়"
 msgid ""
 "The type of the field '%s' must be a many2many field with a relation to "
 "'ir.attachment' model."
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2431
-#: code:addons/web/static/src/xml/base.xml:1258
-#: code:addons/web/static/src/xml/base.xml:1260
-#, python-format
-msgid "Clear"
-msgstr "পরিষ্কার"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:132
-#, python-format
-msgid "Select a database name:"
 msgstr ""
 
 #. module: web
@@ -2278,6 +2065,13 @@ msgstr "বেশ"
 #, python-format
 msgid "Uploading..."
 msgstr ""
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:125
+#, python-format
+msgid "Load Demonstration data:"
+msgstr "প্রদর্শন উপাত্ত লোড করুন"
 
 #. module: web
 #. openerp-web
@@ -2428,28 +2222,10 @@ msgstr "বহিরায়নের জন্য অনুগ্রহপু�
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2047
-#: code:addons/web/static/src/js/search.js:2063
-#: code:addons/web/static/src/js/search.js:2099
-#: code:addons/web/static/src/js/search.js:2126
-#: code:addons/web/static/src/js/search.js:2146
-#, python-format
-msgid "is not set"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:304
 #, python-format
 msgid "New master password:"
 msgstr "নতুন মুখ্য শব্দচাবি:"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1626
-#, python-format
-msgid "Share with all users"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -2559,13 +2335,6 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:5314
-#, python-format
-msgid "Uploading Error"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1642
 #, python-format
 msgid "Add a condition"
@@ -2608,17 +2377,6 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:3139
-#: code:addons/web/static/src/js/view_form.js:3785
-#: code:addons/web/static/src/js/view_form.js:3906
-#: code:addons/web/static/src/js/view_form.js:4358
-#: code:addons/web/static/src/js/view_form.js:4482
-#, python-format
-msgid "Open: "
-msgstr "খুলুন: "
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_list.js:1358
 #, python-format
 msgid "%s (%d)"
@@ -2651,14 +2409,6 @@ msgstr "উইজেট:"
 #, python-format
 msgid "Edit Action"
 msgstr "কাজ সম্পাদনা করুন"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/search.js:1681
-#, python-format
-msgid ""
-"This filter is global and will be removed for everybody if you continue."
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -2768,13 +2518,6 @@ msgstr "আপনি কি সত্যিই এই তথ্যটি মু�
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:318
-#, python-format
-msgid "Back to Login"
-msgstr "আবার প্রবেশ করুন"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1413
 #, python-format
 msgid "Save & Close"
@@ -2794,13 +2537,6 @@ msgstr ""
 #, python-format
 msgid "Password"
 msgstr "শব্দচাবি"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2457
-#, python-format
-msgid "Choose Time"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -2863,10 +2599,10 @@ msgstr "বিভাজক:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2461
+#: code:addons/web/static/src/xml/base.xml:318
 #, python-format
-msgid "Second"
-msgstr ""
+msgid "Back to Login"
+msgstr "আবার প্রবেশ করুন"
 
 #. module: web
 #. openerp-web
@@ -2876,10 +2612,247 @@ msgstr ""
 msgid "Filters"
 msgstr "পরিশোধকগুলি"
 
-#, python-format
-#~ msgid "Admin password:"
-#~ msgstr "প্রশাসনিক শব্দচাবি:"
+#~ msgid "Send OpenERP Enterprise Report"
+#~ msgstr "ওপেন-ই-আর-পি শিল্পোদ্যোগ প্রতিবেদন পাঠান"
+
+#~ msgid "Dont send"
+#~ msgstr "পাঠাবেন না"
+
+#~ msgid "OpenERP - Unsupported/Community Version"
+#~ msgstr "ওপেন-ই-আর-পি - অসমর্থিত/সম্প্রদায়ভিত্তিক সংস্করণ"
+
+#~ msgid "Change password"
+#~ msgstr "অনুমোদন শব্দ পরিবর্তন করুন"
+
+#~ msgid "Filter Entry"
+#~ msgstr "প্রবেশ পরিশুদ্ধ করুন"
+
+#~ msgid "External ID"
+#~ msgstr "বহিরাগত আই-ডি"
+
+#~ msgid "Import File"
+#~ msgstr "ফাইল আনায়ন করুন"
+
+#~ msgid "Filter disabled due to invalid syntax"
+#~ msgstr "অসিদ্ধ শব্দবিন্যাসের কারণে পরিশোধক নিষ্ক্রিয়"
+
+#~ msgid "Import Data"
+#~ msgstr "তথ্য আনায়ন করুন"
+
+#~ msgid "OK"
+#~ msgstr "বেশ"
+
+#~ msgid "Add to Dashboard"
+#~ msgstr "ড্যাশবোর্ডে যোগ করুন"
+
+#~ msgid "Do you really want to remove this view?"
+#~ msgstr "আপনি কি সত্যিই এই দৃশ্য মুছে ফেলতে চাইছেন?"
 
 #, python-format
-#~ msgid "Load Demonstration data:"
-#~ msgstr "প্রদর্শন উপাত্ত লোড করুন"
+#~ msgid "Manage Views (%s)"
+#~ msgstr "দৃশ্য ব্যবস্থাপনা করুন (%s)"
+
+#, python-format
+#~ msgid "View Editor %d - %s"
+#~ msgstr "সম্পাদনকারী দেখান  %d - %s"
+
+#, python-format
+#~ msgid "Create a view (%s)"
+#~ msgstr "একটি দৃশ্য নির্মাণ করুন (%s)"
+
+#~ msgid "Do you really want to remove this node?"
+#~ msgstr "আপনি কি সত্যিই এই সংযোগস্থল মুছে ফেলতে চাইছেন?"
+
+#~ msgid "Do you really wants to create an inherited view here?"
+#~ msgstr ""
+#~ "আপনি কি সত্যিই এখানে একটি উত্তরাধিকারসুত্রে প্রাপ্ত দৃশ্য তৈরি করতে চান?"
+
+#~ msgid "Inherited View"
+#~ msgstr "উত্তরাধিকারসুত্রে প্রাপ্ত দৃশ্য"
+
+#~ msgid "Update"
+#~ msgstr "হালনাগাদ করুন"
+
+#~ msgid "Preview"
+#~ msgstr "পূর্বরূপ"
+
+#~ msgid "Properties"
+#~ msgstr "বৈশিষ্ট্যাবলী"
+
+#~ msgid "Customize"
+#~ msgstr "স্বনির্বাচন করুন"
+
+#~ msgid ""
+#~ "Warning, the record has been modified, your changes will be discarded."
+#~ msgstr "সতর্কবাণী, তথ্যটি পরিবর্তন হয়েছে, আপনার পরিবর্তনগুলি বাতিল করা হবে।"
+
+#~ msgid "Attachments"
+#~ msgstr "সংলগ্নকগুলি"
+
+#~ msgid "Page"
+#~ msgstr "পৃষ্ঠা"
+
+#~ msgid "Could not find current view declaration"
+#~ msgstr "বর্তমান দৃশ্য ঘোষণা খুঁজে পাওয়া যায় নি"
+
+#~ msgid "Translate"
+#~ msgstr "অনুবাদ করুন"
+
+#~ msgid "Other Options"
+#~ msgstr "অন্য বিকল্পসমূহ"
+
+#~ msgid "Reports"
+#~ msgstr "প্রতিবেদনগুলি"
+
+#~ msgid "Translations"
+#~ msgstr "অনুবাদসমূহ"
+
+#~ msgid "Links"
+#~ msgstr "লিঙ্কগুলি"
+
+#~ msgid "Actions"
+#~ msgstr "কার্যসমূহ"
+
+#~ msgid "CREATE DATABASE"
+#~ msgstr "উপাত্তুৎস তৈরি করুন"
+
+#~ msgid ""
+#~ "Your version of OpenERP is unsupported. Support & maintenance services are "
+#~ "available here:"
+#~ msgstr "আপনার ওপেন-ই-আর-পি সংস্করণ অসমর্থিত"
+
+#~ msgid "CHANGE MASTER PASSWORD"
+#~ msgstr "মুখ্য শব্দচাবি পরিবর্তন করুন"
+
+#~ msgid "RESTORE DATABASE"
+#~ msgstr "উপাত্তুৎস পুনরুদ্ধার করুন"
+
+#~ msgid "BACKUP DATABASE"
+#~ msgstr "উপাত্তুৎস ব্যাকআপ নিন"
+
+#~ msgid "Your report will be sent to the OpenERP Enterprise team."
+#~ msgstr "আপনার প্রতিবেদন ওপেন-ই-আর-পি শিল্পোদ্যোগ দলের কাছে পাথানো হবে।"
+
+#~ msgid "Summary:"
+#~ msgstr "সারাংশ:"
+
+#~ msgid "OpenERP Entreprise"
+#~ msgstr "ওপেন-ই-আর-পি শিল্পোদ্যোগ"
+
+#~ msgid "OpenERP Enterprise Contract."
+#~ msgstr "ওপেন-ই-আর-পি শিল্পোদ্যোগ চুক্তি।"
+
+#~ msgid "What you did:"
+#~ msgstr "আপনি কি করেছেন:"
+
+#~ msgid "Description:"
+#~ msgstr "বিবরণ:"
+
+#~ msgid "Home"
+#~ msgstr "ঘর"
+
+#~ msgid "Unfold menu"
+#~ msgstr "তালিকা খুলুন"
+
+#~ msgid "Fold menu"
+#~ msgstr "তালিকা ভাজ করুন"
+
+#~ msgid "More…"
+#~ msgstr "আরো..."
+
+#~ msgid "LOGOUT"
+#~ msgstr "বাইরে যান"
+
+#~ msgid "Disable all tips"
+#~ msgstr "সব ইঙ্গিতগুলি নিষ্ক্রিয় করুন"
+
+#~ msgid "Hide this tip"
+#~ msgstr "এই ইঙ্গিতটি আড়াল করুন"
+
+#~ msgid "Add attachment"
+#~ msgstr "সংলগ্নক যোগ করুন"
+
+#~ msgid "Field"
+#~ msgstr "ক্ষেত্র"
+
+#~ msgid "Open..."
+#~ msgstr "খুলুন..."
+
+#~ msgid "Open this resource"
+#~ msgstr "এই তথ্যসম্পদ খুলুন"
+
+#~ msgid "Send an e-mail with your default e-mail client"
+#~ msgstr "আপনার অবিকল্প ইমেইল ক্লায়েন্ট দিএ ইমেইল পাঠান"
+
+#~ msgid "Set Image"
+#~ msgstr "ছবি বসান"
+
+#~ msgid "Search..."
+#~ msgstr "অনুসন্ধান..."
+
+#~ msgid "Create..."
+#~ msgstr "তৈরি..."
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "<em>   Search More...</em>"
+#~ msgstr "<em>   আরো খুঁজুন...</em>"
+
+#, python-format
+#~ msgid "[%(first_record)d to %(last_record)d] of %(records_count)d"
+#~ msgstr "[%(first_record)d to %(last_record)d] of %(records_count)d"
+
+#~ msgid "<em>   Create and Edit...</em>"
+#~ msgstr "<em>   নির্মাণ ও সম্পাদনা করুন...</em>"
+
+#, python-format
+#~ msgid "<em>   Create \"<strong>%s</strong>\"</em>"
+#~ msgstr "<em>   তৈরি করুন \"<strong>%s</strong>\"</em>"
+
+#~ msgid "Add / Remove Shortcut..."
+#~ msgstr "যোগ / বিয়োগ শর্টকাট..."
+
+#~ msgid "Notebook Page \""
+#~ msgstr "নোটবই এর পাতা \""
+
+#~ msgid "DROP DATABASE"
+#~ msgstr "উপাত্তুৎস ফেলে দিন"
+
+#~ msgid "Advanced Filters"
+#~ msgstr "উন্নয় পরিশোধকগুলি"
+
+#~ msgid "Select Dashboard to add this filter to:"
+#~ msgstr "ড্যাশবোর্ড নির্বাচন করুন, এই পরিশোধক যোগ করার জন্য:"
+
+#~ msgid "Title of new Dashboard item:"
+#~ msgstr "নতুন ড্যাশবোর্ড উপাদানের শিরোনাম:"
+
+#~ msgid "Add condition"
+#~ msgstr "শর্ত যোগ করুন"
+
+#~ msgid "and"
+#~ msgstr "এবং"
+
+#~ msgid "Any of the following conditions must match"
+#~ msgstr "নিম্নলিখিত সকল শর্তগুলির যেকোনটি মেলা আবশ্যক"
+
+#~ msgid "All the following conditions must match"
+#~ msgstr "নিম্নলিখিত সকল শর্তগুলিই মেলা আবশ্যক"
+
+#~ msgid "None of the following conditions must match"
+#~ msgstr "নিম্নলিখিত কোন শর্তগুলিই মেলা আবশ্যক নয়"
+
+#~ msgid "Import Compatible Export"
+#~ msgstr "সামঞ্জস্যপূর্ণ বহিরায়ন আনুন"
+
+#, python-format
+#~ msgid "Confirm Password:"
+#~ msgstr "শব্দচাবি নিশ্চিত করুন:"
+
+#, python-format
+#~ msgid "Do you really want to delete the attachment %s?"
+#~ msgstr "আপনি কি সত্যিই থেকে ফেলতে চাচ্ছেন সংলগ্নক % s '"
+
+#~ msgid "Activate the developper mode"
+#~ msgstr "উন্নতির ধরন সক্রিয় করুন"

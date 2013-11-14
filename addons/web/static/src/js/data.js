@@ -1,5 +1,8 @@
 
-openerp.web.data = function(instance) {
+(function() {
+
+var instance = openerp;
+openerp.web.data = {};
 
 /**
  * Serializes the sort criterion array of a dataset into a form which can be
@@ -100,7 +103,7 @@ instance.web.Query = instance.web.Class.extend({
      * @returns {jQuery.Deferred<Number>}
      */
     count: function () {
-        if (this._count != undefined) { return $.when(this._count); }
+        if (this._count !== undefined) { return $.when(this._count); }
         return this._model.call(
             'search_count', [this._filter], {
                 context: this._model.context(this._context)});
@@ -253,19 +256,41 @@ instance.web.QueryGroup = instance.web.Class.extend({
     }
 });
 
-instance.web.Model = instance.web.Class.extend({
+instance.web.Model.include({
     /**
-     * @constructs instance.web.Model
-     * @extends instance.web.Class
-     *
-     * @param {String} model_name name of the OpenERP model this object is bound to
-     * @param {Object} [context]
-     * @param {Array} [domain]
-     */
-    init: function (model_name, context, domain) {
-        this.name = model_name;
+    new openerp.web.Model([session,] model_name[, context[, domain]])
+
+    @constructs instance.web.Model
+    @extends instance.web.Class
+    
+    @param {openerp.web.Session} [session] The session object used to communicate with
+    the server.
+    @param {String} model_name name of the OpenERP model this object is bound to
+    @param {Object} [context]
+    @param {Array} [domain]
+    */
+    init: function() {
+        var session, model_name, context, domain;
+        var args = _.toArray(arguments);
+        args.reverse();
+        session = args.pop();
+        if (session && ! (session instanceof openerp.web.Session)) {
+            model_name = session;
+            session = null;
+        } else {
+            model_name = args.pop();
+        }
+        context = args.length > 0 ? args.pop() : null;
+        domain = args.length > 0 ? args.pop() : null;
+
+        this._super(session, model_name, context, domain);
         this._context = context || {};
         this._domain = domain || [];
+    },
+    session: function() {
+        if (! this._session)
+            return instance.session;
+        return this._super();
     },
     /**
      * @deprecated does not allow to specify kwargs, directly use call() instead
@@ -294,13 +319,7 @@ instance.web.Model = instance.web.Class.extend({
             args = [];
         }
         instance.web.pyeval.ensure_evaluated(args, kwargs);
-        var debug = instance.session.debug ? '/'+this.name+':'+method : '';
-        return instance.session.rpc('/web/dataset/call_kw' + debug, {
-            model: this.name,
-            method: method,
-            args: args,
-            kwargs: kwargs
-        }, options);
+        return this._super(method, args, kwargs, options);
     },
     /**
      * Fetches a Query instance bound to this model, for searching
@@ -318,7 +337,7 @@ instance.web.Model = instance.web.Class.extend({
      * @param {String} signal signal to trigger on the workflow
      */
     exec_workflow: function (id, signal) {
-        return instance.session.rpc('/web/dataset/exec_workflow', {
+        return this.session().rpc('/web/dataset/exec_workflow', {
             model: this.name,
             id: id,
             signal: signal
@@ -355,7 +374,7 @@ instance.web.Model = instance.web.Class.extend({
      */
     call_button: function (method, args) {
         instance.web.pyeval.ensure_evaluated(args, {});
-        return instance.session.rpc('/web/dataset/call_button', {
+        return this.session().rpc('/web/dataset/call_button', {
             model: this.name,
             method: method,
             // Should not be necessary anymore. Integrate remote in this?
@@ -494,7 +513,7 @@ instance.web.DataSet =  instance.web.Class.extend(instance.web.PropertiesMixin, 
         return this._model.call('create', [data], {
             context: this.get_context()
         }).done(function () {
-            self.trigger('dataset_changed', data, options)
+            self.trigger('dataset_changed', data, options);
         });
     },
     /**
@@ -514,7 +533,7 @@ instance.web.DataSet =  instance.web.Class.extend(instance.web.PropertiesMixin, 
         return this._model.call('write', [[id], data], {
             context: this.get_context(options.context)
         }).done(function () {
-            self.trigger('dataset_changed', id, data, options)
+            self.trigger('dataset_changed', id, data, options);
         });
     },
     /**
@@ -527,7 +546,7 @@ instance.web.DataSet =  instance.web.Class.extend(instance.web.PropertiesMixin, 
         return this._model.call('unlink', [ids], {
             context: this.get_context()
         }).done(function () {
-            self.trigger('dataset_changed', ids)
+            self.trigger('dataset_changed', ids);
         });
     },
     /**
@@ -747,7 +766,7 @@ instance.web.DataSetSearch =  instance.web.DataSet.extend({
         });
     },
     size: function () {
-        if (this._length != null) {
+        if (this._length !== null) {
             return this._length;
         }
         return this._super();
@@ -761,6 +780,7 @@ instance.web.BufferedDataSet = instance.web.DataSetStatic.extend({
         this._super.apply(this, arguments);
         this.reset_ids([]);
         this.last_default_get = {};
+        this.running_reads = [];
     },
     default_get: function(fields, options) {
         var self = this;
@@ -810,7 +830,7 @@ instance.web.BufferedDataSet = instance.web.DataSetStatic.extend({
         var self = this;
         _.each(ids, function(id) {
             if (! _.detect(self.to_create, function(x) { return x.id === id; })) {
-                self.to_delete.push({id: id})
+                self.to_delete.push({id: id});
             }
         });
         this.to_create = _.reject(this.to_create, function(x) { return _.include(ids, x.id);});
@@ -827,6 +847,9 @@ instance.web.BufferedDataSet = instance.web.DataSetStatic.extend({
         this.to_write = [];
         this.cache = [];
         this.delete_all = false;
+        _.each(_.clone(this.running_reads), function(el) {
+            el.reject();
+        });
     },
     read_ids: function (ids, fields, options) {
         var self = this;
@@ -838,11 +861,10 @@ instance.web.BufferedDataSet = instance.web.DataSetStatic.extend({
                 _.each(fields, function(x) {if (cached.values[x] === undefined)
                     cached.values[x] = created.defaults[x] || false;});
             } else {
-                if (!cached || !_.all(fields, function(x) {return cached.values[x] !== undefined}))
+                if (!cached || !_.all(fields, function(x) {return cached.values[x] !== undefined;}))
                     to_get.push(id);
             }
         });
-        var completion = $.Deferred();
         var return_records = function() {
             var records = _.map(ids, function(id) {
                 return _.extend({}, _.detect(self.cache, function(c) {return c.id === id;}).values, {"id": id});
@@ -877,10 +899,20 @@ instance.web.BufferedDataSet = instance.web.DataSetStatic.extend({
                     }, 0);
                 });
             }
-            completion.resolve(records);
+            return $.when(records);
         };
         if(to_get.length > 0) {
-            var rpc_promise = this._super(to_get, fields, options).done(function(records) {
+            var def = $.Deferred();
+            self.running_reads.push(def);
+            def.always(function() {
+                self.running_reads = _.without(self.running_reads, def);
+            });
+            this._super(to_get, fields, options).then(function() {
+                def.resolve.apply(def, arguments);
+            }, function() {
+                def.reject.apply(def, arguments);
+            });
+            return def.then(function(records) {
                 _.each(records, function(record, index) {
                     var id = to_get[index];
                     var cached = _.detect(self.cache, function(x) {return x.id === id;});
@@ -891,13 +923,11 @@ instance.web.BufferedDataSet = instance.web.DataSetStatic.extend({
                         cached.values = _.defaults(_.clone(cached.values), record);
                     }
                 });
-                return_records();
+                return return_records();
             });
-            $.when(rpc_promise).fail(function() {completion.reject();});
         } else {
-            return_records();
+            return return_records();
         }
-        return completion.promise();
     },
     /**
      * Invalidates caching of a record in the dataset to ensure the next read
@@ -1071,6 +1101,6 @@ instance.web.DropMisordered = instance.web.Class.extend({
     }
 });
 
-};
+})();
 
 // vim:et fdc=0 fdl=0 foldnestmax=3 fdm=syntax:

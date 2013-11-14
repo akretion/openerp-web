@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openerp-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-06-07 19:38+0000\n"
-"PO-Revision-Date: 2013-04-04 13:15+0000\n"
-"Last-Translator: Samuli Kivistö <samuli.kivisto@harppaus.fi>\n"
+"POT-Creation-Date: 2012-12-21 17:06+0000\n"
+"PO-Revision-Date: 2012-03-19 11:56+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-06-08 07:51+0000\n"
-"X-Generator: Launchpad (build 16667)\n"
+"X-Launchpad-Export-Date: 2013-09-14 05:41+0000\n"
+"X-Generator: Launchpad (build 16761)\n"
 
 #. module: web_kanban
 #. openerp-web
@@ -26,10 +26,10 @@ msgstr "Muokkaa saraketta"
 
 #. module: web_kanban
 #. openerp-web
-#: code:addons/web_kanban/static/src/xml/web_kanban.xml:80
+#: code:addons/web_kanban/static/src/js/kanban.js:418
 #, python-format
-msgid "Show more... ("
-msgstr "Näytä lisää... ("
+msgid "An error has occured while moving the record to this group."
+msgstr ""
 
 #. module: web_kanban
 #. openerp-web
@@ -118,6 +118,13 @@ msgstr "Levitä"
 
 #. module: web_kanban
 #. openerp-web
+#: code:addons/web_kanban/static/src/xml/web_kanban.xml:80
+#, python-format
+msgid "Show more... ("
+msgstr "Näytä lisää... ("
+
+#. module: web_kanban
+#. openerp-web
 #: code:addons/web_kanban/static/src/xml/web_kanban.xml:99
 #, python-format
 msgid "Cancel"
@@ -129,13 +136,6 @@ msgstr "Peruuta"
 #, python-format
 msgid "remaining)"
 msgstr "jäljellä)"
-
-#. module: web_kanban
-#. openerp-web
-#: code:addons/web_kanban/static/src/js/kanban.js:424
-#, python-format
-msgid "An error has occured while moving the record to this group: "
-msgstr "Tallennetun arvon tuonti tähän ryhmään ei onnistunut: "
 
 #. module: web_kanban
 #. openerp-web
@@ -159,3 +159,9 @@ msgstr "99+"
 #, python-format
 msgid "Delete"
 msgstr "Poista"
+
+#~ msgid "Create"
+#~ msgstr "Luo"
+
+#~ msgid "</tr><tr>"
+#~ msgstr "</tr><tr>"

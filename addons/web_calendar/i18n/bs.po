@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openerp-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-06-07 19:37+0000\n"
-"PO-Revision-Date: 2013-09-05 07:33+0000\n"
-"Last-Translator: Bosko Stojakovic <bluesoft83@gmail.com>\n"
+"POT-Creation-Date: 2012-12-21 17:06+0000\n"
+"PO-Revision-Date: 2012-04-15 00:09+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-09-06 06:07+0000\n"
-"X-Generator: Launchpad (build 16760)\n"
+"X-Launchpad-Export-Date: 2013-09-14 05:41+0000\n"
+"X-Generator: Launchpad (build 16761)\n"
 
 #. module: web_calendar
 #. openerp-web
@@ -30,13 +30,6 @@ msgstr "Novi događaj"
 #, python-format
 msgid "Details"
 msgstr "Detalji"
-
-#. module: web_calendar
-#. openerp-web
-#: code:addons/web_calendar/static/src/js/calendar.js:512
-#, python-format
-msgid "Edit: %s"
-msgstr "Uredi: %s"
 
 #. module: web_calendar
 #. openerp-web
@@ -105,6 +98,13 @@ msgstr "Datum"
 
 #. module: web_calendar
 #. openerp-web
+#: code:addons/web_calendar/static/src/js/calendar.js:470
+#, python-format
+msgid "Edit: "
+msgstr ""
+
+#. module: web_calendar
+#. openerp-web
 #: code:addons/web_calendar/static/src/js/calendar.js:158
 #, python-format
 msgid "Day"
@@ -155,13 +155,6 @@ msgstr "Dnevni red"
 
 #. module: web_calendar
 #. openerp-web
-#: code:addons/web_calendar/static/src/js/calendar.js:475
-#, python-format
-msgid "Create: %s"
-msgstr "Kreiraj: %s"
-
-#. module: web_calendar
-#. openerp-web
 #: code:addons/web_calendar/static/src/js/calendar.js:170
 #, python-format
 msgid "Time period"
@@ -190,6 +183,13 @@ msgstr "Onemogućeno"
 
 #. module: web_calendar
 #. openerp-web
+#: code:addons/web_calendar/static/src/js/calendar.js:435
+#, python-format
+msgid "Create: "
+msgstr ""
+
+#. module: web_calendar
+#. openerp-web
 #: code:addons/web_calendar/static/src/js/calendar.js:185
 #, python-format
 msgid "Year"
@@ -215,3 +215,6 @@ msgstr "Kalendar"
 #, python-format
 msgid "Calendar view has not defined 'date_start' attribute."
 msgstr "Pogled kalendara nema definisan atribut 'date_start'."
+
+#~ msgid "Navigator"
+#~ msgstr "Navigator"

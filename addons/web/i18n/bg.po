@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openerp-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-06-07 19:37+0000\n"
-"PO-Revision-Date: 2013-01-17 19:26+0000\n"
-"Last-Translator: tuxar <Unknown>\n"
+"POT-Creation-Date: 2012-12-21 17:06+0000\n"
+"PO-Revision-Date: 2012-07-07 10:52+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-06-08 07:49+0000\n"
-"X-Generator: Launchpad (build 16667)\n"
+"X-Launchpad-Export-Date: 2013-09-14 05:39+0000\n"
+"X-Generator: Launchpad (build 16761)\n"
 
 #. module: web
 #. openerp-web
@@ -56,16 +56,10 @@ msgstr "по-малко или равно на"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:114
+#: code:addons/web/static/src/js/chrome.js:410
 #, python-format
-msgid ""
-"Fill in this form to create an OpenERP database. You can\n"
-"                    create databases for different companies or for "
-"different\n"
-"                    goals (testing, production). Once the database is "
-"created,\n"
-"                    you will be able to install your first application."
-msgstr ""
+msgid "Please enter your previous password"
+msgstr "Въведете Вашата предишна парола"
 
 #. module: web
 #. openerp-web
@@ -82,13 +76,6 @@ msgstr "Главна парола:"
 #, python-format
 msgid "Change Master Password"
 msgstr "Промяна на главната парола"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2439
-#, python-format
-msgid "Today"
-msgstr "Днес"
 
 #. module: web
 #. openerp-web
@@ -113,10 +100,10 @@ msgstr "Достъпът е отказан"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2462
+#: code:addons/web/static/src/js/view_form.js:5220
 #, python-format
-msgid "Now"
-msgstr "Сега"
+msgid "Uploading error"
+msgstr "Грешка при изпращане на данни."
 
 #. module: web
 #. openerp-web
@@ -124,13 +111,6 @@ msgstr "Сега"
 #, python-format
 msgid "about an hour ago"
 msgstr "преди около час"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2446
-#, python-format
-msgid "Week of the year"
-msgstr "Седмица от годината"
 
 #. module: web
 #. openerp-web
@@ -158,13 +138,6 @@ msgstr "\"%s\" не е валидна дата"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2437
-#, python-format
-msgid "Next>"
-msgstr "Следващ>"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1858
 #, python-format
 msgid "Here is a preview of the file we could not import:"
@@ -172,17 +145,17 @@ msgstr "Преглед на файла, който не се импортира:
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:410
-#, python-format
-msgid "Please enter your previous password"
-msgstr "Въведете Вашата предишна парола"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/coresetup.js:591
 #, python-format
 msgid "about a minute ago"
 msgstr "преди около минута"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:1306
+#, python-format
+msgid "File"
+msgstr "Файл"
 
 #. module: web
 #: code:addons/web/controllers/main.py:869
@@ -251,16 +224,9 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:134
+#: code:addons/web/static/src/xml/base.xml:1626
 #, python-format
-msgid "e.g. mycompany"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_list_editable.js:793
-#, python-format
-msgid "The form's data can not be discarded"
+msgid "Share with all users"
 msgstr ""
 
 #. module: web
@@ -393,13 +359,6 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:189
-#, python-format
-msgid "Original database name:"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_form.js:5082
 #: code:addons/web/static/src/js/view_list.js:2204
 #, python-format
@@ -419,13 +378,6 @@ msgstr ""
 #, python-format
 msgid "Group"
 msgstr "Група"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2445
-#, python-format
-msgid "Wk"
-msgstr "Wk"
 
 #. module: web
 #. openerp-web
@@ -453,13 +405,6 @@ msgstr ""
 #, python-format
 msgid "Languages"
 msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2438
-#, python-format
-msgid "Show the next month"
-msgstr "Покажи следващият месец"
 
 #. module: web
 #. openerp-web
@@ -576,24 +521,10 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2453
-#, python-format
-msgid "Select a date"
-msgstr "Избери дата"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:873
 #, python-format
 msgid "Condition:"
 msgstr "Състояние:"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2458
-#, python-format
-msgid "Time"
-msgstr "Време(час)"
 
 #. module: web
 #. openerp-web
@@ -635,6 +566,13 @@ msgstr ""
 #: code:addons/web/static/src/js/pyeval.js:736
 #, python-format
 msgid "Unknown nonliteral type "
+msgstr ""
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/view_form.js:2359
+#, python-format
+msgid "Resource error"
 msgstr ""
 
 #. module: web
@@ -702,17 +640,6 @@ msgstr "Модел %s полета"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2046
-#: code:addons/web/static/src/js/search.js:2062
-#: code:addons/web/static/src/js/search.js:2098
-#: code:addons/web/static/src/js/search.js:2125
-#: code:addons/web/static/src/js/search.js:2145
-#, python-format
-msgid "is set"
-msgstr "е установен"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_list.js:906
 #, python-format
 msgid "Setting 'id' attribute on existing record %s"
@@ -736,10 +663,11 @@ msgstr "по-голямо от"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/chrome.js:585
+#: code:addons/web/static/src/js/view_list.js:2258
+#: code:addons/web/static/src/xml/base.xml:568
 #, python-format
-msgid "Changed Password"
-msgstr ""
+msgid "View"
+msgstr "Изглед"
 
 #. module: web
 #. openerp-web
@@ -813,25 +741,11 @@ msgstr "Запази и Нов"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2432
-#, python-format
-msgid "Erase the current date"
-msgstr "Изтриване на текущата дата"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1251
 #: code:addons/web/static/src/xml/base.xml:1253
 #, python-format
 msgid "Save As"
 msgstr "Запиши като"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:109
-#, python-format
-msgid "Create a New Database"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -842,16 +756,16 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/coresetup.js:595
+#: code:addons/web/static/src/js/view_form.js:2330
 #, python-format
-msgid "a day ago"
+msgid "E-mail error"
 msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:138
+#: code:addons/web/static/src/js/coresetup.js:595
 #, python-format
-msgid "Load demonstration data:"
+msgid "a day ago"
 msgstr ""
 
 #. module: web
@@ -884,13 +798,6 @@ msgstr ""
 #, python-format
 msgid "Search: "
 msgstr "Търсене: "
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:141
-#, python-format
-msgid "Check this box to evaluate OpenERP."
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -939,10 +846,10 @@ msgstr "Добавяне"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1795
+#: code:addons/web/static/src/xml/base.xml:558
 #, python-format
-msgid "1. Import a .CSV file"
-msgstr "1. Импорт на .CSV файл"
+msgid "Toggle Form Layout Outline"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -974,13 +881,6 @@ msgstr "Настройки"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1704
-#, python-format
-msgid "Only export selection:"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_form.js:435
 #, python-format
 msgid "Wrong on change format: %s"
@@ -993,15 +893,6 @@ msgstr ""
 #, python-format
 msgid "Drop Database"
 msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/data_export.js:30
-#: code:addons/web/static/src/js/view_form.js:1077
-#: code:addons/web/static/src/xml/base.xml:1422
-#, python-format
-msgid "Close"
-msgstr "Затваряне"
 
 #. module: web
 #. openerp-web
@@ -1065,17 +956,10 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2379
+#: code:addons/web/static/src/js/view_list_editable.js:793
 #, python-format
-msgid "Resource Error"
+msgid "The form's data can not be discarded"
 msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2459
-#, python-format
-msgid "Hour"
-msgstr "Час"
 
 #. module: web
 #. openerp-web
@@ -1099,13 +983,6 @@ msgstr "Вход"
 #, python-format
 msgid "Delete"
 msgstr "Изтриване"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:425
-#, python-format
-msgid "My OpenERP.com account"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1169,11 +1046,17 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_list.js:2258
-#: code:addons/web/static/src/xml/base.xml:568
+#: code:addons/web/static/src/xml/base.xml:635
 #, python-format
-msgid "View"
-msgstr "Изглед"
+msgid "/web/binary/upload_attachment"
+msgstr ""
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/js/chrome.js:585
+#, python-format
+msgid "Changed Password"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1184,26 +1067,14 @@ msgstr "Търсене"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2435
+#: code:addons/web/static/src/js/view_form.js:3139
+#: code:addons/web/static/src/js/view_form.js:3785
+#: code:addons/web/static/src/js/view_form.js:3906
+#: code:addons/web/static/src/js/view_form.js:4358
+#: code:addons/web/static/src/js/view_form.js:4482
 #, python-format
-msgid "<Prev"
-msgstr "<Предишен"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2450
-#, python-format
-msgid "Set DD as first week day"
-msgstr "Установи DD като първи ден от седмицата"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:120
-#, python-format
-msgid ""
-"By default, the master password is 'admin'. This password\n"
-"                    is required to created, delete dump or restore databases."
-msgstr ""
+msgid "Open: "
+msgstr "Отвори: "
 
 #. module: web
 #. openerp-web
@@ -1288,13 +1159,6 @@ msgstr ""
 #, python-format
 msgid "Unknown operator %s in domain %s"
 msgstr "Непознат оператор %s в домейн %s"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2436
-#, python-format
-msgid "Show the previous month"
-msgstr "Покажи предишният месец"
 
 #. module: web
 #. openerp-web
@@ -1410,13 +1274,6 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2443
-#, python-format
-msgid "Show a different month"
-msgstr "Покажи друг месец"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_form.js:154
 #, python-format
 msgid "No data provided."
@@ -1471,13 +1328,6 @@ msgstr ""
 #, python-format
 msgid "Remove All"
 msgstr "Премахване на всичко"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:253
-#, python-format
-msgid "Your OpenERP session expired. Please refresh the current web page."
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1548,17 +1398,10 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:427
+#: code:addons/web/static/src/xml/base.xml:1795
 #, python-format
-msgid "Help"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:558
-#, python-format
-msgid "Toggle Form Layout Outline"
-msgstr ""
+msgid "1. Import a .CSV file"
+msgstr "1. Импорт на .CSV файл"
 
 #. module: web
 #. openerp-web
@@ -1583,9 +1426,9 @@ msgstr "Промяна по подразбиране:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1879
+#: code:addons/web/static/src/xml/base.xml:189
 #, python-format
-msgid "Advanced"
+msgid "Original database name:"
 msgstr ""
 
 #. module: web
@@ -1660,24 +1503,19 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2434
+#: code:addons/web/static/src/xml/base.xml:145
 #, python-format
-msgid "Close without change"
-msgstr "Затвори без промяна"
+msgid "Admin password:"
+msgstr "Администраторска парола:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:159
+#: code:addons/web/static/src/js/data_export.js:30
+#: code:addons/web/static/src/js/view_form.js:1077
+#: code:addons/web/static/src/xml/base.xml:1422
 #, python-format
-msgid "Choose a password:"
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2451
-#, python-format
-msgid "Select D, M d"
-msgstr "Избери D, M d"
+msgid "Close"
+msgstr "Затваряне"
 
 #. module: web
 #. openerp-web
@@ -1696,10 +1534,10 @@ msgstr "CSV файл:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2460
+#: code:addons/web/static/src/js/search.js:1879
 #, python-format
-msgid "Minute"
-msgstr "Минути"
+msgid "Advanced"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1771,13 +1609,6 @@ msgstr "Осъществено от"
 #, python-format
 msgid "Yes"
 msgstr "Да"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/chrome.js:1350
-#, python-format
-msgid "Timezone Mismatch"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1866,13 +1697,6 @@ msgstr "Управление на изгледи"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2349
-#, python-format
-msgid "E-mail Error"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1822
 #, python-format
 msgid "Encoding:"
@@ -1956,14 +1780,6 @@ msgstr ""
 #, python-format
 msgid "Create: "
 msgstr "Създаване: "
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2433
-#: code:addons/web/static/src/js/view_form.js:2463
-#, python-format
-msgid "Done"
-msgstr "Готово"
 
 #. module: web
 #. openerp-web
@@ -2084,11 +1900,12 @@ msgstr "-- Филтри --"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:1998
-#: code:addons/web/static/src/js/search.js:2165
+#: code:addons/web/static/src/js/view_form.js:2431
+#: code:addons/web/static/src/xml/base.xml:1258
+#: code:addons/web/static/src/xml/base.xml:1260
 #, python-format
-msgid "%(field)s %(operator)s"
-msgstr ""
+msgid "Clear"
+msgstr "Изчистване"
 
 #. module: web
 #. openerp-web
@@ -2136,13 +1953,6 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2444
-#, python-format
-msgid "Show a different year"
-msgstr "Покажи друга година"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1498
 #, python-format
 msgid "Filter Name:"
@@ -2179,13 +1989,6 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2440
-#, python-format
-msgid "Show the current month"
-msgstr "Покажи текущият месец"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/coresetup.js:599
 #, python-format
 msgid "about a year ago"
@@ -2208,22 +2011,6 @@ msgstr "не е равно на"
 msgid ""
 "The type of the field '%s' must be a many2many field with a relation to "
 "'ir.attachment' model."
-msgstr ""
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2431
-#: code:addons/web/static/src/xml/base.xml:1258
-#: code:addons/web/static/src/xml/base.xml:1260
-#, python-format
-msgid "Clear"
-msgstr "Изчистване"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:132
-#, python-format
-msgid "Select a database name:"
 msgstr ""
 
 #. module: web
@@ -2274,6 +2061,13 @@ msgstr "ОК"
 #, python-format
 msgid "Uploading..."
 msgstr ""
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:125
+#, python-format
+msgid "Load Demonstration data:"
+msgstr "Зареди демонстрационни данни:"
 
 #. module: web
 #. openerp-web
@@ -2424,28 +2218,10 @@ msgstr "Изберете полета за експорт..."
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/search.js:2047
-#: code:addons/web/static/src/js/search.js:2063
-#: code:addons/web/static/src/js/search.js:2099
-#: code:addons/web/static/src/js/search.js:2126
-#: code:addons/web/static/src/js/search.js:2146
-#, python-format
-msgid "is not set"
-msgstr "не е установен"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:304
 #, python-format
 msgid "New master password:"
 msgstr "Нова главна парола:"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:1626
-#, python-format
-msgid "Share with all users"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -2555,13 +2331,6 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:5314
-#, python-format
-msgid "Uploading Error"
-msgstr ""
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1642
 #, python-format
 msgid "Add a condition"
@@ -2605,17 +2374,6 @@ msgstr ""
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:3139
-#: code:addons/web/static/src/js/view_form.js:3785
-#: code:addons/web/static/src/js/view_form.js:3906
-#: code:addons/web/static/src/js/view_form.js:4358
-#: code:addons/web/static/src/js/view_form.js:4482
-#, python-format
-msgid "Open: "
-msgstr "Отвори: "
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/js/view_list.js:1358
 #, python-format
 msgid "%s (%d)"
@@ -2648,14 +2406,6 @@ msgstr "Приставка:"
 #, python-format
 msgid "Edit Action"
 msgstr "Редактиране на действието"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/search.js:1681
-#, python-format
-msgid ""
-"This filter is global and will be removed for everybody if you continue."
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -2765,13 +2515,6 @@ msgstr "Сигурни ли сте, че искате да изтриете то
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:318
-#, python-format
-msgid "Back to Login"
-msgstr "Обратно към вход"
-
-#. module: web
-#. openerp-web
 #: code:addons/web/static/src/xml/base.xml:1413
 #, python-format
 msgid "Save & Close"
@@ -2791,13 +2534,6 @@ msgstr ""
 #, python-format
 msgid "Password"
 msgstr "Парола"
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2457
-#, python-format
-msgid "Choose Time"
-msgstr "Избери време(час)"
 
 #. module: web
 #. openerp-web
@@ -2860,10 +2596,10 @@ msgstr "Разделител:"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/js/view_form.js:2461
+#: code:addons/web/static/src/xml/base.xml:318
 #, python-format
-msgid "Second"
-msgstr "Секунди"
+msgid "Back to Login"
+msgstr "Обратно към вход"
 
 #. module: web
 #. openerp-web
@@ -2873,18 +2609,258 @@ msgstr "Секунди"
 msgid "Filters"
 msgstr "Филтри"
 
-#, python-format
-#~ msgid "Admin password:"
-#~ msgstr "Администраторска парола:"
+#~ msgid "Dont send"
+#~ msgstr "Не изпращай"
+
+#~ msgid "Change password"
+#~ msgstr "Смяна на парола"
+
+#~ msgid "External ID"
+#~ msgstr "Външен ID"
+
+#~ msgid "Import File"
+#~ msgstr "Импорт на файл"
+
+#~ msgid "*Required Fields are not selected :"
+#~ msgstr "*Задължителните полета не са избрани :"
+
+#~ msgid "Import Data"
+#~ msgstr "Импортиране на данни"
+
+#~ msgid "OK"
+#~ msgstr "ОК"
+
+#~ msgid "Filter disabled due to invalid syntax"
+#~ msgstr "Филтъра е дезактивиран поради невалиден синтаксис"
 
 #, python-format
-#~ msgid "Load Demonstration data:"
-#~ msgstr "Зареди демонстрационни данни:"
+#~ msgid "Manage Views (%s)"
+#~ msgstr "Управление на изгледи (%s)"
+
+#~ msgid "Add to Dashboard"
+#~ msgstr "Добави към таблото"
+
+#~ msgid ""
+#~ "Destination fields should only be selected once, some fields are selected "
+#~ "more than once:"
+#~ msgstr ""
+#~ "Назначените полета могат да бъдат избирани само введнъж, някои полета са "
+#~ "избрани повече от един път:"
 
 #, python-format
-#~ msgid "Uploading error"
-#~ msgstr "Грешка при изпращане на данни."
+#~ msgid "Create a view (%s)"
+#~ msgstr "Създаване на изглед (%s)"
+
+#~ msgid "Do you really want to remove this node?"
+#~ msgstr "Сигурни ли сте, че искате да премахнете този възел(разклонение) ?"
+
+#~ msgid "Do you really want to remove this view?"
+#~ msgstr "Сигурни ли сте, че искате да изтриете този изглед?"
+
+#~ msgid "Do you really wants to create an inherited view here?"
+#~ msgstr "Сигурни ли сте, че искате да създадете наследен изглед тук?"
+
+#~ msgid "Inherited View"
+#~ msgstr "Наследен изглед"
+
+#~ msgid "Preview"
+#~ msgstr "Преглед"
+
+#~ msgid "Properties"
+#~ msgstr "Свойства"
+
+#~ msgid "Update"
+#~ msgstr "Обновяване"
+
+#~ msgid "Customize"
+#~ msgstr "Персонализиране"
 
 #, python-format
-#~ msgid "File"
-#~ msgstr "Файл"
+#~ msgid "View Editor %d - %s"
+#~ msgstr "Редактор на изглед %d - %s"
+
+#~ msgid ""
+#~ "Warning, the record has been modified, your changes will be discarded."
+#~ msgstr ""
+#~ "Внимание, записът бе модифициран и вашите промени ще бъдат отхвърлени."
+
+#~ msgid "Attachments"
+#~ msgstr "Прикачени файлове"
+
+#, python-format
+#~ msgid "Do you really want to delete the attachment %s?"
+#~ msgstr "Сигурни ли сте, че искате да изтриете прикачения файл %s?"
+
+#~ msgid "<em>   Search More...</em>"
+#~ msgstr "<em>   Търси още...</em>"
+
+#~ msgid "<em>   Create and Edit...</em>"
+#~ msgstr "<em>   Създаване и редакция...</em>"
+
+#, python-format
+#~ msgid "<em>   Create \"<strong>%s</strong>\"</em>"
+#~ msgstr "<em>   Създаване \"<strong>%s</strong>\"</em>"
+
+#~ msgid "Page"
+#~ msgstr "Страница"
+
+#, python-format
+#~ msgid "[%(first_record)d to %(last_record)d] of %(records_count)d"
+#~ msgstr "[%(first_record)d до %(last_record)d] от %(records_count)d"
+
+#~ msgid "Could not find current view declaration"
+#~ msgstr "Не може да се намери актуална декларация на изгледа"
+
+#~ msgid "Translate"
+#~ msgstr "Превод"
+
+#~ msgid "Other Options"
+#~ msgstr "Други настройки"
+
+#~ msgid "CREATE DATABASE"
+#~ msgstr "СЪЗДАВАНЕ НА БАЗА ДАННИ"
+
+#~ msgid "Reports"
+#~ msgstr "Доклади"
+
+#~ msgid "Translations"
+#~ msgstr "Преводи"
+
+#~ msgid "Links"
+#~ msgstr "Връзки"
+
+#~ msgid "Actions"
+#~ msgstr "Действия"
+
+#~ msgid "DROP DATABASE"
+#~ msgstr "ПРЕМАХВАНЕ НА БАЗА ДАННИ"
+
+#~ msgid "CHANGE MASTER PASSWORD"
+#~ msgstr "СМЯНА НА ГЛАВНА ПАРОЛА"
+
+#~ msgid "RESTORE DATABASE"
+#~ msgstr "ВЪЗСТАНОВЯВАНЕ БАЗА ДАННИ"
+
+#~ msgid "BACKUP DATABASE"
+#~ msgstr "РЕЗЕРВНО КОПИЕ НА БАЗА ДАННИ"
+
+#~ msgid "Your report will be sent to the OpenERP Enterprise team."
+#~ msgstr "Вашият доклад бе изпратен до OpenERP Enterprise team."
+
+#~ msgid "Summary:"
+#~ msgstr "Сумарно:"
+
+#~ msgid "What you did:"
+#~ msgstr "Какво направихте:"
+
+#~ msgid "Description:"
+#~ msgstr "Описание:"
+
+#~ msgid "Add / Remove Shortcut..."
+#~ msgstr "Добави / Премахни Пряк път..."
+
+#~ msgid "Unfold menu"
+#~ msgstr "Разгънато меню"
+
+#~ msgid "Fold menu"
+#~ msgstr "Сгънато меню"
+
+#~ msgid "More…"
+#~ msgstr "Повече..."
+
+#~ msgid "Home"
+#~ msgstr "Начало"
+
+#~ msgid "Disable all tips"
+#~ msgstr "Дезактивирай всички съвети"
+
+#~ msgid "LOGOUT"
+#~ msgstr "ИЗХОД"
+
+#~ msgid "Hide this tip"
+#~ msgstr "Скрий този съвет"
+
+#~ msgid "Add attachment"
+#~ msgstr "Добави прикачен файл"
+
+#~ msgid "Field"
+#~ msgstr "Поле"
+
+#~ msgid "Notebook Page \""
+#~ msgstr "Страница Бележник \""
+
+#~ msgid "Open..."
+#~ msgstr "Отваряне..."
+
+#~ msgid "Open this resource"
+#~ msgstr "Отвори този ресурс"
+
+#~ msgid "Send an e-mail with your default e-mail client"
+#~ msgstr "Изпрати електронна поща с вашия  пощенски клиент"
+
+#~ msgid "Create..."
+#~ msgstr "Създаване..."
+
+#~ msgid "Set Image"
+#~ msgstr "Задай изображение"
+
+#~ msgid "Search..."
+#~ msgstr "Търсене..."
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "OpenERP - Unsupported/Community Version"
+#~ msgstr "OpenERP - Unsupported/Community Version"
+
+#~ msgid "OpenERP Entreprise"
+#~ msgstr "OpenERP Entreprise"
+
+#~ msgid "Send OpenERP Enterprise Report"
+#~ msgstr "Изпрати OpenERP Enterprise доклад"
+
+#~ msgid "OpenERP Enterprise Contract."
+#~ msgstr "OpenERP Enterprise контакт."
+
+#~ msgid "Add condition"
+#~ msgstr "Добави условие"
+
+#~ msgid "and"
+#~ msgstr "и"
+
+#~ msgid "Any of the following conditions must match"
+#~ msgstr "Някои от изброените условия трябва да съвпадат"
+
+#~ msgid "None of the following conditions must match"
+#~ msgstr "Никое от изброените условия не трябва да съвпада"
+
+#~ msgid "Advanced Filters"
+#~ msgstr "Разширени филтри"
+
+#~ msgid "Select Dashboard to add this filter to:"
+#~ msgstr "Избери табло към което да се добави филтъра:"
+
+#~ msgid "Title of new Dashboard item:"
+#~ msgstr "Заглавие на нов елемент от таблото:"
+
+#~ msgid "All the following conditions must match"
+#~ msgstr "Всички изброени условия трябва да съвпадат"
+
+#~ msgid "Import Compatible Export"
+#~ msgstr "Импорт на съвместим експорт"
+
+#, python-format
+#~ msgid "Confirm Password:"
+#~ msgstr "Потвърждаване на парола:"
+
+#~ msgid "Activate the developper mode"
+#~ msgstr "Активиране на режим за разработчици"
+
+#~ msgid "Filter Entry"
+#~ msgstr "Въведи филтър"
+
+#~ msgid ""
+#~ "Your version of OpenERP is unsupported. Support & maintenance services are "
+#~ "available here:"
+#~ msgstr ""
+#~ "Вашата версия на OpenERP е неподдържана. Поддръжка и услуги са достъпни тук:"
