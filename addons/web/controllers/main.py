@@ -1862,6 +1862,25 @@ class Reports(View):
                 break
 
             time.sleep(self.POLLING_DELAY)
+            
+        file_name = action['report_name']
+        # Try to get current object model and their ids from context
+        if action.has_key('context'):
+            action_context = action.get('context',{})
+            if action_context.has_key('active_model') and action_context.has_key('active_id'):
+                action_active_model = action_context.get('active_model','')
+                action_active_ids = action_context.get('active_ids', [])
+                if action_active_model and action_active_ids:
+                    # Use built-in ORM method to get data from DB
+                    m = req.session.model(action_active_model)
+                    r = m.read(action_active_ids, ['name'], context)
+                    # Parse result to create a better filename
+                    for i, item in enumerate(r):
+                        if item.has_key('name'):
+                            if i == 0: 
+                                file_name = ('%s') % (item['name'])
+                            else:
+                                file_name = ('%s-%s') % (file_name, item['name'])  
 
         report = base64.b64decode(report_struct['result'])
         if report_struct.get('code') == 'zlib':
@@ -1870,7 +1889,7 @@ class Reports(View):
             report_struct['format'], 'octet-stream')
         return req.make_response(report,
              headers=[
-                 ('Content-Disposition', 'attachment; filename="%s.%s"' % (action['report_name'], report_struct['format'])),
+                 ('Content-Disposition', 'attachment; filename="%s.%s"' % (file_name, report_struct['format'])),
                  ('Content-Type', report_mimetype),
                  ('Content-Length', len(report))],
              cookies={'fileToken': int(token)})
