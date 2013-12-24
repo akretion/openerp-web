@@ -3945,7 +3945,6 @@ instance.web.form.One2ManyListView = instance.web.ListView.extend({
             GroupsType: instance.web.form.One2ManyGroups,
             ListType: instance.web.form.One2ManyList
         }));
-        this.on('edit:before', this, this.proxy('_before_edit'));
         this.on('edit:after', this, this.proxy('_after_edit'));
         this.on('save:before cancel:before', this, this.proxy('_before_unedit'));
 
@@ -3958,7 +3957,7 @@ instance.web.form.One2ManyListView = instance.web.ListView.extend({
         var ret = this._super();
         this.$el
             .off('mousedown.handleButtons')
-            .on('mousedown.handleButtons', 'table button', this.proxy('_button_down'));
+            .on('mousedown.handleButtons', 'table button, div a.oe_m2o_cm_button', this.proxy('_button_down'));
         return ret;
     },
     changed_records: function () {
@@ -4066,11 +4065,10 @@ instance.web.form.One2ManyListView = instance.web.ListView.extend({
         });
     },
 
-    _before_edit: function () {
+    _after_edit: function () {
         this.__ignore_blur = false;
         this.editor.form.on('blurred', this, this._on_form_blur);
-    },
-    _after_edit: function () {
+
         // The form's blur thing may be jiggered during the edition setup,
         // potentially leading to the o2m instasaving the row. Cancel any
         // blurring triggered the edition startup here
@@ -4103,7 +4101,7 @@ instance.web.form.One2ManyListView = instance.web.ListView.extend({
         }
         this.cancel_edition();
     },
-    keyup_ENTER: function () {
+    keypress_ENTER: function () {
         // blurring caused by hitting the [Return] key, should skip the
         // autosave-on-blur and let the handler for [Return] do its thing (save
         // the current row *anyway*, then create a new one/edit the next one)
@@ -4118,6 +4116,12 @@ instance.web.form.One2ManyListView = instance.web.ListView.extend({
         } finally {
             window.confirm = confirm;
         }
+    },
+    reload_record: function (record) {
+        // Evict record.id from cache to ensure it will be reloaded correctly
+        this.dataset.evict_record(record.get('id'));
+
+        return this._super(record);
     }
 });
 instance.web.form.One2ManyGroups = instance.web.ListView.Groups.extend({
