@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "UTF-8";
 @font-face {
   font-family: "mnmliconsRegular";
   src: url("/web/static/src/font/mnmliconsv21-webfont.eot") format("eot");
@@ -645,6 +645,10 @@
 .openerp .oe_notebook > li > a {
   display: block;
   color: gray;
+}
+.openerp .ui-tabs .oe_notebook.ui-tabs-nav li.ui-tabs-active { 
+  border-bottom: none;
+  padding-bottom: 1px;
 }
 .openerp .oe_notebook > li.ui-tabs-active > a {
   color: #4c4c4c;
@@ -2218,6 +2222,7 @@
 }
 .openerp .oe_form header .oe_button {
   margin: 3px 2px 1px;
+  float: left;
 }
 .openerp .oe_form header .oe_button:first-child {
   margin-left: 6px;

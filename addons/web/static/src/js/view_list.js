@@ -1318,7 +1318,8 @@ instance.web.ListView.Groups = instance.web.Class.extend( /** @lends instance.we
         }
     },
     close: function () {
-        this.$row.children().last().empty();
+        this.$row.children().last().find('button').remove();
+        this.$row.children().last().find('span').remove();
         this.records.reset();
     },
     /**
@@ -1489,7 +1490,8 @@ instance.web.ListView.Groups = instance.web.Class.extend( /** @lends instance.we
                 } else {
                     if (dataset.size() == records.length) {
                         // only one page
-                        self.$row.find('td.oe_list_group_pagination').empty();
+                        self.$row.find('td.oe_list_group_pagination').find('button').remove();
+                        self.$row.find('td.oe_list_group_pagination').find('span').remove();
                     } else {
                         var pages = Math.ceil(dataset.size() / limit);
                         self.$row
