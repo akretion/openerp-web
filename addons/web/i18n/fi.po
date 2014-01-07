@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openerp-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-06-07 19:37+0000\n"
-"PO-Revision-Date: 2013-12-06 16:04+0000\n"
+"PO-Revision-Date: 2013-12-09 20:29+0000\n"
 "Last-Translator: Harri Luuppala <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-12-07 06:32+0000\n"
-"X-Generator: Launchpad (build 16869)\n"
+"X-Launchpad-Export-Date: 2013-12-19 06:13+0000\n"
+"X-Generator: Launchpad (build 16872)\n"
 
 #. module: web
 #. openerp-web
@@ -1001,7 +1001,7 @@ msgstr "Väärä formaatti: %s"
 #: code:addons/web/static/src/xml/base.xml:203
 #, python-format
 msgid "Drop Database"
-msgstr "Pudota Tietokanta"
+msgstr "Poista tietokonta"
 
 #. module: web
 #. openerp-web
@@ -1358,7 +1358,7 @@ msgstr "%d kuukautta sitten"
 #: code:addons/web/static/src/xml/base.xml:326
 #, python-format
 msgid "Drop"
-msgstr "Pudota"
+msgstr "Poista"
 
 #. module: web
 #. openerp-web
@@ -1728,7 +1728,7 @@ msgstr "Puu"
 #: code:addons/web/controllers/main.py:793
 #, python-format
 msgid "Could not drop database !"
-msgstr "Älä pudota tietokantaa !"
+msgstr "Älä poista tietokantaa!"
 
 #. module: web
 #. openerp-web
@@ -1770,7 +1770,7 @@ msgstr "Tarkempi haku..."
 #: code:addons/web/static/src/js/chrome.js:521
 #, python-format
 msgid "Dropping database"
-msgstr "Pudottaa tietokantaa"
+msgstr "Poistaa tietokannan"
 
 #. module: web
 #. openerp-web
@@ -2731,7 +2731,7 @@ msgstr "Muokkaaja:"
 #: code:addons/web/static/src/js/chrome.js:521
 #, python-format
 msgid "The database %s has been dropped"
-msgstr "Tietokanta %s on pudotettu"
+msgstr "Tietokanta %s on poistettu"
 
 #. module: web
 #. openerp-web
