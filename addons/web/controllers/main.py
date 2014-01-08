@@ -1863,24 +1863,22 @@ class Reports(View):
 
             time.sleep(self.POLLING_DELAY)
             
-        file_name = action['report_name']
+        file_name = action['name']
         # Try to get current object model and their ids from context
-        if action.has_key('context'):
-            action_context = action.get('context',{})
-            if action_context.has_key('active_model') and action_context.has_key('active_id'):
-                action_active_model = action_context.get('active_model','')
-                action_active_ids = action_context.get('active_ids', [])
-                if action_active_model and action_active_ids:
-                    # Use built-in ORM method to get data from DB
-                    m = req.session.model(action_active_model)
-                    r = m.read(action_active_ids, ['name'], context)
-                    # Parse result to create a better filename
-                    for i, item in enumerate(r):
-                        if item.has_key('name'):
-                            if i == 0: 
-                                file_name = ('%s') % (item['name'])
-                            else:
-                                file_name = ('%s-%s') % (file_name, item['name'])  
+        action_context = action.get('context', {})
+        if 'active_model' in action_context and 'active_id' in action_context:
+            action_model = action['context'].get('active_model','')
+            action_ids = action['context'].get('active_ids', [])
+            if action_model and action_ids:
+                # Use built-in ORM method to get data from DB
+                m = req.session.model(action_model)
+                r = m.name_get(action_ids, context)
+                # Parse result to create a better filename
+                item_names = [item[1] for item in r]
+                item_names.insert(0, file_name)
+                file_name = '-'.join(item_names)
+                # Create safe filename
+                file_name = "".join(c for c in file_name if c.isalnum() or c in '-_.()!').rstrip()
 
         report = base64.b64decode(report_struct['result'])
         if report_struct.get('code') == 'zlib':
