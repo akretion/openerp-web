@@ -1863,22 +1863,23 @@ class Reports(View):
 
             time.sleep(self.POLLING_DELAY)
             
-        file_name = action['name']
+        # Load built-in report name
+        file_name = action['report_name']
         # Try to get current object model and their ids from context
-        action_context = action.get('context', {})
-        if 'active_model' in action_context and 'active_id' in action_context:
-            action_model = action['context'].get('active_model','')
-            action_ids = action['context'].get('active_ids', [])
-            if action_model and action_ids:
+        if 'context' in action:  
+            action_context = action['context']
+            if action_context.get('active_model') and action_context['active_ids']:
                 # Use built-in ORM method to get data from DB
-                m = req.session.model(action_model)
-                r = m.name_get(action_ids, context)
+                m = req.session.model(action_context['active_model'])
+                r = m.name_get(action_context['active_ids'], context)
                 # Parse result to create a better filename
-                item_names = [item[1] for item in r]
-                item_names.insert(0, file_name)
+                item_names = [item[1] or str(item[0]) for item in r]
+                if action.get('name'):
+                    item_names.insert(0, action['name'])
                 file_name = '-'.join(item_names)
                 # Create safe filename
-                file_name = "".join(c for c in file_name if c.isalnum() or c in '-_.()!').rstrip()
+                p = re.compile('[/:(")<>|?*]|(\\\)')
+                file_name = p.sub('_', file_name)
 
         report = base64.b64decode(report_struct['result'])
         if report_struct.get('code') == 'zlib':
