@@ -2615,6 +2615,11 @@ instance.web.form.FieldText = instance.web.form.AbstractField.extend(instance.we
                 e.stopPropagation();
             }
         },
+        'keypress': function (e) {
+            if (e.which === $.ui.keyCode.ENTER) {
+                e.stopPropagation();
+            }
+        },
         'change textarea': 'store_dom_value',
     },
     initialize_content: function() {
@@ -3411,6 +3416,10 @@ instance.web.form.FieldMany2One = instance.web.form.AbstractField.extend(instanc
         if (! no_recurse) {
             var dataset = new instance.web.DataSetStatic(this, this.field.relation, self.build_context());
             this.alive(dataset.name_get([self.get("value")])).done(function(data) {
+                if (!data[0]) {
+                    self.do_warn(_t("Render"), _t("No value found for the field "+self.field.string+" for value "+self.get("value")));
+                    return;
+                }
                 self.display_value["" + self.get("value")] = data[0][1];
                 self.render_value(true);
             }).fail( function (data, event) {
