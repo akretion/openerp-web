@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "UTF-8";
 @font-face {
   font-family: "mnmliconsRegular";
   src: url("/web/static/src/font/mnmliconsv21-webfont.eot") format("eot");
@@ -220,6 +220,9 @@
   padding: 16px;
 }
 .openerp.ui-dialog .ui-dialog-titlebar {
+  border-top: none;
+  border-left: none;
+  border-right: none;
   border-bottom: 1px solid #cacaca;
   -moz-border-radius: 2px 2px 0 0;
   -webkit-border-radius: 2px 2px 0 0;
@@ -235,9 +238,6 @@
 .openerp.ui-dialog .ui-dialog-titlebar .ui-dialog-title {
   margin: 0;
   padding: 0;
-}
-.openerp.ui-dialog .ui-widget-header {
-  border: none;
 }
 .openerp.ui-dialog .ui-dialog-content {
   background: white;
@@ -437,17 +437,6 @@
 .openerp .oe_form_dirty button.oe_highlight_on_dirty:hover {
   background: #ed6f6a;
 }
-.openerp .oe_title {
-  width: 50%;
-  float: left;
-}
-.openerp .oe_title:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
 .openerp .oe_button_box {
   width: 270px;
   text-align: right;
@@ -646,10 +635,6 @@
   display: block;
   color: gray;
 }
-.openerp .ui-tabs .oe_notebook.ui-tabs-nav li.ui-tabs-active { 
-  border-bottom: none;
-  padding-bottom: 1px;
-}
 .openerp .oe_notebook > li.ui-tabs-active > a {
   color: #4c4c4c;
 }
@@ -674,6 +659,10 @@
   text-decoration: none;
   background-color: #eeeeee;
   border-color: #eeeeee #eeeeee #dddddd;
+}
+.openerp .ui-tabs .oe_notebook.ui-tabs-nav li.ui-tabs-active {
+  border-bottom: none;
+  padding-bottom: 1px;
 }
 .openerp .oe_notebook > li.ui-state-active > a, .openerp .oe_notebook > li.ui-state-active > a:hover {
   background-color: white;
@@ -3185,6 +3174,7 @@
 }
 .openerp .oe_debug_view_log {
   font-size: 95%;
+  line-height: 1.2em;
 }
 .openerp .oe_debug_view_log label {
   display: block;
