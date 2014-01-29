@@ -1052,7 +1052,10 @@ class DataSet(http.Controller):
             }
 
         records = Model.read(ids, fields or False, request.context)
-        records.sort(key=lambda obj: ids.index(obj['id']))
+
+        index = dict((r['id'], r) for r in records)
+        records = [index[x] for x in ids if x in index]
+
         return {
             'length': length,
             'records': records
@@ -1481,8 +1484,8 @@ class Export(http.Controller):
             model, map(operator.itemgetter('name'), export_fields_list))
 
         return [
-            {'name': field['name'], 'label': fields_data[field['name']]}
-            for field in export_fields_list
+            {'name': field_name, 'label': fields_data[field_name]}
+            for field_name in fields_data.keys()
         ]
 
     def fields_info(self, model, export_fields):
@@ -1529,7 +1532,7 @@ class Export(http.Controller):
                     fields[base]['relation'], base, fields[base]['string'],
                     subfields
                 ))
-            else:
+            elif base in fields:
                 info[base] = fields[base]['string']
 
         return info
