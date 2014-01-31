@@ -1008,6 +1008,7 @@ class Session(http.Controller):
         key = saved_actions["next"]
         saved_actions["actions"][key] = the_action
         saved_actions["next"] = key + 1
+        request.httpsession['saved_actions'] = saved_actions
         return key
 
     @http.route('/web/session/get_session_action', type='json', auth="user")
@@ -1148,21 +1149,17 @@ class DataSet(http.Controller):
         """
         Model = request.session.model(model)
 
-        ids = Model.search(domain, offset or 0, limit or False, sort or False,
+        records = Model.search_read(domain, fields, offset or 0, limit or False, sort or False,
                            request.context)
-        if limit and len(ids) == limit:
+        if not records:
+            return {
+                'length': 0,
+                'records': []
+            }
+        if limit and len(records) == limit:
             length = Model.search_count(domain, request.context)
         else:
-            length = len(ids) + (offset or 0)
-        if fields and fields == ['id']:
-            # shortcut read if we only want the ids
-            return {
-                'length': length,
-                'records': [{'id': id} for id in ids]
-            }
-
-        records = Model.read(ids, fields or False, request.context)
-        records.sort(key=lambda obj: ids.index(obj['id']))
+            length = len(records) + (offset or 0)
         return {
             'length': length,
             'records': records
@@ -1599,8 +1596,8 @@ class Export(http.Controller):
             model, map(operator.itemgetter('name'), export_fields_list))
 
         return [
-            {'name': field['name'], 'label': fields_data[field['name']]}
-            for field in export_fields_list
+            {'name': field_name, 'label': fields_data[field_name]}
+            for field_name in fields_data.keys()
         ]
 
     def fields_info(self, model, export_fields):
@@ -1647,7 +1644,7 @@ class Export(http.Controller):
                     fields[base]['relation'], base, fields[base]['string'],
                     subfields
                 ))
-            else:
+            elif base in fields:
                 info[base] = fields[base]['string']
 
         return info
@@ -1846,5 +1843,32 @@ class Reports(http.Controller):
                  ('Content-Type', report_mimetype),
                  ('Content-Length', len(report))],
              cookies={'fileToken': token})
+
+class Apps(http.Controller):
+    @http.route('/apps/<app>', auth='user')
+    def get_app_url(self, req, app):
+        act_window_obj = request.session.model('ir.actions.act_window')
+        ir_model_data = request.session.model('ir.model.data')
+        try:
+            action_id = ir_model_data.get_object_reference('base', 'open_module_tree')[1]
+            action = act_window_obj.read(action_id, ['name', 'type', 'res_model', 'view_mode', 'view_type', 'context', 'views', 'domain'])
+            action['target'] = 'current'
+        except ValueError:
+            action = False
+        try:
+            app_id = ir_model_data.get_object_reference('base', 'module_%s' % app)[1]
+        except ValueError:
+            app_id = False
+
+        if action and app_id:
+            action['res_id'] = app_id
+            action['view_mode'] = 'form'
+            action['views'] = [(False, u'form')]
+
+        sakey = Session().save_session_action(action)
+        debug = '?debug' if req.debug else ''
+        return werkzeug.utils.redirect('/web{0}#sa={1}'.format(debug, sakey))
+        
+
 
 # vim:expandtab:tabstop=4:softtabstop=4:shiftwidth=4:
