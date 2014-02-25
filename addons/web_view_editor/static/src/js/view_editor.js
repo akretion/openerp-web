@@ -73,12 +73,10 @@ instance.web_view_editor.ViewEditor =   instance.web.Widget.extend({
         $.when(this.action_manager.do_action(action)).done(function() {
             var viewmanager = self.action_manager.inner_widget;
             var controller = viewmanager.views[viewmanager.active_view].controller;
-            controller.on('view_loaded', self, function(){
-                $(controller.groups).bind({
-                    'selected': function(e, ids, records) {
+            $(controller.groups).bind({
+                'selected': function (e, ids, records, deselected) {
                         self.main_view_id = ids[0];
-                    }
-                });
+                }
             });
         });
     },
