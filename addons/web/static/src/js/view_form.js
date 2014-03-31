@@ -3226,7 +3226,8 @@ instance.web.form.CompletionFieldMixin = {
         if (self.options.quick_create === undefined || self.options.quick_create) {
             new instance.web.DataSet(this, this.field.relation, self.build_context())
                 .name_create(name).done(function(data) {
-                    self.add_id(data[0]);
+                    if (!self.get('effective_readonly'))
+                        self.add_id(data[0]);
                 }).fail(function(error, event) {
                     event.preventDefault();
                     slow_create();
@@ -5106,7 +5107,7 @@ instance.web.form.SelectCreatePopup = instance.web.form.AbstractFormPopup.extend
         this.searchview.on('search_data', self, function(domains, contexts, groupbys) {
             if (self.initial_ids) {
                 self.do_search(domains.concat([[["id", "in", self.initial_ids]], self.domain]),
-                    contexts, groupbys);
+                    contexts.concat(self.context), groupbys);
                 self.initial_ids = undefined;
             } else {
                 self.do_search(domains.concat([self.domain]), contexts.concat(self.context), groupbys);
