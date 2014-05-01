@@ -269,6 +269,11 @@ instance.web.CrashManager = instance.web.Class.extend({
         buttons[_t("Ok")] = function() {
             this.parents('.modal').modal('hide');
         };
+        if (typeof window.callPhantom === 'function') {
+            console.log(error.type + " " + error.message);
+            console.log(error.data.debug);
+            console.log("error");
+        }
         new instance.web.Dialog(this, {
             title: "OpenERP " + _.str.capitalize(error.type),
             buttons: buttons
@@ -605,7 +610,6 @@ instance.web.logout = function() {
 };
 instance.web.client_actions.add("logout", "instance.web.logout");
 
-
 /**
  * Redirect to url by replacing window.location
  * If wait is true, sleep 1s and wait for the server i.e. after a restart.
@@ -722,12 +726,13 @@ instance.web.client_actions.add("change_password", "instance.web.ChangePassword"
 
 instance.web.Menu =  instance.web.Widget.extend({
     template: 'Menu',
-    init: function() {
+    init: function(parent) {
         var self = this;
         this._super.apply(this, arguments);
+        this.client = parent;
         this.has_been_loaded = $.Deferred();
         this.maximum_visible_links = 'auto'; // # of menu to show. 0 = do not crop, 'auto' = algo
-        this.data = {data:{children:[]}};
+        this.data = {children:[]};
         this.on("menu_loaded", this, function (menu_data) {
             self.reflow();
             // launch the fetch of needaction counters, asynchronous
@@ -755,7 +760,7 @@ instance.web.Menu =  instance.web.Widget.extend({
     },
     menu_loaded: function(data) {
         var self = this;
-        this.data = {data: data};
+        this.data = data;
         this.renderElement();
         this.$secondary_menus.html(QWeb.render("Menu.secondary", { widget : this }));
         this.$el.on('click', 'a[data-menu]', this.on_top_menu_click);
@@ -907,6 +912,7 @@ instance.web.Menu =  instance.web.Widget.extend({
             }, $item);
         }
         this.open_menu(id);
+        return action_id;
     },
     do_reload_needaction: function () {
         var self = this;
@@ -925,7 +931,7 @@ instance.web.Menu =  instance.web.Widget.extend({
         var self = this;
         var id = $(ev.currentTarget).data('menu');
         var menu_ids = [id];
-        var menu = _.filter(this.data.data.children, function (menu) {return menu.id == id;})[0];
+        var menu = _.filter(this.data.children, function (menu) {return menu.id == id;})[0];
         function add_menu_ids (menu) {
             if (menu.children) {
                 _.each(menu.children, function (menu) {
@@ -945,6 +951,25 @@ instance.web.Menu =  instance.web.Widget.extend({
         var needaction = $(ev.target).is('div#menu_counter');
         this.menu_click($(ev.currentTarget).data('menu'), needaction);
     },
+    /**
+     * open all action and wait result for each menu
+     * log if action failed or is resolved
+     */
+    click_all_menu_items: function(index) {
+        var self = this;
+        index = index || 0;
+        if(index < self.data.all_menu_ids.length) {
+            var item = self.data.all_menu_ids[index];
+            self.menu_click(item, null);
+            self.client.menu_action_def.done(function() {
+                self.click_all_menu_items(index + 1);
+            }).fail(function () {
+                console.log("error menu item: " + item);
+            });
+        } else {
+            console.log("ok");
+        }
+    }
 });
 
 instance.web.UserMenu =  instance.web.Widget.extend({
@@ -1140,6 +1165,7 @@ instance.web.WebClient = instance.web.Client.extend({
         }
         this._current_state = null;
         this.menu_dm = new instance.web.DropMisordered();
+        this.menu_action_def = $.when();
         this.action_mutex = new $.Mutex();
         this.set('title_part', {"zopenerp": "OpenERP"});
     },
@@ -1358,6 +1384,7 @@ instance.web.WebClient = instance.web.Client.extend({
     },
     on_menu_action: function(options) {
         var self = this;
+        this.menu_action_def = $.Deferred();
         return this.menu_dm.add(this.rpc("/web/action/load", { action_id: options.action_id }))
             .then(function (result) {
                 return self.action_mutex.exec(function() {
@@ -1373,6 +1400,9 @@ instance.web.WebClient = instance.web.Client.extend({
                         action_menu_id: self.menu.current_menu,
                     })).fail(function() {
                         self.menu.open_menu(options.previous_menu_id);
+                        self.menu_action_def.reject();
+                    }).done(function() {
+                        self.menu_action_def.resolve();
                     }).always(function() {
                         completed.resolve();
                     });
