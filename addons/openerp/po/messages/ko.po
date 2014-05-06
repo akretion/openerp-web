@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openobject-client-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-02-05 17:10+0100\n"
-"PO-Revision-Date: 2013-02-08 04:49+0000\n"
-"Last-Translator: Josh Kim <joshkkim@gmail.com>\n"
+"PO-Revision-Date: 2014-05-05 08:32+0000\n"
+"Last-Translator: Lee SunSin <Unknown>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-04-02 05:27+0000\n"
-"X-Generator: Launchpad (build 16546)\n"
+"X-Launchpad-Export-Date: 2014-05-06 06:45+0000\n"
+"X-Generator: Launchpad (build 16996)\n"
 
 #: validators.py:84
 msgid "Invalid literal for float"
@@ -27,29 +27,29 @@ msgstr "유효하지 않은 일시 형식"
 
 #: validators.py:175
 msgid "Please select a file."
-msgstr "파일을 선택하세요."
+msgstr "파일을 선택해주세요"
 
 #: validators.py:260
 msgid "Please enter an email address"
-msgstr "이메일 주소를 입력하세요"
+msgstr "이메일 주소를 입력해주세요"
 
 #: validators.py:261
 msgid "An email address must contain a single @"
-msgstr "이메일 주소는 하나의 @만 포함해야 합니다."
+msgstr "이메일 주소에는 반드시 한개의 @문자가 포함되어야 합니다."
 
 #: validators.py:262
 #, python-format
 msgid ""
 "The username portion of the email address is invalid (the portion before the "
 "@: %(username)s)"
-msgstr "이메일 주소의 사용자 이름이 유효하지 않습니다. (@ 이전 부분: %(username)s)"
+msgstr "이메일주소의 사용자이름 일부가 유효하지 않습니다. (@ 이전 부분: %(username)s)"
 
 #: validators.py:263
 #, python-format
 msgid ""
 "The domain portion of the email address is invalid (the portion after the @: "
 "%(domain)s)"
-msgstr "이메일 주소의 도메인이 유효하지 않습니다 (@ 이후 부분: %(domain)s)"
+msgstr "이메일주소의 도메인 일부가 유효하지 않습니다. (@ 이후 부분: %(domain)s)"
 
 #: validators.py:267
 msgid "You must start your URL with http://, https://, etc"
@@ -66,11 +66,11 @@ msgstr "전체 도메인명을 입력해야 합니다 (예: %(domain)s.com)"
 
 #: validators.py:273
 msgid "Please enter an integer value"
-msgstr "정수 값을 입력하세요"
+msgstr "정수값을 입력해주세요"
 
 #: validators.py:274
 msgid "Please enter a number"
-msgstr "숫자를 입력하세요"
+msgstr "숫자를 입력해주세요"
 
 #: controllers/actions.py:95
 msgid "Invalid View"
@@ -94,11 +94,11 @@ msgstr "관련 URL은 지원되지 않습니다"
 
 #: controllers/actions.py:438 widgets/form/_action.py:46
 msgid "Action not found"
-msgstr "작동을 찾지 못함"
+msgstr "액션을 찾을수 없습니다"
 
 #: controllers/actions.py:492
 msgid "No action defined"
-msgstr "작동이 정의되지 않음"
+msgstr "정의된 액션이 없습니다"
 
 #: controllers/attachment.py:54
 msgid "No record selected, You can only attach to existing record..."
@@ -106,17 +106,17 @@ msgstr "레코드가 선택되지 않음, 기존 레코드에만 첨부할 수 �
 
 #: controllers/database.py:65
 msgid "Create database"
-msgstr "데이터베이스 생성"
+msgstr "데이터베이스 생성하기"
 
 #: controllers/database.py:67 controllers/templates/database.mako:52
 #: controllers/templates/search.mako:145
 msgid "Create"
-msgstr "생성"
+msgstr "생성하기"
 
 #: controllers/database.py:70 controllers/database.py:86
 #: controllers/database.py:94 controllers/database.py:102
 msgid "Super admin password:"
-msgstr "슈퍼 관리자 암호:"
+msgstr "슈퍼 관리자 비밀번호"
 
 #: controllers/database.py:70
 msgid ""
