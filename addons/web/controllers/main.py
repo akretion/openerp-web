@@ -1753,10 +1753,10 @@ class Reports(openerpweb.Controller):
             report_struct['format'], 'octet-stream')
         file_name = action['report_name']
         # Try to get current object model and their ids from context
-        if 'context' in action:  
+        if 'context' in action:
             action_context = action['context']
             if (action_context.get('active_model')
-            and action_context['active_ids']):
+                    and action_context['active_ids']):
                 # Use built-in ORM method to get data from DB
                 m = req.session.model(action_context['active_model'])
                 r = m.name_get(action_context['active_ids'], context)
