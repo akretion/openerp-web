@@ -133,6 +133,25 @@ def ensure_db(redirect='/web/database/selector'):
     if db and db not in http.db_filter([db]):
         db = None
 
+    if db and not request.session.db:
+        # User asked a specific database on a new session.
+        # That mean the nodb router has been used to find the route
+        # Depending on installed module in the database, the rendering of the page
+        # may depend on data injected by the database route dispatcher.
+        # Thus, we redirect the user to the same page but with the session cookie set.
+        # This will force using the database route dispatcher...
+        r = request.httprequest
+        url_redirect = r.base_url
+        if r.query_string:
+            # Can't use werkzeug.wrappers.BaseRequest.url with encoded hashes:
+            # https://github.com/amigrave/werkzeug/commit/b4a62433f2f7678c234cdcac6247a869f90a7eb7
+            url_redirect += '?' + r.query_string
+        response = werkzeug.utils.redirect(url_redirect, 302)
+        request.session.db = db
+        response = r.app.get_response(r, response, explicit_session=False)
+        werkzeug.exceptions.abort(response)
+        return
+
     # if db not provided, use the session one
     if not db:
         db = request.session.db
@@ -342,7 +361,13 @@ def manifest_glob(extension, addons=None, db=None, include_remotes=False):
                     r.append((None, pattern))
             else:
                 for path in glob.glob(os.path.normpath(os.path.join(addons_path, addon, pattern))):
-                    r.append((path, fs2web(path[len(addons_path):])))
+                    # Hack for IE, who limit 288Ko, 4095 rules, 31 sheets
+                    # http://support.microsoft.com/kb/262161/en
+                    if pattern == "static/lib/bootstrap/css/bootstrap.css":
+                        if include_remotes:
+                            r.insert(0, (None, fs2web(path[len(addons_path):])))
+                    else:
+                        r.append((path, fs2web(path[len(addons_path):])))
     return r
 
 def manifest_list(extension, mods=None, db=None, debug=False):
@@ -406,6 +431,15 @@ def set_cookie_and_redirect(redirect_url):
     redirect = werkzeug.utils.redirect(redirect_url, 303)
     redirect.autocorrect_location_header = False
     return redirect
+
+def login_redirect():
+    url = '/web/login?'
+    if request.debug:
+        url += 'debug&'
+    return """<html><head><script>
+        window.location = '%sredirect=' + encodeURIComponent(window.location);
+    </script></head></html>
+    """ % (url,)
 
 def load_actions_from_ir_values(key, key2, models, meta):
     Values = request.session.model('ir.values')
@@ -602,7 +636,8 @@ def render_bootstrap_template(db, template, values=None, debug=False, lazy=False
         registry = openerp.modules.registry.RegistryManager.get(db)
         with registry.cursor() as cr:
             view_obj = registry["ir.ui.view"]
-            return view_obj.render(cr, openerp.SUPERUSER_ID, template, values)
+            uid = request.uid or openerp.SUPERUSER_ID
+            return view_obj.render(cr, uid, template, values)
     if lazy:
         return LazyResponse(callback, template=template, values=values)
     else:
@@ -612,21 +647,27 @@ class Home(http.Controller):
 
     @http.route('/', type='http', auth="none")
     def index(self, s_action=None, db=None, **kw):
-        return http.local_redirect('/web', query=request.params)
+        return http.local_redirect('/web', query=request.params, keep_hash=True)
 
     @http.route('/web', type='http', auth="none")
     def web_client(self, s_action=None, **kw):
         ensure_db()
 
         if request.session.uid:
+            if kw.get('redirect'):
+                return werkzeug.utils.redirect(kw.get('redirect'), 303)
+
             html = render_bootstrap_template(request.session.db, "web.webclient_bootstrap")
             return request.make_response(html, {'Cache-Control': 'no-cache', 'Content-Type': 'text/html; charset=utf-8'})
         else:
-            return http.local_redirect('/web/login', query=request.params)
+            return login_redirect()
 
     @http.route('/web/login', type='http', auth="none")
     def web_login(self, redirect=None, **kw):
         ensure_db()
+
+        if request.httprequest.method == 'GET' and redirect and request.session.uid:
+            return http.redirect_with_hash(redirect)
 
         values = request.params.copy()
         if not redirect:
@@ -998,18 +1039,7 @@ class Session(http.Controller):
         :return: A key identifying the saved action.
         :rtype: integer
         """
-        saved_actions = request.httpsession.get('saved_actions')
-        if not saved_actions:
-            saved_actions = {"next":1, "actions":{}}
-            request.httpsession['saved_actions'] = saved_actions
-        # we don't allow more than 10 stored actions
-        if len(saved_actions["actions"]) >= 10:
-            del saved_actions["actions"][min(saved_actions["actions"])]
-        key = saved_actions["next"]
-        saved_actions["actions"][key] = the_action
-        saved_actions["next"] = key + 1
-        request.httpsession['saved_actions'] = saved_actions
-        return key
+        return request.httpsession.save_action(the_action)
 
     @http.route('/web/session/get_session_action', type='json', auth="user")
     def get_session_action(self, key):
@@ -1022,10 +1052,7 @@ class Session(http.Controller):
         :return: The saved action or None.
         :rtype: anything
         """
-        saved_actions = request.httpsession.get('saved_actions')
-        if not saved_actions:
-            return None
-        return saved_actions["actions"].get(key)
+        return request.httpsession.get_action(key)
 
     @http.route('/web/session/check', type='json', auth="user")
     def check(self):
@@ -1179,14 +1206,17 @@ class DataSet(http.Controller):
 
     def _call_kw(self, model, method, args, kwargs):
         # Temporary implements future display_name special field for model#read()
-        if method == 'read' and kwargs.get('context', {}).get('future_display_name'):
+        if method in ('read', 'search_read') and kwargs.get('context', {}).get('future_display_name'):
             if 'display_name' in args[1]:
-                names = dict(request.session.model(model).name_get(args[0], **kwargs))
+                if method == 'read':
+                    names = dict(request.session.model(model).name_get(args[0], **kwargs))
+                else:
+                    names = dict(request.session.model(model).name_search('', args[0], **kwargs))
                 args[1].remove('display_name')
-                records = request.session.model(model).read(*args, **kwargs)
+                records = getattr(request.session.model(model), method)(*args, **kwargs)
                 for record in records:
                     record['display_name'] = \
-                        names.get(record['id']) or "%s#%d" % (model, (record['id']))
+                        names.get(record['id']) or "{0}#{1}".format(model, (record['id']))
                 return records
 
         if method.startswith('_'):
@@ -1596,8 +1626,8 @@ class Export(http.Controller):
             model, map(operator.itemgetter('name'), export_fields_list))
 
         return [
-            {'name': field_name, 'label': fields_data[field_name]}
-            for field_name in fields_data.keys()
+            {'name': field['name'], 'label': fields_data[field['name']]}
+            for field in export_fields_list
         ]
 
     def fields_info(self, model, export_fields):

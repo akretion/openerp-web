@@ -221,11 +221,12 @@ instance.web.QueryGroup = instance.web.Class.extend({
             {__context: {group_by: []}, __domain: []},
             read_group_group);
 
+        var raw_field = grouping_field && grouping_field.split(':')[0];
         var aggregates = {};
         _(fixed_group).each(function (value, key) {
             if (key.indexOf('__') === 0
-                    || key === grouping_field
-                    || key === grouping_field + '_count') {
+                    || key === raw_field
+                    || key === raw_field + '_count') {
                 return;
             }
             aggregates[key] = value || 0;
@@ -234,7 +235,6 @@ instance.web.QueryGroup = instance.web.Class.extend({
         this.model = new instance.web.Model(
             model, fixed_group.__context, fixed_group.__domain);
 
-        var raw_field = grouping_field && grouping_field.split(':')[0];
         var group_size = fixed_group[raw_field + '_count'] || fixed_group.__count || 0;
         var leaf_group = fixed_group.__context.group_by.length === 0;
 
@@ -448,15 +448,37 @@ instance.web.DataSet =  instance.web.Class.extend(instance.web.PropertiesMixin, 
      * Read records.
      *
      * @param {Array} ids identifiers of the records to read
-     * @param {Array} fields fields to read and return, by default all fields are returned
+     * @param {Array} [fields] fields to read and return, by default all fields are returned
+     * @param {Object} [options]
      * @returns {$.Deferred}
      */
     read_ids: function (ids, fields, options) {
+        if (_.isEmpty(ids))
+            return $.Deferred().resolve([]);
+            
         options = options || {};
-        // TODO: reorder results to match ids list
-        return this._model.call('read',
-            [ids, fields || false],
-            {context: this.get_context(options.context)});
+        var method = 'read';
+        var ids_arg = ids;
+        var context = this.get_context(options.context);
+        if (options.check_access_rule === true){
+            method = 'search_read';
+            ids_arg = [['id', 'in', ids]];
+            context = new instance.web.CompoundContext(context, {active_test: false});
+        }
+        return this._model.call(method,
+                [ids_arg, fields || false],
+                {context: context})
+            .then(function (records) {
+                if (records.length <= 1) { return records; }
+                var indexes = {};
+                for (var i = 0; i < ids.length; i++) {
+                    indexes[ids[i]] = i;
+                }
+                records.sort(function (a, b) {
+                    return indexes[a.id] - indexes[b.id];
+                });
+                return records;
+        });
     },
     /**
      * Read a slice of the records represented by this DataSet, based on its
@@ -872,7 +894,8 @@ instance.web.BufferedDataSet = instance.web.DataSetStatic.extend({
         });
         var return_records = function() {
             var records = _.map(ids, function(id) {
-                return _.extend({}, _.detect(self.cache, function(c) {return c.id === id;}).values, {"id": id});
+                var c = _.find(self.cache, function(c) {return c.id === id;});
+                return _.isUndefined(c) ? c : _.extend({}, c.values, {"id": id});
             });
             if (self.debug_mode) {
                 if (_.include(records, undefined)) {
@@ -899,6 +922,10 @@ instance.web.BufferedDataSet = instance.web.DataSetStatic.extend({
                         if (field[0] === '-') {
                             sign = -1;
                             field = field.slice(1);
+                        }
+                        //m2o should be searched based on value[1] not based whole value(i.e. [id, value])
+                        if(_.isArray(a[field]) && a[field].length == 2 && _.isString(a[field][1])){
+                            return sign * compare(a[field][1], b[field][1]);
                         }
                         return sign * compare(a[field], b[field]);
                     }, 0);

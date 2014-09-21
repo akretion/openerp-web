@@ -536,23 +536,32 @@
 </t>
 <t t-name="ViewManagerDebugViewLog">
     <div class="oe_debug_view_log">
-        <label>ID:</label>
-        <span><t t-esc="perm.id"/></span>
-
-        <label>XML ID:</label>
-        <span><t t-esc="perm.xmlid"/></span>
-
-        <label>Creation User:</label>
-        <span><t t-esc="format(perm.create_uid, { 'type' : 'many2one' }, '/')"/></span>
-
-        <label>Creation Date:</label>
-        <span><t t-esc="format(perm.create_date, { 'type' : 'datetime' }, '/')"/></span>
-
-        <label>Latest Modification by:</label>
-        <span><t t-esc="format(perm.write_uid, { 'type' : 'many2one' }, '/')"/></span>
-
-        <label>Latest Modification Date:</label>
-        <span><t t-esc="format(perm.write_date, { 'type' : 'datetime' }, '/')"/></span>
+        <table class="table table-condensed table-striped">
+            <tr>
+                <th>ID:</th>
+                <td><t t-esc="perm.id"/></td>
+            </tr>
+            <tr>
+                <th>XML ID:</th>
+                <td><t t-esc="perm.xmlid or '/'"/></td>
+            </tr>
+            <tr>
+                <th>Creation User:</th>
+                <td><t t-esc="format(perm.create_uid, { 'type' : 'many2one' }, '/')"/></td>
+            </tr>
+            <tr>
+                <th>Creation Date:</th>
+                <td><t t-esc="format(perm.create_date, { 'type' : 'datetime' }, '/')"/></td>
+            </tr>
+            <tr>
+                <th>Latest Modification by:</th>
+                <td><t t-esc="format(perm.write_uid, { 'type' : 'many2one' }, '/')"/></td>
+            </tr>
+            <tr>
+                <th>Latest Modification Date:</th>
+                <td><t t-esc="format(perm.write_date, { 'type' : 'datetime' }, '/')"/></td>
+            </tr>
+        </table>
     </div>
 </t>
 <t t-name="ViewPager">
@@ -1243,7 +1252,7 @@
                     <td>
                         <t t-call="HiddenInputFile">
                             <t t-set="fileupload_id" t-value="widget.fileupload_id"/>
-                            <t t-set="fileupload_style" t-translation="off">width: 83px;</t>
+                            <t t-set="fileupload_style" t-translation="off">overflow-x: hidden</t>
                             <button class="oe_button oe_field_button" type="button">
                                 <img t-att-src='_s + "/web/static/src/img/icons/STOCK_DIRECTORY.png"'/>
                                 <span>Select</span>
@@ -1327,7 +1336,7 @@
 <t t-name="FieldBinaryFileUploader">
     <div t-att-style="widget.node.attrs.style" t-attf-class="oe_fileupload #{widget.node.attrs.class ? widget.node.attrs.class :''}">
         <div class="oe_placeholder_files"/>
-        <div class="oe_add" t-if="!widget.get('effective_readonly')">
+        <div class="oe_add">
             <!-- uploader of file -->
             <button class="oe_attach"><span class="oe_e">'</span></button> 
             <span class='oe_attach_label'><t t-esc="widget.string"/></span>
