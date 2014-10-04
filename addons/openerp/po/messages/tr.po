@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openobject-client-web\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-02-05 17:10+0100\n"
-"PO-Revision-Date: 2011-04-27 13:40+0000\n"
-"Last-Translator: Ahmet Altınışık <Unknown>\n"
+"PO-Revision-Date: 2014-10-03 16:55+0000\n"
+"Last-Translator: Ayhan KIZILTAN <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-04-02 05:27+0000\n"
-"X-Generator: Launchpad (build 16546)\n"
+"X-Launchpad-Export-Date: 2014-10-04 06:13+0000\n"
+"X-Generator: Launchpad (build 17196)\n"
 
 #: validators.py:84
 msgid "Invalid literal for float"
@@ -237,11 +237,11 @@ msgstr "Şifreyi Değiştir"
 
 #: controllers/database.py:110
 msgid "Old super admin password:"
-msgstr ""
+msgstr "Süper yönetici eski parolası:"
 
 #: controllers/database.py:111
 msgid "New super admin password:"
-msgstr ""
+msgstr "süper yönetici yeni parolası:"
 
 #: controllers/database.py:112 controllers/preferences.py:39
 msgid "Confirm Password:"
@@ -362,7 +362,7 @@ msgstr ""
 
 #: controllers/impex.py:116
 msgid "You cannot export these record(s) !"
-msgstr ""
+msgstr "Bu kayıt(lar)ı dışaaktaramazsınız!"
 
 #: controllers/impex.py:116 utils/common.py:24
 msgid "Error"
@@ -408,11 +408,11 @@ msgstr "Dosya Format Hatası"
 
 #: controllers/impex.py:528
 msgid "The file is empty !"
-msgstr ""
+msgstr "Dosya boştur !"
 
 #: controllers/impex.py:528
 msgid "Importation !"
-msgstr ""
+msgstr "İçeaktarım !"
 
 #: controllers/impex.py:535
 msgid "XML-RPC error"
